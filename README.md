@@ -1,2 +1,0 @@
-# Entmaa-Donations-Community-Service
- 
