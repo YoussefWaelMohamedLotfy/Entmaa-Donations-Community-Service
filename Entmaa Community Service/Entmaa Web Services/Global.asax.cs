@@ -11,7 +11,7 @@ using System.Web.SessionState;
 
 namespace Entmaa_Web_Services
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
