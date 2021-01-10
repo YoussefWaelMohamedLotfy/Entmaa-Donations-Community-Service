@@ -277,6 +277,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-flatly.css" />
+    <Content Include="Content\bootstrap-flatly.min.css" />
     <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-darkly.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
