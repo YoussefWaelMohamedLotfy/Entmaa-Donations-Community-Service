@@ -13,7 +13,12 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<User> Users { get; set; }
         public DbSet<Contributor> Contributors { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+
         public DbSet<Post> Posts { get; set; }
+        
+        public DbSet<Photo> Photo { get; set; }
+
+        public DbSet<Auction> Auctions { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
@@ -26,7 +31,11 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new ContributorConfiguration());
             
-            //modelBuilder.Configurations.Add(new PostConfiguration());
+            modelBuilder.Configurations.Add(new PostConfiguration());
+
+            modelBuilder.Configurations.Add(new PhotoConfiguration());
+
+            modelBuilder.Configurations.Add(new AuctionConfiguration());
         }
     }
 }

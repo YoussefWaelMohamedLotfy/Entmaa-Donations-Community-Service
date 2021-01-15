@@ -26,6 +26,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string FirebaseToken { get; set; }
         
         public byte UserType { get; set; }
+
+        public ICollection<Post> PostsReactedTo { get; set; }
     }
 
     public class UserType

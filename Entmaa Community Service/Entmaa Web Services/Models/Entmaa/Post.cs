@@ -18,6 +18,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public byte PostType { get; set; }
 
         public Organization Organization { get; set; }
+
+        public ICollection<User> UsersReacted { get; set; }
     }
 
     public class PostType

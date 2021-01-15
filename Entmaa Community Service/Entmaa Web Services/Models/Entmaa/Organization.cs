@@ -16,5 +16,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string FawryToken { get; set; }
 
         public ICollection<Post> Posts { get; set; }
+        
+        public ICollection<Auction> AuctionsCreated { get; set; }
     }
 }

@@ -17,27 +17,4 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(u => u.FirebaseToken).IsRequired();
         }
     }
-
-    public class ContributorConfiguration : EntityTypeConfiguration<Contributor>
-    {
-        public ContributorConfiguration()
-        {
-            ToTable("Contributors");
-            Property(c => c.ID).HasColumnName("UserID");
-            Property(c => c.Gender).IsRequired();
-        }
-    }
-
-    public class OrganizationConfiguration : EntityTypeConfiguration<Organization>
-    {
-        public OrganizationConfiguration()
-        {
-            ToTable("Organizations");
-
-            Property(o => o.ID).HasColumnName("UserID");
-            Property(o => o.FawryToken).IsRequired();
-
-            HasMany(o => o.Posts).WithRequired(o => o.Organization).HasForeignKey(o => o.PostedBy);
-        }
-    }
 }
