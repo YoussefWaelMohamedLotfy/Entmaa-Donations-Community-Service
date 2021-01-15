@@ -268,8 +268,26 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Entmaa\Auction.cs" />
+    <Compile Include="Models\Entmaa\Badge.cs" />
+    <Compile Include="Models\Entmaa\City.cs" />
+    <Compile Include="Models\Entmaa\Contributor.cs" />
+    <Compile Include="Models\Entmaa\DonatedItem.cs" />
+    <Compile Include="Models\Entmaa\DonationRequest.cs" />
+    <Compile Include="Models\Entmaa\Event.cs" />
+    <Compile Include="Models\Entmaa\Notification.cs" />
+    <Compile Include="Models\Entmaa\Organization.cs" />
+    <Compile Include="Models\Entmaa\Photo.cs" />
+    <Compile Include="Models\Entmaa\Post.cs" />
+    <Compile Include="Models\Entmaa\ReportedCase.cs" />
+    <Compile Include="Models\Entmaa\ReportedItem.cs" />
+    <Compile Include="Models\Entmaa\Subscription.cs" />
+    <Compile Include="Models\Entmaa\Tag.cs" />
+    <Compile Include="Models\Entmaa\User.cs" />
+    <Compile Include="Models\Entmaa\UserLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -691,9 +709,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\APIs\" />
+    <Folder Include="Controllers\Entmaa\" />
     <Folder Include="DTOs\" />
-    <Folder Include="Models\Entmaa\" />
-    <Folder Include="Persistence\EntityConfigurations\" />
     <Folder Include="Persistence\MapperProfiles\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
