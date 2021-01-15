@@ -33,8 +33,11 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public OrganizationConfiguration()
         {
             ToTable("Organizations");
+
             Property(o => o.ID).HasColumnName("UserID");
             Property(o => o.FawryToken).IsRequired();
+
+            HasMany(o => o.Posts).WithRequired(o => o.Organization).HasForeignKey(o => o.PostedBy);
         }
     }
 }

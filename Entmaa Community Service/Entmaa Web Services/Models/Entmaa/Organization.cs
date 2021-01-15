@@ -14,5 +14,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public DateTime FoundedDate { get; set; }
         
         public string FawryToken { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
     }
 }

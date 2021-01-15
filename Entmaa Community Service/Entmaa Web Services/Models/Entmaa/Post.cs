@@ -16,6 +16,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int PostedBy { get; set; }
         
         public byte PostType { get; set; }
+
+        public Organization Organization { get; set; }
     }
 
     public class PostType

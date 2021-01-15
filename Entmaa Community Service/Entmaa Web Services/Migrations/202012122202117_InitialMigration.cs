@@ -25,6 +25,20 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Posts",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        TimePosted = c.DateTime(nullable: false),
+                        Description = c.String(),
+                        PostedBy = c.Int(nullable: false),
+                        PostType = c.Byte(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Organizations", t => t.PostedBy)
+                .Index(t => t.PostedBy);
+            
+            CreateTable(
                 "dbo.Contributors",
                 c => new
                     {
@@ -56,10 +70,13 @@
         {
             DropForeignKey("dbo.Organizations", "UserID", "dbo.Users");
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
+            DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropIndex("dbo.Organizations", new[] { "UserID" });
             DropIndex("dbo.Contributors", new[] { "UserID" });
+            DropIndex("dbo.Posts", new[] { "PostedBy" });
             DropTable("dbo.Organizations");
             DropTable("dbo.Contributors");
+            DropTable("dbo.Posts");
             DropTable("dbo.Users");
         }
     }
