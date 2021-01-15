@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Entmaa_Web_Services.Models.Entmaa
 {
-    public class User
+    public abstract class User
     {
         public int ID { get; set; }
 
@@ -26,10 +26,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string FirebaseToken { get; set; }
         
         public byte UserType { get; set; }
-
-        public Contributor Contributor { get; set; }
-
-        public Organization Organization { get; set; }
     }
 
     public class UserType

@@ -11,11 +11,10 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public UserConfiguration()
         {
-            //HasOptional(c => c.Contributor).WithRequired(c => c.User).Map(c => c.MapKey("UserID"));
-            //HasOptional(c => c.Organization).WithRequired(c => c.User).Map(c => c.MapKey("UserID"));
-            HasRequired(c => c.Organization).WithRequiredPrincipal(c => c.User);
-            HasRequired(c => c.Contributor).WithRequiredPrincipal(c => c.User);
-
+            Property(u => u.Email).IsRequired();
+            Property(u => u.Password).IsRequired();
+            Property(u => u.Name).IsRequired();
+            Property(u => u.FirebaseToken).IsRequired();
         }
     }
 
@@ -24,7 +23,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public ContributorConfiguration()
         {
             ToTable("Contributors");
-            //HasRequired(c => c.User).WithRequiredDependent(c => c.Contributor);
+            Property(c => c.ID).HasColumnName("UserID");
+            Property(c => c.Gender).IsRequired();
         }
     }
 
@@ -33,7 +33,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public OrganizationConfiguration()
         {
             ToTable("Organizations");
-            //HasRequired(c => c.User).WithRequiredDependent(c => c.Organization);
+            Property(o => o.ID).HasColumnName("UserID");
+            Property(o => o.FawryToken).IsRequired();
         }
     }
 }

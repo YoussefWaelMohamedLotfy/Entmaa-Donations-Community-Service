@@ -15,12 +15,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public int PostedBy { get; set; }
         
-        public int PostType { get; set; }
+        public byte PostType { get; set; }
     }
 
     public class PostType
     {
-        public int ID { get; set; }
+        public byte ID { get; set; }
 
         public string Name { get; set; }
     }

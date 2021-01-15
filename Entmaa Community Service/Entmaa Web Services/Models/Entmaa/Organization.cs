@@ -7,8 +7,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Organization : User
     {
-        public int UserID { get; set; }
-        
         public float Rating { get; set; }
         
         public bool IsApproved { get; set; }
@@ -16,7 +14,5 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public DateTime FoundedDate { get; set; }
         
         public string FawryToken { get; set; }
-
-        public User User { get; set; }
     }
 }

@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Entmaa_Web_Services.Models.Entmaa;
+using Entmaa_Web_Services.Persistence.EntityConfigurations;
 
 namespace Entmaa_Web_Services.Persistence
 {
     public class MainContext : DbContext
     {
-        
+        public DbSet<User> Users { get; set; }
+        public DbSet<Contributor> Contributors { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
@@ -17,8 +21,9 @@ namespace Entmaa_Web_Services.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // To be removed
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new OrganizationConfiguration());
+            modelBuilder.Configurations.Add(new ContributorConfiguration());
         }
     }
 }
