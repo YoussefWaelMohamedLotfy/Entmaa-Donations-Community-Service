@@ -12,8 +12,11 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public ContributorConfiguration()
         {
             ToTable("Contributors");
+
             Property(c => c.ID).HasColumnName("UserID");
             Property(c => c.Gender).IsRequired();
+
+            HasMany(c => c.EventsVolunteeredIn).WithRequired(v => v.Contributor).HasForeignKey(v => v.ContributorID);
         }
     }
 }

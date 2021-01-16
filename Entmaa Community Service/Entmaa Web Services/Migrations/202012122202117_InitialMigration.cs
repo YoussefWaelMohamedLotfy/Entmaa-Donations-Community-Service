@@ -84,6 +84,20 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Volunteers",
+                c => new
+                    {
+                        ContributorID = c.Int(nullable: false),
+                        EventID = c.Int(nullable: false),
+                        IsAccepted = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ContributorID, t.EventID })
+                .ForeignKey("dbo.Contributors", t => t.ContributorID)
+                .ForeignKey("dbo.Events", t => t.EventID, cascadeDelete: true)
+                .Index(t => t.ContributorID)
+                .Index(t => t.EventID);
+            
+            CreateTable(
                 "dbo.Photos",
                 c => new
                     {
@@ -192,8 +206,10 @@
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.PostLikes", "UserID", "dbo.Users");
             DropForeignKey("dbo.PostLikes", "PostID", "dbo.Posts");
+            DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
             DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserTags", "TagID", "dbo.Tags");
+            DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.PostTags", "PostID", "dbo.Posts");
             DropForeignKey("dbo.PostTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.EventTags", "EventID", "dbo.Events");
@@ -214,6 +230,8 @@
             DropIndex("dbo.EventTags", new[] { "TagID" });
             DropIndex("dbo.AuctionTags", new[] { "AuctionID" });
             DropIndex("dbo.AuctionTags", new[] { "TagID" });
+            DropIndex("dbo.Volunteers", new[] { "EventID" });
+            DropIndex("dbo.Volunteers", new[] { "ContributorID" });
             DropIndex("dbo.Events", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "PostedBy" });
             DropIndex("dbo.Auctions", new[] { "HostedBy" });
@@ -225,6 +243,7 @@
             DropTable("dbo.EventTags");
             DropTable("dbo.AuctionTags");
             DropTable("dbo.Photos");
+            DropTable("dbo.Volunteers");
             DropTable("dbo.Tags");
             DropTable("dbo.Events");
             DropTable("dbo.Posts");

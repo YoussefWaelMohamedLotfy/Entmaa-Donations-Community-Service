@@ -12,7 +12,6 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public AuctionConfiguration()
         {
             Property(a => a.Title).IsRequired();
-
         }
     }
 }
