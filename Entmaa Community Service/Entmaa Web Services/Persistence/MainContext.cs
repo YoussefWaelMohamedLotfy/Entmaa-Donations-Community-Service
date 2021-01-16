@@ -26,6 +26,9 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<Tag> Tags { get; set; }
 
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<City> Cities { get; set; }
+
         public MainContext() : base("name=EntmaaConnection")
         {
             Configuration.LazyLoadingEnabled = false;
@@ -48,6 +51,9 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new AuctionBidderConfiguration());
 
             modelBuilder.Configurations.Add(new TagConfiguration());
+            
+            modelBuilder.Configurations.Add(new CountryConfiguration());
+            modelBuilder.Configurations.Add(new CityConfiguration());
         }
     }
 }

@@ -115,6 +115,27 @@
                 .Index(t => t.EventID);
             
             CreateTable(
+                "dbo.Cities",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        CountryID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Countries", t => t.CountryID, cascadeDelete: true)
+                .Index(t => t.CountryID);
+            
+            CreateTable(
+                "dbo.Countries",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.Photos",
                 c => new
                     {
@@ -220,6 +241,7 @@
         {
             DropForeignKey("dbo.Organizations", "UserID", "dbo.Users");
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
+            DropForeignKey("dbo.Cities", "CountryID", "dbo.Countries");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.PostLikes", "UserID", "dbo.Users");
             DropForeignKey("dbo.PostLikes", "PostID", "dbo.Posts");
@@ -249,6 +271,7 @@
             DropIndex("dbo.EventTags", new[] { "TagID" });
             DropIndex("dbo.AuctionTags", new[] { "AuctionID" });
             DropIndex("dbo.AuctionTags", new[] { "TagID" });
+            DropIndex("dbo.Cities", new[] { "CountryID" });
             DropIndex("dbo.Volunteers", new[] { "EventID" });
             DropIndex("dbo.Volunteers", new[] { "ContributorID" });
             DropIndex("dbo.Events", new[] { "PostID" });
@@ -264,6 +287,8 @@
             DropTable("dbo.EventTags");
             DropTable("dbo.AuctionTags");
             DropTable("dbo.Photos");
+            DropTable("dbo.Countries");
+            DropTable("dbo.Cities");
             DropTable("dbo.Volunteers");
             DropTable("dbo.Tags");
             DropTable("dbo.Events");
