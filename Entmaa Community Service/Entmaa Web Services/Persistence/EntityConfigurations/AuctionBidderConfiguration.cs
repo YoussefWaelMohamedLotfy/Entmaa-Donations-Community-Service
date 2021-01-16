@@ -7,13 +7,11 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class AuctionConfiguration : EntityTypeConfiguration<Auction>
+    public class AuctionBidderConfiguration : EntityTypeConfiguration<AuctionBidder>
     {
-        public AuctionConfiguration()
+        public AuctionBidderConfiguration()
         {
-            Property(a => a.Title).IsRequired();
-
-            HasMany(a => a.Bidders).WithRequired(c => c.Auction).HasForeignKey(a => a.AuctionID);
+            HasKey(a => new { a.AuctionID, a.BidBy });
         }
     }
 }

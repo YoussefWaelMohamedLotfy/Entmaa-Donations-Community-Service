@@ -22,6 +22,7 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<Volunteer> Volunteers { get; set; }
 
         public DbSet<Auction> Auctions { get; set; }
+        public DbSet<AuctionBidder> AuctionBidders { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
 
@@ -44,6 +45,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new PhotoConfiguration());
 
             modelBuilder.Configurations.Add(new AuctionConfiguration());
+            modelBuilder.Configurations.Add(new AuctionBidderConfiguration());
 
             modelBuilder.Configurations.Add(new TagConfiguration());
         }

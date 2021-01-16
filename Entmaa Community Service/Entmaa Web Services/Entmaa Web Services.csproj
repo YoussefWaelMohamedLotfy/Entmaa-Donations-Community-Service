@@ -269,6 +269,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entmaa\Auction.cs" />
+    <Compile Include="Models\Entmaa\AuctionBidder.cs" />
     <Compile Include="Models\Entmaa\Badge.cs" />
     <Compile Include="Models\Entmaa\City.cs" />
     <Compile Include="Models\Entmaa\Contributor.cs" />
@@ -288,6 +289,7 @@
     <Compile Include="Models\Entmaa\Volunteer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Persistence\EntityConfigurations\AuctionBidderConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\AuctionConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ContributorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\EventConfiguration.cs" />

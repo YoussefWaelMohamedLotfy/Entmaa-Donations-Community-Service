@@ -17,6 +17,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(c => c.Gender).IsRequired();
 
             HasMany(c => c.EventsVolunteeredIn).WithRequired(v => v.Contributor).HasForeignKey(v => v.ContributorID);
+            HasMany(c => c.AuctionsJoined).WithRequired(a => a.Contributor).HasForeignKey(a => a.BidBy);
         }
     }
 }

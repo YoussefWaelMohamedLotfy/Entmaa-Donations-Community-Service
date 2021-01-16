@@ -12,5 +12,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string Gender { get; set; }
 
         public ICollection<Volunteer> EventsVolunteeredIn { get; set; }
+
+        public ICollection<AuctionBidder> AuctionsJoined { get; set; }
     }
 }

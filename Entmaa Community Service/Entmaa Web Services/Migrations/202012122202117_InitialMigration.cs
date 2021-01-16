@@ -8,6 +8,23 @@
         public override void Up()
         {
             CreateTable(
+                "dbo.AuctionBidders",
+                c => new
+                    {
+                        AuctionID = c.Int(nullable: false),
+                        BidBy = c.Int(nullable: false),
+                        Price = c.Int(nullable: false),
+                        FawryToken = c.String(),
+                        ValidUntil = c.DateTime(nullable: false),
+                        IsPaid = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.AuctionID, t.BidBy })
+                .ForeignKey("dbo.Auctions", t => t.AuctionID, cascadeDelete: true)
+                .ForeignKey("dbo.Contributors", t => t.BidBy)
+                .Index(t => t.AuctionID)
+                .Index(t => t.BidBy);
+            
+            CreateTable(
                 "dbo.Auctions",
                 c => new
                     {
@@ -79,7 +96,7 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -210,6 +227,7 @@
             DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
+            DropForeignKey("dbo.AuctionBidders", "BidBy", "dbo.Contributors");
             DropForeignKey("dbo.PostTags", "PostID", "dbo.Posts");
             DropForeignKey("dbo.PostTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.EventTags", "EventID", "dbo.Events");
@@ -218,6 +236,7 @@
             DropForeignKey("dbo.AuctionTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
             DropForeignKey("dbo.Auctions", "HostedBy", "dbo.Organizations");
+            DropForeignKey("dbo.AuctionBidders", "AuctionID", "dbo.Auctions");
             DropIndex("dbo.Organizations", new[] { "UserID" });
             DropIndex("dbo.Contributors", new[] { "UserID" });
             DropIndex("dbo.PostLikes", new[] { "UserID" });
@@ -235,6 +254,8 @@
             DropIndex("dbo.Events", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "PostedBy" });
             DropIndex("dbo.Auctions", new[] { "HostedBy" });
+            DropIndex("dbo.AuctionBidders", new[] { "BidBy" });
+            DropIndex("dbo.AuctionBidders", new[] { "AuctionID" });
             DropTable("dbo.Organizations");
             DropTable("dbo.Contributors");
             DropTable("dbo.PostLikes");
@@ -249,6 +270,7 @@
             DropTable("dbo.Posts");
             DropTable("dbo.Users");
             DropTable("dbo.Auctions");
+            DropTable("dbo.AuctionBidders");
         }
     }
 }
