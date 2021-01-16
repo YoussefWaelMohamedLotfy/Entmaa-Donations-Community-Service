@@ -11,5 +11,6 @@ namespace Entmaa_Web_Services.Core
 
 
         int CompleteWork();
+        Task<int> CompleteWorkAsync();
     }
 }
