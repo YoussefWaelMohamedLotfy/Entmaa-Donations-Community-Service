@@ -7,6 +7,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public TagConfiguration()
         {
+            Property(t => t.Name).IsRequired();
+
             HasMany(t => t.AuctionTags).WithMany(a => a.Tags)
                 .Map(c =>
                         {

@@ -10,5 +10,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public DateTime BirthDate { get; set; }
 
         public string Gender { get; set; }
+
+        public ICollection<Volunteer> EventsVolunteeredIn { get; set; }
     }
 }

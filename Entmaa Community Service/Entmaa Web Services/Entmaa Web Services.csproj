@@ -285,6 +285,7 @@
     <Compile Include="Models\Entmaa\Tag.cs" />
     <Compile Include="Models\Entmaa\User.cs" />
     <Compile Include="Models\Entmaa\UserLocation.cs" />
+    <Compile Include="Models\Entmaa\Volunteer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Persistence\EntityConfigurations\AuctionConfiguration.cs" />
@@ -295,6 +296,7 @@
     <Compile Include="Persistence\EntityConfigurations\PostConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\TagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />

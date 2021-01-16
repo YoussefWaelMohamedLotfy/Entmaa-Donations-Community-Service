@@ -17,6 +17,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(e => e.MapLocation).IsRequired();
 
             HasRequired(e => e.Post).WithOptional(p => p.Event);
+
+            HasMany(e => e.Volunteers).WithRequired(v => v.Event).HasForeignKey(v => v.EventID);
         }
     }
 }

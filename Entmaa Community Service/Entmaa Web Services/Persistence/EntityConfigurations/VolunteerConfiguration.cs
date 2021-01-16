@@ -7,11 +7,11 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class PhotoConfiguration : EntityTypeConfiguration<Photo>
+    public class VolunteerConfiguration : EntityTypeConfiguration<Volunteer>
     {
-        public PhotoConfiguration()
+        public VolunteerConfiguration()
         {
-            Property(p => p.Path).IsRequired();
+            HasKey(v => new { v.ContributorID, v.EventID });
         }
     }
 }
