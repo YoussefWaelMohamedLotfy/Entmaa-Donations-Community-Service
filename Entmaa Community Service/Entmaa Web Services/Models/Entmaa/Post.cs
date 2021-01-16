@@ -19,7 +19,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public Organization Organization { get; set; }
 
+        public Event Event { get; set; }
+
         public ICollection<User> UsersReacted { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 
     public class PostType

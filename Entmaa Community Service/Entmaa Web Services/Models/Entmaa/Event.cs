@@ -8,7 +8,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
     public class Event
     {
         public int PostID { get; set; }
-        
+
         public string Name { get; set; }
         
         public DateTime StartDate { get; set; }
@@ -26,5 +26,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int NeededCount { get; set; }
         
         public int AcceptedCount { get; set; }
+
+        public Post Post { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 }

@@ -28,6 +28,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public byte UserType { get; set; }
 
         public ICollection<Post> PostsReactedTo { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 
     public class UserType

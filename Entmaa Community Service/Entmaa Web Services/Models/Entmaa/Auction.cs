@@ -24,6 +24,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public DateTime EndDate { get; set; }
 
         public Organization OrganizationCreator { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 
     public class AuctionBidder

@@ -18,7 +18,11 @@ namespace Entmaa_Web_Services.Persistence
         
         public DbSet<Photo> Photo { get; set; }
 
+        public DbSet<Event> Events { get; set; }
+
         public DbSet<Auction> Auctions { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
@@ -33,9 +37,13 @@ namespace Entmaa_Web_Services.Persistence
             
             modelBuilder.Configurations.Add(new PostConfiguration());
 
+            modelBuilder.Configurations.Add(new EventConfiguration());
+
             modelBuilder.Configurations.Add(new PhotoConfiguration());
 
             modelBuilder.Configurations.Add(new AuctionConfiguration());
+
+            modelBuilder.Configurations.Add(new TagConfiguration());
         }
     }
 }
