@@ -15,7 +15,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public int PostedBy { get; set; }
         
-        public byte PostType { get; set; }
+        public byte PostTypeID { get; set; }
+
+        public PostType PostType { get; set; }
 
         public Organization Organization { get; set; }
 
@@ -31,6 +33,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public byte ID { get; set; }
 
         public string Name { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
     }
 
     public class PostComment

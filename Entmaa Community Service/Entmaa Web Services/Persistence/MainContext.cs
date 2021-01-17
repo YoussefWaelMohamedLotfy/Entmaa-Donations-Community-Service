@@ -12,10 +12,13 @@ namespace Entmaa_Web_Services.Persistence
     {
         public DbSet<User> Users { get; set; }
         public DbSet<UserPhoneNumber> UserPhoneNumbers { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
+
         public DbSet<Contributor> Contributors { get; set; }
         public DbSet<Organization> Organizations { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<PostType> PostTypes { get; set; }
         
         public DbSet<Photo> Photo { get; set; }
 
@@ -40,10 +43,13 @@ namespace Entmaa_Web_Services.Persistence
         {
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new UserPhoneNumberConfiguration());
+            modelBuilder.Configurations.Add(new UserTypeConfiguration());
+
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new ContributorConfiguration());
             
             modelBuilder.Configurations.Add(new PostConfiguration());
+            modelBuilder.Configurations.Add(new PostTypeConfiguration());
 
             modelBuilder.Configurations.Add(new EventConfiguration());
             modelBuilder.Configurations.Add(new VolunteerConfiguration());
