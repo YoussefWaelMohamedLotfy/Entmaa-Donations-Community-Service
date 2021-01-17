@@ -30,6 +30,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<Post> PostsReactedTo { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
+
+        public ICollection<UserLocation> Locations { get; set; }
     }
 
     public class UserType

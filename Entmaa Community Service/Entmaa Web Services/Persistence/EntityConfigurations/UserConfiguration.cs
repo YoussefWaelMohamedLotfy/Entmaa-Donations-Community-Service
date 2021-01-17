@@ -15,6 +15,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(u => u.Password).IsRequired();
             Property(u => u.Name).IsRequired();
             Property(u => u.FirebaseToken).IsRequired();
+
+            HasMany(u => u.Locations).WithRequired(u => u.User).HasForeignKey(u => u.UserID);
         }
     }
 }

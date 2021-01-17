@@ -28,6 +28,7 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<UserLocation> UserLocations { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
@@ -54,6 +55,7 @@ namespace Entmaa_Web_Services.Persistence
             
             modelBuilder.Configurations.Add(new CountryConfiguration());
             modelBuilder.Configurations.Add(new CityConfiguration());
+            modelBuilder.Configurations.Add(new UserLocationConfiguration());
         }
     }
 }

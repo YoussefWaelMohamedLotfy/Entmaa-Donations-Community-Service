@@ -14,6 +14,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int CountryID { get; set; }
 
         public Country Country { get; set; }
+
+        public ICollection<UserLocation> Locations { get; set; }
     }
 
     public class Country

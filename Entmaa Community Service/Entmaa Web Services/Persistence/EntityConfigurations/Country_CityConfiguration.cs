@@ -22,6 +22,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public CityConfiguration()
         {
             Property(c => c.Name).IsRequired();
+
+            HasMany(c => c.Locations).WithRequired(u => u.City).HasForeignKey(u => u.CityID);
         }
     }
 }

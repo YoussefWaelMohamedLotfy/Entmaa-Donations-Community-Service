@@ -16,5 +16,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string Address { get; set; }
         
         public string MapLocation { get; set; }
+
+        public City City { get; set; }
+
+        public User User { get; set; }
     }
 }
