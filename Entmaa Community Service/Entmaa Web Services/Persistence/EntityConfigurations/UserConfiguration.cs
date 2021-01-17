@@ -17,6 +17,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(u => u.FirebaseToken).IsRequired();
 
             HasMany(u => u.Locations).WithRequired(u => u.User).HasForeignKey(u => u.UserID);
+            HasMany(u => u.PhoneNumbers).WithRequired(u => u.User).HasForeignKey(u => u.UserID);
         }
     }
 }

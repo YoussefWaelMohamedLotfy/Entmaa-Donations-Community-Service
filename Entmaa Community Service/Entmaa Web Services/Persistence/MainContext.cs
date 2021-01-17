@@ -11,6 +11,7 @@ namespace Entmaa_Web_Services.Persistence
     public class MainContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<UserPhoneNumber> UserPhoneNumbers { get; set; }
         public DbSet<Contributor> Contributors { get; set; }
         public DbSet<Organization> Organizations { get; set; }
 
@@ -38,6 +39,7 @@ namespace Entmaa_Web_Services.Persistence
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new UserPhoneNumberConfiguration());
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new ContributorConfiguration());
             

@@ -25,13 +25,17 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public string FirebaseToken { get; set; }
         
-        public byte UserType { get; set; }
+        public byte UserTypeID { get; set; }
+
+        public UserType UserType { get; set; }
 
         public ICollection<Post> PostsReactedTo { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
 
         public ICollection<UserLocation> Locations { get; set; }
+
+        public ICollection<UserPhoneNumber> PhoneNumbers { get; set; }
     }
 
     public class UserType
@@ -39,6 +43,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public byte ID { get; set; }
 
         public string Name { get; set; }
+
+        public ICollection<User> Users { get; set; }
     }
 
     public class UserPhoneNumber
@@ -46,5 +52,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public string PhoneNumber { get; set; }
 
         public int UserID { get; set; }
+
+        public User User { get; set; }
     }
 }

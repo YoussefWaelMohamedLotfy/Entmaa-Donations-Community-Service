@@ -304,6 +304,7 @@
     <Compile Include="Persistence\EntityConfigurations\TagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserLocationConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\UserPhoneNumberConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />

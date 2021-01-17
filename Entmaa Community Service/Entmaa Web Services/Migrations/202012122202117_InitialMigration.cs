@@ -54,9 +54,11 @@
                         ProfilePhotoID = c.Int(nullable: false),
                         CoverPhotoID = c.Int(nullable: false),
                         FirebaseToken = c.String(nullable: false),
-                        UserType = c.Byte(nullable: false),
+                        UserTypeID = c.Byte(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.UserTypes", t => t.UserTypeID, cascadeDelete: true)
+                .Index(t => t.UserTypeID);
             
             CreateTable(
                 "dbo.UserLocations",
@@ -94,6 +96,17 @@
                         Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.UserPhoneNumbers",
+                c => new
+                    {
+                        PhoneNumber = c.String(nullable: false, maxLength: 50),
+                        UserID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PhoneNumber)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.Posts",
@@ -150,6 +163,15 @@
                 .ForeignKey("dbo.Events", t => t.EventID, cascadeDelete: true)
                 .Index(t => t.ContributorID)
                 .Index(t => t.EventID);
+            
+            CreateTable(
+                "dbo.UserTypes",
+                c => new
+                    {
+                        ID = c.Byte(nullable: false),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Photos",
@@ -261,6 +283,7 @@
             DropForeignKey("dbo.PostLikes", "UserID", "dbo.Users");
             DropForeignKey("dbo.PostLikes", "PostID", "dbo.Posts");
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
+            DropForeignKey("dbo.Users", "UserTypeID", "dbo.UserTypes");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.AuctionBidders", "BidBy", "dbo.Contributors");
             DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
@@ -272,6 +295,7 @@
             DropForeignKey("dbo.AuctionTags", "AuctionID", "dbo.Auctions");
             DropForeignKey("dbo.AuctionTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
+            DropForeignKey("dbo.UserPhoneNumbers", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
             DropForeignKey("dbo.Cities", "CountryID", "dbo.Countries");
@@ -293,9 +317,11 @@
             DropIndex("dbo.Volunteers", new[] { "ContributorID" });
             DropIndex("dbo.Events", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "PostedBy" });
+            DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
             DropIndex("dbo.Cities", new[] { "CountryID" });
             DropIndex("dbo.UserLocations", new[] { "CityID" });
             DropIndex("dbo.UserLocations", new[] { "UserID" });
+            DropIndex("dbo.Users", new[] { "UserTypeID" });
             DropIndex("dbo.Auctions", new[] { "HostedBy" });
             DropIndex("dbo.AuctionBidders", new[] { "BidBy" });
             DropIndex("dbo.AuctionBidders", new[] { "AuctionID" });
@@ -307,10 +333,12 @@
             DropTable("dbo.EventTags");
             DropTable("dbo.AuctionTags");
             DropTable("dbo.Photos");
+            DropTable("dbo.UserTypes");
             DropTable("dbo.Volunteers");
             DropTable("dbo.Tags");
             DropTable("dbo.Events");
             DropTable("dbo.Posts");
+            DropTable("dbo.UserPhoneNumbers");
             DropTable("dbo.Countries");
             DropTable("dbo.Cities");
             DropTable("dbo.UserLocations");
