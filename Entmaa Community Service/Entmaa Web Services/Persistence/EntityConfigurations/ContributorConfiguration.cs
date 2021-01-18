@@ -29,6 +29,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                 }
 
                 );
+
+            HasMany(d => d.DonationOnRequests).WithRequired(c => c.Contributor).HasForeignKey(c => c.ContibutorID);
                 
         }
     }

@@ -70,6 +70,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new UserLocationConfiguration());
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
             modelBuilder.Configurations.Add(new BadgesConfiguration());
+            modelBuilder.Configurations.Add(new DonationOnRequestConfiguration());
             
         }
     }

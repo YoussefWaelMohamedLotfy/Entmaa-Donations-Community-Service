@@ -21,6 +21,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public Post Post { get; set; }
 
+        public ICollection<DonationOnRequest> DonationOnRequests { get; set; }
+
     }
 
     public class DonationOnRequest
@@ -32,5 +34,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int CashAmount { get; set; }
         
         public string DonationToken { get; set; }
+
+        public DonationRequest DonationRequest { get; set; }
+
+        public Contributor Contributor { get; set; }
+
+
     }
 }

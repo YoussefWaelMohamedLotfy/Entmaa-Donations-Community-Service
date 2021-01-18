@@ -299,6 +299,7 @@
     <Compile Include="Persistence\EntityConfigurations\CityConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ContributorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CountryConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\DonationOnRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonationRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\EventConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\OrganizationConfiguration.cs" />

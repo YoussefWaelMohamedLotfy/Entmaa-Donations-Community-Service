@@ -13,6 +13,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             Property(d => d.Title).IsRequired();           
             HasKey(d => d.PostID);
+            HasMany(d => d.DonationOnRequests).WithRequired(d => d.DonationRequest).HasForeignKey(d => d.RequestID);
         }
     }
 }

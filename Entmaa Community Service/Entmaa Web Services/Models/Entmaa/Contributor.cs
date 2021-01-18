@@ -16,5 +16,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<AuctionBidder> AuctionsJoined { get; set; }
 
         public ICollection<Badge> BadgesOwned { get; set; }
+
+        public ICollection<DonationOnRequest> DonationOnRequests { get; set; }
     }
 }
