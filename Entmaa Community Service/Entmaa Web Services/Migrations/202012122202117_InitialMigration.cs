@@ -125,6 +125,21 @@
                 .Index(t => t.PostTypeID);
             
             CreateTable(
+                "dbo.DonationRequests",
+                c => new
+                    {
+                        PostID = c.Int(nullable: false),
+                        Title = c.String(nullable: false),
+                        AmountNeeded = c.Int(nullable: false),
+                        AmountReceived = c.Int(nullable: false),
+                        AreItemsAccepted = c.Boolean(nullable: false),
+                        IsCompleted = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.PostID)
+                .ForeignKey("dbo.Posts", t => t.PostID)
+                .Index(t => t.PostID);
+            
+            CreateTable(
                 "dbo.Events",
                 c => new
                     {
@@ -165,6 +180,15 @@
                 .ForeignKey("dbo.Events", t => t.EventID, cascadeDelete: true)
                 .Index(t => t.ContributorID)
                 .Index(t => t.EventID);
+            
+            CreateTable(
+                "dbo.Badges",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.UserTypes",
@@ -246,6 +270,19 @@
                 .Index(t => t.UserID);
             
             CreateTable(
+                "dbo.ContributorBadges",
+                c => new
+                    {
+                        BadgeID = c.Int(nullable: false),
+                        ContributorID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.BadgeID, t.ContributorID })
+                .ForeignKey("dbo.Contributors", t => t.BadgeID, cascadeDelete: true)
+                .ForeignKey("dbo.Badges", t => t.ContributorID, cascadeDelete: true)
+                .Index(t => t.BadgeID)
+                .Index(t => t.ContributorID);
+            
+            CreateTable(
                 "dbo.PostLikes",
                 c => new
                     {
@@ -297,6 +334,8 @@
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
             DropForeignKey("dbo.Users", "UserTypeID", "dbo.UserTypes");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
+            DropForeignKey("dbo.ContributorBadges", "ContributorID", "dbo.Badges");
+            DropForeignKey("dbo.ContributorBadges", "BadgeID", "dbo.Contributors");
             DropForeignKey("dbo.AuctionBidders", "BidBy", "dbo.Contributors");
             DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserTags", "TagID", "dbo.Tags");
@@ -307,6 +346,7 @@
             DropForeignKey("dbo.AuctionTags", "AuctionID", "dbo.Auctions");
             DropForeignKey("dbo.AuctionTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
+            DropForeignKey("dbo.DonationRequests", "PostID", "dbo.Posts");
             DropForeignKey("dbo.UserPhoneNumbers", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
@@ -317,6 +357,8 @@
             DropIndex("dbo.Contributors", new[] { "UserID" });
             DropIndex("dbo.PostLikes", new[] { "UserID" });
             DropIndex("dbo.PostLikes", new[] { "PostID" });
+            DropIndex("dbo.ContributorBadges", new[] { "ContributorID" });
+            DropIndex("dbo.ContributorBadges", new[] { "BadgeID" });
             DropIndex("dbo.UserTags", new[] { "UserID" });
             DropIndex("dbo.UserTags", new[] { "TagID" });
             DropIndex("dbo.PostTags", new[] { "PostID" });
@@ -328,6 +370,7 @@
             DropIndex("dbo.Volunteers", new[] { "EventID" });
             DropIndex("dbo.Volunteers", new[] { "ContributorID" });
             DropIndex("dbo.Events", new[] { "PostID" });
+            DropIndex("dbo.DonationRequests", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "PostTypeID" });
             DropIndex("dbo.Posts", new[] { "PostedBy" });
             DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
@@ -341,6 +384,7 @@
             DropTable("dbo.Organizations");
             DropTable("dbo.Contributors");
             DropTable("dbo.PostLikes");
+            DropTable("dbo.ContributorBadges");
             DropTable("dbo.UserTags");
             DropTable("dbo.PostTags");
             DropTable("dbo.EventTags");
@@ -348,9 +392,11 @@
             DropTable("dbo.Photos");
             DropTable("dbo.PostTypes");
             DropTable("dbo.UserTypes");
+            DropTable("dbo.Badges");
             DropTable("dbo.Volunteers");
             DropTable("dbo.Tags");
             DropTable("dbo.Events");
+            DropTable("dbo.DonationRequests");
             DropTable("dbo.Posts");
             DropTable("dbo.UserPhoneNumbers");
             DropTable("dbo.Countries");

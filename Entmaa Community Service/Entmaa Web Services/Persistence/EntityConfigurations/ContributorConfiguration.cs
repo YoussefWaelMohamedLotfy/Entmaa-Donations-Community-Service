@@ -18,6 +18,18 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 
             HasMany(c => c.EventsVolunteeredIn).WithRequired(v => v.Contributor).HasForeignKey(v => v.ContributorID);
             HasMany(c => c.AuctionsJoined).WithRequired(a => a.Contributor).HasForeignKey(a => a.BidBy);
+
+            HasMany(c => c.BadgesOwned).WithMany(b => b.Contributors).Map
+                (
+                m =>
+                {
+                    m.ToTable("ContributorBadges");
+                    m.MapLeftKey("BadgeID");
+                    m.MapRightKey("ContributorID");
+                }
+
+                );
+                
         }
     }
 }

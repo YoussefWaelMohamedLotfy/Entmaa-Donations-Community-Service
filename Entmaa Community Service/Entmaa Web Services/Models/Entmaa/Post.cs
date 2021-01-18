@@ -23,9 +23,13 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public Event Event { get; set; }
 
+        public DonationRequest DonationRequest { get; set; }
+
         public ICollection<User> UsersReacted { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
+
+
     }
 
     public class PostType

@@ -14,6 +14,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                            c.MapLeftKey("PostID");
                            c.MapRightKey("UserID");
                        });
+            HasRequired(p => p.DonationRequest).WithRequiredPrincipal(d => d.Post);
+
         }
     }
 }

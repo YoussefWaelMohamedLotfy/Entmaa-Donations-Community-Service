@@ -18,6 +18,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public bool AreItemsAccepted { get; set; }
         
         public bool IsCompleted { get; set; }
+
+        public Post Post { get; set; }
+
     }
 
     public class DonationOnRequest
