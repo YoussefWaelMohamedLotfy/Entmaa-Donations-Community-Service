@@ -71,6 +71,15 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
             modelBuilder.Configurations.Add(new BadgesConfiguration());
             modelBuilder.Configurations.Add(new DonationOnRequestConfiguration());
+            modelBuilder.Configurations.Add(new DonatedItemsConfiguration());
+            modelBuilder.Configurations.Add(new ReportedItemsConfiguration());
+            modelBuilder.Configurations.Add(new PostPhotosConfiguration());
+            modelBuilder.Configurations.Add(new DonatedItemPhotosConfiguration());
+            modelBuilder.Configurations.Add(new AuctionItemPhotosConfiguration());
+            modelBuilder.Configurations.Add(new ReportedItemsPhotosConfiguration());
+            modelBuilder.Configurations.Add(new OrganizationsAlbumPhotosConfiguration());
+
+
             
         }
     }

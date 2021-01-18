@@ -18,5 +18,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int DonatedBy { get; set; }
         
         public int DonatedTo { get; set; }
+
+        public ICollection<DonatedItemPhoto> DonatedItemPhotos { get; set; }
     }
 }

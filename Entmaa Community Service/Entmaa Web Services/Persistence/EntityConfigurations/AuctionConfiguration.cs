@@ -14,6 +14,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(a => a.Title).IsRequired();
 
             HasMany(a => a.Bidders).WithRequired(c => c.Auction).HasForeignKey(a => a.AuctionID);
+            HasMany(a => a.AuctionItemPhotos).WithRequired(a => a.Auction).HasForeignKey(a => a.AuctionID);
         }
     }
 }

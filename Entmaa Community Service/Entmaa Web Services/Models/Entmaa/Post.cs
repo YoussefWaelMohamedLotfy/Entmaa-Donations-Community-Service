@@ -29,6 +29,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<Tag> Tags { get; set; }
 
+        public ICollection<PostPhoto> PostPhotos { get; set; }
+
 
     }
 

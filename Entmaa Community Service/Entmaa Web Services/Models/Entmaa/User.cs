@@ -29,6 +29,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public UserType UserType { get; set; }
 
+        public Photo ProfilePhoto { get; set; }
+        public Photo CoverPhoto { get; set; }
+
         public ICollection<Post> PostsReactedTo { get; set; }
 
         public ICollection<Tag> Tags { get; set; }

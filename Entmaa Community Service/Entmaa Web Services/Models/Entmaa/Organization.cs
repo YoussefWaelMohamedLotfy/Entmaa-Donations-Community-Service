@@ -18,5 +18,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<Post> Posts { get; set; }
         
         public ICollection<Auction> AuctionsCreated { get; set; }
+
+        public ICollection<OrganizationAlbumPhoto> organizationAlbumPhotos { get; set; }
     }
 }

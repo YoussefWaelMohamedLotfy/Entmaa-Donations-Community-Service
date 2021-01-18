@@ -16,6 +16,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                        });
             HasRequired(p => p.DonationRequest).WithRequiredPrincipal(d => d.Post);
 
+            HasMany(p => p.PostPhotos).WithRequired(p => p.Post).HasForeignKey(p => p.PostID);
+
         }
     }
 }

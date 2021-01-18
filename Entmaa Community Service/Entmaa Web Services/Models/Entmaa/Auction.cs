@@ -28,5 +28,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<Tag> Tags { get; set; }
 
         public ICollection<AuctionBidder> Bidders { get; set; }
+
+        public ICollection<AuctionItemPhoto> AuctionItemPhotos { get; set; }
     }
 }

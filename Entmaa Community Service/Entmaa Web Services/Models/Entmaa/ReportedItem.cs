@@ -20,5 +20,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int ResolvedBy { get; set; }
 
         public bool IsFound { get; set; }
+
+        public ICollection<ReportedItemPhoto> reportedItemPhotos { get; set; }
     }
 }
