@@ -12,7 +12,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public MoneyDonationsOnRequestConfiguration()
         {
 
-            HasKey(m => new { m.ContributorId, m.RequestId });
+            HasKey(m =>m.Id );
             Property(m => m.DonationToken).IsRequired();
 
         }

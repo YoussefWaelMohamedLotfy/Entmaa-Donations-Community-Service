@@ -243,12 +243,13 @@
                 "dbo.MoneyDonationsOnRequests",
                 c => new
                     {
+                        Id = c.Int(nullable: false, identity: true),
                         ContributorId = c.Int(nullable: false),
                         RequestId = c.Int(nullable: false),
                         MoneyAmount = c.Int(nullable: false),
                         DonationToken = c.String(nullable: false),
                     })
-                .PrimaryKey(t => new { t.ContributorId, t.RequestId })
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Contributors", t => t.ContributorId)
                 .ForeignKey("dbo.DonationRequests", t => t.RequestId, cascadeDelete: true)
                 .Index(t => t.ContributorId)
