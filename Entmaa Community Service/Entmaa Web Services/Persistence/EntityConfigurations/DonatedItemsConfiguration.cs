@@ -13,6 +13,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(d => d.ID);
             HasMany(d => d.DonatedItemPhotos).WithRequired(d => d.DonatedItem).HasForeignKey(d => d.ItemID);
+            HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonatedItem).HasForeignKey(i => i.ItemID);
         }
     }
 }

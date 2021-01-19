@@ -31,7 +31,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                 );
 
             HasMany(c => c.MoneyDonationsOnRequests).WithRequired(m => m.Contributor).HasForeignKey(m => m.ContributorId);
-            HasMany(c => c.ItemsDonationsOnRequests).WithRequired(i => i.contributor).HasForeignKey(m => m.ContributorId);
+          
                 
         }
     }
