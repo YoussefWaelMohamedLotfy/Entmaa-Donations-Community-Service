@@ -15,6 +15,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             HasMany(d => d.DonatedItemPhotos).WithRequired(d => d.DonatedItem).HasForeignKey(d => d.ItemID);
             HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonatedItem).HasForeignKey(i => i.ItemID);
             HasMany(d => d.collectedItemDonations).WithRequired(c => c.DonatedItem).HasForeignKey(c => c.ItemID);
+            HasMany(d => d.DonatedItemTags).WithRequired(d => d.donatedItem).HasForeignKey(d => d.ItemID);
         }
     }
 }

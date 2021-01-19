@@ -32,5 +32,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
     {
         public int ItemID { get; set; }
         public int TagID { get; set; }
+        public DonatedItem donatedItem { get; set; }
+
     }
 }
