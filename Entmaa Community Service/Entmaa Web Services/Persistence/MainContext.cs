@@ -80,6 +80,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new AuctionItemPhotosConfiguration());
             modelBuilder.Configurations.Add(new ReportedItemsPhotosConfiguration());
             modelBuilder.Configurations.Add(new OrganizationsAlbumPhotosConfiguration());
+            modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
 
 
             

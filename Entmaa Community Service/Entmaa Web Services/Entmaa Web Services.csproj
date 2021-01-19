@@ -276,6 +276,7 @@
     <Compile Include="Models\Entmaa\AuctionBidder.cs" />
     <Compile Include="Models\Entmaa\Badge.cs" />
     <Compile Include="Models\Entmaa\City.cs" />
+    <Compile Include="Models\Entmaa\CollectedItemDonations.cs" />
     <Compile Include="Models\Entmaa\Contributor.cs" />
     <Compile Include="Models\Entmaa\DonatedItem.cs" />
     <Compile Include="Models\Entmaa\DonationRequest.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="Persistence\EntityConfigurations\AuctionConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\BadgesConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CityConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CollectedItemDonationsConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ContributorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CountryConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonatedItemsConfiguration.cs" />
