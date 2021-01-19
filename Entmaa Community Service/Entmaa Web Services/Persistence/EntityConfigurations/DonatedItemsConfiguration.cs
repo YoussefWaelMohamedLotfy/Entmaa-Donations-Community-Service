@@ -12,6 +12,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         public DonatedItemsConfiguration()
         {
             HasKey(d => d.ID);
+            Property(d => d.Name).IsRequired();
             HasMany(d => d.DonatedItemPhotos).WithRequired(d => d.DonatedItem).HasForeignKey(d => d.ItemID);
             HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonatedItem).HasForeignKey(i => i.ItemID);
             HasMany(d => d.collectedItemDonations).WithRequired(c => c.DonatedItem).HasForeignKey(c => c.ItemID);

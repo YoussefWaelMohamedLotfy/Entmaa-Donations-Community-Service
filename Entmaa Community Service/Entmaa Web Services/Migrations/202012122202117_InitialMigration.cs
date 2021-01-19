@@ -88,7 +88,7 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Description = c.String(),
                         IsDelivered = c.Boolean(nullable: false),
                         DonatedBy = c.Int(nullable: false),
