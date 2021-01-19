@@ -82,6 +82,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new OrganizationsAlbumPhotosConfiguration());
             modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
             modelBuilder.Configurations.Add(new DonatedItemTagsConfiguration());
+            modelBuilder.Configurations.Add(new MoneyDonationsConfiguration());
 
 
             

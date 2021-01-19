@@ -389,6 +389,18 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.MoneyDonations",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ContributorId = c.Int(nullable: false),
+                        OrganizationId = c.Int(nullable: false),
+                        MoneyaAmount = c.Int(nullable: false),
+                        DonationToken = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.ContributorBadges",
                 c => new
                     {
@@ -602,6 +614,7 @@
             DropTable("dbo.EventTags");
             DropTable("dbo.AuctionTags");
             DropTable("dbo.ContributorBadges");
+            DropTable("dbo.MoneyDonations");
             DropTable("dbo.ReportedItems");
             DropTable("dbo.ReportedItemPhotoes");
             DropTable("dbo.DonatedItemTags");
