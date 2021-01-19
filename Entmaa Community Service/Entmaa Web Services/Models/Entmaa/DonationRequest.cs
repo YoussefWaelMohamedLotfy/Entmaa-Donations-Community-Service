@@ -11,34 +11,25 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public string Title { get; set; }
         
-        public int AmountNeeded { get; set; }
+        public int MoneyNeededAmount { get; set; }
         
-        public int AmountReceived { get; set; }
-        
-        public bool AreItemsAccepted { get; set; }
-        
-        public bool IsCompleted { get; set; }
+        public int MoneyReceivedAmount { get; set; }
+
+        public int ItemesNeededCount { get; set; }
+        public int ItemsReceivedCount { get; set; }
+        public int DonationTypeID { get; set; }
+        public Boolean IsFulfilled { get; set; }
 
         public Post Post { get; set; }
+        public DonationTypes DonationType { get; set; }
+        public ICollection<MoneyDonationsOnRequest> MoneyDonationsOnRequests { get; set; }
+        public ICollection <ItemsDonationsOnRequest> ItemsDonationsOnRequests { get; set; }
 
-        public ICollection<DonationOnRequest> DonationOnRequests { get; set; }
 
-    }
 
-    public class DonationOnRequest
-    {
-        public int ContibutorID { get; set; }
-        
-        public int RequestID { get; set; }
-        
-        public int CashAmount { get; set; }
-        
-        public string DonationToken { get; set; }
-
-        public DonationRequest DonationRequest { get; set; }
-
-        public Contributor Contributor { get; set; }
 
 
     }
+
+    
 }

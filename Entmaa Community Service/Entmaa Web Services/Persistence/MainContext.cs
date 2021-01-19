@@ -69,8 +69,10 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new UserLocationConfiguration());
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
+            modelBuilder.Configurations.Add(new DonationTypesConfiguration());
+            modelBuilder.Configurations.Add(new MoneyDonationsOnRequestConfiguration());
+            modelBuilder.Configurations.Add(new ItemsDonationsOnRequestConfiguration());
             modelBuilder.Configurations.Add(new BadgesConfiguration());
-            modelBuilder.Configurations.Add(new DonationOnRequestConfiguration());
             modelBuilder.Configurations.Add(new DonatedItemsConfiguration());
             modelBuilder.Configurations.Add(new ReportedItemsConfiguration());
             modelBuilder.Configurations.Add(new PostPhotosConfiguration());

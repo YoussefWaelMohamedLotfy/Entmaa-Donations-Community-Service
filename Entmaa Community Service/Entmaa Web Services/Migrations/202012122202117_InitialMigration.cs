@@ -201,29 +201,42 @@
                     {
                         PostID = c.Int(nullable: false),
                         Title = c.String(nullable: false),
-                        AmountNeeded = c.Int(nullable: false),
-                        AmountReceived = c.Int(nullable: false),
-                        AreItemsAccepted = c.Boolean(nullable: false),
-                        IsCompleted = c.Boolean(nullable: false),
+                        MoneyNeededAmount = c.Int(nullable: false),
+                        MoneyReceivedAmount = c.Int(nullable: false),
+                        ItemesNeededCount = c.Int(nullable: false),
+                        ItemsReceivedCount = c.Int(nullable: false),
+                        DonationTypeID = c.Int(nullable: false),
+                        IsFulfilled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.PostID)
+                .ForeignKey("dbo.DonationTypes", t => t.DonationTypeID, cascadeDelete: true)
                 .ForeignKey("dbo.Posts", t => t.PostID)
-                .Index(t => t.PostID);
+                .Index(t => t.PostID)
+                .Index(t => t.DonationTypeID);
             
             CreateTable(
-                "dbo.DonationOnRequests",
+                "dbo.DonationTypes",
                 c => new
                     {
-                        ContibutorID = c.Int(nullable: false),
-                        RequestID = c.Int(nullable: false),
-                        CashAmount = c.Int(nullable: false),
-                        DonationToken = c.String(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
+                        name = c.String(nullable: false),
                     })
-                .PrimaryKey(t => new { t.ContibutorID, t.RequestID })
-                .ForeignKey("dbo.Contributors", t => t.ContibutorID)
-                .ForeignKey("dbo.DonationRequests", t => t.RequestID, cascadeDelete: true)
-                .Index(t => t.ContibutorID)
-                .Index(t => t.RequestID);
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.ItemsDonationsOnRequests",
+                c => new
+                    {
+                        ContributorId = c.Int(nullable: false),
+                        RequestId = c.Int(nullable: false),
+                        DonatedItemId = c.Int(nullable: false),
+                        ItemsAmount = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ContributorId, t.RequestId })
+                .ForeignKey("dbo.Contributors", t => t.ContributorId)
+                .ForeignKey("dbo.DonationRequests", t => t.RequestId, cascadeDelete: true)
+                .Index(t => t.ContributorId)
+                .Index(t => t.RequestId);
             
             CreateTable(
                 "dbo.Badges",
@@ -275,6 +288,21 @@
                         Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.MoneyDonationsOnRequests",
+                c => new
+                    {
+                        ContributorId = c.Int(nullable: false),
+                        RequestId = c.Int(nullable: false),
+                        MoneyAmount = c.Int(nullable: false),
+                        DonationToken = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ContributorId, t.RequestId })
+                .ForeignKey("dbo.Contributors", t => t.ContributorId)
+                .ForeignKey("dbo.DonationRequests", t => t.RequestId, cascadeDelete: true)
+                .Index(t => t.ContributorId)
+                .Index(t => t.RequestId);
             
             CreateTable(
                 "dbo.UserTypes",
@@ -457,8 +485,11 @@
             DropForeignKey("dbo.Posts", "PostTypeID", "dbo.PostTypes");
             DropForeignKey("dbo.PostPhotoes", "PostID", "dbo.Posts");
             DropForeignKey("dbo.DonationRequests", "PostID", "dbo.Posts");
-            DropForeignKey("dbo.DonationOnRequests", "RequestID", "dbo.DonationRequests");
+            DropForeignKey("dbo.MoneyDonationsOnRequests", "RequestId", "dbo.DonationRequests");
+            DropForeignKey("dbo.ItemsDonationsOnRequests", "RequestId", "dbo.DonationRequests");
             DropForeignKey("dbo.Users", "UserTypeID", "dbo.UserTypes");
+            DropForeignKey("dbo.MoneyDonationsOnRequests", "ContributorId", "dbo.Contributors");
+            DropForeignKey("dbo.ItemsDonationsOnRequests", "ContributorId", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
             DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
@@ -470,10 +501,10 @@
             DropForeignKey("dbo.AuctionTags", "AuctionID", "dbo.Auctions");
             DropForeignKey("dbo.AuctionTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
-            DropForeignKey("dbo.DonationOnRequests", "ContibutorID", "dbo.Contributors");
             DropForeignKey("dbo.ContributorBadges", "ContributorID", "dbo.Badges");
             DropForeignKey("dbo.ContributorBadges", "BadgeID", "dbo.Contributors");
             DropForeignKey("dbo.AuctionBidders", "BidBy", "dbo.Contributors");
+            DropForeignKey("dbo.DonationRequests", "DonationTypeID", "dbo.DonationTypes");
             DropForeignKey("dbo.UserPhoneNumbers", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
@@ -499,11 +530,14 @@
             DropIndex("dbo.ReportedItemPhotoes", new[] { "Photo_ID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.PostPhotoes", new[] { "PostID" });
+            DropIndex("dbo.MoneyDonationsOnRequests", new[] { "RequestId" });
+            DropIndex("dbo.MoneyDonationsOnRequests", new[] { "ContributorId" });
             DropIndex("dbo.Events", new[] { "PostID" });
             DropIndex("dbo.Volunteers", new[] { "EventID" });
             DropIndex("dbo.Volunteers", new[] { "ContributorID" });
-            DropIndex("dbo.DonationOnRequests", new[] { "RequestID" });
-            DropIndex("dbo.DonationOnRequests", new[] { "ContibutorID" });
+            DropIndex("dbo.ItemsDonationsOnRequests", new[] { "RequestId" });
+            DropIndex("dbo.ItemsDonationsOnRequests", new[] { "ContributorId" });
+            DropIndex("dbo.DonationRequests", new[] { "DonationTypeID" });
             DropIndex("dbo.DonationRequests", new[] { "PostID" });
             DropIndex("dbo.Posts", new[] { "PostTypeID" });
             DropIndex("dbo.Posts", new[] { "PostedBy" });
@@ -536,11 +570,13 @@
             DropTable("dbo.PostTypes");
             DropTable("dbo.PostPhotoes");
             DropTable("dbo.UserTypes");
+            DropTable("dbo.MoneyDonationsOnRequests");
             DropTable("dbo.Tags");
             DropTable("dbo.Events");
             DropTable("dbo.Volunteers");
             DropTable("dbo.Badges");
-            DropTable("dbo.DonationOnRequests");
+            DropTable("dbo.ItemsDonationsOnRequests");
+            DropTable("dbo.DonationTypes");
             DropTable("dbo.DonationRequests");
             DropTable("dbo.Posts");
             DropTable("dbo.UserPhoneNumbers");

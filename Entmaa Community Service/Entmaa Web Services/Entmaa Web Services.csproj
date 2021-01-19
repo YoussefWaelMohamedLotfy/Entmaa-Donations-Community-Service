@@ -279,7 +279,10 @@
     <Compile Include="Models\Entmaa\Contributor.cs" />
     <Compile Include="Models\Entmaa\DonatedItem.cs" />
     <Compile Include="Models\Entmaa\DonationRequest.cs" />
+    <Compile Include="Models\Entmaa\DonationTypes.cs" />
     <Compile Include="Models\Entmaa\Event.cs" />
+    <Compile Include="Models\Entmaa\ItemsDonationsOnRequest.cs" />
+    <Compile Include="Models\Entmaa\MoneyDonationsOnRequest.cs" />
     <Compile Include="Models\Entmaa\Notification.cs" />
     <Compile Include="Models\Entmaa\Organization.cs" />
     <Compile Include="Models\Entmaa\Photo.cs" />
@@ -300,9 +303,11 @@
     <Compile Include="Persistence\EntityConfigurations\ContributorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CountryConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonatedItemsConfiguration.cs" />
-    <Compile Include="Persistence\EntityConfigurations\DonationOnRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonationRequestConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\DonationTypesConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\EventConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\ItemsDonationsOnRequestConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\MoneyDonationsOnRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\OrganizationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PhotoConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostConfiguration.cs" />

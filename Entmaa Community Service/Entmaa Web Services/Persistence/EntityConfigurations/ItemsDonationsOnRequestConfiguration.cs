@@ -7,13 +7,12 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class DonationOnRequestConfiguration:EntityTypeConfiguration<DonationOnRequest>
+    public class ItemsDonationsOnRequestConfiguration:EntityTypeConfiguration<ItemsDonationsOnRequest>
     {
-        public DonationOnRequestConfiguration()
+        public ItemsDonationsOnRequestConfiguration()
         {
-
-            Property(d => d.DonationToken).IsRequired();
-            HasKey(d => new { d.ContibutorID, d.RequestID });
+            HasKey(i => new { i.ContributorId, i.RequestId });
         }
     }
+
 }
