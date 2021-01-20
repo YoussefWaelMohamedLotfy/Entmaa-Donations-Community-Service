@@ -86,6 +86,8 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new UserPhotosConfiguration());
             modelBuilder.Configurations.Add(new NotificationTypesConfiguration());
             modelBuilder.Configurations.Add(new ReportedItemTagConfiguration());
+            modelBuilder.Configurations.Add(new ReportedCaseConfiguration());
+            modelBuilder.Configurations.Add(new PostCommentsConfiguration());
             
 
 

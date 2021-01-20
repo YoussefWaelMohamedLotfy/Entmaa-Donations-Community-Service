@@ -31,6 +31,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<PostPhoto> PostPhotos { get; set; }
 
+        public ICollection<PostComments> PostComments { get; set; }
+
 
     }
 
@@ -43,18 +45,5 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<Post> Posts { get; set; }
     }
 
-    public class PostComment
-    {
-        public int ID { get; set; }
-        
-        public int PostID { get; set; }
-        
-        public int UserID { get; set; }
-        
-        public string Comment { get; set; }
-        
-        public DateTime CommentDate { get; set; }
-        
-        public int ParentComment { get; set; }
-    }
+    
 }

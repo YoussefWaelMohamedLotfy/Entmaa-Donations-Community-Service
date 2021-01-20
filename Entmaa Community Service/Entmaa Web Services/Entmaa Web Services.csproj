@@ -289,6 +289,7 @@
     <Compile Include="Models\Entmaa\Organization.cs" />
     <Compile Include="Models\Entmaa\Photo.cs" />
     <Compile Include="Models\Entmaa\Post.cs" />
+    <Compile Include="Models\Entmaa\PostComments.cs" />
     <Compile Include="Models\Entmaa\ReportedCase.cs" />
     <Compile Include="Models\Entmaa\ReportedItem.cs" />
     <Compile Include="Models\Entmaa\Subscription.cs" />
@@ -316,8 +317,10 @@
     <Compile Include="Persistence\EntityConfigurations\NotificationTypesConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\OrganizationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PhotoConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PostCommentsConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostTypeConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\ReportedCaseConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedItemsConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedItemTagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\TagConfiguration.cs" />

@@ -22,6 +22,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             HasMany(o => o.CollectedItemDonations).WithRequired(c => c.organization).HasForeignKey(c => c.OrganizationId);
             HasMany(o => o.DonatedItems).WithRequired(d => d.Organization).HasForeignKey(d => d.DonatedTo);
             HasMany(o => o.subscriptions).WithRequired(s => s.organization).HasForeignKey(s => s.SubscribedTo);
+            HasMany(o => o.ReportedCases).WithRequired(r => r.Organization).HasForeignKey(r => r.ReportedTo);
         }
     }
 }

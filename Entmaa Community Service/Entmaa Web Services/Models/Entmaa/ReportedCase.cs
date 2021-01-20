@@ -18,5 +18,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int ReportedBy { get; set; }
         
         public int ReportedTo { get; set; }
+        public Contributor Contributor { get; set; }
+        public Organization Organization { get; set; }
     }
 }

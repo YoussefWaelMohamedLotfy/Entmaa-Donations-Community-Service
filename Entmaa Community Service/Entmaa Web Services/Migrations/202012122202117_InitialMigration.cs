@@ -217,24 +217,72 @@
                 .Index(t => t.RequestId);
             
             CreateTable(
-                "dbo.PostPhotoes",
+                "dbo.PostComments",
                 c => new
                     {
-                        PostID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        PostId = c.Int(nullable: false),
+                        UserID = c.Int(nullable: false),
+                        Comment = c.String(nullable: false),
+                        DateCommented = c.DateTime(nullable: false),
+                        ParentComment = c.Int(nullable: false),
+                        PostComments_Id = c.Int(),
                     })
-                .PrimaryKey(t => new { t.PostID, t.PhotoURL })
-                .ForeignKey("dbo.Posts", t => t.PostID, cascadeDelete: true)
-                .Index(t => t.PostID);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.PostComments", t => t.PostComments_Id)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
+                .ForeignKey("dbo.Posts", t => t.PostId, cascadeDelete: true)
+                .Index(t => t.PostId)
+                .Index(t => t.UserID)
+                .Index(t => t.PostComments_Id);
             
             CreateTable(
-                "dbo.PostTypes",
+                "dbo.UserLocations",
                 c => new
                     {
-                        ID = c.Byte(nullable: false),
+                        ID = c.Int(nullable: false, identity: true),
+                        UserID = c.Int(nullable: false),
+                        CityID = c.Int(nullable: false),
+                        Address = c.String(),
+                        MapLocation = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Cities", t => t.CityID, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
+                .Index(t => t.UserID)
+                .Index(t => t.CityID);
+            
+            CreateTable(
+                "dbo.Cities",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        CountryID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Countries", t => t.CountryID, cascadeDelete: true)
+                .Index(t => t.CountryID);
+            
+            CreateTable(
+                "dbo.Countries",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.UserPhoneNumbers",
+                c => new
+                    {
+                        PhoneNumber = c.String(nullable: false, maxLength: 50),
+                        UserID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PhoneNumber)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.Tags",
@@ -297,54 +345,6 @@
                 .Index(t => t.ItemID);
             
             CreateTable(
-                "dbo.UserLocations",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        UserID = c.Int(nullable: false),
-                        CityID = c.Int(nullable: false),
-                        Address = c.String(),
-                        MapLocation = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Cities", t => t.CityID, cascadeDelete: true)
-                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
-                .Index(t => t.UserID)
-                .Index(t => t.CityID);
-            
-            CreateTable(
-                "dbo.Cities",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        CountryID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Countries", t => t.CountryID, cascadeDelete: true)
-                .Index(t => t.CountryID);
-            
-            CreateTable(
-                "dbo.Countries",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
-                "dbo.UserPhoneNumbers",
-                c => new
-                    {
-                        PhoneNumber = c.String(nullable: false, maxLength: 50),
-                        UserID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.PhoneNumber)
-                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
-                .Index(t => t.UserID);
-            
-            CreateTable(
                 "dbo.UserPhotos",
                 c => new
                     {
@@ -363,6 +363,43 @@
                         Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.PostPhotoes",
+                c => new
+                    {
+                        PostID = c.Int(nullable: false),
+                        PhotoURL = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.PostID, t.PhotoURL })
+                .ForeignKey("dbo.Posts", t => t.PostID, cascadeDelete: true)
+                .Index(t => t.PostID);
+            
+            CreateTable(
+                "dbo.PostTypes",
+                c => new
+                    {
+                        ID = c.Byte(nullable: false),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.ReportedCases",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Title = c.String(nullable: false),
+                        Description = c.String(nullable: false),
+                        Photo = c.String(),
+                        ReportedBy = c.Int(nullable: false),
+                        ReportedTo = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Contributors", t => t.ReportedBy)
+                .ForeignKey("dbo.Organizations", t => t.ReportedTo)
+                .Index(t => t.ReportedBy)
+                .Index(t => t.ReportedTo);
             
             CreateTable(
                 "dbo.Subscriptions",
@@ -553,6 +590,7 @@
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
             DropForeignKey("dbo.Notifications", "TypeID", "dbo.NotificationTypes");
             DropForeignKey("dbo.Subscriptions", "SubscribedTo", "dbo.Organizations");
+            DropForeignKey("dbo.ReportedCases", "ReportedTo", "dbo.Organizations");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.OrganizationAlbumPhotoes", "OrganizationID", "dbo.Organizations");
             DropForeignKey("dbo.DonatedItems", "DonatedTo", "dbo.Organizations");
@@ -561,20 +599,20 @@
             DropForeignKey("dbo.DonatedItemTags", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.DonatedItemPhotoes", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.Subscriptions", "SubscribedBy", "dbo.Contributors");
+            DropForeignKey("dbo.ReportedCases", "ReportedBy", "dbo.Contributors");
             DropForeignKey("dbo.MoneyDonationsOnRequests", "ContributorId", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
             DropForeignKey("dbo.PostLikes", "UserID", "dbo.Users");
             DropForeignKey("dbo.PostLikes", "PostID", "dbo.Posts");
-            DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
-            DropForeignKey("dbo.UserTags", "TagID", "dbo.Tags");
+            DropForeignKey("dbo.Posts", "PostTypeID", "dbo.PostTypes");
+            DropForeignKey("dbo.PostPhotoes", "PostID", "dbo.Posts");
+            DropForeignKey("dbo.PostComments", "PostId", "dbo.Posts");
             DropForeignKey("dbo.Users", "UserTypeID", "dbo.UserTypes");
             DropForeignKey("dbo.UserPhotos", "UserID", "dbo.Users");
-            DropForeignKey("dbo.UserPhoneNumbers", "UserID", "dbo.Users");
-            DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
-            DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
-            DropForeignKey("dbo.Cities", "CountryID", "dbo.Countries");
+            DropForeignKey("dbo.UserTags", "UserID", "dbo.Users");
+            DropForeignKey("dbo.UserTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.ReportedItemTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.ReportedItemTags", "ItemID", "dbo.ReportedItems");
             DropForeignKey("dbo.ReportedItemPhotoes", "ItemID", "dbo.ReportedItems");
@@ -585,8 +623,12 @@
             DropForeignKey("dbo.DonatedItemTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.AuctionTags", "AuctionID", "dbo.Auctions");
             DropForeignKey("dbo.AuctionTags", "TagID", "dbo.Tags");
-            DropForeignKey("dbo.Posts", "PostTypeID", "dbo.PostTypes");
-            DropForeignKey("dbo.PostPhotoes", "PostID", "dbo.Posts");
+            DropForeignKey("dbo.PostComments", "UserID", "dbo.Users");
+            DropForeignKey("dbo.UserPhoneNumbers", "UserID", "dbo.Users");
+            DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
+            DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
+            DropForeignKey("dbo.Cities", "CountryID", "dbo.Countries");
+            DropForeignKey("dbo.PostComments", "PostComments_Id", "dbo.PostComments");
             DropForeignKey("dbo.DonationRequests", "PostID", "dbo.Posts");
             DropForeignKey("dbo.MoneyDonationsOnRequests", "RequestId", "dbo.DonationRequests");
             DropForeignKey("dbo.ItemsDonationsOnRequests", "RequestId", "dbo.DonationRequests");
@@ -618,17 +660,22 @@
             DropIndex("dbo.DonatedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.Subscriptions", new[] { "SubscribedTo" });
             DropIndex("dbo.Subscriptions", new[] { "SubscribedBy" });
+            DropIndex("dbo.ReportedCases", new[] { "ReportedTo" });
+            DropIndex("dbo.ReportedCases", new[] { "ReportedBy" });
+            DropIndex("dbo.PostPhotoes", new[] { "PostID" });
             DropIndex("dbo.UserPhotos", new[] { "UserID" });
-            DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
-            DropIndex("dbo.Cities", new[] { "CountryID" });
-            DropIndex("dbo.UserLocations", new[] { "CityID" });
-            DropIndex("dbo.UserLocations", new[] { "UserID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.ReportedItemTags", new[] { "TagID" });
             DropIndex("dbo.ReportedItemTags", new[] { "ItemID" });
             DropIndex("dbo.DonatedItemTags", new[] { "TagID" });
             DropIndex("dbo.DonatedItemTags", new[] { "ItemID" });
-            DropIndex("dbo.PostPhotoes", new[] { "PostID" });
+            DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
+            DropIndex("dbo.Cities", new[] { "CountryID" });
+            DropIndex("dbo.UserLocations", new[] { "CityID" });
+            DropIndex("dbo.UserLocations", new[] { "UserID" });
+            DropIndex("dbo.PostComments", new[] { "PostComments_Id" });
+            DropIndex("dbo.PostComments", new[] { "UserID" });
+            DropIndex("dbo.PostComments", new[] { "PostId" });
             DropIndex("dbo.MoneyDonationsOnRequests", new[] { "RequestId" });
             DropIndex("dbo.MoneyDonationsOnRequests", new[] { "ContributorId" });
             DropIndex("dbo.ItemsDonationsOnRequests", new[] { "RequestId" });
@@ -663,19 +710,21 @@
             DropTable("dbo.OrganizationAlbumPhotoes");
             DropTable("dbo.DonatedItemPhotoes");
             DropTable("dbo.Subscriptions");
+            DropTable("dbo.ReportedCases");
+            DropTable("dbo.PostTypes");
+            DropTable("dbo.PostPhotoes");
             DropTable("dbo.UserTypes");
             DropTable("dbo.UserPhotos");
-            DropTable("dbo.UserPhoneNumbers");
-            DropTable("dbo.Countries");
-            DropTable("dbo.Cities");
-            DropTable("dbo.UserLocations");
             DropTable("dbo.ReportedItemPhotoes");
             DropTable("dbo.ReportedItems");
             DropTable("dbo.ReportedItemTags");
             DropTable("dbo.DonatedItemTags");
             DropTable("dbo.Tags");
-            DropTable("dbo.PostTypes");
-            DropTable("dbo.PostPhotoes");
+            DropTable("dbo.UserPhoneNumbers");
+            DropTable("dbo.Countries");
+            DropTable("dbo.Cities");
+            DropTable("dbo.UserLocations");
+            DropTable("dbo.PostComments");
             DropTable("dbo.MoneyDonationsOnRequests");
             DropTable("dbo.ItemsDonationsOnRequests");
             DropTable("dbo.DonationTypes");
