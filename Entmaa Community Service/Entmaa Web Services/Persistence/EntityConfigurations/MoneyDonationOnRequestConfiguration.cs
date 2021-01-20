@@ -3,9 +3,9 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class MoneyDonationsOnRequestConfiguration : EntityTypeConfiguration<MoneyDonationsOnRequest>
+    public class MoneyDonationOnRequestConfiguration : EntityTypeConfiguration<MoneyDonationOnRequest>
     {
-        public MoneyDonationsOnRequestConfiguration()
+        public MoneyDonationOnRequestConfiguration()
         {
             HasKey(m => m.ID);
 

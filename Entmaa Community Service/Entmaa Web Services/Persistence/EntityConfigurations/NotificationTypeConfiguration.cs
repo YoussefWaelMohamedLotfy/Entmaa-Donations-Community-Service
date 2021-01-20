@@ -7,12 +7,11 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class ItemsDonationsOnRequestConfiguration:EntityTypeConfiguration<ItemsDonationsOnRequest>
+    public class NotificationTypeConfiguration:EntityTypeConfiguration<NotificationType>
     {
-        public ItemsDonationsOnRequestConfiguration()
+        public NotificationTypeConfiguration()
         {
-            HasKey(i => new { i.ItemID, i.RequestId });
+            HasMany(n => n.Notifications).WithRequired(n => n.NotificationType).HasForeignKey(n => n.TypeID);   
         }
     }
-
 }

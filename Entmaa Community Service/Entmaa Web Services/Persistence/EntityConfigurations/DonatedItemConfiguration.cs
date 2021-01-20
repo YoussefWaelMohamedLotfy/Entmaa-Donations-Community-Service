@@ -7,9 +7,9 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class DonatedItemsConfiguration:EntityTypeConfiguration<DonatedItem>
+    public class DonatedItemConfiguration:EntityTypeConfiguration<DonatedItem>
     {
-        public DonatedItemsConfiguration()
+        public DonatedItemConfiguration()
         {
             Property(d => d.Name).IsRequired();
 

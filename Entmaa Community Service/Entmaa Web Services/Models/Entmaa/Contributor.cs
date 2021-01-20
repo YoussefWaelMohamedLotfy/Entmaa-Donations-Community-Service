@@ -17,7 +17,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<Badge> BadgesOwned { get; set; }
 
-        public ICollection<MoneyDonationsOnRequest> MoneyDonationsOnRequests { get; set; }
+        public ICollection<MoneyDonationOnRequest> MoneyDonationsOnRequests { get; set; }
 
         public ICollection<DonatedItem> DonatedItems { get; set; }
 

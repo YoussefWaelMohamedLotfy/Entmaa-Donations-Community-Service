@@ -7,11 +7,11 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class BadgesConfiguration:EntityTypeConfiguration<Badge>
+    public class CollectedItemDonationConfiguration:EntityTypeConfiguration<CollectedItemDonation>
     {
-       public BadgesConfiguration()
+        public CollectedItemDonationConfiguration()
         {
-            Property(b => b.Name).IsRequired();
+            HasKey(c => new { c.ItemID, c.OrganizationID });
         }
     }
 }

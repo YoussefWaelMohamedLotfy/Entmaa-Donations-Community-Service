@@ -63,7 +63,7 @@ namespace Entmaa_Web_Services.Persistence
             
             modelBuilder.Configurations.Add(new PostConfiguration());
             modelBuilder.Configurations.Add(new PostTypeConfiguration());
-            modelBuilder.Configurations.Add(new PostCommentsConfiguration());
+            modelBuilder.Configurations.Add(new PostCommentConfiguration());
             modelBuilder.Configurations.Add(new PostPhotoConfiguration());
 
             modelBuilder.Configurations.Add(new EventConfiguration());
@@ -81,26 +81,25 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new UserLocationConfiguration());
 
-            modelBuilder.Configurations.Add(new NotificationTypesConfiguration());
+            modelBuilder.Configurations.Add(new NotificationTypeConfiguration());
 
-            modelBuilder.Configurations.Add(new BadgesConfiguration());
+            modelBuilder.Configurations.Add(new BadgeConfiguration());
             
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
-            modelBuilder.Configurations.Add(new DonationTypesConfiguration());
+            modelBuilder.Configurations.Add(new DonationTypeConfiguration());
             
-            modelBuilder.Configurations.Add(new MoneyDonationsOnRequestConfiguration());
-            modelBuilder.Configurations.Add(new ItemsDonationsOnRequestConfiguration());
+            modelBuilder.Configurations.Add(new MoneyDonationOnRequestConfiguration());
+            modelBuilder.Configurations.Add(new ItemsDonationOnRequestConfiguration());
             
-            modelBuilder.Configurations.Add(new DonatedItemsConfiguration());
+            modelBuilder.Configurations.Add(new DonatedItemConfiguration());
             modelBuilder.Configurations.Add(new DonatedItemPhotoConfiguration());
 
-            modelBuilder.Configurations.Add(new ReportedItemsConfiguration());
-            modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
-            modelBuilder.Configurations.Add(new MoneyDonationsConfiguration());
+            modelBuilder.Configurations.Add(new ReportedItemConfiguration());
+            modelBuilder.Configurations.Add(new CollectedItemDonationConfiguration());
+            modelBuilder.Configurations.Add(new MoneyDonationConfiguration());
 
             modelBuilder.Configurations.Add(new ReportedItemsPhotoConfiguration());
             modelBuilder.Configurations.Add(new ReportedCaseConfiguration());
-            
         }
     }
 }

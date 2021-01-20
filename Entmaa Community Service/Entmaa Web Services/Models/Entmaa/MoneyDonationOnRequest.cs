@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Entmaa_Web_Services.Models.Entmaa
 {
-    public class MoneyDonationsOnRequest
+    public class MoneyDonationOnRequest
     {
         public int ID { get; set; }
 

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Entmaa_Web_Services.Models.Entmaa
 {
-    public class DonationTypes
+    public class DonationType
     {
-        public int ID { get; set; }
+        public byte ID { get; set; }
 
         public string Name { get; set; }
 

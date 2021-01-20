@@ -4,13 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity.ModelConfiguration;
 using Entmaa_Web_Services.Models.Entmaa;
+
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class ReportedItemsConfiguration:EntityTypeConfiguration<ReportedItem>
+    public class ItemsDonationOnRequestConfiguration:EntityTypeConfiguration<ItemsDonationOnRequest>
     {
-        public ReportedItemsConfiguration()
+        public ItemsDonationOnRequestConfiguration()
         {
-            HasMany(r => r.ReportedItemPhotos).WithRequired(r => r.ReportedItem).HasForeignKey(r => r.ItemID);
+            HasKey(i => new { i.ItemID, i.RequestId });
         }
     }
+
 }
