@@ -10,8 +10,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public ReportedItemsConfiguration()
         {
-            HasMany(r => r.reportedItemPhotos).WithRequired(r => r.ReportedItem).HasForeignKey(r => r.ItemID);
-            HasMany(r => r.ReportedItemTags).WithRequired(r => r.ReportedItem).HasForeignKey(r => r.ItemID);
+            HasMany(r => r.ReportedItemPhotos).WithRequired(r => r.ReportedItem).HasForeignKey(r => r.ItemID);
         }
     }
 }

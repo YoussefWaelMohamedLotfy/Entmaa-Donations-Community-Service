@@ -7,11 +7,11 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class PostCommentsConfiguration:EntityTypeConfiguration<PostComments>
+    public class PostCommentsConfiguration:EntityTypeConfiguration<PostComment>
     {
         public PostCommentsConfiguration()
         {
-            Property(p => p.PostId).IsRequired();
+            Property(p => p.PostID).IsRequired();
             Property(p => p.UserID).IsRequired();
             Property(p => p.Comment).IsRequired();
             Property(p => p.DateCommented).IsRequired();

@@ -8,11 +8,12 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class MoneyDonationsConfiguration:EntityTypeConfiguration<MoneyDonations>
+    public class MoneyDonationsConfiguration:EntityTypeConfiguration<MoneyDonation>
     {
         public MoneyDonationsConfiguration()
         {
-            HasKey(m => m.Id);
+            HasKey(m => m.ID);
+
             Property(m => m.DonationToken).IsRequired();
         }
     }

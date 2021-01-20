@@ -25,7 +25,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
    
         public bool IsActive { get; set; }
 
-        public Contributor contributor { get; set; }
-        public Organization organization { get; set; }
+        public Contributor Contributor { get; set; }
+
+        public Organization Organization { get; set; }
     }
 }

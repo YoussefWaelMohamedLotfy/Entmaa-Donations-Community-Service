@@ -40,8 +40,22 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                             c.MapLeftKey("TagID");
                             c.MapRightKey("UserID");
                         });
-            HasMany(t => t.ReportedItemTags).WithRequired(r => r.Tag).HasForeignKey(r => r.TagID);
-            HasMany(t => t.DonatedItemTags).WithRequired(d => d.Tag).HasForeignKey(d => d.TagID);
+
+            HasMany(t => t.ReportedItemTags).WithMany(r => r.Tags)
+                .Map(c =>
+                        {
+                            c.ToTable("ReportedItemTags");
+                            c.MapLeftKey("TagID");
+                            c.MapRightKey("ReportedItemID");
+                        });
+
+            HasMany(t => t.DonatedItemTags).WithMany(d => d.Tags)
+                .Map(c =>
+                        {
+                            c.ToTable("DonatedItemTags");
+                            c.MapLeftKey("TagID");
+                            c.MapRightKey("DonatedItemID");
+                        });
         }
     }
 }

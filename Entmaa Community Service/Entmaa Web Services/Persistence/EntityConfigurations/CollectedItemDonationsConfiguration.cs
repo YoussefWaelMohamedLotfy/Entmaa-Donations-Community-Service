@@ -11,7 +11,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public CollectedItemDonationsConfiguration()
         {
-            HasKey(c => new { c.ItemID, c.OrganizationId });
+            HasKey(c => new { c.ItemID, c.OrganizationID });
         }
     }
 }

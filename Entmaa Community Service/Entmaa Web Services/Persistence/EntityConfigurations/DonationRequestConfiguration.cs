@@ -11,11 +11,14 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public DonationRequestConfiguration()
         {
-            Property(d => d.Title).IsRequired();           
+            Property(d => d.Title).IsRequired();       
+            
             HasKey(d => d.PostID);
-            HasMany(d => d.MoneyDonationsOnRequests).WithRequired(m => m.DonationRequest).HasForeignKey(m => m.RequestId);
-            HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonationRequest).HasForeignKey(i => i.RequestId);
+
             HasRequired(d => d.Post).WithRequiredDependent(p => p.DonationRequest);
+
+            HasMany(d => d.MoneyDonationsOnRequests).WithRequired(m => m.DonationRequest).HasForeignKey(m => m.RequestID);
+            HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonationRequest).HasForeignKey(i => i.RequestId);
         }
     }
 }

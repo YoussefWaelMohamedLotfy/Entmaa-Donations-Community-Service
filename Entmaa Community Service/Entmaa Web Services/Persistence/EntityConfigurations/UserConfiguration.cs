@@ -18,7 +18,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 
             HasMany(u => u.Locations).WithRequired(u => u.User).HasForeignKey(u => u.UserID);
             HasMany(u => u.PhoneNumbers).WithRequired(u => u.User).HasForeignKey(u => u.UserID);
-            HasMany(u => u.postComments).WithRequired(p => p.User).HasForeignKey(p => p.UserID);
+            HasMany(u => u.PostComments).WithRequired(p => p.User).HasForeignKey(p => p.UserID);
 
         }
     }

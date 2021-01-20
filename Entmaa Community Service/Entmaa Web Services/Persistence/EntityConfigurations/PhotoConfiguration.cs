@@ -25,56 +25,63 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
       }
       */
 
-    public class UserPhotosConfiguration : EntityTypeConfiguration<UserPhotos>
+    public class UserPhotoConfiguration : EntityTypeConfiguration<UserPhoto>
     {
-        public UserPhotosConfiguration()
+        public UserPhotoConfiguration()
         {
             HasKey(u => new { u.UserID, u.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
-    public class PostPhotosConfiguration: EntityTypeConfiguration<PostPhoto>
+
+    public class PostPhotoConfiguration: EntityTypeConfiguration<PostPhoto>
     {
-        public PostPhotosConfiguration()
+        public PostPhotoConfiguration()
         {
             HasKey(p => new { p.PostID, p.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
 
         }
     }
 
-    public class DonatedItemPhotosConfiguration: EntityTypeConfiguration<DonatedItemPhoto>
+    public class DonatedItemPhotoConfiguration: EntityTypeConfiguration<DonatedItemPhoto>
     {
-        public DonatedItemPhotosConfiguration()
+        public DonatedItemPhotoConfiguration()
         {
             HasKey(p => new { p.ItemID, p.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
-    public class AuctionItemPhotosConfiguration:EntityTypeConfiguration<AuctionItemPhoto>
+    public class AuctionItemPhotoConfiguration:EntityTypeConfiguration<AuctionItemPhoto>
     {
-        public AuctionItemPhotosConfiguration()
+        public AuctionItemPhotoConfiguration()
         {
             HasKey(a => new { a.AuctionID, a.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
-    public class ReportedItemsPhotosConfiguration:EntityTypeConfiguration<ReportedItemPhoto>
+    public class ReportedItemsPhotoConfiguration:EntityTypeConfiguration<ReportedItemPhoto>
     {
-        public ReportedItemsPhotosConfiguration()
+        public ReportedItemsPhotoConfiguration()
         {
             HasKey(r => new { r.ItemID, r.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
-    public class OrganizationsAlbumPhotosConfiguration:EntityTypeConfiguration<OrganizationAlbumPhoto>
+    public class OrganizationsAlbumPhotoConfiguration:EntityTypeConfiguration<OrganizationAlbumPhoto>
     {
-        public OrganizationsAlbumPhotosConfiguration()
+        public OrganizationsAlbumPhotoConfiguration()
         {
             HasKey(o => new { o.OrganizationID, o.PhotoURL });
+
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }

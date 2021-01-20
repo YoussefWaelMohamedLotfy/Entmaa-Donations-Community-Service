@@ -7,9 +7,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class CollectedItemDonations
     {
-        public int OrganizationId { get; set; }
+        public int OrganizationID { get; set; }
+
         public int ItemID { get; set; }
-        public Organization organization { get; set; }
+
+        public Organization Organization { get; set; }
+
         public DonatedItem DonatedItem { get; set; }
     }
 }

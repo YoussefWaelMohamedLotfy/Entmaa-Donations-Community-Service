@@ -283,13 +283,13 @@
     <Compile Include="Models\Entmaa\DonationTypes.cs" />
     <Compile Include="Models\Entmaa\Event.cs" />
     <Compile Include="Models\Entmaa\ItemsDonationsOnRequest.cs" />
-    <Compile Include="Models\Entmaa\MoneyDonations.cs" />
+    <Compile Include="Models\Entmaa\MoneyDonation.cs" />
     <Compile Include="Models\Entmaa\MoneyDonationsOnRequest.cs" />
     <Compile Include="Models\Entmaa\Notification.cs" />
     <Compile Include="Models\Entmaa\Organization.cs" />
     <Compile Include="Models\Entmaa\Photo.cs" />
     <Compile Include="Models\Entmaa\Post.cs" />
-    <Compile Include="Models\Entmaa\PostComments.cs" />
+    <Compile Include="Models\Entmaa\PostComment.cs" />
     <Compile Include="Models\Entmaa\ReportedCase.cs" />
     <Compile Include="Models\Entmaa\ReportedItem.cs" />
     <Compile Include="Models\Entmaa\Subscription.cs" />
@@ -307,7 +307,6 @@
     <Compile Include="Persistence\EntityConfigurations\ContributorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CountryConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonatedItemsConfiguration.cs" />
-    <Compile Include="Persistence\EntityConfigurations\DonatedItemTagsConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonationRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\DonationTypesConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\EventConfiguration.cs" />
@@ -322,7 +321,6 @@
     <Compile Include="Persistence\EntityConfigurations\PostTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedCaseConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedItemsConfiguration.cs" />
-    <Compile Include="Persistence\EntityConfigurations\ReportedItemTagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\TagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserLocationConfiguration.cs" />

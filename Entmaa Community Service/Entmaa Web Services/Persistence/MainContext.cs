@@ -19,6 +19,7 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostType> PostTypes { get; set; }
+        public DbSet<PostComment> PostComments { get; set; }
         
        // public DbSet<Photo> Photo { get; set; }
 
@@ -35,8 +36,14 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<UserLocation> UserLocations { get; set; }
 
         public DbSet<DonationRequest> DonationRequests { get; set; }
-        
-        
+        public DbSet<MoneyDonation> MoneyDonations { get; set; }
+
+        public DbSet<AuctionItemPhoto> AuctionItemPhotos { get; set; }
+        public DbSet<PostPhoto> PostPhotos { get; set; }
+        public DbSet<DonatedItemPhoto> DonatedItemPhotos { get; set; }
+        public DbSet<OrganizationAlbumPhoto> OrganizationAlbumPhotos { get; set; }
+        public DbSet<UserPhoto> UserPhotos { get; set; }
+        public DbSet<ReportedItemPhoto> ReportedItemPhotos { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
@@ -48,12 +55,16 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new UserPhoneNumberConfiguration());
             modelBuilder.Configurations.Add(new UserTypeConfiguration());
+            modelBuilder.Configurations.Add(new UserPhotoConfiguration());
 
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
+            modelBuilder.Configurations.Add(new OrganizationsAlbumPhotoConfiguration());
             modelBuilder.Configurations.Add(new ContributorConfiguration());
             
             modelBuilder.Configurations.Add(new PostConfiguration());
             modelBuilder.Configurations.Add(new PostTypeConfiguration());
+            modelBuilder.Configurations.Add(new PostCommentsConfiguration());
+            modelBuilder.Configurations.Add(new PostPhotoConfiguration());
 
             modelBuilder.Configurations.Add(new EventConfiguration());
             modelBuilder.Configurations.Add(new VolunteerConfiguration());
@@ -62,35 +73,33 @@ namespace Entmaa_Web_Services.Persistence
 
             modelBuilder.Configurations.Add(new AuctionConfiguration());
             modelBuilder.Configurations.Add(new AuctionBidderConfiguration());
+            modelBuilder.Configurations.Add(new AuctionItemPhotoConfiguration());
 
             modelBuilder.Configurations.Add(new TagConfiguration());
             
             modelBuilder.Configurations.Add(new CountryConfiguration());
             modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new UserLocationConfiguration());
+
+            modelBuilder.Configurations.Add(new NotificationTypesConfiguration());
+
+            modelBuilder.Configurations.Add(new BadgesConfiguration());
+            
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
             modelBuilder.Configurations.Add(new DonationTypesConfiguration());
+            
             modelBuilder.Configurations.Add(new MoneyDonationsOnRequestConfiguration());
             modelBuilder.Configurations.Add(new ItemsDonationsOnRequestConfiguration());
-            modelBuilder.Configurations.Add(new BadgesConfiguration());
-            modelBuilder.Configurations.Add(new DonatedItemsConfiguration());
-            modelBuilder.Configurations.Add(new ReportedItemsConfiguration());
-            modelBuilder.Configurations.Add(new PostPhotosConfiguration());
-            modelBuilder.Configurations.Add(new DonatedItemPhotosConfiguration());
-            modelBuilder.Configurations.Add(new AuctionItemPhotosConfiguration());
-            modelBuilder.Configurations.Add(new ReportedItemsPhotosConfiguration());
-            modelBuilder.Configurations.Add(new OrganizationsAlbumPhotosConfiguration());
-            modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
-            modelBuilder.Configurations.Add(new DonatedItemTagsConfiguration());
-            modelBuilder.Configurations.Add(new MoneyDonationsConfiguration());
-            modelBuilder.Configurations.Add(new UserPhotosConfiguration());
-            modelBuilder.Configurations.Add(new NotificationTypesConfiguration());
-            modelBuilder.Configurations.Add(new ReportedItemTagConfiguration());
-            modelBuilder.Configurations.Add(new ReportedCaseConfiguration());
-            modelBuilder.Configurations.Add(new PostCommentsConfiguration());
             
+            modelBuilder.Configurations.Add(new DonatedItemsConfiguration());
+            modelBuilder.Configurations.Add(new DonatedItemPhotoConfiguration());
 
+            modelBuilder.Configurations.Add(new ReportedItemsConfiguration());
+            modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
+            modelBuilder.Configurations.Add(new MoneyDonationsConfiguration());
 
+            modelBuilder.Configurations.Add(new ReportedItemsPhotoConfiguration());
+            modelBuilder.Configurations.Add(new ReportedCaseConfiguration());
             
         }
     }

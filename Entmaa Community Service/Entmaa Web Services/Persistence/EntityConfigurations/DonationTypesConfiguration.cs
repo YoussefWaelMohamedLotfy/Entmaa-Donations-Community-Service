@@ -11,8 +11,10 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public DonationTypesConfiguration()
         {
-            Property(d => d.name).IsRequired();
+            Property(d => d.Name).IsRequired();
+
             HasKey(d => d.ID);
+
             HasMany(d => d.DonationRequests).WithRequired(d => d.DonationType).HasForeignKey(d => d.DonationTypeID);
         }
     }

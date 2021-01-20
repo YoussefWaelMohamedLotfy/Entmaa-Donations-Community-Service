@@ -8,7 +8,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
     public class DonationTypes
     {
         public int ID { get; set; }
-        public string name { get; set; }
+
+        public string Name { get; set; }
+
         public ICollection<DonationRequest> DonationRequests { get; set; }
     }
 }

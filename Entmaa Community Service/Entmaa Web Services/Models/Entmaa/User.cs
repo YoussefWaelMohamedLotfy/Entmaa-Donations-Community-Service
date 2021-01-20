@@ -29,9 +29,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public UserType UserType { get; set; }
 
-       // public Photo ProfilePhoto { get; set; }
-        //public Photo CoverPhoto { get; set; }
-
         public ICollection<Post> PostsReactedTo { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
@@ -40,9 +37,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<UserPhoneNumber> PhoneNumbers { get; set; }
 
-        public ICollection<UserPhotos> UserPhotos { get; set; }
+        public ICollection<UserPhoto> UserPhotos { get; set; }
 
-        public ICollection<PostComments> postComments { get; set; }
+        public ICollection<PostComment> PostComments { get; set; }
     }
 
     public class UserType

@@ -19,13 +19,16 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public int DonatedTo { get; set; }
 
-        public ICollection<DonatedItemPhoto> DonatedItemPhotos { get; set; }
-        public ICollection<ItemsDonationsOnRequest> ItemsDonationsOnRequests { get; set; }
-        public ICollection<CollectedItemDonations> collectedItemDonations { get; set; }
-
         public Organization Organization { get; set; }
-        public ICollection<DonatedItemTag> DonatedItemTags { get; set; }
+
         public Contributor Contributor { get; set; }
 
+        public ICollection<DonatedItemPhoto> DonatedItemPhotos { get; set; }
+
+        public ICollection<ItemsDonationsOnRequest> ItemsDonationsOnRequests { get; set; }
+
+        public ICollection<CollectedItemDonations> CollectedItemDonations { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 }

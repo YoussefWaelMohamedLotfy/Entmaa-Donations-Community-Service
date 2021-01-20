@@ -14,10 +14,11 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                            c.MapLeftKey("PostID");
                            c.MapRightKey("UserID");
                        });
+
             HasRequired(p => p.DonationRequest).WithRequiredPrincipal(d => d.Post);
 
             HasMany(p => p.PostPhotos).WithRequired(p => p.Post).HasForeignKey(p => p.PostID);
-            HasMany(p => p.PostComments).WithRequired(p => p.Post).HasForeignKey(p => p.PostId);
+            HasMany(p => p.PostComments).WithRequired(p => p.Post).HasForeignKey(p => p.PostID);
 
         }
     }

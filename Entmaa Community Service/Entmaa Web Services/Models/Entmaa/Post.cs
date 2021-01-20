@@ -31,7 +31,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<PostPhoto> PostPhotos { get; set; }
 
-        public ICollection<PostComments> PostComments { get; set; }
+        public ICollection<PostComment> PostComments { get; set; }
 
 
     }
@@ -44,6 +44,4 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<Post> Posts { get; set; }
     }
-
-    
 }
