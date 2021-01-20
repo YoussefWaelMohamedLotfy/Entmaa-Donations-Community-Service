@@ -16,5 +16,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int MoneyAmount { get; set; }
         
         public string DonationToken { get; set; }
+
+        public Contributor Contributor { get; set; }
+
+        public Organization Organization { get; set; }
     }
 }

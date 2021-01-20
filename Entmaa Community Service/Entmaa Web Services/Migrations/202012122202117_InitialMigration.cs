@@ -359,6 +359,22 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.MoneyDonations",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        ContributorID = c.Int(nullable: false),
+                        OrganizationID = c.Int(nullable: false),
+                        MoneyAmount = c.Int(nullable: false),
+                        DonationToken = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Contributors", t => t.ContributorID)
+                .ForeignKey("dbo.Organizations", t => t.OrganizationID)
+                .Index(t => t.ContributorID)
+                .Index(t => t.OrganizationID);
+            
+            CreateTable(
                 "dbo.ReportedCases",
                 c => new
                     {
@@ -416,18 +432,6 @@
                 .PrimaryKey(t => new { t.OrganizationID, t.PhotoURL })
                 .ForeignKey("dbo.Organizations", t => t.OrganizationID)
                 .Index(t => t.OrganizationID);
-            
-            CreateTable(
-                "dbo.MoneyDonations",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        ContributorID = c.Int(nullable: false),
-                        OrganizationID = c.Int(nullable: false),
-                        MoneyAmount = c.Int(nullable: false),
-                        DonationToken = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.NotificationTypes",
@@ -593,6 +597,7 @@
             DropForeignKey("dbo.ReportedCases", "ReportedTo", "dbo.Organizations");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.OrganizationAlbumPhotoes", "OrganizationID", "dbo.Organizations");
+            DropForeignKey("dbo.MoneyDonations", "OrganizationID", "dbo.Organizations");
             DropForeignKey("dbo.DonatedItems", "DonatedTo", "dbo.Organizations");
             DropForeignKey("dbo.CollectedItemDonations", "OrganizationID", "dbo.Organizations");
             DropForeignKey("dbo.ItemsDonationsOnRequests", "ItemID", "dbo.DonatedItems");
@@ -600,6 +605,7 @@
             DropForeignKey("dbo.Subscriptions", "SubscribedBy", "dbo.Contributors");
             DropForeignKey("dbo.ReportedCases", "ReportedBy", "dbo.Contributors");
             DropForeignKey("dbo.MoneyDonationsOnRequests", "ContributorID", "dbo.Contributors");
+            DropForeignKey("dbo.MoneyDonations", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
@@ -666,6 +672,8 @@
             DropIndex("dbo.Subscriptions", new[] { "SubscribedBy" });
             DropIndex("dbo.ReportedCases", new[] { "ReportedTo" });
             DropIndex("dbo.ReportedCases", new[] { "ReportedBy" });
+            DropIndex("dbo.MoneyDonations", new[] { "OrganizationID" });
+            DropIndex("dbo.MoneyDonations", new[] { "ContributorID" });
             DropIndex("dbo.PostPhotoes", new[] { "PostID" });
             DropIndex("dbo.UserPhotoes", new[] { "UserID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
@@ -708,11 +716,11 @@
             DropTable("dbo.ContributorBadges");
             DropTable("dbo.Notifications");
             DropTable("dbo.NotificationTypes");
-            DropTable("dbo.MoneyDonations");
             DropTable("dbo.OrganizationAlbumPhotoes");
             DropTable("dbo.DonatedItemPhotoes");
             DropTable("dbo.Subscriptions");
             DropTable("dbo.ReportedCases");
+            DropTable("dbo.MoneyDonations");
             DropTable("dbo.PostTypes");
             DropTable("dbo.PostPhotoes");
             DropTable("dbo.UserTypes");
