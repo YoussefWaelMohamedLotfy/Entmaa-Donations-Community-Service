@@ -24,5 +24,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int CashAmount { get; set; }
    
         public bool IsActive { get; set; }
+
+        public Contributor contributor { get; set; }
+        public Organization organization { get; set; }
     }
 }

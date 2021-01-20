@@ -23,5 +23,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<CollectedItemDonations> CollectedItemDonations { get; set; }
         public ICollection<DonatedItem> DonatedItems { get; set; }
+
+        public ICollection<Subscription> subscriptions { get; set; }
     }
 }

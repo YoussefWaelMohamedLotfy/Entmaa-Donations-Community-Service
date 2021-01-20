@@ -314,6 +314,26 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Subscriptions",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        SubscribedBy = c.Int(nullable: false),
+                        SubscribedTo = c.Int(nullable: false),
+                        DaysInterval = c.Int(nullable: false),
+                        StartDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(nullable: false),
+                        RenewalDate = c.DateTime(nullable: false),
+                        CashAmount = c.Int(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Contributors", t => t.SubscribedBy)
+                .ForeignKey("dbo.Organizations", t => t.SubscribedTo)
+                .Index(t => t.SubscribedBy)
+                .Index(t => t.SubscribedTo);
+            
+            CreateTable(
                 "dbo.DonatedItemPhotoes",
                 c => new
                     {
@@ -494,6 +514,7 @@
             DropForeignKey("dbo.Organizations", "UserID", "dbo.Users");
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
             DropForeignKey("dbo.ReportedItemPhotoes", "ItemID", "dbo.ReportedItems");
+            DropForeignKey("dbo.Subscriptions", "SubscribedTo", "dbo.Organizations");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.OrganizationAlbumPhotoes", "OrganizationID", "dbo.Organizations");
             DropForeignKey("dbo.DonatedItems", "DonatedTo", "dbo.Organizations");
@@ -501,6 +522,7 @@
             DropForeignKey("dbo.ItemsDonationsOnRequests", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.DonatedItemTags", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.DonatedItemPhotoes", "ItemID", "dbo.DonatedItems");
+            DropForeignKey("dbo.Subscriptions", "SubscribedBy", "dbo.Contributors");
             DropForeignKey("dbo.MoneyDonationsOnRequests", "ContributorId", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.Volunteers", "EventID", "dbo.Events");
@@ -553,6 +575,8 @@
             DropIndex("dbo.OrganizationAlbumPhotoes", new[] { "OrganizationID" });
             DropIndex("dbo.DonatedItemTags", new[] { "ItemID" });
             DropIndex("dbo.DonatedItemPhotoes", new[] { "ItemID" });
+            DropIndex("dbo.Subscriptions", new[] { "SubscribedTo" });
+            DropIndex("dbo.Subscriptions", new[] { "SubscribedBy" });
             DropIndex("dbo.UserPhotos", new[] { "UserID" });
             DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
             DropIndex("dbo.Cities", new[] { "CountryID" });
@@ -593,6 +617,7 @@
             DropTable("dbo.OrganizationAlbumPhotoes");
             DropTable("dbo.DonatedItemTags");
             DropTable("dbo.DonatedItemPhotoes");
+            DropTable("dbo.Subscriptions");
             DropTable("dbo.UserTypes");
             DropTable("dbo.UserPhotos");
             DropTable("dbo.UserPhoneNumbers");
