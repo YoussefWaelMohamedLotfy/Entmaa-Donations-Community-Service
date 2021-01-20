@@ -404,6 +404,29 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.NotificationTypes",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Notifications",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        DeliveredTo = c.Int(nullable: false),
+                        IsSeen = c.Boolean(nullable: false),
+                        TypeID = c.Int(nullable: false),
+                        TriggerID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.NotificationTypes", t => t.TypeID, cascadeDelete: true)
+                .Index(t => t.TypeID);
+            
+            CreateTable(
                 "dbo.ContributorBadges",
                 c => new
                     {
@@ -513,6 +536,7 @@
         {
             DropForeignKey("dbo.Organizations", "UserID", "dbo.Users");
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
+            DropForeignKey("dbo.Notifications", "TypeID", "dbo.NotificationTypes");
             DropForeignKey("dbo.ReportedItemPhotoes", "ItemID", "dbo.ReportedItems");
             DropForeignKey("dbo.Subscriptions", "SubscribedTo", "dbo.Organizations");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
@@ -571,6 +595,7 @@
             DropIndex("dbo.AuctionTags", new[] { "TagID" });
             DropIndex("dbo.ContributorBadges", new[] { "ContributorID" });
             DropIndex("dbo.ContributorBadges", new[] { "BadgeID" });
+            DropIndex("dbo.Notifications", new[] { "TypeID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.OrganizationAlbumPhotoes", new[] { "OrganizationID" });
             DropIndex("dbo.DonatedItemTags", new[] { "ItemID" });
@@ -611,6 +636,8 @@
             DropTable("dbo.EventTags");
             DropTable("dbo.AuctionTags");
             DropTable("dbo.ContributorBadges");
+            DropTable("dbo.Notifications");
+            DropTable("dbo.NotificationTypes");
             DropTable("dbo.MoneyDonations");
             DropTable("dbo.ReportedItemPhotoes");
             DropTable("dbo.ReportedItems");

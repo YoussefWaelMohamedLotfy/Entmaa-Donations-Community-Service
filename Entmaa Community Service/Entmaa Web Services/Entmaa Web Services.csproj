@@ -313,6 +313,7 @@
     <Compile Include="Persistence\EntityConfigurations\ItemsDonationsOnRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MoneyDonationsConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MoneyDonationsOnRequestConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\NotificationTypesConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\OrganizationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PhotoConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostConfiguration.cs" />
