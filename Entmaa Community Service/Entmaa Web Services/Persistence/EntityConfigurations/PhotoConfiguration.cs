@@ -7,28 +7,39 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class PhotoConfiguration : EntityTypeConfiguration<Photo>
+    /*  public class PhotoConfiguration : EntityTypeConfiguration<Photo>
+      {
+          public PhotoConfiguration()
+          {
+              HasKey(p => p.ID);
+              Property(p => p.Path).IsRequired();
+              HasRequired(p => p.UserProfile).WithRequiredPrincipal(p => p.ProfilePhoto);
+              HasRequired(p => p.UserCover).WithRequiredPrincipal(p => p.CoverPhoto);
+              HasRequired(p => p.OrganizationAlbumPhoto).WithRequiredPrincipal(p => p.Photo);
+              HasRequired(p => p.ReportedItemPhoto).WithRequiredPrincipal(p => p.Photo);
+              HasRequired(p => p.auctionItemPhoto).WithRequiredPrincipal(p => p.Photo);
+              HasRequired(p => p.postPhoto).WithRequiredPrincipal(p => p.Photo);
+              HasRequired(p => p.donatedItemPhoto).WithRequiredPrincipal(p => p.Photo);
+
+          }
+      }
+      */
+
+    public class UserPhotosConfiguration : EntityTypeConfiguration<UserPhotos>
     {
-        public PhotoConfiguration()
+        public UserPhotosConfiguration()
         {
-            HasKey(p => p.ID);
-            Property(p => p.Path).IsRequired();
-            HasRequired(p => p.UserProfile).WithRequiredPrincipal(p => p.ProfilePhoto);
-            HasRequired(p => p.UserCover).WithRequiredPrincipal(p => p.CoverPhoto);
-            HasRequired(p => p.OrganizationAlbumPhoto).WithRequiredPrincipal(p => p.Photo);
-            HasRequired(p => p.ReportedItemPhoto).WithRequiredPrincipal(p => p.Photo);
-            HasRequired(p => p.auctionItemPhoto).WithRequiredPrincipal(p => p.Photo);
-            HasRequired(p => p.postPhoto).WithOptional(p => p.Photo);
-            HasRequired(p => p.donatedItemPhoto).WithOptional(p => p.Photo);
-            
+            HasKey(u => new { u.UserID, u.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
-
     public class PostPhotosConfiguration: EntityTypeConfiguration<PostPhoto>
     {
         public PostPhotosConfiguration()
         {
-            HasKey(p => new { p.PostID, p.PhotoID });
+            HasKey(p => new { p.PostID, p.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+
         }
     }
 
@@ -36,7 +47,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public DonatedItemPhotosConfiguration()
         {
-            HasKey(p => new { p.ItemID, p.PhotoID });
+            HasKey(p => new { p.ItemID, p.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
@@ -44,7 +56,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public AuctionItemPhotosConfiguration()
         {
-            HasKey(a => new { a.AuctionID, a.PhotoID });
+            HasKey(a => new { a.AuctionID, a.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
@@ -52,7 +65,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public ReportedItemsPhotosConfiguration()
         {
-            HasKey(r => new { r.ItemID, r.PhotoID });
+            HasKey(r => new { r.ItemID, r.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
@@ -60,7 +74,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public OrganizationsAlbumPhotosConfiguration()
         {
-            HasKey(o => new { o.OrganizationID, o.PhotoID });
+            HasKey(o => new { o.OrganizationID, o.PhotoURL });
+            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 

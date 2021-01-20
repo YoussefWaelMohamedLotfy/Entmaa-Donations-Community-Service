@@ -20,7 +20,7 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostType> PostTypes { get; set; }
         
-        public DbSet<Photo> Photo { get; set; }
+       // public DbSet<Photo> Photo { get; set; }
 
         public DbSet<Event> Events { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
@@ -58,7 +58,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new EventConfiguration());
             modelBuilder.Configurations.Add(new VolunteerConfiguration());
 
-            modelBuilder.Configurations.Add(new PhotoConfiguration());
+            //modelBuilder.Configurations.Add(new PhotoConfiguration());
 
             modelBuilder.Configurations.Add(new AuctionConfiguration());
             modelBuilder.Configurations.Add(new AuctionBidderConfiguration());
@@ -83,6 +83,7 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new CollectedItemDonationsConfiguration());
             modelBuilder.Configurations.Add(new DonatedItemTagsConfiguration());
             modelBuilder.Configurations.Add(new MoneyDonationsConfiguration());
+            modelBuilder.Configurations.Add(new UserPhotosConfiguration());
 
 
             

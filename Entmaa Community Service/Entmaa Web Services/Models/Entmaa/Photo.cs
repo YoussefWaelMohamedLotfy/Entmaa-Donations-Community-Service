@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Entmaa_Web_Services.Models.Entmaa
 {
-    public class Photo
+   /* public class Photo
     {
         public int ID { get; set; }
         public string Path { get; set; }
@@ -20,20 +20,29 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
 
     }
+    */
 
+
+
+    public class UserPhotos
+    {
+        public int UserID { get; set; }
+        public string PhotoURL { get; set; }
+        public User User { get; set; }
+    }
     public class PostPhoto
     {
         public int PostID { get; set; }
-        public int PhotoID { get; set; }
-        public Photo Photo { get; set; }
+        public string PhotoURL { get; set; }
+        //  public Photo Photo { get; set; }
         public Post Post { get; set; }
     }
 
     public class DonatedItemPhoto
     {
         public int ItemID { get; set; }
-        public int PhotoID { get; set; }
-        public Photo Photo { get; set; }
+        public string PhotoURL { get; set; }
+        // public Photo Photo { get; set; }
 
         public DonatedItem DonatedItem { get; set; }
     }
@@ -41,8 +50,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
     public class ReportedItemPhoto
     {
         public int ItemID { get; set; }
-        public int PhotoID { get; set; }
-        public Photo Photo { get; set; }
+        public string PhotoURL { get; set; }
+        // public Photo Photo { get; set; }
 
         public ReportedItem ReportedItem { get; set; }
     }
@@ -50,8 +59,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
     public class AuctionItemPhoto
     {
         public int AuctionID { get; set; }
-        public int PhotoID { get; set; }
-        public Photo Photo { get; set; }
+        public string PhotoURL { get; set; }
+        // public Photo Photo { get; set; }
 
         public Auction Auction { get; set; }
     }
@@ -59,8 +68,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
     public class OrganizationAlbumPhoto
     {
         public int OrganizationID { get; set; }
-        public int PhotoID { get; set; }
-        public Photo Photo { get; set; }
+        public string PhotoURL { get; set; }
+        // public Photo Photo { get; set; }
 
         public Organization organization { get; set; }
     }
