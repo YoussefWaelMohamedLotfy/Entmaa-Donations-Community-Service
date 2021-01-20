@@ -40,6 +40,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
                             c.MapLeftKey("TagID");
                             c.MapRightKey("UserID");
                         });
+            HasMany(t => t.ReportedItemTags).WithRequired(r => r.Tag).HasForeignKey(r => r.TagID);
         }
     }
 }

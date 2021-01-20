@@ -246,6 +246,44 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.ReportedItemTags",
+                c => new
+                    {
+                        ItemID = c.Int(nullable: false),
+                        TagID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ItemID, t.TagID })
+                .ForeignKey("dbo.ReportedItems", t => t.ItemID, cascadeDelete: true)
+                .ForeignKey("dbo.Tags", t => t.TagID, cascadeDelete: true)
+                .Index(t => t.ItemID)
+                .Index(t => t.TagID);
+            
+            CreateTable(
+                "dbo.ReportedItems",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                        MapLocation = c.String(),
+                        CreatedBy = c.Int(nullable: false),
+                        ResolvedBy = c.Int(nullable: false),
+                        IsFound = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.ReportedItemPhotoes",
+                c => new
+                    {
+                        ItemID = c.Int(nullable: false),
+                        PhotoURL = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ItemID, t.PhotoURL })
+                .ForeignKey("dbo.ReportedItems", t => t.ItemID, cascadeDelete: true)
+                .Index(t => t.ItemID);
+            
+            CreateTable(
                 "dbo.UserLocations",
                 c => new
                     {
@@ -365,31 +403,6 @@
                 .PrimaryKey(t => new { t.OrganizationID, t.PhotoURL })
                 .ForeignKey("dbo.Organizations", t => t.OrganizationID)
                 .Index(t => t.OrganizationID);
-            
-            CreateTable(
-                "dbo.ReportedItems",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Description = c.String(),
-                        MapLocation = c.String(),
-                        CreatedBy = c.Int(nullable: false),
-                        ResolvedBy = c.Int(nullable: false),
-                        IsFound = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
-                "dbo.ReportedItemPhotoes",
-                c => new
-                    {
-                        ItemID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.ItemID, t.PhotoURL })
-                .ForeignKey("dbo.ReportedItems", t => t.ItemID, cascadeDelete: true)
-                .Index(t => t.ItemID);
             
             CreateTable(
                 "dbo.MoneyDonations",
@@ -537,7 +550,6 @@
             DropForeignKey("dbo.Organizations", "UserID", "dbo.Users");
             DropForeignKey("dbo.Contributors", "UserID", "dbo.Users");
             DropForeignKey("dbo.Notifications", "TypeID", "dbo.NotificationTypes");
-            DropForeignKey("dbo.ReportedItemPhotoes", "ItemID", "dbo.ReportedItems");
             DropForeignKey("dbo.Subscriptions", "SubscribedTo", "dbo.Organizations");
             DropForeignKey("dbo.Posts", "PostedBy", "dbo.Organizations");
             DropForeignKey("dbo.OrganizationAlbumPhotoes", "OrganizationID", "dbo.Organizations");
@@ -561,6 +573,9 @@
             DropForeignKey("dbo.UserLocations", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
             DropForeignKey("dbo.Cities", "CountryID", "dbo.Countries");
+            DropForeignKey("dbo.ReportedItemTags", "TagID", "dbo.Tags");
+            DropForeignKey("dbo.ReportedItemTags", "ItemID", "dbo.ReportedItems");
+            DropForeignKey("dbo.ReportedItemPhotoes", "ItemID", "dbo.ReportedItems");
             DropForeignKey("dbo.PostTags", "PostID", "dbo.Posts");
             DropForeignKey("dbo.PostTags", "TagID", "dbo.Tags");
             DropForeignKey("dbo.EventTags", "EventID", "dbo.Events");
@@ -596,7 +611,6 @@
             DropIndex("dbo.ContributorBadges", new[] { "ContributorID" });
             DropIndex("dbo.ContributorBadges", new[] { "BadgeID" });
             DropIndex("dbo.Notifications", new[] { "TypeID" });
-            DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.OrganizationAlbumPhotoes", new[] { "OrganizationID" });
             DropIndex("dbo.DonatedItemTags", new[] { "ItemID" });
             DropIndex("dbo.DonatedItemPhotoes", new[] { "ItemID" });
@@ -607,6 +621,9 @@
             DropIndex("dbo.Cities", new[] { "CountryID" });
             DropIndex("dbo.UserLocations", new[] { "CityID" });
             DropIndex("dbo.UserLocations", new[] { "UserID" });
+            DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
+            DropIndex("dbo.ReportedItemTags", new[] { "TagID" });
+            DropIndex("dbo.ReportedItemTags", new[] { "ItemID" });
             DropIndex("dbo.PostPhotoes", new[] { "PostID" });
             DropIndex("dbo.MoneyDonationsOnRequests", new[] { "RequestId" });
             DropIndex("dbo.MoneyDonationsOnRequests", new[] { "ContributorId" });
@@ -639,8 +656,6 @@
             DropTable("dbo.Notifications");
             DropTable("dbo.NotificationTypes");
             DropTable("dbo.MoneyDonations");
-            DropTable("dbo.ReportedItemPhotoes");
-            DropTable("dbo.ReportedItems");
             DropTable("dbo.OrganizationAlbumPhotoes");
             DropTable("dbo.DonatedItemTags");
             DropTable("dbo.DonatedItemPhotoes");
@@ -651,6 +666,9 @@
             DropTable("dbo.Countries");
             DropTable("dbo.Cities");
             DropTable("dbo.UserLocations");
+            DropTable("dbo.ReportedItemPhotoes");
+            DropTable("dbo.ReportedItems");
+            DropTable("dbo.ReportedItemTags");
             DropTable("dbo.Tags");
             DropTable("dbo.PostTypes");
             DropTable("dbo.PostPhotoes");
