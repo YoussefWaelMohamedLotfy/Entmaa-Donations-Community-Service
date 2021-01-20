@@ -19,6 +19,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<User> UserTags { get; set; }
         public ICollection<ReportedItemTag> ReportedItemTags{ get; set; }
+        public ICollection<DonatedItemTag> DonatedItemTags { get; set; }
     }
 
 
@@ -36,6 +37,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int ItemID { get; set; }
         public int TagID { get; set; }
         public DonatedItem donatedItem { get; set; }
+
+        public Tag Tag { get; set; }
 
     }
 }
