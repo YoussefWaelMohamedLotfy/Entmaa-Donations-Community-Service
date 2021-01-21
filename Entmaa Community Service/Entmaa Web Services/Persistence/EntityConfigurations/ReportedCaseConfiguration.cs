@@ -13,6 +13,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             Property(r => r.Title).IsRequired();
             Property(r => r.Description).IsRequired();
+            Property(r => r.Photo).IsRequired();
         }
     }
 }

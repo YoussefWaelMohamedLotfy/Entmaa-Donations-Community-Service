@@ -45,6 +45,10 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<UserPhoto> UserPhotos { get; set; }
         public DbSet<ReportedItemPhoto> ReportedItemPhotos { get; set; }
 
+        public DbSet<ReportedItem> ReportedItems { get; set; }
+
+        public DbSet<Notification> Notifications { get; set; }
+
         public MainContext() : base("name=EntmaaConnection")
         {
             Configuration.LazyLoadingEnabled = false;

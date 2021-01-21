@@ -28,6 +28,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             HasMany(c => c.Subscriptions).WithRequired(s => s.Contributor).HasForeignKey(s => s.SubscribedBy);
             HasMany(c => c.ReportedCases).WithRequired(r => r.Contributor).HasForeignKey(r => r.ReportedBy);
             HasMany(c => c.MoneyDonationsMade).WithRequired(r => r.Contributor).HasForeignKey(r => r.ContributorID);
+            HasMany(c => c.ReportedItemsCreated).WithRequired(r => r.ContributorCreated).HasForeignKey(r => r.CreatedBy);
+            HasMany(c => c.ReportedItemsResolved).WithRequired(r => r.ContributorResolved).HasForeignKey(r => r.ResolvedBy);
         }
     }
 }
