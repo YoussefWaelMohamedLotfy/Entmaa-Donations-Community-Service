@@ -298,14 +298,18 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Description = c.String(),
-                        MapLocation = c.String(),
+                        MapLocation = c.String(nullable: false),
                         CreatedBy = c.Int(nullable: false),
                         ResolvedBy = c.Int(nullable: false),
                         IsFound = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Contributors", t => t.CreatedBy)
+                .ForeignKey("dbo.Contributors", t => t.ResolvedBy)
+                .Index(t => t.CreatedBy)
+                .Index(t => t.ResolvedBy);
             
             CreateTable(
                 "dbo.ReportedItemPhotoes",
@@ -381,7 +385,7 @@
                         ID = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false),
                         Description = c.String(nullable: false),
-                        Photo = c.String(),
+                        Photo = c.String(nullable: false),
                         ReportedBy = c.Int(nullable: false),
                         ReportedTo = c.Int(nullable: false),
                     })
@@ -603,6 +607,8 @@
             DropForeignKey("dbo.ItemsDonationOnRequests", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.DonatedItemPhotoes", "ItemID", "dbo.DonatedItems");
             DropForeignKey("dbo.Subscriptions", "SubscribedBy", "dbo.Contributors");
+            DropForeignKey("dbo.ReportedItems", "ResolvedBy", "dbo.Contributors");
+            DropForeignKey("dbo.ReportedItems", "CreatedBy", "dbo.Contributors");
             DropForeignKey("dbo.ReportedCases", "ReportedBy", "dbo.Contributors");
             DropForeignKey("dbo.MoneyDonationOnRequests", "ContributorID", "dbo.Contributors");
             DropForeignKey("dbo.MoneyDonations", "ContributorID", "dbo.Contributors");
@@ -677,6 +683,8 @@
             DropIndex("dbo.PostPhotoes", new[] { "PostID" });
             DropIndex("dbo.UserPhotoes", new[] { "UserID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
+            DropIndex("dbo.ReportedItems", new[] { "ResolvedBy" });
+            DropIndex("dbo.ReportedItems", new[] { "CreatedBy" });
             DropIndex("dbo.UserPhoneNumbers", new[] { "UserID" });
             DropIndex("dbo.Cities", new[] { "CountryID" });
             DropIndex("dbo.UserLocations", new[] { "CityID" });

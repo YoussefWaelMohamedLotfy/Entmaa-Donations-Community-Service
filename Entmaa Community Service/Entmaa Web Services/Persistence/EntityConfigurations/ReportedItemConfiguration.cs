@@ -10,6 +10,9 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public ReportedItemConfiguration()
         {
+            Property(r => r.Name).IsRequired();
+            Property(r => r.MapLocation).IsRequired();
+
             HasMany(r => r.ReportedItemPhotos).WithRequired(r => r.ReportedItem).HasForeignKey(r => r.ItemID);
         }
     }
