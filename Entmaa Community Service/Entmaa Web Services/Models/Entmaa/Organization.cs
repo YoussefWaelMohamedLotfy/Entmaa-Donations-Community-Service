@@ -15,15 +15,17 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public string FawryToken { get; set; }
 
+        public ICollection<Contributor> ContributorsFollowed { get; set; }
+
         public ICollection<Post> Posts { get; set; }
         
         public ICollection<Auction> AuctionsCreated { get; set; }
 
         public ICollection<OrganizationAlbumPhoto> OrganizationAlbumPhotos { get; set; }
 
-        public ICollection<CollectedItemDonation> CollectedItemDonations { get; set; }
-
         public ICollection<DonatedItem> DonatedItems { get; set; }
+
+        public ICollection<DonatedItem> CollectedItemDonations { get; set; }
 
         public ICollection<Subscription> Subscriptions { get; set; }
 

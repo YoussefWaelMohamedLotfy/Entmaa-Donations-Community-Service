@@ -7,7 +7,7 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class DonatedItemConfiguration:EntityTypeConfiguration<DonatedItem>
+    public class DonatedItemConfiguration : EntityTypeConfiguration<DonatedItem>
     {
         public DonatedItemConfiguration()
         {
@@ -16,8 +16,6 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             HasKey(d => d.ID);
 
             HasMany(d => d.DonatedItemPhotos).WithRequired(d => d.DonatedItem).HasForeignKey(d => d.ItemID);
-            HasMany(d => d.ItemsDonationsOnRequests).WithRequired(i => i.DonatedItem).HasForeignKey(i => i.ItemID);
-            HasMany(d => d.CollectedItemDonations).WithRequired(c => c.DonatedItem).HasForeignKey(c => c.ItemID);
         }
     }
 }

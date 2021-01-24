@@ -29,6 +29,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public Post Post { get; set; }
 
+        public City City { get; set; }
+
         public ICollection<Tag> Tags { get; set; }
 
         public ICollection<Volunteer> Volunteers { get; set; }

@@ -16,6 +16,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public Country Country { get; set; }
 
         public ICollection<UserLocation> Locations { get; set; }
+
+        public ICollection<Event> EventsHosted { get; set; }
     }
 
     public class Country
