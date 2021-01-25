@@ -37,9 +37,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public ICollection<UserPhoneNumber> PhoneNumbers { get; set; }
 
-        public ICollection<UserPhoto> UserPhotos { get; set; }
+       
 
         public ICollection<PostComment> PostComments { get; set; }
+
+        public UserPhoto UserProfilePhoto { get; set; }
+        public UserPhoto UserCoverPhoto { get; set; }
     }
 
     public class UserType

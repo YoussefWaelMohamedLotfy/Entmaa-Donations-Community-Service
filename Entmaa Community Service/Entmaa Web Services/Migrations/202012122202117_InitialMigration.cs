@@ -66,10 +66,18 @@
                         CoverPhotoID = c.Int(nullable: false),
                         FirebaseToken = c.String(nullable: false),
                         UserTypeID = c.Byte(nullable: false),
+                        UserCoverPhoto_UserID = c.Int(nullable: false),
+                        UserCoverPhoto_type = c.Int(nullable: false),
+                        UserProfilePhoto_UserID = c.Int(nullable: false),
+                        UserProfilePhoto_type = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.UserPhotoes", t => new { t.UserCoverPhoto_UserID, t.UserCoverPhoto_type })
+                .ForeignKey("dbo.UserPhotoes", t => new { t.UserProfilePhoto_UserID, t.UserProfilePhoto_type })
                 .ForeignKey("dbo.UserTypes", t => t.UserTypeID, cascadeDelete: true)
-                .Index(t => t.UserTypeID);
+                .Index(t => t.UserTypeID)
+                .Index(t => new { t.UserCoverPhoto_UserID, t.UserCoverPhoto_type })
+                .Index(t => new { t.UserProfilePhoto_UserID, t.UserProfilePhoto_type });
             
             CreateTable(
                 "dbo.DonatedItems",
@@ -323,11 +331,10 @@
                 c => new
                     {
                         UserID = c.Int(nullable: false),
+                        type = c.Int(nullable: false),
                         PhotoURL = c.String(nullable: false),
                     })
-                .PrimaryKey(t => new { t.UserID, t.PhotoURL })
-                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
-                .Index(t => t.UserID);
+                .PrimaryKey(t => new { t.UserID, t.type });
             
             CreateTable(
                 "dbo.UserTypes",
@@ -634,7 +641,8 @@
             DropForeignKey("dbo.Events", "PostID", "dbo.Posts");
             DropForeignKey("dbo.UserLocations", "CityID", "dbo.Cities");
             DropForeignKey("dbo.Users", "UserTypeID", "dbo.UserTypes");
-            DropForeignKey("dbo.UserPhotoes", "UserID", "dbo.Users");
+            DropForeignKey("dbo.Users", new[] { "UserProfilePhoto_UserID", "UserProfilePhoto_type" }, "dbo.UserPhotoes");
+            DropForeignKey("dbo.Users", new[] { "UserCoverPhoto_UserID", "UserCoverPhoto_type" }, "dbo.UserPhotoes");
             DropForeignKey("dbo.PostComments", "UserID", "dbo.Users");
             DropForeignKey("dbo.PostComments", "PostComment_ID", "dbo.PostComments");
             DropForeignKey("dbo.PostLikes", "UserID", "dbo.Users");
@@ -704,7 +712,6 @@
             DropIndex("dbo.ReportedCases", new[] { "ReportedBy" });
             DropIndex("dbo.MoneyDonations", new[] { "OrganizationID" });
             DropIndex("dbo.MoneyDonations", new[] { "ContributorID" });
-            DropIndex("dbo.UserPhotoes", new[] { "UserID" });
             DropIndex("dbo.ReportedItemPhotoes", new[] { "ItemID" });
             DropIndex("dbo.ReportedItems", new[] { "ResolvedBy" });
             DropIndex("dbo.ReportedItems", new[] { "CreatedBy" });
@@ -728,6 +735,8 @@
             DropIndex("dbo.Volunteers", new[] { "ContributorID" });
             DropIndex("dbo.DonatedItems", new[] { "DonatedTo" });
             DropIndex("dbo.DonatedItems", new[] { "DonatedBy" });
+            DropIndex("dbo.Users", new[] { "UserProfilePhoto_UserID", "UserProfilePhoto_type" });
+            DropIndex("dbo.Users", new[] { "UserCoverPhoto_UserID", "UserCoverPhoto_type" });
             DropIndex("dbo.Users", new[] { "UserTypeID" });
             DropIndex("dbo.AuctionItemPhotoes", new[] { "AuctionID" });
             DropIndex("dbo.Auctions", new[] { "HostedBy" });

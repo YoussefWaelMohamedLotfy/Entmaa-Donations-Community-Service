@@ -29,7 +29,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public UserPhotoConfiguration()
         {
-            HasKey(u => new { u.UserID, u.PhotoURL });
+            HasKey(u => new { u.UserID, u.type });
 
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }

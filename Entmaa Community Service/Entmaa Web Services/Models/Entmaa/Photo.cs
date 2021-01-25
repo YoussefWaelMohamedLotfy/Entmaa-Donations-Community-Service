@@ -28,7 +28,10 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public string PhotoURL { get; set; }
 
-        public User User { get; set; }
+        public int type { get; set; } // 1 => profile , 2=> cover 
+
+        public User UserProfilePhoto { get; set; }
+        public User UserCoverPhoto { get; set; }
     }
 
     public class PostPhoto
