@@ -46,7 +46,7 @@
                 c => new
                     {
                         AuctionID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.AuctionID, t.PhotoURL })
                 .ForeignKey("dbo.Auctions", t => t.AuctionID, cascadeDelete: true)
@@ -262,7 +262,7 @@
                 c => new
                     {
                         PostID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.PostID, t.PhotoURL })
                 .ForeignKey("dbo.Posts", t => t.PostID, cascadeDelete: true)
@@ -309,7 +309,7 @@
                 c => new
                     {
                         ItemID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.ItemID, t.PhotoURL })
                 .ForeignKey("dbo.ReportedItems", t => t.ItemID, cascadeDelete: true)
@@ -321,7 +321,7 @@
                     {
                         UserID = c.Int(nullable: false),
                         PhotoType = c.Byte(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.UserID, t.PhotoType })
                 .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true)
@@ -394,7 +394,7 @@
                 c => new
                     {
                         ItemID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.ItemID, t.PhotoURL })
                 .ForeignKey("dbo.DonatedItems", t => t.ItemID, cascadeDelete: true)
@@ -405,7 +405,7 @@
                 c => new
                     {
                         OrganizationID = c.Int(nullable: false),
-                        PhotoURL = c.String(nullable: false),
+                        PhotoURL = c.String(nullable: false, maxLength: 450),
                     })
                 .PrimaryKey(t => new { t.OrganizationID, t.PhotoURL })
                 .ForeignKey("dbo.Organizations", t => t.OrganizationID)

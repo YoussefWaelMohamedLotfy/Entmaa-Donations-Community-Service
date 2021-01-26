@@ -9,7 +9,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(u => new { u.UserID, u.PhotoType });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
 
@@ -19,8 +19,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(p => new { p.PostID, p.PhotoURL });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
-
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
 
@@ -30,7 +29,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(p => new { p.ItemID, p.PhotoURL });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
 
@@ -40,7 +39,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(a => new { a.AuctionID, a.PhotoURL });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
 
@@ -50,7 +49,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(r => new { r.ItemID, r.PhotoURL });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
 
@@ -60,9 +59,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         {
             HasKey(o => new { o.OrganizationID, o.PhotoURL });
 
-            Property(p => p.PhotoURL).IsRequired().IsMaxLength();
+            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
         }
     }
-
-
 }
