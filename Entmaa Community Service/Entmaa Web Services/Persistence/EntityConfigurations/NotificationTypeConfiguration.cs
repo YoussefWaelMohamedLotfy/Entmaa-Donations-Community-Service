@@ -11,6 +11,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public NotificationTypeConfiguration()
         {
+            Property(n => n.Description).IsRequired();
+
             HasMany(n => n.Notifications).WithRequired(n => n.NotificationType).HasForeignKey(n => n.TypeID);   
         }
     }

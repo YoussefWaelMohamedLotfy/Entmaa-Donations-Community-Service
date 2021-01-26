@@ -17,7 +17,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 
             HasRequired(d => d.Post).WithRequiredDependent(p => p.DonationRequest);
 
-            HasMany(d => d.MoneyDonationsOnRequests).WithRequired(m => m.DonationRequest).HasForeignKey(m => m.RequestID);
+            HasMany(d => d.MoneyDonationsOnRequest).WithRequired(m => m.DonationRequest).HasForeignKey(m => m.RequestID);
 
             HasMany(d => d.Items).WithMany(d => d.Donations)
                 .Map(c => 

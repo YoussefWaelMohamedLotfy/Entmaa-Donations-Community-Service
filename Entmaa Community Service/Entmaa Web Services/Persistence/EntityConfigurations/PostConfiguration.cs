@@ -7,6 +7,8 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public PostConfiguration()
         {
+            Property(p => p.Description).IsRequired().IsMaxLength();
+
             HasMany(p => p.UsersReacted).WithMany(u => u.PostsReactedTo)
                 .Map(c =>
                        {

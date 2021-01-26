@@ -15,7 +15,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public int MoneyReceivedAmount { get; set; }
 
-        public int ItemesNeededCount { get; set; }
+        public int ItemsNeededCount { get; set; }
 
         public int ItemsReceivedCount { get; set; }
 
@@ -27,7 +27,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public DonationType DonationType { get; set; }
 
-        public ICollection<MoneyDonationOnRequest> MoneyDonationsOnRequests { get; set; }
+        public ICollection<MoneyDonationOnRequest> MoneyDonationsOnRequest { get; set; }
 
         public ICollection<DonatedItem> Items { get; set; }
     }

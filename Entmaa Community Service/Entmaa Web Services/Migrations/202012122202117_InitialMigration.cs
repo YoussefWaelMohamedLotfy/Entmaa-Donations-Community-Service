@@ -203,7 +203,7 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         TimePosted = c.DateTime(nullable: false),
-                        Description = c.String(),
+                        Description = c.String(nullable: false),
                         PostedBy = c.Int(nullable: false),
                         PostTypeID = c.Byte(nullable: false),
                     })
@@ -221,7 +221,7 @@
                         Title = c.String(nullable: false),
                         MoneyNeededAmount = c.Int(nullable: false),
                         MoneyReceivedAmount = c.Int(nullable: false),
-                        ItemesNeededCount = c.Int(nullable: false),
+                        ItemsNeededCount = c.Int(nullable: false),
                         ItemsReceivedCount = c.Int(nullable: false),
                         DonationTypeID = c.Byte(nullable: false),
                         IsFulfilled = c.Boolean(nullable: false),
@@ -430,7 +430,7 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

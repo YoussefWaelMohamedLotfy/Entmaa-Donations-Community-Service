@@ -29,6 +29,8 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<Tag> Tags { get; set; }
 
+        public DbSet<Badge> Badges { get; set; }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<UserLocation> UserLocations { get; set; }
@@ -46,6 +48,8 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<ReportedItem> ReportedItems { get; set; }
 
         public DbSet<Notification> Notifications { get; set; }
+
+        public DbSet<MoneyDonationOnRequest> MoneyDonationsOnRequest { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
