@@ -1,41 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity.ModelConfiguration;
 using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    /*  public class PhotoConfiguration : EntityTypeConfiguration<Photo>
-      {
-          public PhotoConfiguration()
-          {
-              HasKey(p => p.ID);
-              Property(p => p.Path).IsRequired();
-              HasRequired(p => p.UserProfile).WithRequiredPrincipal(p => p.ProfilePhoto);
-              HasRequired(p => p.UserCover).WithRequiredPrincipal(p => p.CoverPhoto);
-              HasRequired(p => p.OrganizationAlbumPhoto).WithRequiredPrincipal(p => p.Photo);
-              HasRequired(p => p.ReportedItemPhoto).WithRequiredPrincipal(p => p.Photo);
-              HasRequired(p => p.auctionItemPhoto).WithRequiredPrincipal(p => p.Photo);
-              HasRequired(p => p.postPhoto).WithRequiredPrincipal(p => p.Photo);
-              HasRequired(p => p.donatedItemPhoto).WithRequiredPrincipal(p => p.Photo);
-
-          }
-      }
-      */
-
     public class UserPhotoConfiguration : EntityTypeConfiguration<UserPhoto>
     {
         public UserPhotoConfiguration()
         {
-            HasKey(u => new { u.UserID, u.type });
+            HasKey(u => new { u.UserID, u.PhotoType });
 
             Property(p => p.PhotoURL).IsRequired().IsMaxLength();
         }
     }
 
-    public class PostPhotoConfiguration: EntityTypeConfiguration<PostPhoto>
+    public class PostPhotoConfiguration : EntityTypeConfiguration<PostPhoto>
     {
         public PostPhotoConfiguration()
         {
@@ -46,7 +24,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         }
     }
 
-    public class DonatedItemPhotoConfiguration: EntityTypeConfiguration<DonatedItemPhoto>
+    public class DonatedItemPhotoConfiguration : EntityTypeConfiguration<DonatedItemPhoto>
     {
         public DonatedItemPhotoConfiguration()
         {
@@ -56,7 +34,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         }
     }
 
-    public class AuctionItemPhotoConfiguration:EntityTypeConfiguration<AuctionItemPhoto>
+    public class AuctionItemPhotoConfiguration : EntityTypeConfiguration<AuctionItemPhoto>
     {
         public AuctionItemPhotoConfiguration()
         {
@@ -66,7 +44,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         }
     }
 
-    public class ReportedItemsPhotoConfiguration:EntityTypeConfiguration<ReportedItemPhoto>
+    public class ReportedItemsPhotoConfiguration : EntityTypeConfiguration<ReportedItemPhoto>
     {
         public ReportedItemsPhotoConfiguration()
         {
@@ -76,7 +54,7 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
         }
     }
 
-    public class OrganizationsAlbumPhotoConfiguration:EntityTypeConfiguration<OrganizationAlbumPhoto>
+    public class OrganizationsAlbumPhotoConfiguration : EntityTypeConfiguration<OrganizationAlbumPhoto>
     {
         public OrganizationsAlbumPhotoConfiguration()
         {
