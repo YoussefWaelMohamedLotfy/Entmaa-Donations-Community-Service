@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Entmaa_Web_Services.Models.Entmaa;
+using Entmaa_Web_Services.Persistence.Initializers;
 using Entmaa_Web_Services.Persistence.EntityConfigurations;
 
 namespace Entmaa_Web_Services.Persistence
@@ -54,6 +55,7 @@ namespace Entmaa_Web_Services.Persistence
         public MainContext() : base("name=EntmaaConnection")
         {
             Configuration.LazyLoadingEnabled = false;
+            Database.SetInitializer(new MainInitializerIfModelChanges());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
