@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Entmaa_Web_Services.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

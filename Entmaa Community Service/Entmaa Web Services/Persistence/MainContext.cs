@@ -54,8 +54,8 @@ namespace Entmaa_Web_Services.Persistence
 
         public MainContext() : base("name=EntmaaConnection")
         {
+            Database.SetInitializer(new MainInitializerAlways());
             Configuration.LazyLoadingEnabled = false;
-            Database.SetInitializer(new MainInitializerIfModelChanges());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
