@@ -7,6 +7,14 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class DonatedItem
     {
+        public DonatedItem()
+        {
+            DonatedItemPhotos = new HashSet<DonatedItemPhoto>();
+            Donations = new HashSet<DonationRequest>();
+            Organizations = new HashSet<Organization>();
+            Tags = new HashSet<Tag>();
+        }
+
         public int ID { get; set; }
         
         public string Name { get; set; }

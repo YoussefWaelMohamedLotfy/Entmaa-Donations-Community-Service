@@ -22,6 +22,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
     public class NotificationType
     {
+        public NotificationType()
+        {
+            Notifications = new HashSet<Notification>();
+        }
+
         public int ID { get; set; }
 
         public string Description { get; set; }

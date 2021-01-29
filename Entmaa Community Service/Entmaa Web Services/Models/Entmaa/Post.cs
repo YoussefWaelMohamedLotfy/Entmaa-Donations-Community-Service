@@ -7,6 +7,14 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Post
     {
+        public Post()
+        {
+            UsersReacted = new HashSet<User>();
+            Tags = new HashSet<Tag>();
+            PostPhotos = new HashSet<PostPhoto>();
+            PostComments = new HashSet<PostComment>();
+        }
+
         public int ID { get; set; }
         
         public DateTime TimePosted { get; set; }
@@ -32,12 +40,15 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<PostPhoto> PostPhotos { get; set; }
 
         public ICollection<PostComment> PostComments { get; set; }
-
-
     }
 
     public class PostType
     {
+        public PostType()
+        {
+            Posts = new HashSet<Post>();
+        }
+
         public byte ID { get; set; }
 
         public string Name { get; set; }

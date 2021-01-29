@@ -7,6 +7,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class DonationType
     {
+        public DonationType()
+        {
+            DonationRequests = new HashSet<DonationRequest>();
+        }
+
         public byte ID { get; set; }
 
         public string Name { get; set; }

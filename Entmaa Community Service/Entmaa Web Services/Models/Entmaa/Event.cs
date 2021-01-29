@@ -7,6 +7,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Event
     {
+        public Event()
+        {
+            Tags = new HashSet<Tag>();
+            Volunteers = new HashSet<Volunteer>();
+        }
+
         public int PostID { get; set; }
 
         public string Name { get; set; }

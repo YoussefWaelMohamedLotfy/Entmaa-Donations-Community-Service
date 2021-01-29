@@ -7,6 +7,16 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Tag
     {
+        public Tag()
+        {
+            AuctionTags = new HashSet<Auction>();
+            PostTags = new HashSet<Post>();
+            EventTags = new HashSet<Event>();
+            UserTags = new HashSet<User>();
+            ReportedItemTags = new HashSet<ReportedItem>();
+            DonatedItemTags = new HashSet<DonatedItem>();
+        }
+
         public int ID { get; set; }
 
         public string Name { get; set; }

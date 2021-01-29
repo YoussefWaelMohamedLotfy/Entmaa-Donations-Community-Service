@@ -7,6 +7,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Badge
     {
+        public Badge()
+        {
+            Contributors = new HashSet<Contributor>();
+        }
+
         public int ID { get; set; }
 
         public string Name { get; set; }

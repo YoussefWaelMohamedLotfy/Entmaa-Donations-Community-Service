@@ -7,6 +7,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class ReportedItem
     {
+        public ReportedItem()
+        {
+            ReportedItemPhotos = new HashSet<ReportedItemPhoto>();
+            Tags = new HashSet<Tag>();
+        }
+
         public int ID { get; set; }
 
         public string Name { get; set; }

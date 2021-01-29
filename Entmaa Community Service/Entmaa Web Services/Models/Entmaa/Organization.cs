@@ -7,6 +7,19 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Organization : User
     {
+        public Organization()
+        {
+            ContributorsFollowed = new HashSet<Contributor>();
+            Posts = new HashSet<Post>();
+            AuctionsCreated = new HashSet<Auction>();
+            OrganizationAlbumPhotos = new HashSet<OrganizationAlbumPhoto>();
+            DonatedItems = new HashSet<DonatedItem>();
+            CollectedItemDonations = new HashSet<DonatedItem>();
+            Subscriptions = new HashSet<Subscription>();
+            ReportedCases = new HashSet<ReportedCase>();
+            MoneyDonationsReceived = new HashSet<MoneyDonation>();
+        }
+
         public float Rating { get; set; }
         
         public bool IsApproved { get; set; }

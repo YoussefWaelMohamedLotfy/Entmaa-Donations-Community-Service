@@ -40,6 +40,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
     public class UserType
     {
+        public UserType()
+        {
+            Users = new HashSet<User>();
+        }
+
         public byte ID { get; set; }
 
         public string Name { get; set; }

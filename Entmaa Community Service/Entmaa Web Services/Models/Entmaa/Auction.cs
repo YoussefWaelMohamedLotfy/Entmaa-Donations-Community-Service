@@ -7,6 +7,13 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class Auction
     {
+        public Auction()
+        {
+            Tags = new HashSet<Tag>();
+            Bidders = new HashSet<AuctionBidder>();
+            AuctionItemPhotos = new HashSet<AuctionItemPhoto>();
+        }
+
         public int ID { get; set; }
 
         public int HostedBy { get; set; }

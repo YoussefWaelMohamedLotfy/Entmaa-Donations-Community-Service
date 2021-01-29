@@ -7,6 +7,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 {
     public class DonationRequest
     {
+        public DonationRequest()
+        {
+            MoneyDonationsOnRequest = new HashSet<MoneyDonationOnRequest>();
+            Items = new HashSet<DonatedItem>();
+        }
+
         public int PostID { get; set; }
         
         public string Title { get; set; }
