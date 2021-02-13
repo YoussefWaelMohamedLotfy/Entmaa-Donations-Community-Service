@@ -12,6 +12,7 @@ namespace Entmaa_Web_Services
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootbox.js",
                         "~/Scripts/toastr.js",
+                        "~/Scripts/themechanger.js",
                         "~/Scripts/DataTables/jquery.datatables.js",
                         "~/Scripts/DataTables/datatables.bootstrap4.js",
                         "~/Scripts/bootstrap.js"));
@@ -25,8 +26,8 @@ namespace Entmaa_Web_Services
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-flatly.css",
-                      "~/Content/bootstrap-darkly.css",
+                      //"~/Content/bootstrap-flatly.css",
+                      //"~/Content/bootstrap-darkly.css",
                       "~/Content/DataTables/css/datatables.bootstrap4.css",
                       "~/Content/toastr.css",
                       "~/Content/site.css"));

@@ -1,6 +1,4 @@
-﻿
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     @Html.ActionLink("Entmaa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
     <div class="collapse navbar-collapse" id="navbarColor01">
@@ -12,10 +10,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                @Html.ActionLink("Store", "Index", "Users", null, new { @class = "nav-link" })
+                @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
             </li>
-            <li class="nav-item">
-                @Html.ActionLink("Cart", "ShowCart", "Users", null, new { @class = "nav-link" })
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Themes</a>
+                <div class="dropdown-menu">
+                    <button class="change-style-menu-item dropdown-item" rel="flatly">Flatly</button>
+                    <div class="dropdown-divider"></div>
+                    <button class="change-style-menu-item dropdown-item" rel="darkly">Darkly</button>
+                </div>
             </li>
         </ul>
         @Html.Partial("_LoginPartial")

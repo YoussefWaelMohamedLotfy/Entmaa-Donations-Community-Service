@@ -1,24 +1,28 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Entmaa Community Service</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//netdna.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css" rel="stylesheet" title="main">
+        <title>@ViewBag.Title - Entmaa Community Service</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
 
-</head>
-<body style="padding-top:unset; padding-bottom:unset" class="hold-transition skin-blue sidebar-mini">
-    @Html.Partial("_NavBar")
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Entmaa Community Service</p>
-        </footer>
-    </div>
+    </head>
+    <body style="padding-top:unset;" class="hold-transition skin-blue sidebar-mini">
+        @Html.Partial("_NavBar")
+        <div class="container body-content">
+            <div style="margin-top: 75px">
+                @*@Html.MvcSiteMap().SiteMapPath()*@
+            </div>
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Entmaa Community Service</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/lib")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/lib")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
