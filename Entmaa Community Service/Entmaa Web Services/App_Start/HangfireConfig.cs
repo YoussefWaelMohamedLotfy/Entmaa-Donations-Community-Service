@@ -14,7 +14,7 @@ namespace Entmaa_Web_Services.App_Start
 
             #if DEBUG
             app.UseHangfireDashboard();
-            BackgroundJob.Enqueue(() => Debug.WriteLine("Hello from Hangfire!"));
+            //BackgroundJob.Enqueue(() => Debug.WriteLine("Hello from Hangfire!"));
             #endif
         }
 
