@@ -1,4 +1,4 @@
-package com.gp.entmaa
+package com.team.entmaa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
