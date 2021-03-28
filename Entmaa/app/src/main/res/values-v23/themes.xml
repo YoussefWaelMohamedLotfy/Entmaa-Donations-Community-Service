@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="Platform.v23.Theme.Entmaa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="Platform.Theme.Entmaa" parent="Platform.v23.Theme.Entmaa">
+
+    </style>
+
+</resources>

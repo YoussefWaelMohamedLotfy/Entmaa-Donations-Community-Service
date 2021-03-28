@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Dark Theme -->
+    <!-- Light Theme -->
 
     <style name="Theme.Entmaa" parent="Base.Theme.Entmaa">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/teal_400</item>
         <item name="colorPrimaryVariant">@color/teal_500</item>
@@ -11,9 +13,10 @@
         <item name="colorSecondary">@color/orange_400</item>
         <item name="colorSecondaryVariant">@color/orange_500</item>
         <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
-        <item name="android:windowLightStatusBar">false</item>
-        <!-- Customize your theme here. -->
 
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
     </style>
+
 </resources>

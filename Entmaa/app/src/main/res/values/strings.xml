@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Entmaa</string>
+    <string name="app_name">entmaa</string>
+    <string name="main_donate">Donate</string>
+    <string name="main_volunteer">Volunteer</string>
+    <string name="main_news">News</string>
+    <string name="main_lost_and_found"><![CDATA[Lost & Found]]></string>
+    <string name="main_more">More</string>
+    <string name="slash">/</string>
+    <string name="donation_request_item_collected">collected</string>
+    <string name="donation_request_item_donate_btn">@string/main_donate</string>
+
 </resources>
