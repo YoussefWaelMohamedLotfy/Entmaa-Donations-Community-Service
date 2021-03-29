@@ -13,7 +13,7 @@
 
     <!-- Linear Progress Indicator -->
     <dimen name="progress_corner_radius">4dp</dimen>
-    <dimen name="progress_track_Thickness">8dp</dimen>
+    <dimen name="progress_track_Thickness">6dp</dimen>
 
 
     <!-- Material Card -->
