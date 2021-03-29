@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whiteGray">#D8D8D8	</color>
 
     <!-- Teal palette -->
     <color name="teal_300">#9affff</color>
