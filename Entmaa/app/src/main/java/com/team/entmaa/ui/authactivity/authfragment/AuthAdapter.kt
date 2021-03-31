@@ -1,4 +1,4 @@
-package com.team.entmaa.ui.mainactivity.authfragment
+package com.team.entmaa.ui.authactivity.authfragment
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

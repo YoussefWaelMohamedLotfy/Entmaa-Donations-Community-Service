@@ -1,4 +1,4 @@
-package com.team.entmaa.ui.mainactivity.authfragment
+package com.team.entmaa.ui.authactivity.authfragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +16,7 @@ class LoginFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
 
-        val rootView = inflater.inflate(R.layout.login, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_login, container, false)
 
         //Currently will redirect to the mainPage
         val loginBut: Button = rootView.findViewById(R.id.login_button)

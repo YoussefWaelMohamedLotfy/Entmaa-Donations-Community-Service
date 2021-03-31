@@ -19,6 +19,10 @@
     <!-- Material Card -->
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="card_sheet_radius">32dp</dimen>
+
+    <!-- EditText -->
+    <dimen name="edit_text_radius">32dp</dimen>
 
 
     <!-- Buttons -->
