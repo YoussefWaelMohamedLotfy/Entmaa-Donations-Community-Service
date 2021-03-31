@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <style name="Entmaa.Button.TextButton.Caption" parent="Widget.MaterialComponents.Button.TextButton" >
 
         <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Caption</item>
@@ -33,15 +32,12 @@
         <item name="android:paddingRight">0dp</item>
         <item name="android:minWidth">0dp</item>
         <item name="android:minHeight">0dp</item>
-
     </style>
-
 
     <style name="Entmaa.Button" parent="Widget.MaterialComponents.Button" >
         <item name="textAllCaps">false</item>
         <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.Button</item>
     </style>
-
 
 
 </resources>
