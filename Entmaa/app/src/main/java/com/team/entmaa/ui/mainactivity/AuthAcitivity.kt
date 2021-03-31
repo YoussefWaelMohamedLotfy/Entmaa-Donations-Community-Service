@@ -18,7 +18,7 @@ class AuthAcitivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.acitivity_auth)
+        setContentView(R.layout.auth_acitivity)
 
 
         //  Auth UI includes the tabs SignUp & Login
