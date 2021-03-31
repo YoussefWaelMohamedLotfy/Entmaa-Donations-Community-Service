@@ -1,4 +1,4 @@
-package com.team.entmaa.ui.mainactivity.authfragment
+package com.team.entmaa.ui.mainactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.team.entmaa.R
+import com.team.entmaa.ui.mainactivity.authfragment.AuthAdapter
 
 class AuthAcitivity : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class AuthAcitivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.auth_acitivity)
+        setContentView(R.layout.acitivity_auth)
 
 
         //  Auth UI includes the tabs SignUp & Login
