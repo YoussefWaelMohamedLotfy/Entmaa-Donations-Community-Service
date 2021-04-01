@@ -24,10 +24,10 @@
     <dimen name="card_sheet_radius">32dp</dimen>
 
     <!-- EditText -->
-    <dimen name="edit_text_radius">32dp</dimen>
+    <dimen name="edit_text_radius">18dp</dimen>
 
 
     <!-- Buttons -->
-    <dimen name="button_corner_radius">8dp</dimen>
+    <dimen name="button_corner_radius">16dp</dimen>
 
 </resources>

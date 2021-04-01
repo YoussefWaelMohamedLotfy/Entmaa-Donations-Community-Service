@@ -10,7 +10,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class DonationRequestViewModel @Inject constructor(@FakeRepository private val repository:IRepository)
+class DonationRequestViewModel @Inject
+    constructor(@FakeRepository private val repository:IRepository)
     : ViewModel() {
 
     private val mRequestsList = MutableLiveData<List<DonationRequest>>()
