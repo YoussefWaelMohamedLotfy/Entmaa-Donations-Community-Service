@@ -6,8 +6,22 @@
     </style>
 
     <style name="Entmaa.ShapeAppearance.Button" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">@dimen/button_corner_radius</item>
+        <item name="cornerSize">50dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
+
+
+    <style name="Entmaa.ShapeAppearance.CardSheet" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSizeTopLeft">@dimen/card_sheet_radius</item>
+        <item name="cornerSizeTopRight">@dimen/card_sheet_radius</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+
+    <style name="Entmaa.ShapeAppearance.EditText" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/edit_text_radius</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 
 </resources>
