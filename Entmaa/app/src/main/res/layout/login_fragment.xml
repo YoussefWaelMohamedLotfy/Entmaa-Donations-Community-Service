@@ -19,6 +19,7 @@
             android:layout_marginStart="@dimen/margin_xlarge"
             android:layout_marginEnd="@dimen/margin_xlarge"
             android:layout_marginBottom="@dimen/margin_xlarge"
+            app:shapeAppearance="@style/Entmaa.ShapeAppearance.EditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -34,14 +35,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:layout_marginTop="@dimen/margin_xlarge"
             android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_xlarge"
-            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:hint="Password"
+            app:shapeAppearance="@style/Entmaa.ShapeAppearance.EditText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailId">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -50,11 +51,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="forget password"
-            android:layout_marginRight="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_xlarge"
+            android:text="forget password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailId" />
 
@@ -65,6 +67,7 @@
             android:layout_marginStart="@dimen/margin_xlarge"
             android:layout_marginEnd="@dimen/margin_xlarge"
             android:layout_marginBottom="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xlarge"
             android:padding="16dp"
             android:text="Login"
             android:textSize="16sp"

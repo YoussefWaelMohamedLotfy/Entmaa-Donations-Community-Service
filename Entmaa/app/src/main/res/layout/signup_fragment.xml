@@ -84,10 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintWidth_percent="0.6"
-        tools:layout_editor_absoluteX="82dp"
-        app:shapeAppearance="@style/Entmaa.ShapeAppearance.Button" />
+        app:layout_constraintTop_toBottomOf="@+id/password"/>
    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
