@@ -10,6 +10,8 @@
     <dimen name="margin_normal">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+
 
     <!-- Linear Progress Indicator -->
     <dimen name="progress_corner_radius">4dp</dimen>
@@ -19,6 +21,10 @@
     <!-- Material Card -->
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="card_sheet_radius">32dp</dimen>
+
+    <!-- EditText -->
+    <dimen name="edit_text_radius">32dp</dimen>
 
 
     <!-- Buttons -->
