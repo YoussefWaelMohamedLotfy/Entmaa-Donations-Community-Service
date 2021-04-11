@@ -482,8 +482,6 @@
     <Compile Include="Persistence\EntityConfigurations\UserPhoneNumberConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
-    <Compile Include="Persistence\Initializers\MainInitializerAlways.cs" />
-    <Compile Include="Persistence\Initializers\MainInitializerIfModelChanges.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -494,10 +492,6 @@
     <Compile Include="ViewModels\FirebaseSignupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-flatly.css" />
-    <Content Include="Content\bootstrap-flatly.min.css" />
-    <Content Include="Content\bootstrap-darkly.css" />
-    <Content Include="Content\bootstrap-darkly.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
