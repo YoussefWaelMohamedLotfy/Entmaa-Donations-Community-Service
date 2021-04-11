@@ -21,7 +21,7 @@ function set_theme(theme) {
 jQuery(function ($) {
     $('body').on('click', '.change-style-menu-item', function () {
         var theme_name = $(this).attr('rel');
-        var theme = "//netdna.bootstrapcdn.com/bootswatch/4.5.2/" + theme_name + "/bootstrap.min.css";
+        var theme = "/Content/bootstrap-" + theme_name + ".min.css";
         set_theme(theme);
     });
 });
