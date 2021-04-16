@@ -416,11 +416,19 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\APIs\ContributorController.cs" />
+    <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IContributorRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="DTOs\CityDTO.cs" />
+    <Compile Include="DTOs\CountryDTO.cs" />
+    <Compile Include="DTOs\GetContributorProfileDTO.cs" />
+    <Compile Include="DTOs\LocationDTO.cs" />
+    <Compile Include="DTOs\TagDTO.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -483,6 +491,7 @@
     <Compile Include="Persistence\EntityConfigurations\UserTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
+    <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -918,9 +927,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\APIs\" />
-    <Folder Include="DTOs\" />
     <Folder Include="Persistence\MapperProfiles\" />
+    <Folder Include="Views\Contributor\" />
     <Folder Include="Views\FirebaseAccount\" />
   </ItemGroup>
   <ItemGroup>
