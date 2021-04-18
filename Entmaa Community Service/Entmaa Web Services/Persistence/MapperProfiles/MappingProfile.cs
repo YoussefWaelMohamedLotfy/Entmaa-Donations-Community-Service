@@ -13,6 +13,10 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
         public MappingProfile()
         {
             CreateMap<Contributor, GetContributorProfileDTO>();
+            CreateMap<UserLocation, LocationDTO>();
+            CreateMap<City, CityDTO>();
+            CreateMap<Country, CountryDTO>();
+            CreateMap<Tag, TagDTO>();
         }
     }
 }

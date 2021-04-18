@@ -8,9 +8,12 @@ using AutoMapper;
 using Entmaa_Web_Services.Core;
 using Entmaa_Web_Services.DTOs;
 using Entmaa_Web_Services.Models.Entmaa;
+using Entmaa_Web_Services.Persistence;
+using Entmaa_Web_Services.Persistence.MapperProfiles;
 
 namespace Entmaa_Web_Services.Controllers.APIs
 {
+    [AllowAnonymous]
     public class ContributorController : ApiController
     {
         private readonly IUnitOfWork _unit;
@@ -22,7 +25,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
             _mapper = mapper;
         }
 
-        [Route("{id}/profile")]
+        [Route("api/Contributor/{id}/profile")]
         [HttpGet]
         public IHttpActionResult GetProfile(int id)
         {
@@ -33,7 +36,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
             var dto = _mapper.Map<GetContributorProfileDTO>(userProfile);
 
-            return Ok(userProfile);
+            return Json(dto);
         }
 
         [HttpPost]

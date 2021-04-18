@@ -11,6 +11,6 @@ namespace Entmaa_Web_Services.DTOs
 
         public string Address { get; set; }
         
-        public string MapsLocation { get; set; }
+        public string MapLocation { get; set; }
     }
 }

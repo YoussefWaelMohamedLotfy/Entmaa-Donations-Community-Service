@@ -20,7 +20,9 @@ namespace Entmaa_Web_Services.Persistence.Repositories
         public Contributor GetContributorProfile(int id)
         {
             return MainContext.Contributors
-                .Include(c => new { c.Tags, c.Locations })
+                .Include(c => c.PhoneNumbers)
+                .Include(c => c.Tags)
+                .Include(c => c.Locations)
                 .SingleOrDefault(c => c.ID == id);
         }
     }
