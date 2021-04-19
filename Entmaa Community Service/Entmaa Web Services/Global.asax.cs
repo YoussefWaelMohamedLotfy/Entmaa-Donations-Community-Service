@@ -21,10 +21,6 @@ namespace Entmaa_Web_Services
     {
         protected void Application_Start()
         {
-            //var config = new MapperConfiguration(cfg => {
-            //    cfg.AddProfile<MappingProfile>();
-            //});
-
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -36,7 +32,7 @@ namespace Entmaa_Web_Services
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>()
                 .WithParameter(new TypedParameter(typeof(MainContext), new MainContext()));
 
-            // Register your MVC controllers. (MvcApplication is the name of the class in Global.asax.)
+            // Register your MVC controllers. (MvcApplication is the name of the class in Global.asax)
             builder.RegisterControllers(typeof(MvcApplication).Assembly).InstancePerRequest();
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly).InstancePerRequest();
             
@@ -44,7 +40,7 @@ namespace Entmaa_Web_Services
             //builder.RegisterModule(new AutoMapperModule());
             builder.RegisterModule<AutoFacModule>();
 
-            // Set the dependency resolver to be Autofac.
+            // Set the dependency resolver to be Autofac for MVC and Web API Controllers.
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);

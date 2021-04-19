@@ -8,8 +8,6 @@ using AutoMapper;
 using Entmaa_Web_Services.Core;
 using Entmaa_Web_Services.DTOs;
 using Entmaa_Web_Services.Models.Entmaa;
-using Entmaa_Web_Services.Persistence;
-using Entmaa_Web_Services.Persistence.MapperProfiles;
 
 namespace Entmaa_Web_Services.Controllers.APIs
 {
