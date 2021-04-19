@@ -10,6 +10,7 @@ namespace Entmaa_Web_Services.Core
     public interface IUnitOfWork : IDisposable
     {
         IContributorRepository Contributors { get; }
+        IOrganizationRepository Organizations { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();

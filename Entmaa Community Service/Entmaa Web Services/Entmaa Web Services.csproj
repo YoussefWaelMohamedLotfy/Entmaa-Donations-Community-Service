@@ -431,15 +431,18 @@
     <Compile Include="Controllers\APIs\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
+    <Compile Include="Controllers\APIs\OrganizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\DIModules\AutoFacModule.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
+    <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />
     <Compile Include="DTOs\GetContributorProfileDTO.cs" />
+    <Compile Include="DTOs\GetOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\TagDTO.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -506,6 +509,7 @@
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\MapperProfiles\MappingProfile.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
+    <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

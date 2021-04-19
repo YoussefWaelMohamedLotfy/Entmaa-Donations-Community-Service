@@ -16,11 +16,14 @@ namespace Entmaa_Web_Services.Persistence
         // Repositories
         public IContributorRepository Contributors { get; private set; }
 
+        public IOrganizationRepository Organizations { get; private set; }
+
         public UnitOfWork(MainContext context)
         {
             _context = context;
 
             Contributors = new ContributorRepository(_context);
+            Organizations = new OrganizationRepository(_context);
         }
 
         public int CompleteWork()
