@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Entmaa_Web_Services.Core;
 using Entmaa_Web_Services.DTOs;
+using Entmaa_Web_Services.Models.Entmaa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,19 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
             return Json(dto);
         }
+        [Route("api/Organizations")]
+        [HttpGet]
+        public IHttpActionResult GetOrganizations()
+        {
+            var Organizations = _unit.Organizations.GetAllOrganizations();
+            if (Organizations == null)
+                return NotFound();
+
+            var dto = Organizations.Select(_mapper.Map < Organization, OrganizationInfoDTO>);
+            return Json(dto);
+        }
+
+
 
 
     }

@@ -24,6 +24,11 @@ namespace Entmaa_Web_Services.Persistence.Repositories
 
             
         }
+
+        public IEnumerable<Organization> GetAllOrganizations()
+        {
+            return MainContext.Organizations.ToList();
+        }
     }
 }
  

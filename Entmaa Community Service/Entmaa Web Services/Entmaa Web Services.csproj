@@ -444,6 +444,7 @@
     <Compile Include="DTOs\GetContributorProfileDTO.cs" />
     <Compile Include="DTOs\GetOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
+    <Compile Include="DTOs\OrganizationInfoDTO.cs" />
     <Compile Include="DTOs\TagDTO.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">

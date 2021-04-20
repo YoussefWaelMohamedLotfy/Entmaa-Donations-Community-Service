@@ -19,6 +19,7 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
             CreateMap<Tag, TagDTO>();
 
             CreateMap<Organization, GetOrganizationProfileDTO>();
+            CreateMap<Organization, OrganizationInfoDTO>();
             
 
         }
