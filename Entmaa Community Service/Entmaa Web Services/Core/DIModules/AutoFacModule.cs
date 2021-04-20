@@ -10,8 +10,9 @@ namespace Entmaa_Web_Services.Core.DIModules
         {
             builder.Register(context => new MapperConfiguration(cfg =>
             {
-                //Register Mapper Profile
+                //Register AutoMapper Profiles
                 cfg.AddProfile<MappingProfile>();
+                cfg.AddProfile<DatasetMappingProfile>();
             }
             )).AsSelf().SingleInstance();
 
@@ -22,8 +23,7 @@ namespace Entmaa_Web_Services.Core.DIModules
                     var config = context.Resolve<MapperConfiguration>();
                     return config.CreateMapper(context.Resolve);
                 })
-                .As<IMapper>()
-                .InstancePerLifetimeScope();
+                .As<IMapper>().InstancePerLifetimeScope();
         }
     }
 }
