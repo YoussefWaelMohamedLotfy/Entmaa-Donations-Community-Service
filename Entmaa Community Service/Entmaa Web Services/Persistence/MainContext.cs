@@ -31,6 +31,8 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<Badge> Badges { get; set; }
 
+        public DbSet<Review> Reviews { get; set; }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<UserLocation> UserLocations { get; set; }
@@ -88,6 +90,8 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new NotificationTypeConfiguration());
 
             modelBuilder.Configurations.Add(new BadgeConfiguration());
+
+            modelBuilder.Configurations.Add(new ReviewConfiguration());
             
             modelBuilder.Configurations.Add(new DonationRequestConfiguration());
             modelBuilder.Configurations.Add(new DonationTypeConfiguration());

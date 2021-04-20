@@ -453,6 +453,10 @@
     <Compile Include="Migrations\202012122202117_InitialMigration.designer.cs">
       <DependentUpon>202012122202117_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104201908430_AddReviewsTable.cs" />
+    <Compile Include="Migrations\202104201908430_AddReviewsTable.designer.cs">
+      <DependentUpon>202104201908430_AddReviewsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entmaa\Auction.cs" />
@@ -473,6 +477,7 @@
     <Compile Include="Models\Entmaa\PostComment.cs" />
     <Compile Include="Models\Entmaa\ReportedCase.cs" />
     <Compile Include="Models\Entmaa\ReportedItem.cs" />
+    <Compile Include="Models\Entmaa\Review.cs" />
     <Compile Include="Models\Entmaa\Subscription.cs" />
     <Compile Include="Models\Entmaa\Tag.cs" />
     <Compile Include="Models\Entmaa\User.cs" />
@@ -500,6 +505,7 @@
     <Compile Include="Persistence\EntityConfigurations\PostTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedCaseConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ReportedItemConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\ReviewConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\TagConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserLocationConfiguration.cs" />
@@ -961,6 +967,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012122202117_InitialMigration.resx">
       <DependentUpon>202012122202117_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104201908430_AddReviewsTable.resx">
+      <DependentUpon>202104201908430_AddReviewsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

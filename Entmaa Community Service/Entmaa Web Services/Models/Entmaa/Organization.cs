@@ -12,6 +12,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
             ContributorsFollowed = new HashSet<Contributor>();
             Posts = new HashSet<Post>();
             AuctionsCreated = new HashSet<Auction>();
+            ReviewsGiven = new HashSet<Review>();
             OrganizationAlbumPhotos = new HashSet<OrganizationAlbumPhoto>();
             DonatedItems = new HashSet<DonatedItem>();
             CollectedItemDonations = new HashSet<DonatedItem>();
@@ -33,6 +34,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<Post> Posts { get; set; }
         
         public ICollection<Auction> AuctionsCreated { get; set; }
+
+        public ICollection<Review> ReviewsGiven { get; set; }
 
         public ICollection<OrganizationAlbumPhoto> OrganizationAlbumPhotos { get; set; }
 

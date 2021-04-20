@@ -16,6 +16,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
             MoneyDonationsOnRequest = new HashSet<MoneyDonationOnRequest>();
             DonatedItems = new HashSet<DonatedItem>();
             Subscriptions = new HashSet<Subscription>();
+            ReviewsGiven = new HashSet<Review>();
             ReportedCases = new HashSet<ReportedCase>();
             MoneyDonationsMade = new HashSet<MoneyDonation>();
             ReportedItemsCreated = new HashSet<ReportedItem>();
@@ -39,6 +40,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<DonatedItem> DonatedItems { get; set; }
 
         public ICollection<Subscription> Subscriptions { get; set; }
+
+        public ICollection<Review> ReviewsGiven { get; set; }
 
         public ICollection<ReportedCase> ReportedCases { get; set; }
 
