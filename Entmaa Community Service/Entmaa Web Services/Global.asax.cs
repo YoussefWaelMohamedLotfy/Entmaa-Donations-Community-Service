@@ -30,7 +30,7 @@ namespace Entmaa_Web_Services
             var builder = new ContainerBuilder();
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>()
-                .WithParameter(new TypedParameter(typeof(MainContext), new MainContext()));
+                .WithParameter(new TypedParameter(typeof(MainContext), new MainContext())).SingleInstance();
 
             // Register your MVC controllers. (MvcApplication is the name of the class in Global.asax)
             builder.RegisterControllers(typeof(MvcApplication).Assembly).InstancePerRequest();

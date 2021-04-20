@@ -945,6 +945,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DTOs\Dataset\" />
     <Folder Include="Views\Contributor\" />
     <Folder Include="Views\FirebaseAccount\" />
   </ItemGroup>

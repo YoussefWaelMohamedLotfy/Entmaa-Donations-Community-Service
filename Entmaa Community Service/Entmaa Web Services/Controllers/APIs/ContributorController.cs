@@ -33,6 +33,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
                 return NotFound();
 
             var dto = _mapper.Map<GetContributorProfileDTO>(userProfile);
+            dto.PhoneNumber = userProfile.PhoneNumbers.FirstOrDefault().PhoneNumber;
 
             return Json(dto);
         }
