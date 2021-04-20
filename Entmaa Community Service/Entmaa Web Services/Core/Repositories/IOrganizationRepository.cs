@@ -10,5 +10,7 @@ namespace Entmaa_Web_Services.Core.Repositories
     public interface IOrganizationRepository: IRepository<Organization>
     {
         Organization GetOrganization(int id);
+        IEnumerable<Organization> GetAllOrganizations();
+
     }
 }
