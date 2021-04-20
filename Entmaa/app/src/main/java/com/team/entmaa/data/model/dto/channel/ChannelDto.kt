@@ -8,3 +8,7 @@ class ChannelDto {
     var profilePhotoUrl:Int? = null
     var userName:String? = null
 }
+
+/**
+ * createdBy change type to organization Dto
+ * */

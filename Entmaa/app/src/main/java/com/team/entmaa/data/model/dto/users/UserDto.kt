@@ -13,7 +13,7 @@ open class UserDto{
     var profilePhotoUrl:String? = null
     var coverPhotoUtl:String? = null
     var firebaseToken:String? = null
-    var phoneNumbers:List<String>? = null
+    var phoneNumbers:String? = null
     var location: LocationDto? = null
     var tags:List<TagDto>? = null
 }
