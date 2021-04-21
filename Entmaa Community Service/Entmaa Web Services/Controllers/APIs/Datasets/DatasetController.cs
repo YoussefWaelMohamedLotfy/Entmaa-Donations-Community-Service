@@ -54,5 +54,21 @@ namespace Entmaa_Web_Services.Controllers.APIs.Datasets
             organizationDTO.ID = organization.ID;
             return Created(new Uri(Request.RequestUri + "/" + organization.ID), organizationDTO);
         }
+
+        [Route("api/Dataset/Badge")]
+        [HttpPost]
+        public IHttpActionResult CreateBadge(BadgeDatasetDTO badgeDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
+
+            var badge = _mapper.Map<Badge>(badgeDTO);
+
+            _unit.Badges.Add(badge);
+            _unit.CompleteWork();
+
+            badgeDTO.ID = badge.ID;
+            return Created(new Uri(Request.RequestUri + "/" + badge.ID), badgeDTO);
+        }
     }
 }

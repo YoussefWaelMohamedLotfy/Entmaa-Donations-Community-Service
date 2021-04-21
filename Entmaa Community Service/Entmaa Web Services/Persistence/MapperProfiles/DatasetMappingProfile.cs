@@ -14,6 +14,7 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
         {
             CreateMap<ContributorDatasetDTO, Contributor>();
             CreateMap<OrganizationDatasetDTO, Organization>();
+            CreateMap<BadgeDatasetDTO, Badge>();
         }
     }
 }

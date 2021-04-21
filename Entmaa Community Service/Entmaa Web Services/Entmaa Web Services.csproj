@@ -437,11 +437,14 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\DIModules\AutoFacModule.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IBadgeRepository.cs" />
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />
+    <Compile Include="DTOs\CreateContributorProfileDTO.cs" />
+    <Compile Include="DTOs\Dataset\BadgeDatasetDTO.cs" />
     <Compile Include="DTOs\Dataset\ContributorDatasetDTO.cs" />
     <Compile Include="DTOs\Dataset\OrganizationDatasetDTO.cs" />
     <Compile Include="DTOs\GetContributorProfileDTO.cs" />
@@ -519,6 +522,7 @@
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\MappingProfile.cs" />
+    <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />

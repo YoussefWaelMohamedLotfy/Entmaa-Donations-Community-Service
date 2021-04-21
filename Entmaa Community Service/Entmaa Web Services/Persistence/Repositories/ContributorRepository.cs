@@ -25,5 +25,12 @@ namespace Entmaa_Web_Services.Persistence.Repositories
                 .Include(c => c.Locations)
                 .SingleOrDefault(c => c.ID == id);
         }
+
+        public Contributor GetContributorBadges(int id)
+        {
+            return MainContext.Contributors
+                .Include(c => c.BadgesOwned)
+                .SingleOrDefault(c => c.ID == id);
+        }
     }
 }
