@@ -18,6 +18,8 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
             CreateMap<Country, CountryDTO>();
 
             CreateMap<LocationDTO, UserLocation>();
+            CreateMap<CityDTO, City>();
+            CreateMap<CountryDTO, Country>();
             CreateMap<TagDTO, Tag>();
 
 

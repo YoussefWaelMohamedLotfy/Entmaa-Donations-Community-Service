@@ -12,6 +12,7 @@ namespace Entmaa_Web_Services.Core
         IContributorRepository Contributors { get; }
         IOrganizationRepository Organizations { get; }
         IBadgeRepository Badges { get; }
+        IPostRepository Posts { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();

@@ -70,5 +70,21 @@ namespace Entmaa_Web_Services.Controllers.APIs.Datasets
             badgeDTO.ID = badge.ID;
             return Created(new Uri(Request.RequestUri + "/" + badge.ID), badgeDTO);
         }
+
+        [Route("api/Dataset/Post")]
+        [HttpPost]
+        public IHttpActionResult CreatePost(PostDatasetDTO postDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
+
+            var post = _mapper.Map<Post>(postDTO);
+
+            _unit.Posts.Add(post);
+            _unit.CompleteWork();
+
+            postDTO.ID = post.ID;
+            return Created(new Uri(Request.RequestUri + "/" + post.ID), postDTO);
+        }
     }
 }
