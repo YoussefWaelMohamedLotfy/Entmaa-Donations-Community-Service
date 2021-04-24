@@ -38,14 +38,34 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
-        [HttpPost]
-        public IHttpActionResult CreateContributor([FromBody]Contributor contributor)
+        [Route("api/Contributor/{id}/badges")]
+        [HttpGet]
+        public IHttpActionResult GetBadges(int id)
         {
+            var userProfile = _unit.Contributors.GetContributorBadges(id);
 
+            if (userProfile == null)
+                return NotFound();
 
+            var dto = _mapper.Map<GetContributorProfileDTO>(userProfile);
+            dto.PhoneNumber = userProfile.PhoneNumbers.FirstOrDefault().PhoneNumber;
 
+            return Json(dto);
+        }
 
-            return Created(new Uri(Request.RequestUri + "/" + contributor.ID), contributor);
+        [Route("api/Contributor/{id}/profile")]
+        [HttpPost]
+        public IHttpActionResult CreateContributor(CreateContributorProfileDTO contributorDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var contributor = _mapper.Map<Contributor>(contributorDTO);
+
+            _unit.Contributors.Add(contributor);
+            _unit.CompleteWork();
+
+            return Json(new { message = "Success"});
         }
     }
 }

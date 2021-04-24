@@ -7,9 +7,8 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Core.Repositories
 {
-    public interface IContributorRepository : IRepository<Contributor>
+    public interface IPostRepository : IRepository<Post>
     {
-        Contributor GetContributorProfile(int id);
-        Contributor GetContributorBadges(int id);
+
     }
 }
