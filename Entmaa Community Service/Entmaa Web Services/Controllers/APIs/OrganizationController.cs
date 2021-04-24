@@ -48,7 +48,19 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
+        [Route("api/Organization/patch/{id}/profile")]
+        [HttpPatch]
+        public IHttpActionResult OrganizationProfileEdit(int id,GetOrganizationProfileDTO organization)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
 
+            var OrganizationInDB = _unit.Organizations.ModifyOrganization(id);
+            var ModifiedOrganization = _mapper.Map(organization,OrganizationInDB);
+            return Json(ModifiedOrganization);
+
+
+        }
 
 
     }

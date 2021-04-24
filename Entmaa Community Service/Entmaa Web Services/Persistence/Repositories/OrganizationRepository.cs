@@ -29,6 +29,14 @@ namespace Entmaa_Web_Services.Persistence.Repositories
         {
             return MainContext.Organizations.ToList();
         }
+
+        public Organization ModifyOrganization(int id)
+        {
+            var OrganizationInDB = MainContext.Organizations
+                .Include(c => c.Tags)
+                .SingleOrDefault(O => O.ID == id);
+            return OrganizationInDB;
+        }
     }
 }
  
