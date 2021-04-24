@@ -17,6 +17,22 @@ namespace Entmaa_Web_Services.Persistence.Repositories
                 
         }
 
+        public Contributor GetContributorProfileCreation(int id)
+        {
+            return MainContext.Contributors
+                .Include(c => c.PhoneNumbers)
+                .Include(c => c.Tags)
+                .Include(c => c.Locations)
+                .Include(c => c.BadgesOwned)
+                .SingleOrDefault(c => c.ID == id);
+        }
+
+        public Contributor Login(string email, string password)
+        {
+            return MainContext.Contributors
+                .SingleOrDefault(c => c.Email == email && c.Password == password);
+        }
+
         public Contributor GetContributorProfile(int id)
         {
             return MainContext.Contributors

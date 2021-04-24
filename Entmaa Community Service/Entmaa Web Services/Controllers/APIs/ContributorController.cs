@@ -53,19 +53,84 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
-        [Route("api/Contributor/{id}/profile")]
+        [Route("api/Contributors")]
         [HttpPost]
-        public IHttpActionResult CreateContributor(CreateContributorProfileDTO contributorDTO)
+        public IHttpActionResult Signup(ContributorSignupRequestDTO request)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Failed. Model not valid.");
 
-            var contributor = _mapper.Map<Contributor>(contributorDTO);
+            var newContributor = _mapper.Map<Contributor>(request);
+            newContributor.Gender = "";
+            newContributor.FirebaseToken = "";
+            newContributor.DateJoined = DateTime.Now;
+            newContributor.BirthDate = new DateTime(2007, 2, 13);
 
-            _unit.Contributors.Add(contributor);
+            _unit.Contributors.Add(newContributor);
+            _unit.CompleteWork();
+
+            var responseDTO = _mapper.Map<ContributorSignupResponseDTO>(newContributor);
+            return Json(responseDTO);
+        }
+
+        [Route("api/Contributors/sessions")]
+        [HttpPost]
+        public IHttpActionResult Login(ContributorLoginRequestDTO request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var contributor = _unit.Contributors.Login(request.Email, request.Password);
+
+            if (contributor == null)
+                return Unauthorized();
+
+            var response = _mapper.Map<ContributorLoginResponseDTO>(contributor);
+            return Ok(response);
+
+        }
+
+        [Route("api/Contributor/{id}/profile")]
+        [HttpPost]
+        public IHttpActionResult CreateContributor(int id, CreateContributorProfileDTO contributorDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var contributor = _unit.Contributors.GetContributorProfileCreation(id);
+
+            if (contributor == null)
+                return NotFound();
+
+            var tagsinDb = _unit.Tags.GetTags((List<TagDTO>)contributorDTO.Tags);
+            
+            foreach (var tag in tagsinDb)
+            {
+                ((HashSet<Tag>)contributor.Tags).Add(tag);
+            }
+
+            _mapper.Map(contributorDTO, contributor);
             _unit.CompleteWork();
 
             return Json(new { message = "Success"});
+        }
+
+        [Route("api/Contributor/{id}/profile")]
+        [HttpPatch]
+        public IHttpActionResult EditContributor(int id, CreateContributorProfileDTO contributorDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var contributor = _unit.Contributors.Get(id);
+
+            if (contributor == null)
+                return NotFound();
+
+            _mapper.Map(contributorDTO, contributor);
+            _unit.CompleteWork();
+
+            return Json(new { message = "Success" });
         }
     }
 }
