@@ -12,5 +12,7 @@ namespace Entmaa_Web_Services.Core.Repositories
         Organization GetOrganization(int id);
         IEnumerable<Organization> GetAllOrganizations();
 
+        Organization ModifyOrganization(int id);
+
     }
 }
