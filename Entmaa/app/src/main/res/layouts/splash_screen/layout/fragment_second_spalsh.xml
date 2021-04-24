@@ -21,7 +21,6 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        app:lottie_rawRes="@raw/swipeleft"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         android:layout_width="wrap_content"

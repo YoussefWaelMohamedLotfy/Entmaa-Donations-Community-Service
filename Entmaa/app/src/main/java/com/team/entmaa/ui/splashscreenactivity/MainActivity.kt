@@ -17,10 +17,7 @@ import com.team.entmaa.ui.splashscreenactivity.splashfragment.*
 
 class MainActivity : AppCompatActivity() {
 
-    /*lateinit var imgbg: ImageView
-    lateinit var imglogo: ImageView
-    lateinit var imgname: ImageView
-    lateinit var lottie: LottieAnimationView*/
+
     private val NUM_PAGES: Int = 3
     private lateinit var viewPager:ViewPager
     private lateinit var pagerAdapter:ScreensSlideAdapter
@@ -33,21 +30,9 @@ class MainActivity : AppCompatActivity() {
         actionBar?.hide()
 
 
-        /*imgbg = findViewById(R.id.imgbg);
-        imglogo = findViewById(R.id.imglogo);
-        imgname = findViewById(R.id.imgname);
-        lottie = findViewById(R.id.lottie);*/
         viewPager =  findViewById(R.id.pager)
         pagerAdapter  = ScreensSlideAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
-
-
-        /*imgbg.animate().translationY(-2500F).setDuration(1500).startDelay = 4000
-        imglogo.animate().translationY(2000F).setDuration(1500).startDelay = 4000
-        imgname.animate().translationY(2000F).setDuration(1500).startDelay = 4000
-        lottie.animate().translationY(2000F).setDuration(1500).startDelay = 4000*/
-
-
 
     }
 
