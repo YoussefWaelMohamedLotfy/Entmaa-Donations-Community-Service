@@ -19,6 +19,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/splash_screen',
+                    'src/main/res/layout',
+                    'src/main/res'
+            ]
+        }
+    }
 
     buildTypes {
         release {
@@ -69,6 +78,9 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
     //  ViewPager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //consume library
+    implementation 'com.cuberto:liquid-swipe:1.0.0'
 
 
 
