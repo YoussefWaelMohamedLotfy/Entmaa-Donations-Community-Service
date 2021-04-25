@@ -23,7 +23,7 @@ class AuthAcitivity : AppCompatActivity() {
 
         //  Auth UI includes the tabs SignUp & Login
 
-        tabLayout = findViewById(R.id.tapLayout);
+        /*tabLayout = findViewById(R.id.tapLayout);
         viewPager = findViewById(R.id.viewpager);
         floatBut  = findViewById(R.id.googleActionButton);
 
