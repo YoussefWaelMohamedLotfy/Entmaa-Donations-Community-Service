@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.team.entmaa.R
-import com.team.entmaa.ui.authactivity.AuthAcitivity
-import com.team.entmaa.ui.mainactivity.MainActivity
+import com.team.entmaa.ui.authactivity.MainAuthActivity
 
 class ThirdSpalshFragment : Fragment() {
 
@@ -24,7 +23,7 @@ class ThirdSpalshFragment : Fragment() {
        // buttonNext add onClick Listener
        val loginBut: Button = root.findViewById(R.id.butNext)
         loginBut.setOnClickListener {
-            val intent: Intent = Intent(activity, AuthAcitivity::class.java)
+            val intent: Intent = Intent(activity, MainAuthActivity::class.java)
             startActivity(intent)
         }
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.authactivity.AuthAcitivity">
+    tools:context=".ui.authactivity.MainAuthActivity">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -75,7 +76,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
+ 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
