@@ -42,14 +42,12 @@ namespace Entmaa_Web_Services.Controllers.APIs
         [HttpGet]
         public IHttpActionResult GetBadges(int id)
         {
-            var userProfile = _unit.Contributors.GetContributorBadges(id);
+            var userBadges = _unit.Contributors.GetContributorBadges(id).BadgesOwned;
 
-            if (userProfile == null)
+            if (userBadges == null)
                 return NotFound();
 
-            var dto = _mapper.Map<GetContributorProfileDTO>(userProfile);
-            dto.PhoneNumber = userProfile.PhoneNumbers.FirstOrDefault().PhoneNumber;
-
+            var dto = userBadges.Select(_mapper.Map<Badge, ContributorBadgesDTO>);
             return Json(dto);
         }
 
@@ -122,10 +120,17 @@ namespace Entmaa_Web_Services.Controllers.APIs
             if (!ModelState.IsValid)
                 return BadRequest("Failed. Model not valid.");
 
-            var contributor = _unit.Contributors.Get(id);
+            var contributor = _unit.Contributors.GetContributorProfileCreation(id);
 
             if (contributor == null)
                 return NotFound();
+
+            var tagsinDb = _unit.Tags.GetTags((List<TagDTO>)contributorDTO.Tags);
+
+            foreach (var tag in tagsinDb)
+            {
+                ((HashSet<Tag>)contributor.Tags).Add(tag);
+            }
 
             _mapper.Map(contributorDTO, contributor);
             _unit.CompleteWork();

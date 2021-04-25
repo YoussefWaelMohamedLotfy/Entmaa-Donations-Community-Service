@@ -11,7 +11,7 @@ namespace Entmaa_Web_Services.Core.DIModules
             builder.Register(context => new MapperConfiguration(cfg =>
             {
                 //Register AutoMapper Profiles
-                cfg.AddProfile<MappingProfile>();
+                cfg.AddProfile<UserMappingProfile>();
                 cfg.AddProfile<DatasetMappingProfile>();
             }
             )).AsSelf().SingleInstance();

@@ -8,11 +8,12 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.MapperProfiles
 {
-    public class MappingProfile : Profile
+    public class UserMappingProfile : Profile
     {
-        public MappingProfile()
+        public UserMappingProfile()
         {
             CreateMap<Contributor, GetContributorProfileDTO>();
+            CreateMap<Badge, ContributorBadgesDTO>();
             CreateMap<UserLocation, LocationDTO>();
             CreateMap<City, CityDTO>();
             CreateMap<Country, CountryDTO>();

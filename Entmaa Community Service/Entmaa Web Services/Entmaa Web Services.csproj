@@ -444,6 +444,7 @@
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
+    <Compile Include="DTOs\ContributorBadgesDTO.cs" />
     <Compile Include="DTOs\ContributorLoginRequestDTO.cs" />
     <Compile Include="DTOs\ContributorSignupRequestDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />
@@ -526,7 +527,7 @@
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
-    <Compile Include="Persistence\MapperProfiles\MappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
     <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
