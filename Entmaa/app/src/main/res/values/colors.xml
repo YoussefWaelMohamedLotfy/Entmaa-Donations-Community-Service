@@ -17,14 +17,11 @@
     <color name="orange_500">#ba3721</color>
 
 
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="pink">#FF1493	</color>
-    <color name="deeppink">#FF69B4	</color>
-    <color name="babyBlue">#5300EB</color>
+   <!---Splash Screen Colors-->
+    <color name="green_300">#74c69d</color>
+    <color name="green_400">#52b788</color>
+    <color name="green_500">#40916c</color>
+
 
 
 </resources>
