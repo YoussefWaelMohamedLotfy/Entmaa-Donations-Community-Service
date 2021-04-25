@@ -46,25 +46,12 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/ic_scroll3"
+        android:src="@drawable/ic_scrol_3"
         android:layout_margin="@dimen/margin_xlarge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
     />
 
-    <Button
-        android:id="@+id/butNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_xlarge"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="Next"
-        android:elevation="5dp"
-        android:textSize="18sp"
-        android:textColor="@color/green_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

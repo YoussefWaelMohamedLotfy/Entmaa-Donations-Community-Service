@@ -20,11 +20,11 @@ class FirstSpalshFragment : Fragment() {
         val root =  inflater.inflate(R.layout.fragment_first_spalsh, container, false)
 
         // buttonSkip add onClick Listener
-        val loginBut: Button = root.findViewById(R.id.butSkip)
+        /*val loginBut: Button = root.findViewById(R.id.butSkip)
         loginBut.setOnClickListener {
             val intent: Intent = Intent(activity, MainAuthActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         return root
     }

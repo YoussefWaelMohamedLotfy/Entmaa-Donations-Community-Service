@@ -20,7 +20,7 @@
             android:label="@string/title_activity_main_auth">
         </activity>
 
-        <activity android:name=".ui.splashscreenactivity.MainActivity">
+        <activity android:name=".ui.splashscreenactivity.MainSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

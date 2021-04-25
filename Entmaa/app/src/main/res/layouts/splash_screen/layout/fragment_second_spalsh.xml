@@ -7,20 +7,7 @@
     tools:context=".ui.splashscreenactivity.splashfragment.SecondSpalshFragment"
     android:background="@color/green_400">
 
-    <Button
-        android:id="@+id/butSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_normal"
-        android:layout_marginRight="@dimen/margin_large"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="Skip"
-        android:textSize="18sp"
-        android:elevation="5dp"
-        android:textColor="@color/green_500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,7 +48,7 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@drawable/ic_scroll2"
+        android:src="@drawable/ic_scrol_2"
         android:layout_margin="@dimen/margin_xlarge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -21,11 +21,11 @@ class ThirdSpalshFragment : Fragment() {
        val root =  inflater.inflate(R.layout.fragment_third_spalsh, container, false)
 
        // buttonNext add onClick Listener
-       val loginBut: Button = root.findViewById(R.id.butNext)
+       /*val loginBut: Button = root.findViewById(R.id.butNext)
         loginBut.setOnClickListener {
             val intent: Intent = Intent(activity, MainAuthActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         return root
     }

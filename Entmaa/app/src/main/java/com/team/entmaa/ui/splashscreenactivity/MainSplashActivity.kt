@@ -3,21 +3,15 @@ package com.team.entmaa.ui.splashscreenactivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
 import com.cuberto.liquid_swipe.LiquidPager
 import com.team.entmaa.R
 import com.team.entmaa.ui.splashscreenactivity.splashfragment.*
-import com.team.entmaa.util.swipeBack
 
-class MainActivity : AppCompatActivity() {
+class MainSplashActivity : AppCompatActivity() {
 
 
     private val NUM_PAGES: Int = 3
@@ -26,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_main_splash)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
@@ -58,7 +52,7 @@ class MainActivity : AppCompatActivity() {
          * Return the number of views available.
          */
         override fun getCount(): Int {
-            return 3
+            return 5
         }
 
         /**
@@ -68,8 +62,10 @@ class MainActivity : AppCompatActivity() {
             when (position) {
                 0 -> return FirstSpalshFragment()
                 1 -> return SecondSpalshFragment()
+                2-> return ThirdSpalshFragment()
+                3-> return JoinAsOrgFragment()
             }
-            return ThirdSpalshFragment()
+            return JoinAsUserFragment()
         }
     }
 
