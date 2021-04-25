@@ -1,4 +1,4 @@
-package com.team.entmaa.data.model.dto.action
+package com.team.entmaa.data.model.dto.auction
 
 class BidDto {
     var auctionId:Int? = null

@@ -80,13 +80,11 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     //consume library
-    implementation 'com.cuberto:liquid-swipe:1.0.0'
+    implementation "com.cuberto:liquid-swipe:1.0.0"
 
     // Lottie
     def lottieVersion = "3.7.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
-
-
 
 
 }

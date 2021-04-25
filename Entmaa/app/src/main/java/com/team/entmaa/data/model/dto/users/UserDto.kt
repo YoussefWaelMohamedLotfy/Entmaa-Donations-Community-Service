@@ -11,9 +11,16 @@ open class UserDto{
     var username:String? = null
     var description:String? = null
     var profilePhotoUrl:String? = null
-    var coverPhotoUtl:String? = null
+    var coverPhotoUrl:String? = null
     var firebaseToken:String? = null
     var phoneNumbers:String? = null
     var location: LocationDto? = null
     var tags:List<TagDto>? = null
+}
+
+fun test()
+{
+    UserDto().apply {
+        description = "New description"
+    }
 }

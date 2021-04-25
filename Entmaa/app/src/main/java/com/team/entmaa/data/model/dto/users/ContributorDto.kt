@@ -10,5 +10,7 @@ class ContributorDto : UserDto()
 {
     var birthDate:LocalDate? = null
     var gender: Gender? = null
+    var followingcount:Int? = null
+    var badgesCount:Int? = null
 }
 

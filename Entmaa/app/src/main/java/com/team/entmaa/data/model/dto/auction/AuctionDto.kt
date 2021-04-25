@@ -1,4 +1,4 @@
-package com.team.entmaa.data.model.dto.action
+package com.team.entmaa.data.model.dto.auction
 
 import com.team.entmaa.data.model.dto.tags.TagDto
 import java.time.ZonedDateTime

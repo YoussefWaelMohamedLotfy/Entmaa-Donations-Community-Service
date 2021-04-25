@@ -12,14 +12,16 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.cuberto.liquid_swipe.LiquidPager
 import com.team.entmaa.R
 import com.team.entmaa.ui.splashscreenactivity.splashfragment.*
+import com.team.entmaa.util.swipeBack
 
 class MainActivity : AppCompatActivity() {
 
 
     private val NUM_PAGES: Int = 3
-    private lateinit var viewPager:ViewPager
+    private lateinit var viewPager:LiquidPager
     private lateinit var pagerAdapter:ScreensSlideAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,10 +32,23 @@ class MainActivity : AppCompatActivity() {
         actionBar?.hide()
 
 
-        viewPager =  findViewById(R.id.pager)
+        viewPager = findViewById(R.id.pager)
+
         pagerAdapter  = ScreensSlideAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
 
+    }
+
+
+    override fun onBackPressed() {
+
+        if (viewPager.currentItem > 0)
+        {
+            viewPager.switchPage(-1)
+            return
+        }
+
+        super.onBackPressed()
     }
 
     private class ScreensSlideAdapter(@NonNull manager: FragmentManager) :
