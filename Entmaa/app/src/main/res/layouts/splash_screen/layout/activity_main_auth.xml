@@ -4,32 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.authactivity.AuthAcitivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:alpha="1"
-        android:background="@color/black"
-        android:scaleType="centerCrop"
-        android:src="@drawable/sharing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.authactivity.MainAuthActivity">
 
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="-48dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
         app:shapeAppearance="@style/Entmaa.ShapeAppearance.CardSheet">
 
 
@@ -43,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="@dimen/margin_large"
-                app:layout_constraintBottom_toTopOf="@id/googleActionButton"
+                app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,25 +43,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
 
-                android:id="@+id/googleActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="35dp"
-                app:backgroundTint="?attr/colorSurface"
-                android:layout_marginBottom="@dimen/margin_large"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:maxImageSize="40dp"
-                app:srcCompat="@drawable/ic_googleicon"
-                app:tint="@null" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
+ 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
