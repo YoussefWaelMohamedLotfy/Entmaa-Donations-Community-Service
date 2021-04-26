@@ -62,7 +62,22 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
 
         }
+        [Route("api/Organizations/sessions")]
+        [HttpPost]
 
+        public IHttpActionResult Login(UserLoginRequestDTO request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
 
+            var organization= _unit.Organizations.Login(request.Email, request.Password);
+
+            if (organization == null)
+                return Unauthorized();
+
+            var response = _mapper.Map<UserLoginResponseDTO>(organization);
+            return Ok(response);
+
+        }
     }
 }

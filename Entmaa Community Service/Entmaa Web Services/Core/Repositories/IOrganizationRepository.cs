@@ -13,6 +13,7 @@ namespace Entmaa_Web_Services.Core.Repositories
         IEnumerable<Organization> GetAllOrganizations();
 
         Organization ModifyOrganization(int id);
+        Organization Login(string email, string password);
 
     }
 }

@@ -34,6 +34,12 @@ namespace Entmaa_Web_Services.Persistence.Repositories
                 .SingleOrDefault(O => O.ID == id);
             return OrganizationInDB;
         }
+
+        public Organization Login(string email, string password)
+        {
+            return MainContext.Organizations
+                .SingleOrDefault(o => o.Email == email && o.Password == password);
+        }
     }
 }
  
