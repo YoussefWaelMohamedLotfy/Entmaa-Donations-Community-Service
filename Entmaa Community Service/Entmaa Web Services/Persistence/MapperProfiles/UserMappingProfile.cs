@@ -25,10 +25,10 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
 
 
             CreateMap<CreateContributorProfileDTO, Contributor>();
-            CreateMap<ContributorSignupRequestDTO, Contributor>();
+            CreateMap<UserSignupRequestDTO, Contributor>();
             CreateMap<Contributor, ContributorSignupResponseDTO>();
             
-            CreateMap<ContributorLoginRequestDTO, Contributor>();
+            CreateMap<UserLoginRequestDTO, Contributor>();
             CreateMap<Contributor, ContributorLoginResponseDTO>();
 
             CreateMap<Organization, GetOrganizationProfileDTO>();

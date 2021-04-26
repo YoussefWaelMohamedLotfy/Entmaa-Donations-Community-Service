@@ -18,7 +18,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public int ID { get; set; }
         
         public DateTime TimePosted { get; set; }
-        
+
+        public string Title { get; set; }
+
         public string Description { get; set; }
         
         public int PostedBy { get; set; }

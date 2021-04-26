@@ -12,6 +12,7 @@ namespace Entmaa_Web_Services.Core.DIModules
             {
                 //Register AutoMapper Profiles
                 cfg.AddProfile<UserMappingProfile>();
+                cfg.AddProfile<PostMappingProfile>();
                 cfg.AddProfile<DatasetMappingProfile>();
             }
             )).AsSelf().SingleInstance();

@@ -430,6 +430,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIs\ContributorController.cs" />
     <Compile Include="Controllers\APIs\Datasets\DatasetController.cs" />
+    <Compile Include="Controllers\APIs\PostController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
     <Compile Include="Controllers\APIs\OrganizationController.cs" />
@@ -445,8 +446,8 @@
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
     <Compile Include="DTOs\ContributorBadgesDTO.cs" />
-    <Compile Include="DTOs\ContributorLoginRequestDTO.cs" />
-    <Compile Include="DTOs\ContributorSignupRequestDTO.cs" />
+    <Compile Include="DTOs\UserLoginRequestDTO.cs" />
+    <Compile Include="DTOs\UserSignupRequestDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />
     <Compile Include="DTOs\CreateContributorProfileDTO.cs" />
     <Compile Include="DTOs\Dataset\BadgeDatasetDTO.cs" />
@@ -457,6 +458,10 @@
     <Compile Include="DTOs\GetOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\LocationDTO.cs" />
     <Compile Include="DTOs\OrganizationInfoDTO.cs" />
+    <Compile Include="DTOs\Posts\CommentDTO.cs" />
+    <Compile Include="DTOs\Posts\CreatePostDTO.cs" />
+    <Compile Include="DTOs\Posts\GetOrganizationNewsDTO.cs" />
+    <Compile Include="DTOs\Posts\UserDTO.cs" />
     <Compile Include="DTOs\TagDTO.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -469,6 +474,10 @@
     <Compile Include="Migrations\202104201908430_AddReviewsTable.cs" />
     <Compile Include="Migrations\202104201908430_AddReviewsTable.designer.cs">
       <DependentUpon>202104201908430_AddReviewsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104251156122_AddTitleToPostModel.cs" />
+    <Compile Include="Migrations\202104251156122_AddTitleToPostModel.designer.cs">
+      <DependentUpon>202104251156122_AddTitleToPostModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -527,6 +536,7 @@
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
     <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
@@ -968,6 +978,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DTOs\Users\" />
     <Folder Include="Views\Contributor\" />
     <Folder Include="Views\FirebaseAccount\" />
   </ItemGroup>
@@ -986,6 +997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104201908430_AddReviewsTable.resx">
       <DependentUpon>202104201908430_AddReviewsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104251156122_AddTitleToPostModel.resx">
+      <DependentUpon>202104251156122_AddTitleToPostModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

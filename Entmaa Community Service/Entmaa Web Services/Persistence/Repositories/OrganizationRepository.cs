@@ -20,9 +20,6 @@ namespace Entmaa_Web_Services.Persistence.Repositories
             return MainContext.Organizations
                     .Include(c=>c.Tags)
                     .SingleOrDefault(c => c.ID == id);
-
-
-            
         }
 
         public IEnumerable<Organization> GetAllOrganizations()

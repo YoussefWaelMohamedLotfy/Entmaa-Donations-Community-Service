@@ -53,7 +53,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
         [Route("api/Contributors")]
         [HttpPost]
-        public IHttpActionResult Signup(ContributorSignupRequestDTO request)
+        public IHttpActionResult Signup(UserSignupRequestDTO request)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Failed. Model not valid.");
@@ -73,7 +73,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
         [Route("api/Contributors/sessions")]
         [HttpPost]
-        public IHttpActionResult Login(ContributorLoginRequestDTO request)
+        public IHttpActionResult Login(UserLoginRequestDTO request)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Failed. Model not valid.");

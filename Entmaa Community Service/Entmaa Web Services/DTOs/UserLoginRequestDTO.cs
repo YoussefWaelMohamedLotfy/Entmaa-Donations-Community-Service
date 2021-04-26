@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Entmaa_Web_Services.DTOs
 {
-    public class ContributorLoginRequestDTO
+    public class UserLoginRequestDTO
     {
         public string Email { get; set; }
 
