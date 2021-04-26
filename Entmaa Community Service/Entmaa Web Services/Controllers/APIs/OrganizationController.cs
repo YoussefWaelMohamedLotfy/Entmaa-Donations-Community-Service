@@ -48,7 +48,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
-        [Route("api/Organization/patch/{id}/profile")]
+        [Route("api/Organization/{id}/profile")]
         [HttpPatch]
         public IHttpActionResult OrganizationProfileEdit(int id,GetOrganizationProfileDTO organization)
         {
@@ -56,8 +56,9 @@ namespace Entmaa_Web_Services.Controllers.APIs
                 return BadRequest("Model not valid.");
 
             var OrganizationInDB = _unit.Organizations.ModifyOrganization(id);
-            var ModifiedOrganization = _mapper.Map(organization,OrganizationInDB);
-            return Json(ModifiedOrganization);
+            _mapper.Map(organization,OrganizationInDB);
+            _unit.CompleteWork();
+            return Json(new { message="Success"});
 
 
         }
