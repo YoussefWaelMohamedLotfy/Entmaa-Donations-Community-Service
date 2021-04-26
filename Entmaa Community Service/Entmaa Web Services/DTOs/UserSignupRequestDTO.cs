@@ -14,7 +14,7 @@ namespace Entmaa_Web_Services.DTOs
         public string Password { get; set; }
     }
 
-    public class ContributorSignupResponseDTO
+    public class UserSignupResponseDTO
     {
         public int Id { get; set; }
 

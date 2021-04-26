@@ -67,7 +67,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
             _unit.Contributors.Add(newContributor);
             _unit.CompleteWork();
 
-            var responseDTO = _mapper.Map<ContributorSignupResponseDTO>(newContributor);
+            var responseDTO = _mapper.Map<UserSignupResponseDTO>(newContributor);
             return Json(responseDTO);
         }
 
@@ -83,7 +83,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
             if (contributor == null)
                 return Unauthorized();
 
-            var response = _mapper.Map<ContributorLoginResponseDTO>(contributor);
+            var response = _mapper.Map<UserLoginResponseDTO>(contributor);
             return Ok(response);
 
         }
