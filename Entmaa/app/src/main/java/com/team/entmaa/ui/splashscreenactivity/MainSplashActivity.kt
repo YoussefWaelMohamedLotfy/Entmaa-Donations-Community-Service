@@ -1,39 +1,54 @@
 package com.team.entmaa.ui.splashscreenactivity
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.annotation.NonNull
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.cuberto.liquid_swipe.LiquidPager
 import com.team.entmaa.R
-import com.team.entmaa.ui.splashscreenactivity.splashfragment.*
+import com.team.entmaa.ui.authactivity.MainAuthActivity
+import com.team.entmaa.ui.splashscreenactivity.splashfragment.ScreensSlideAdapter
 
 class MainSplashActivity : AppCompatActivity() {
 
 
-    private val NUM_PAGES: Int = 3
     private lateinit var viewPager:LiquidPager
     private lateinit var pagerAdapter:ScreensSlideAdapter
+    lateinit var settings: SharedPreferences
+    private val viewModel: ItemViewModel by viewModels()
+    private val  PREFS_NAME = "MyPrefsFile"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_splash)
 
+        checkSharedPreferences()
+
+        /** observe onClick **/
+        viewModel.selectedItem.observe(this, Observer { item ->
+            // Perform an action with the latest item data
+            Log.i("onCreate", item.toString())
+           setSharedPreferences()
+        })
+
+        /** Removing the title bar and navigation bar **/
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
-
 
         viewPager = findViewById(R.id.pager)
 
         pagerAdapter  = ScreensSlideAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
 
+
     }
 
-
+    /**override the behaviour of pressing back button**/
     override fun onBackPressed() {
 
         if (viewPager.currentItem > 0)
@@ -45,31 +60,28 @@ class MainSplashActivity : AppCompatActivity() {
         super.onBackPressed()
     }
 
-    private class ScreensSlideAdapter(@NonNull manager: FragmentManager) :
-        FragmentStatePagerAdapter(manager) {
+   fun setSharedPreferences() {
+       Log.i("setSharedPreferences", "Called")
+       settings.edit().putBoolean("my_first_time", false).commit();
+       val intent: Intent = Intent(this, MainAuthActivity::class.java)
+       startActivity(intent)
+       finish()
+   }
 
-        /**
-         * Return the number of views available.
-         */
-        override fun getCount(): Int {
-            return 5
-        }
+    private fun checkSharedPreferences(){
+        Log.i("checkSharedPreferences", "Called")
+        settings = getSharedPreferences(PREFS_NAME, 0)
+        if (settings.getBoolean("my_first_time", true)) {
+            Log.i("Comments", "First time");
 
-        /**
-         * Return the Fragment associated with a specified position.
-         */
-        override fun getItem(position: Int): Fragment {
-            when (position) {
-                0 -> return FirstSpalshFragment()
-                1 -> return SecondSpalshFragment()
-                2-> return ThirdSpalshFragment()
-                3-> return JoinAsOrgFragment()
-            }
-            return JoinAsUserFragment()
+        }else{
+            Log.i("Comments", "Second time");
+            val intent: Intent = Intent(this, MainAuthActivity::class.java)
+            startActivity(intent)
+            finish()
+
         }
     }
-
-
 }
 
 

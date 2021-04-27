@@ -5,15 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.activityViewModels
 import com.team.entmaa.R
+import com.team.entmaa.ui.splashscreenactivity.ItemViewModel
 
 class JoinAsUserFragment : Fragment() {
+
+    private val viewModel: ItemViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_join_as_user, container, false)
+        val root =  inflater.inflate(R.layout.fragment_join_as_user, container, false)
+        val joinButton: Button = root.findViewById(R.id.butJoin)
+        joinButton.setOnClickListener {
+            onItemClicked(true,"User")
+        }
+        return root
+    }
+
+    fun onItemClicked(item: Boolean, type:String) {
+        // Set a new item
+        viewModel.selectItem(item,type)
+
     }
 }
