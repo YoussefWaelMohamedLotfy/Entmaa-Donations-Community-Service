@@ -62,7 +62,47 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
 
         }
+        [Route("api/Organizations/sessions")]
+        [HttpPost]
+
+        public IHttpActionResult Login(UserLoginRequestDTO request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var organization= _unit.Organizations.Login(request.Email, request.Password);
+
+            if (organization == null)
+                return Unauthorized();
+
+            var response = _mapper.Map<UserLoginResponseDTO>(organization);
+            return Ok(response);
+
+        }
+
+        [Route("api/Organizations")]
+        [HttpPost]
+        public IHttpActionResult Signup(UserSignupRequestDTO request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+
+            var newOrganization = _mapper.Map<Organization>(request);
+            newOrganization.IsApproved = true;
+            newOrganization.FirebaseToken = "";
+            newOrganization.FawryToken = "new token";
+            newOrganization.DateJoined = DateTime.Now;
+            newOrganization.FoundedDate = new DateTime(2007, 2, 13);
 
 
+            _unit.Organizations.Add(newOrganization);
+            _unit.CompleteWork();
+
+            var responseDTO = _mapper.Map<UserSignupResponseDTO>(newOrganization); 
+            return Json(responseDTO);
+        }
     }
+
+    
+   
 }
