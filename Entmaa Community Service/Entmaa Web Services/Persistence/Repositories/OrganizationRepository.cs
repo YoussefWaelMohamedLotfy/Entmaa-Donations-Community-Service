@@ -40,6 +40,8 @@ namespace Entmaa_Web_Services.Persistence.Repositories
             return MainContext.Organizations
                 .SingleOrDefault(o => o.Email == email && o.Password == password);
         }
+
+       
     }
 }
  

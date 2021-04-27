@@ -448,6 +448,7 @@
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
     <Compile Include="DTOs\ContributorBadgesDTO.cs" />
+    <Compile Include="DTOs\CreateOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\Dataset\CommentDatasetDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
     <Compile Include="DTOs\UserLoginRequestDTO.cs" />

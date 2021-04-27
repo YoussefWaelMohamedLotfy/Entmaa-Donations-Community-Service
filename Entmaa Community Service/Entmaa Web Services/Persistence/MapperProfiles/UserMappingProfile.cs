@@ -37,6 +37,7 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
             CreateMap<Organization, UserLoginResponseDTO>();
             CreateMap<UserSignupRequestDTO, Organization>();
             CreateMap<Organization, UserSignupResponseDTO>();
+            CreateMap<CreateOrganizationProfileDTO, Organization>();
 
 
 

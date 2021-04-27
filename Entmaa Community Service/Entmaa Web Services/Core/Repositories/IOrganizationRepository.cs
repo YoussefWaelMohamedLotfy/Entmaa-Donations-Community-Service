@@ -14,6 +14,7 @@ namespace Entmaa_Web_Services.Core.Repositories
 
         Organization ModifyOrganization(int id);
         Organization Login(string email, string password);
+        
 
     }
 }
