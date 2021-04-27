@@ -31,4 +31,5 @@ class SecondSpalshFragment : Fragment() {
         return root
     }
 
+
 }

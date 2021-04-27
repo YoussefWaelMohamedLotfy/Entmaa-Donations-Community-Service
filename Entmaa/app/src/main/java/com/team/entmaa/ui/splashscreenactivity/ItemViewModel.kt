@@ -15,7 +15,7 @@ class ItemViewModel : ViewModel() {
 
 
 
-    class Join(isJoined:Boolean=false,type:String=""){
+    class Join(val isJoined:Boolean=false, val type:String=""){
 
     }
 }

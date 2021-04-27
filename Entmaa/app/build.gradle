@@ -45,7 +45,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
@@ -87,6 +87,7 @@ dependencies {
     // Lottie
     def lottieVersion = "3.7.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.30"
 
 
 }

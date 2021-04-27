@@ -30,11 +30,12 @@ class MainSplashActivity : AppCompatActivity() {
         checkSharedPreferences()
 
         /** observe onClick **/
-        viewModel.selectedItem.observe(this, Observer { item ->
+        viewModel.selectedItem.observe(this) { item ->
             // Perform an action with the latest item data
+
             Log.i("onCreate", item.toString())
            setSharedPreferences()
-        })
+        }
 
         /** Removing the title bar and navigation bar **/
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
