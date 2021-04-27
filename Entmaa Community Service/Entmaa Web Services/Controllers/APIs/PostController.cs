@@ -37,6 +37,19 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
+        [Route("api/Contributors/{id}/news")]
+        [HttpGet]
+        public IHttpActionResult GetRecommendedNews(int id)
+        {
+            var news = _unit.Posts.GetOrganizationNews(id);
+
+            if (news == null)
+                return NotFound();
+
+            var dto = news.Select(_mapper.Map<Post, GetOrganizationNewsDTO>);
+            return Json(dto);
+        }
+
         [Route("api/Organizations/{id}/news")]
         [HttpPost]
         public IHttpActionResult CreateNewsPost(int id, CreatePostDTO postDTO)

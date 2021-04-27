@@ -14,6 +14,7 @@ namespace Entmaa_Web_Services.Core
         IBadgeRepository Badges { get; }
         IPostRepository Posts { get; }
         ITagRepository Tags { get; }
+        ICommentRepository Comments { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();
