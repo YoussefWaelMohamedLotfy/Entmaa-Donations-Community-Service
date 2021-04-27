@@ -101,6 +101,27 @@ namespace Entmaa_Web_Services.Controllers.APIs
             var responseDTO = _mapper.Map<UserSignupResponseDTO>(newOrganization); 
             return Json(responseDTO);
         }
+
+        [Route("api/organization/{id}/profile")]
+        public IHttpActionResult CreateOrganizationProfile(int id,CreateOrganizationProfileDTO OrganizationDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Failed. Model not valid.");
+            var Organization = _unit.Organizations.GetOrganization(id);
+            var TagsInDB=_unit.Tags.GetTags((List<TagDTO>)OrganizationDTO.Tags);
+            foreach (var tag in TagsInDB)
+            {
+                ((HashSet<Tag>)Organization.Tags).Add(tag);
+
+
+            }
+            _mapper.Map(OrganizationDTO, Organization);
+            _unit.CompleteWork();
+
+            return Json(new { message = "Success" });
+
+        }
+
     }
 
     
