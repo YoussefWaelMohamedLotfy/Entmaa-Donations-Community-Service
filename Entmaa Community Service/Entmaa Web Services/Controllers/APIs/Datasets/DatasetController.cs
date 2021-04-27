@@ -86,5 +86,22 @@ namespace Entmaa_Web_Services.Controllers.APIs.Datasets
             postDTO.ID = post.ID;
             return Created(new Uri(Request.RequestUri + "/" + post.ID), postDTO);
         }
+
+        [Route("api/Dataset/Comment")]
+        [HttpPost]
+        public IHttpActionResult CreateComment(CommentDatasetDTO commentDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
+
+            var comment = _mapper.Map<PostComment>(commentDTO);
+            comment.DateCommented = DateTime.Now;
+
+            _unit.Comments.Add(comment);
+            _unit.CompleteWork();
+
+            commentDTO.ID = comment.ID;
+            return Created(new Uri(Request.RequestUri + "/" + comment.ID), commentDTO);
+        }
     }
 }

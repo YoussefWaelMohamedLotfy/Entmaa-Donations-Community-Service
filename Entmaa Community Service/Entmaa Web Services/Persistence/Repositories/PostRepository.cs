@@ -21,6 +21,7 @@ namespace Entmaa_Web_Services.Persistence.Repositories
         {
             return MainContext.Posts
                 .Include(p => p.Tags)
+                .Include(p => p.UsersReacted)
                 .SingleOrDefault(p => p.ID == id);
         }
 

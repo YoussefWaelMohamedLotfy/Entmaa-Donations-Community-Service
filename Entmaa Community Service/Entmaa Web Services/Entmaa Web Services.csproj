@@ -430,6 +430,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIs\ContributorController.cs" />
     <Compile Include="Controllers\APIs\Datasets\DatasetController.cs" />
+    <Compile Include="Controllers\APIs\InteractionController.cs" />
     <Compile Include="Controllers\APIs\PostController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
@@ -447,6 +448,8 @@
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
     <Compile Include="DTOs\ContributorBadgesDTO.cs" />
+    <Compile Include="DTOs\Dataset\CommentDatasetDTO.cs" />
+    <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
     <Compile Include="DTOs\UserLoginRequestDTO.cs" />
     <Compile Include="DTOs\UserSignupRequestDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />

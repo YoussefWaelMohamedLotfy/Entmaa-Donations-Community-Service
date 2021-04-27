@@ -84,7 +84,7 @@ namespace Entmaa_Web_Services.Controllers.APIs
                 return Unauthorized();
 
             var response = _mapper.Map<UserLoginResponseDTO>(contributor);
-            return Ok(response);
+            return Json(response);
 
         }
 

@@ -14,11 +14,13 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
         public PostMappingProfile()
         {
             CreateMap<CreatePostDTO, Post>();
+            CreateMap<CommentDTO, PostComment>();
 
             CreateMap<Post, GetOrganizationNewsDTO>();
             CreateMap<PostComment, CommentDTO>();
             CreateMap<Organization, UserDTO>();
             CreateMap<Tag, TagDTO>();
+            CreateMap<User, UsersReactedDTO>();
 
 
 

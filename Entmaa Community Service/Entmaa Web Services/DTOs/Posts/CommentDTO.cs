@@ -9,6 +9,8 @@ namespace Entmaa_Web_Services.DTOs.Posts
     {
         public int Id { get; set; }
 
+        public int UserId { get; set; }
+
         public string CommentText { get; set; }
 
         public DateTime TimePosted { get; set; }
