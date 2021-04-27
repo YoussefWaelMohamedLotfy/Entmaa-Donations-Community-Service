@@ -439,6 +439,7 @@
     <Compile Include="Core\DIModules\AutoFacModule.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IBadgeRepository.cs" />
+    <Compile Include="Core\Repositories\ICommentRepository.cs" />
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IPostRepository.cs" />
@@ -540,6 +541,7 @@
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
     <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
+    <Compile Include="Persistence\Repositories\CommentRepository.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\PostRepository.cs" />

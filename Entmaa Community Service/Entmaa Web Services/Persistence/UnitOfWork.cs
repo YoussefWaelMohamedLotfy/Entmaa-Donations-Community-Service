@@ -19,6 +19,7 @@ namespace Entmaa_Web_Services.Persistence
         public IBadgeRepository Badges { get; private set; }
         public IPostRepository Posts { get; private set; }
         public ITagRepository Tags { get; private set; }
+        public ICommentRepository Comments { get; private set; }
 
         public UnitOfWork(MainContext context)
         {
@@ -29,6 +30,7 @@ namespace Entmaa_Web_Services.Persistence
             Badges = new BadgeRepository(_context);
             Posts = new PostRepository(_context);
             Tags = new TagRepository(_context);
+            Comments = new CommentRepository(_context);
         }
 
         public int CompleteWork()
