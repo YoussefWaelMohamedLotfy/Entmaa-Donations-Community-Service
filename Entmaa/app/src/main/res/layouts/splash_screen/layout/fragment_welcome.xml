@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ui.authactivity.authfragment.WelcomeFragment"
+    android:id="@+id/welcomeFragment">
+
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="1"
+            android:elevation="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sharing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Welcome"
+        android:textColor="@color/green_500"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Create a new account"
+        android:textColor="@color/green_500"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+
+
+    <Button
+        android:id="@+id/butRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_xlarge"
+        android:layout_marginLeft="@dimen/margin_xlarge"        android:backgroundTint="@color/green_500"
+        android:elevation="5dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:shadowColor="@color/white"
+        android:text=" REGISTER "
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sub_title"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/butLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_xlarge"
+        android:layout_marginLeft="@dimen/margin_xlarge"
+        android:backgroundTint="@color/green_500"
+        android:elevation="5dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text=" LOGIN "
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butRegister"
+        app:layout_constraintVertical_bias="0.2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

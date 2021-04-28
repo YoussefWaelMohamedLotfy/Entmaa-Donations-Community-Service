@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import com.cuberto.liquid_swipe.LiquidPager
 import com.team.entmaa.R
 import com.team.entmaa.ui.authactivity.MainAuthActivity
+import com.team.entmaa.ui.mainactivity.MainActivity
 import com.team.entmaa.ui.splashscreenactivity.splashfragment.ScreensSlideAdapter
 
 class MainSplashActivity : AppCompatActivity() {
@@ -18,9 +19,9 @@ class MainSplashActivity : AppCompatActivity() {
 
     private lateinit var viewPager:LiquidPager
     private lateinit var pagerAdapter:ScreensSlideAdapter
-    lateinit var settings: SharedPreferences
-    private val viewModel: ItemViewModel by viewModels()
-    private val  PREFS_NAME = "MyPrefsFile"
+    lateinit var  settings: SharedPreferences
+    private  val  viewModel: ItemViewModel by viewModels()
+    private  val  PREFS_NAME = "MyPrefsFile"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,9 +38,7 @@ class MainSplashActivity : AppCompatActivity() {
            setSharedPreferences()
         }
 
-        /** Removing the title bar and navigation bar **/
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        actionBar?.hide()
+
 
         viewPager = findViewById(R.id.pager)
 

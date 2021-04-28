@@ -90,4 +90,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.30"
 
 
+    //SDP - a scalable size unit
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+
+
 }

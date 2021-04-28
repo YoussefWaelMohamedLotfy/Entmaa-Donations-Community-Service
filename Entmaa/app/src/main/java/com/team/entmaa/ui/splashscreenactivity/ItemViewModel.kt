@@ -5,17 +5,15 @@ import androidx.lifecycle.ViewModel
 
 
 class ItemViewModel : ViewModel() {
-    private val mutableSelectedItem = MutableLiveData<Join>()
-    val selectedItem: MutableLiveData<Join> get() = mutableSelectedItem
+    private val mutableSelectedItem = MutableLiveData<Users>()
+    val selectedItem: MutableLiveData<Users> get() = mutableSelectedItem
 
-    fun selectItem(item: Boolean, type:String) {
-        mutableSelectedItem.value = Join(item,type)
-
-    }
-
-
-
-    class Join(val isJoined:Boolean=false, val type:String=""){
+    fun selectItem(item: Users) {
+        mutableSelectedItem.value = item
 
     }
+
+
+
+
 }

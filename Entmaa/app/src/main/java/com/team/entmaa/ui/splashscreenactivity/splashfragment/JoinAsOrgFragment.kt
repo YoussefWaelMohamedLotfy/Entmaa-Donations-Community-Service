@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import com.team.entmaa.R
 import com.team.entmaa.ui.splashscreenactivity.ItemViewModel
+import com.team.entmaa.ui.splashscreenactivity.Users
 
 
 class JoinAsOrgFragment : Fragment() {
@@ -22,15 +23,15 @@ class JoinAsOrgFragment : Fragment() {
         val joinButton:Button = root.findViewById(R.id.butJoin)
 
         joinButton.setOnClickListener {
-            onItemClicked(true,"Org")
+            onItemClicked(Users.Organization)
 
         }
         return root
     }
 
-    fun onItemClicked(item: Boolean, type:String) {
+    fun onItemClicked(item:Users) {
         // Set a new item
-        viewModel.selectItem(item,type)
+        viewModel.selectItem(item)
     }
 
 }

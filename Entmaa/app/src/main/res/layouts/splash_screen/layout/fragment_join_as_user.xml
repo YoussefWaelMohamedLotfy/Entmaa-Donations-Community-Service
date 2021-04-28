@@ -33,8 +33,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="1"
         android:elevation="2dp"
         android:layout_margin="@dimen/margin_xlarge"
         android:scaleType="centerCrop"
