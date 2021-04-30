@@ -20,6 +20,9 @@ namespace Entmaa_Web_Services.Persistence
         public IPostRepository Posts { get; private set; }
         public ITagRepository Tags { get; private set; }
         public ICommentRepository Comments { get; private set; }
+        public IDonationRequestRepository DonationRequests { get; private set; }
+        public IMoneyDonationRepository MoneyDonations { get; private set; }
+        public IDonatedItemRepository DonatedItems { get; private set; }
 
         public UnitOfWork(MainContext context)
         {
@@ -31,6 +34,9 @@ namespace Entmaa_Web_Services.Persistence
             Posts = new PostRepository(_context);
             Tags = new TagRepository(_context);
             Comments = new CommentRepository(_context);
+            DonationRequests = new DonationRequestRepository(_context);
+            MoneyDonations = new MoneyDonationRepository(_context);
+            DonatedItems = new DonatedItemRepository(_context);
         }
 
         public int CompleteWork()

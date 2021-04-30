@@ -430,7 +430,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIs\ContributorController.cs" />
     <Compile Include="Controllers\APIs\Datasets\DatasetController.cs" />
+    <Compile Include="Controllers\APIs\DonatedItemController.cs" />
+    <Compile Include="Controllers\APIs\DonationRequestController.cs" />
     <Compile Include="Controllers\APIs\InteractionController.cs" />
+    <Compile Include="Controllers\APIs\MoneyDonationController.cs" />
     <Compile Include="Controllers\APIs\PostController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
@@ -442,6 +445,9 @@
     <Compile Include="Core\Repositories\IBadgeRepository.cs" />
     <Compile Include="Core\Repositories\ICommentRepository.cs" />
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
+    <Compile Include="Core\Repositories\IDonatedItemRepository.cs" />
+    <Compile Include="Core\Repositories\IDonationRequestRepository.cs" />
+    <Compile Include="Core\Repositories\IMoneyDonationRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IPostRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
@@ -541,11 +547,15 @@
     <Compile Include="Persistence\EntityConfigurations\VolunteerConfiguration.cs" />
     <Compile Include="Persistence\MainContext.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\DonationMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
     <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
     <Compile Include="Persistence\Repositories\CommentRepository.cs" />
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
+    <Compile Include="Persistence\Repositories\DonatedItemRepository.cs" />
+    <Compile Include="Persistence\Repositories\DonationRequestRepository.cs" />
+    <Compile Include="Persistence\Repositories\MoneyDonationRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\PostRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
@@ -984,6 +994,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DTOs\Donations\" />
     <Folder Include="DTOs\Users\" />
     <Folder Include="Views\Contributor\" />
     <Folder Include="Views\FirebaseAccount\" />

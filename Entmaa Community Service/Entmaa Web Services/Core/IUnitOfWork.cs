@@ -15,6 +15,9 @@ namespace Entmaa_Web_Services.Core
         IPostRepository Posts { get; }
         ITagRepository Tags { get; }
         ICommentRepository Comments { get; }
+        IDonationRequestRepository DonationRequests { get; }
+        IMoneyDonationRepository MoneyDonations { get; }
+        IDonatedItemRepository DonatedItems { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();
