@@ -91,16 +91,15 @@
                 android:id="@+id/donationProgress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:progress="30"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postPhoto"
                 app:trackCornerRadius="@dimen/progress_corner_radius"
                 app:trackThickness="@dimen/progress_track_Thickness"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:layout_marginStart="@dimen/margin_normal"
-                android:layout_marginEnd="@dimen/margin_normal"
-                app:layout_constraintTop_toBottomOf="@id/postPhoto"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
+                tools:progress="30" />
 
             <TextView
                 android:id="@+id/moneyCollected"

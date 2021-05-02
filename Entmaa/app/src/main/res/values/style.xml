@@ -36,8 +36,18 @@
     <style name="Entmaa.Button" parent="Widget.MaterialComponents.Button" >
         <item name="textAllCaps">false</item>
         <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.Button</item>
+        <item name="fontFamily">@font/nunito_semibold</item>
     </style>
+    
+    
+    
+    <!-- Material Input layout-->
+    <style name="Entmaa.TextInputLayout.OutlinedBox" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+        <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.TextInputLayout</item>
+        <item name="boxStrokeWidth">@dimen/text_input_layout_stroke</item>
+
+    </style>
 
 
 </resources>

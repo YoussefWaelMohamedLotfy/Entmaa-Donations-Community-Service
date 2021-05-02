@@ -1,0 +1,15 @@
+def versions = [
+        retrofit : "2.9.0",
+        sandwich: "1.1.0"
+]
+
+
+ext {
+
+    network = [
+            retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            moshi: "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+            sandwich: "com.github.skydoves:sandwich:$versions.sandwich"
+    ]
+
+}

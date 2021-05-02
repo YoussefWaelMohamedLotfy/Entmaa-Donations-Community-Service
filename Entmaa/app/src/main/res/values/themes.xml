@@ -8,6 +8,11 @@
         <!-- Buttons -->
         <item name="materialButtonStyle">@style/Entmaa.Button</item>
 
+        <!-- TextInputLayout -->
+        <item name="textInputStyle">@style/Entmaa.TextInputLayout.OutlinedBox</item>
+
+        <item name="fontFamily">@font/nunito</item>
+
     </style>
 
 </resources>

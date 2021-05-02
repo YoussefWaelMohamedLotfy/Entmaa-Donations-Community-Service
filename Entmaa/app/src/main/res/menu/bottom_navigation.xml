@@ -2,26 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@id/donateFragment"
         android:title="@string/main_donate"
         android:icon="@drawable/ic_donate"
         />
 
     <item
+        android:id="@+id/volunteerFragment"
         android:title="@string/main_volunteer"
         android:icon="@drawable/ic_volunteer"
         />
 
     <item
+        android:id="@+id/newsFragment"
         android:title="@string/main_news"
         android:icon="@drawable/ic_paper"
         />
 
     <item
+        android:id="@+id/reportedItemsFragment"
         android:title="@string/main_lost_and_found"
         android:icon="@drawable/ic_lost_items"
         />
 
     <item
+        android:id="@+id/moreFragment"
         android:title="@string/main_more"
         android:icon="@drawable/ic_square_grid"
         />

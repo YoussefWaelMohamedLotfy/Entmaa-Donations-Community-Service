@@ -1,12 +1,19 @@
 package com.team.entmaa.di
 
-import com.team.entmaa.data.repositories.IRepository
+
+import com.team.entmaa.data.repositories.implementaion.DonationRequestsRepositoryImpl
+import com.team.entmaa.data.repositories.interfaces.DonationRequestsRepository
+import com.team.entmaa.data.sources.remote.DonatonRequestsApi
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.components.ActivityRetainedComponent
+import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.scopes.ActivityScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Qualifier
-import javax.inject.Singleton
 
 
 @Qualifier
@@ -18,14 +25,14 @@ annotation class FakeRepository
 annotation class RealRepository
 
 @Module
-@InstallIn(SingletonComponent::class)
-class RepositoryModule {
+@InstallIn(ActivityRetainedComponent::class)
+object RepositoryModule {
 
     @Provides
-    @Singleton
-    @FakeRepository
-    fun provideRepository() : IRepository
+    @ActivityRetainedScoped
+    fun provideDonationRequestsRepository(donatonRequestsApi: DonatonRequestsApi)
+    : DonationRequestsRepository
     {
-        return com.team.entmaa.data.repositories.FakeRepository
+        return DonationRequestsRepositoryImpl(donatonRequestsApi)
     }
 }

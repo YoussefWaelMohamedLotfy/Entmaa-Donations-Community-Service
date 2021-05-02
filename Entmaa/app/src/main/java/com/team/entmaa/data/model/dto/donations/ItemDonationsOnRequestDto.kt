@@ -1,8 +1,10 @@
 package com.team.entmaa.data.model.dto.donations
 
+import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.users.ContributorDto
+
 class ItemDonationsOnRequestDto {
-    var itemId:Int? = null
-    var requestId:Int? = null
-    var itemName:String? = null
-    var donatedByName:String? = null
+    var donatedItem:DonatedItemDto? = null
+    var request:DonationRequestDto? = null
+    var donatedBy:ContributorDto? = null
 }

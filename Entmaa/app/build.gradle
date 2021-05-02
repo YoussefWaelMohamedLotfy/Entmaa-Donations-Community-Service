@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply from: "$rootDir/versions.gradle"
 
 android {
     compileSdkVersion 30
@@ -46,6 +47,7 @@ android {
 
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
 }
 
@@ -94,5 +96,9 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
 
+    implementation network.retrofit
+    implementation network.moshi
+    implementation network.sandwich
 
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
 }

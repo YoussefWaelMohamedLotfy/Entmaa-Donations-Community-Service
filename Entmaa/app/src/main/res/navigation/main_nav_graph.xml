@@ -10,4 +10,24 @@
         android:name="com.team.entmaa.ui.mainactivity.donatefragment.DonateFragment"
         android:label="fragment_donate"
         tools:layout="@layout/fragment_donate" />
+    <fragment
+        android:id="@+id/volunteerFragment"
+        android:name="com.team.entmaa.ui.mainactivity.volunteerfragment.VolunteerFragment"
+        android:label="fragment_volunteer"
+        tools:layout="@layout/fragment_volunteer" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.team.entmaa.ui.mainactivity.newsfragment.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/reportedItemsFragment"
+        android:name="com.team.entmaa.ui.mainactivity.ReportedItemsfragment.ReportedItemsFragment"
+        android:label="fragment_reported_items"
+        tools:layout="@layout/fragment_reported_items" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.team.entmaa.ui.mainactivity.morefragment.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
 </navigation>

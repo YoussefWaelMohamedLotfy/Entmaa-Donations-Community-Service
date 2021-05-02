@@ -18,10 +18,8 @@
     </style>
 
 
-    <style name="Entmaa.ShapeAppearance.EditText" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">@dimen/edit_text_radius</item>
-        <item name="cornerSizeTopLeft">@dimen/edit_text_radius</item>
-        <item name="cornerSizeTopRight">@dimen/edit_text_radius</item>
+    <style name="Entmaa.ShapeAppearance.TextInputLayout" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/text_input_layout_radius</item>
         <item name="cornerFamily">rounded</item>
 
     </style>
