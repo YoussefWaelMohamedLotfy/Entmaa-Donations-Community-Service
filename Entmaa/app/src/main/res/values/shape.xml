@@ -21,7 +21,6 @@
     <style name="Entmaa.ShapeAppearance.TextInputLayout" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">@dimen/text_input_layout_radius</item>
         <item name="cornerFamily">rounded</item>
-
     </style>
 
 </resources>

@@ -40,23 +40,13 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Full Name"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopStart="16dp"
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_normal"
-
             app:layout_constraintEnd_toEndOf="parent"
             android:maxLines="1"
-            app:boxStrokeColor="@color/green_500"
-            app:boxStrokeWidth="3dp"
-
             app:layout_constraintTop_toBottomOf="@+id/header_title">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -75,22 +65,12 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Email"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopStart="16dp"
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_normal"
-
-
             android:maxLines="1"
-            app:boxStrokeColor="@color/green_500"
-            app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username">
 
@@ -107,26 +87,18 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_normal"            android:hint="Password"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
             android:maxLines="1"
             app:endIconCheckable="false"
             app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email"
-            app:passwordToggleEnabled="true"
-            app:boxStrokeWidth="3dp">
-
+            app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

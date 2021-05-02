@@ -16,6 +16,7 @@
             android:layout_height="200dp"
             android:padding="5dp"
             android:layout_marginTop="@dimen/margin_large"
+            android:scaleType="centerCrop"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:layout_marginLeft="@dimen/margin_xlarge"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
@@ -27,7 +28,6 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
@@ -36,11 +36,6 @@
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
             app:boxStrokeColor="@color/green_500"
             app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +53,6 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
@@ -67,12 +61,6 @@
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxStrokeColor="@color/green_500"
             app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username">
@@ -89,7 +77,6 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/address"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
@@ -98,13 +85,7 @@
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxStrokeColor="@color/green_500"
-            app:boxStrokeWidth="3dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phone">
 
@@ -180,7 +161,6 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Date of birth"
@@ -189,13 +169,6 @@
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
             android:orientation="vertical"
-            app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxStrokeColor="@color/green_500"
-            app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/governorateMenu"
             >
