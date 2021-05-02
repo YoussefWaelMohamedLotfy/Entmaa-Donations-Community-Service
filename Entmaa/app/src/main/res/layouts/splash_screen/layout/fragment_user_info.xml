@@ -4,12 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_300"
     android:fillViewport="true">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profilePic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="5dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_xlarge"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            android:src="@drawable/addimg"
+            app:layout_constraintBottom_toTopOf="@+id/username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username"
@@ -30,15 +44,15 @@
             app:boxStrokeColor="@color/green_500"
             app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/profilePic">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
 
-                android:textColorHighlight="@color/green_300"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHighlight="@color/green_600"
+                android:textColorHint="@color/green_600" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
 
-                android:textColorHighlight="@color/green_300"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHighlight="@color/green_600"
+                android:textColorHint="@color/green_600" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,8 +113,8 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
 
-                android:textColorHighlight="@color/green_300"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHighlight="@color/green_600"
+                android:textColorHint="@color/green_600" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,7 +139,9 @@
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:textColorHighlight="@color/green_600"
+                android:textColorHint="@color/green_600"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,7 +170,9 @@
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:textColorHighlight="@color/green_600"
+                android:textColorHint="@color/green_600"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,18 +197,67 @@
             app:boxStrokeColor="@color/green_500"
             app:boxStrokeWidth="3dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/governorateMenu">
+            app:layout_constraintTop_toBottomOf="@+id/governorateMenu"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/dateEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-
                 android:textColorHighlight="@color/green_300"
                 android:textColorHint="#FFFFFF" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginEnd="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date"
+
+            >
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Volunteering"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Charity Work"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Tutoring"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Helping People"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Health"/>
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIcon="@drawable/ic_googleicon"
+                android:text="Economics"
+                />
+        </com.google.android.material.chip.ChipGroup>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

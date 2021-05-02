@@ -38,6 +38,20 @@
         <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.Button</item>
     </style>
 
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/green_300</item>
+        <item name="colorPrimaryDark">@color/green_600</item>
+        <item name="colorAccent">@color/green_500</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
 
 
 </resources>
