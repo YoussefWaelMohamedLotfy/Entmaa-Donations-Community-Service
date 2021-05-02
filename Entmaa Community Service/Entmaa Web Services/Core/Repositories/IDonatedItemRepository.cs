@@ -9,6 +9,6 @@ namespace Entmaa_Web_Services.Core.Repositories
 {
     public interface IDonatedItemRepository : IRepository<DonatedItem>
     {
-
+        IQueryable<DonatedItem> GetAllDonatedItems();
     }
 }

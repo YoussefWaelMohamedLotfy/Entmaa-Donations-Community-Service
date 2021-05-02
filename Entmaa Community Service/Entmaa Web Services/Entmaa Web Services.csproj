@@ -456,6 +456,11 @@
     <Compile Include="DTOs\ContributorBadgesDTO.cs" />
     <Compile Include="DTOs\CreateOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\Dataset\CommentDatasetDTO.cs" />
+    <Compile Include="DTOs\Dataset\DonatedItemDatasetDTO.cs" />
+    <Compile Include="DTOs\Donations\AddDonatedItemDTO.cs" />
+    <Compile Include="DTOs\Donations\ContributorDTO.cs" />
+    <Compile Include="DTOs\Donations\EditDonatedItemDTO.cs" />
+    <Compile Include="DTOs\Donations\GetDonatedItemsDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
     <Compile Include="DTOs\UserLoginRequestDTO.cs" />
     <Compile Include="DTOs\UserSignupRequestDTO.cs" />
@@ -994,7 +999,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DTOs\Donations\" />
     <Folder Include="DTOs\Users\" />
     <Folder Include="Views\Contributor\" />
     <Folder Include="Views\FirebaseAccount\" />

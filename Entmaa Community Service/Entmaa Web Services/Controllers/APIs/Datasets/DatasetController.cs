@@ -103,5 +103,21 @@ namespace Entmaa_Web_Services.Controllers.APIs.Datasets
             commentDTO.ID = comment.ID;
             return Created(new Uri(Request.RequestUri + "/" + comment.ID), commentDTO);
         }
+
+        [Route("api/Dataset/DonatedItem")]
+        [HttpPost]
+        public IHttpActionResult CreateDonatedItem(DonatedItemDatasetDTO itemDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
+
+            var item = _mapper.Map<DonatedItem>(itemDTO);
+
+            _unit.DonatedItems.Add(item);
+            _unit.CompleteWork();
+
+            itemDTO.ID = item.ID;
+            return Created(new Uri(Request.RequestUri + "/" + item.ID), itemDTO);
+        }
     }
 }

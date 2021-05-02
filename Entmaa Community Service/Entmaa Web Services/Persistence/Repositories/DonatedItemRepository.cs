@@ -16,6 +16,12 @@ namespace Entmaa_Web_Services.Persistence.Repositories
         {
         }
 
-
+        public IQueryable<DonatedItem> GetAllDonatedItems()
+        {
+            return MainContext.DonatedItems
+                .Include(i => i.Organization)
+                .Include(i => i.Contributor)
+                .Include(i => i.Tags);
+        }
     }
 }
