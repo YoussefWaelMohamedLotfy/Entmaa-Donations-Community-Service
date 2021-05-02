@@ -9,6 +9,7 @@ namespace Entmaa_Web_Services.Core.Repositories
 {
     public interface IMoneyDonationRepository : IRepository<MoneyDonation>
     {
-
+        IEnumerable<MoneyDonation> GetContributorDonations(int id);
+        IEnumerable<MoneyDonation> GetDonationsToOrganization(int id);
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Entmaa_Web_Services.DTOs.Donations
 {
-    public class ContributorDTO
+    public class UserDTO
     {
         public int Id { get; set; }
 

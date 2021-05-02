@@ -13,6 +13,6 @@ namespace Entmaa_Web_Services.DTOs.Donations
 
         public IEnumerable<TagDTO> Tags { get; set; }
 
-        public ContributorDTO Contributor { get; set; }
+        public UserDTO Contributor { get; set; }
     }
 }

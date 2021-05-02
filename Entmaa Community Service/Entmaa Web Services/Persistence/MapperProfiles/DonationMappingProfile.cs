@@ -14,10 +14,12 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
         {
             CreateMap<AddDonatedItemDTO, DonatedItem>();
             CreateMap<EditDonatedItemDTO, DonatedItem>();
+            CreateMap<MoneyDonationDTO, MoneyDonation>();
 
             CreateMap<DonatedItem, GetDonatedItemsDTO>();
-            CreateMap<Contributor, ContributorDTO>();
-
+            CreateMap<Contributor, UserDTO>();
+            CreateMap<Organization, UserDTO>();
+            CreateMap<MoneyDonation, GetMoneyDonationDTO>();
         }
     }
 }

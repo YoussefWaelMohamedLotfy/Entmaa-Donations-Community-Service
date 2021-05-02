@@ -41,6 +41,7 @@ namespace Entmaa_Web_Services.Persistence.Repositories
                 .Include(c => c.Locations)
                 .Include(c => c.BadgesOwned)
                 .Include(c => c.DonatedItems)
+                .Include(c => c.MoneyDonationsMade)
                 .SingleOrDefault(c => c.ID == id);
         }
 

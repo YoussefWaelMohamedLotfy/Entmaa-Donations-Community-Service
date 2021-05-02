@@ -457,8 +457,11 @@
     <Compile Include="DTOs\CreateOrganizationProfileDTO.cs" />
     <Compile Include="DTOs\Dataset\CommentDatasetDTO.cs" />
     <Compile Include="DTOs\Dataset\DonatedItemDatasetDTO.cs" />
+    <Compile Include="DTOs\Dataset\MoneyDonationDatasetDTO.cs" />
     <Compile Include="DTOs\Donations\AddDonatedItemDTO.cs" />
-    <Compile Include="DTOs\Donations\ContributorDTO.cs" />
+    <Compile Include="DTOs\Donations\GetMoneyDonationDTO.cs" />
+    <Compile Include="DTOs\Donations\MoneyDonationDTO.cs" />
+    <Compile Include="DTOs\Donations\UserDTO.cs" />
     <Compile Include="DTOs\Donations\EditDonatedItemDTO.cs" />
     <Compile Include="DTOs\Donations\GetDonatedItemsDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />

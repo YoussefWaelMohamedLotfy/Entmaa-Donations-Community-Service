@@ -16,6 +16,22 @@ namespace Entmaa_Web_Services.Persistence.Repositories
         {
         }
 
-        
+        public IEnumerable<MoneyDonation> GetContributorDonations(int id)
+        {
+            return MainContext.MoneyDonations
+                .Include(d => d.Organization)
+                .Include(d => d.Contributor)
+                .Where(d => d.ContributorID == id)
+                .ToList();
+        }
+
+        public IEnumerable<MoneyDonation> GetDonationsToOrganization(int id)
+        {
+            return MainContext.MoneyDonations
+                .Include(d => d.Organization)
+                .Include(d => d.Contributor)
+                .Where(d => d.OrganizationID == id)
+                .ToList();
+        }
     }
 }
