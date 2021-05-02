@@ -35,5 +35,8 @@
     <!-- Header -->
    <dimen name="header_normal">100dp</dimen>
 
+   <!-- Circle Image -->
+    <dimen name="corner_radius">100dp</dimen>
+
 
 </resources>

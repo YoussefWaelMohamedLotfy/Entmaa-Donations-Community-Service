@@ -38,9 +38,9 @@
         <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.Button</item>
         <item name="fontFamily">@font/nunito_semibold</item>
     </style>
-    
-    
-    
+
+
+
     <!-- Material Input layout-->
     <style name="Entmaa.TextInputLayout.OutlinedBox" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -48,6 +48,20 @@
         <item name="boxStrokeWidth">@dimen/text_input_layout_stroke</item>
 
     </style>
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/green_300</item>
+        <item name="colorPrimaryDark">@color/green_600</item>
+        <item name="colorAccent">@color/green_500</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
 
 
 </resources>
