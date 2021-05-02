@@ -11,14 +11,14 @@ fun LocalDate.durationFrom(dateTime: LocalDate) : String
 
     val period = Period.between(this,dateTime)
 
-    val seconds
+    /*val seconds = period
     val days = period.days
     val month = period.months
 
     if(days < 32)
     {
         return "$daysNumber days"
-    }
+    }*/
 
-    return "$monthNumber months"
+    return  "months"
 }
