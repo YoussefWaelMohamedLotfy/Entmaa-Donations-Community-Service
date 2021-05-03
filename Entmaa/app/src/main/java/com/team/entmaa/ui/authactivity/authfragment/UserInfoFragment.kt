@@ -78,20 +78,11 @@ class UserInfoFragment : Fragment() {
 
                     /***Get Picture from internal storage***/
         profilePic = root.findViewById(R.id.profilePic)
-        /*val radius = resources.getDimension(R.dimen.corner_radius)
-        profilePic.shapeAppearanceModel = profilePic.shapeAppearanceModel
-            .toBuilder()
-            .setAllCorners(CornerFamily.ROUNDED, radius)
-            .setTopEdge(EdgeTreatment())
-            .build()*/
-
 
         profilePic.setOnClickListener {
             val photoPickerIntent = Intent(Intent.ACTION_PICK)
             photoPickerIntent.type = "image/*"
             startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG)
-
-
         }
 
         return root
@@ -120,11 +111,7 @@ class UserInfoFragment : Fragment() {
         }
     }
 
-
-
-
-
-    fun getResizedBitmap(bm: Bitmap, newWidth: Int, newHeight: Int): Bitmap? {
+    /*fun getResizedBitmap(bm: Bitmap, newWidth: Int, newHeight: Int): Bitmap? {
         val width = bm.width
         val height = bm.height
         val scaleWidth = newWidth.toFloat() / width
@@ -140,8 +127,7 @@ class UserInfoFragment : Fragment() {
         )
         bm.recycle()
         return resizedBitmap
-    }
-
+    }*/
 
     companion object{
         val governorates =

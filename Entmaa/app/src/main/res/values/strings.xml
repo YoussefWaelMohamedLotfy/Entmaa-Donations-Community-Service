@@ -8,5 +8,190 @@
     <string name="slash">/</string>
     <string name="donation_request_item_collected">collected</string>
     <string name="donation_request_item_donate_btn">@string/main_donate</string>
-
+    <string-array name="cities">
+        <item>Cairo</item>
+        <item>Alexandria</item>
+        <item>Giza</item>
+        <item>Shubra el-Khema</item>
+        <item>Port Said</item>
+        <item>Suez</item>
+        <item>El Mahalla el Kubra</item>
+        <item>El Mansoura</item>
+        <item>Tanta</item>
+        <item>Asyut</item>
+        <item>Fayoum</item>
+        <item>Zagazig</item>
+        <item>Ismailia</item>
+        <item>Khusus</item>
+        <item>Aswan</item>
+        <item>Damanhur</item>
+        <item>El-Minya</item>
+        <item>Damietta</item>
+        <item>Luxor</item>
+        <item>Qena</item>
+        <item>Beni Suef</item>
+        <item>Sohag</item>
+        <item>Shibin el-Kom</item>
+        <item>Hurghada</item>
+        <item>Banha</item>
+        <item>Kafr al-Sheikh</item>
+        <item>Mallawi</item>
+        <item>El Arish</item>
+        <item>Belbeis</item>
+        <item>10th of Ramadan City</item>
+        <item>Marsa Matruh</item>
+        <item>Mit Ghamr</item>
+        <item>Kafr el-Dawwar</item>
+        <item>Qalyub</item>
+        <item>Desouk</item>
+        <item>Abu Kabir</item>
+        <item>Girga</item>
+        <item>Akhmim</item>
+        <item>El-Matareya</item>
+        <item>Edko</item>
+        <item>Bilqas</item>
+        <item>Zifta</item>
+        <item>Samalut</item>
+        <item>Menouf</item>
+        <item>Senbellawein</item>
+        <item>Tahta</item>
+        <item>Bush</item>
+        <item>Ashmoun</item>
+        <item>Manfalut</item>
+        <item>Senuris</item>
+        <item>Beni Mazar</item>
+        <item>Faqous</item>
+        <item>Talkha</item>
+        <item>Armant</item>
+        <item>Maghagha</item>
+        <item>Manzala</item>
+        <item>Dairut</item>
+        <item>Kom Ombo</item>
+        <item>Kafr al-Zayat</item>
+        <item>Abu Tig</item>
+        <item>Qis</item>
+        <item>Edfu</item>
+        <item>Rosetta</item>
+        <item>Esna</item>
+        <item>Dikirnis</item>
+        <item>Abnub</item>
+        <item>Tima</item>
+        <item>Beila</item>
+        <item>El-Kanater al-Khiria</item>
+        <item>Al-Fashn</item>
+        <item>Al-Mansha</item>
+        <item>Al-Kareen</item>
+        <item>El-Gamalia</item>
+        <item>Fuwa</item>
+        <item>Minya al-Qamh</item>
+        <item>Kharga</item>
+        <item>Qus</item>
+        <item>Khanka</item>
+        <item>Abu Qirqas</item>
+        <item>Biba</item>
+        <item>Samannoud</item>
+        <item>Minyet al-Nasr</item>
+        <item>Shibin al-Qanater</item>
+        <item>Ibshawai</item>
+        <item>Sherbin</item>
+        <item>Drib Nigm</item>
+        <item>Basyoun</item>
+        <item>Sers el-Lyan</item>
+        <item>Dishna</item>
+        <item>Al-Hamool</item>
+        <item>Farshut</item>
+        <item>Tala</item>
+        <item>Ash-Shuhada</item>
+        <item>Tamiya</item>
+        <item>Mashtul el-Sook</item>
+        <item>Sadat City</item>
+        <item>El-Ghanayem</item>
+        <item>Itsa</item>
+        <item>Al-Baliyana</item>
+        <item>Hosh Issa</item>
+        <item>Matai</item>
+        <item>Juhayna</item>
+        <item>Sidi Salem</item>
+        <item>Naj Hammadi</item>
+        <item>Quesna</item>
+        <item>Hehya</item>
+        <item>Abul Matamir</item>
+        <item>El Ubour</item>
+        <item>El-Badari</item>
+        <item>Al-Kanayat</item>
+        <item>At-Tall al-Kabir</item>
+        <item>El-Delengat</item>
+        <item>Al-Hammam</item>
+        <item>Tukh</item>
+        <item>Bagour</item>
+        <item>Etay el-Barud</item>
+        <item>Deir Mawas</item>
+        <item>Baltim</item>
+        <item>Abu Hammad</item>
+        <item>Abu Hummus</item>
+        <item>Nabaroh</item>
+        <item>Sharm el-Sheikh</item>
+        <item>Daraw</item>
+        <item>Al-Maragha</item>
+        <item>Sumusta al-Waqf</item>
+        <item>Al-Wasta</item>
+        <item>Ihnasiya</item>
+        <item>Kom Hamadah</item>
+        <item>Al-Quseir</item>
+        <item>Qallin</item>
+        <item>Birkat al-Sab</item>
+        <item>Safaga</item>
+        <item>Ezbet el-Borg</item>
+        <item>Faraskur</item>
+        <item>Al-Ibrahimiya</item>
+        <item>El-Santa</item>
+        <item>Ras Gharib</item>
+        <item>Sahel Selim</item>
+        <item>Dar as-Salam</item>
+        <item>Rafah</item>
+        <item>Mit Salsil</item>
+        <item>Al-Husseinieh</item>
+        <item>Kafr el-Batikh</item>
+        <item>Kafr Saqr</item>
+        <item>Bani Ubayd</item>
+        <item>El-Qantara</item>
+        <item>Metoubes</item>
+        <item>El-Rahmaniyah</item>
+        <item>Shubrakhit</item>
+        <item>El-Mahmoudiyah</item>
+        <item>Al-Waqf</item>
+        <item>New Damietta City</item>
+        <item>Qaha</item>
+        <item>Kotoor</item>
+        <item>Abu Suweir-el-Mahatta</item>
+        <item>Kafr Shukr</item>
+        <item>Kafr Saad</item>
+        <item>Qift</item>
+        <item>Fayed</item>
+        <item>Saqultah</item>
+        <item>Wadi al-Natrun</item>
+        <item>Naqadah</item>
+        <item>As-Sarw</item>
+        <item>Awlad Saqr</item>
+        <item>Sidi Barrani</item>
+        <item>Al-Basaliyah Bahri</item>
+        <item>Badr</item>
+        <item>Sedfa</item>
+        <item>El-Qantara ash-Sharqiya</item>
+        <item>Ar-Ruda</item>
+        <item>Mut</item>
+        <item>Al-Tur</item>
+        <item>New Salhia</item>
+        <item>Ash-Shaykh Zawid</item>
+        <item>Riyadh</item>
+        <item>New Beni Suef</item>
+        <item>Aga</item>
+        <item>Ad-Dabah</item>
+        <item>Al-Zarqa</item>
+        <item>As-Sibaiyah Gharb</item>
+        <item>Siwa</item>
+        <item>El-Idwa</item>
+        <item>Yusuf as-Siddiq</item>
+        <item>Al-Bayadiyah</item>
+    </string-array>
 </resources>
