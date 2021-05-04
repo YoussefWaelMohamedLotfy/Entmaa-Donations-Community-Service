@@ -1,23 +1,20 @@
-package com.team.entmaa.ui.authactivity
+package com.team.entmaa.ui.profileactivity
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.team.entmaa.R
 import com.team.entmaa.ui.authactivity.authfragment.WelcomeFragment
 
-
-class MainAuthActivity : AppCompatActivity() {
-    var manager:FragmentManager = supportFragmentManager
+class ProfileMainActivity : AppCompatActivity() {
+    var manager: FragmentManager = supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_auth)
-
-        replaceFragment(WelcomeFragment(),manager)
-
+        setContentView(R.layout.activity_profile_main)
+        replaceFragment(ProfileFragment(),manager)
     }
 
     override fun onBackPressed() {
@@ -30,10 +27,12 @@ class MainAuthActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
 }
 
-fun replaceFragment(fragment: Fragment,manager:FragmentManager){
+fun replaceFragment(fragment: Fragment, manager:FragmentManager){
     val transaction = manager.beginTransaction()
-    transaction.replace(R.id.authActivity, fragment)
+    transaction.replace(R.id.profileActivity, fragment)
     transaction.commit()
 }
+

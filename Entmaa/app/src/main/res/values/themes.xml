@@ -11,8 +11,7 @@
         <!-- TextInputLayout -->
         <item name="textInputStyle">@style/Entmaa.TextInputLayout.OutlinedBox</item>
 
-        <item name="fontFamily">@font/nunito</item>
-
+        <item name="fontFamily">@font/nunito_bold</item>
     </style>
 
 </resources>

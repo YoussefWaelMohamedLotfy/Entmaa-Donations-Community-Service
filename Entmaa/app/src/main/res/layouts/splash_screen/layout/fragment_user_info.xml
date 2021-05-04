@@ -182,6 +182,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.chip.ChipGroup
+            android:id="@+id/interestsChipsGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -230,6 +231,27 @@
                 android:text="Economics"
                 />
         </com.google.android.material.chip.ChipGroup>
+
+
+
+        <Button
+            android:id="@+id/butRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_xlarge"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            android:backgroundTint="@color/green_500"
+            android:elevation="5dp"
+            android:shadowColor="@color/white"
+            android:text="Register"
+            android:paddingVertical="8dp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/interestsChipsGroup"
+            app:layout_constraintVertical_bias="0.3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

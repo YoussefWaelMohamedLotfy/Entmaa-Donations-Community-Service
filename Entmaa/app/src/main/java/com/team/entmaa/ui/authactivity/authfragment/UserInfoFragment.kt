@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputLayout
 import com.team.entmaa.R
+import com.team.entmaa.ui.profileactivity.ProfileMainActivity
 import java.io.FileNotFoundException
 import java.io.InputStream
 import java.text.SimpleDateFormat
@@ -24,9 +25,9 @@ import kotlin.collections.ArrayList
 
 
 class UserInfoFragment : Fragment() {
-    val RESULT_LOAD_IMG = 1
+
+    private val RESULT_LOAD_IMG = 1
    lateinit var profilePic:ShapeableImageView
-    val arrayList:ArrayList<String> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,34 +83,33 @@ class UserInfoFragment : Fragment() {
         profilePic.setOnClickListener {
             val photoPickerIntent = Intent(Intent.ACTION_PICK)
             photoPickerIntent.type = "image/*"
-            startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG)
+            photoPickerIntent.action = Intent.ACTION_OPEN_DOCUMENT
+            photoPickerIntent.addCategory(Intent.CATEGORY_OPENABLE)
+            startActivityForResult(Intent.createChooser(photoPickerIntent,"Hello"), RESULT_LOAD_IMG)
+
+        }
+
+
+        /***Redirect to Profile Activity***/
+        val RegisterBut:Button = root.findViewById(R.id.butRegister)
+        RegisterBut.setOnClickListener {
+            val intent:Intent = Intent(activity,ProfileMainActivity::class.java)
+            activity?.startActivity(intent)
         }
 
         return root
     }
 
     override  fun onActivityResult(reqCode: Int, resultCode: Int, data: Intent?) {
+        val imageUri = data?.data ?: return
+
         if (resultCode == RESULT_OK) {
-            try {
-                val imageUri: Uri? = data?.data
-                if (imageUri != null) {
-                    Log.i("path", imageUri.path.toString())
-                }
-                val imageStream: InputStream? = imageUri?.let { activity?.contentResolver?.openInputStream(
-                    it
-                ) }
-                //val selectedImage = BitmapFactory.decodeStream(imageStream)
-                if (imageUri != null) {
-                    profilePic.setImageURI(imageUri)
-                }
-            } catch (e: FileNotFoundException) {
-                e.printStackTrace()
-                Toast.makeText(context, "Something went wrong", Toast.LENGTH_LONG).show()
-            }
-        } else {
-            Toast.makeText(context, "You haven't picked Image", Toast.LENGTH_LONG).show()
+            val imageStream: InputStream? = imageUri?.let { activity?.contentResolver?.openInputStream(it) }
+            profilePic.setImageURI(imageUri)
         }
     }
+
+
 
     /*fun getResizedBitmap(bm: Bitmap, newWidth: Int, newHeight: Int): Bitmap? {
         val width = bm.width
@@ -130,6 +130,8 @@ class UserInfoFragment : Fragment() {
     }*/
 
     companion object{
+
+
         val governorates =
             listOf(
                 "Alexandria",

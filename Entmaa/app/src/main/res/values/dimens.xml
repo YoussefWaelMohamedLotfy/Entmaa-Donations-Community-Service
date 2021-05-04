@@ -19,9 +19,10 @@
 
 
     <!-- Material Card -->
-    <dimen name="card_elevation">2dp</dimen>
-    <dimen name="card_stroke_width">1dp</dimen>
-    <dimen name="card_sheet_radius">32dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="card_stroke_width">5dp</dimen>
+    <dimen name="card_sheet_radius">48dp</dimen>
+    <dimen name="card_sheet_radius_default">20dp</dimen>
 
     <!-- EditText -->
     <dimen name="text_input_layout_radius">16dp</dimen>
