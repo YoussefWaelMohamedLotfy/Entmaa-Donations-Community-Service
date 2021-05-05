@@ -1,25 +1,38 @@
 package com.team.entmaa.util
 
 import java.time.*
-import java.time.temporal.Temporal
+import java.time.temporal.ChronoUnit
+import kotlin.math.abs
 
 
-fun LocalDate.durationFrom(dateTime: LocalDate) : String
+fun LocalDateTime.durationFrom(from: LocalDateTime) : String
 {
 
-    val duration = Duration.between(this,dateTime)
+    val seconds: Long = abs(ChronoUnit.SECONDS.between(this, from))
+    val minutes:Int = seconds.toInt() / 60
+    val hours = minutes / 60
+    val days = hours / 24
+    val weeks = days / 7
+    val months = weeks / 4
+    val years = months / 12
 
-    val period = Period.between(this,dateTime)
+    val durations = listOf(
+        years to "years",
+        months to "months",
+        weeks to "weeks",
+        days to "days",
+        hours to "hours",
+        minutes to "minutes",
+        seconds to "seconds"
+    )
 
-    /*val seconds = period
-    val days = period.days
-    val month = period.months
-
-    if(days < 32)
-    {
-        return "$daysNumber days"
-    }*/
-
-
-    return  "months"
+    return durations.first { it.first != 0 }
+        .let {
+            var unit = it.second
+            if(it.first == 1)
+            {
+                unit = unit.dropLast(1)
+            }
+            "${it.first} $unit"
+        }
 }

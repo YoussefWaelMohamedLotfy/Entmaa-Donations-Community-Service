@@ -20,7 +20,7 @@
 
     <!-- Material Card -->
     <dimen name="card_elevation">5dp</dimen>
-    <dimen name="card_stroke_width">5dp</dimen>
+    <dimen name="card_stroke_width">2dp</dimen>
     <dimen name="card_sheet_radius">48dp</dimen>
     <dimen name="card_sheet_radius_default">20dp</dimen>
 

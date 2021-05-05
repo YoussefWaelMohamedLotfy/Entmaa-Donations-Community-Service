@@ -1,6 +1,7 @@
 package com.team.entmaa.ui.mainactivity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
@@ -15,12 +16,27 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val filtersViewModel:FiltersViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         styleBottomNavigationBar()
+
+        binding.SwipeRefreshLayout.setOnRefreshListener {
+            filtersViewModel.setRefreshing(true)
+        }
+
+        filtersViewModel.refreshState.observe(this){
+            binding.SwipeRefreshLayout.isRefreshing = it
+        }
+
+
+    }
+
+    private fun setupFilters()
+    {
 
     }
 

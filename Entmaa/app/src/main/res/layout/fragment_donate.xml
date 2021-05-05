@@ -12,10 +12,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/requestsList"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:paddingBottom="@dimen/bottom_nav_shadow_height"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -24,6 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_donation_request" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

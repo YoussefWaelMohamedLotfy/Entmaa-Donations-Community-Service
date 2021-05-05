@@ -43,10 +43,27 @@
 
     <!-- Material Input layout-->
     <style name="Entmaa.TextInputLayout.OutlinedBox" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
         <item name="shapeAppearance">@style/Entmaa.ShapeAppearance.TextInputLayout</item>
         <item name="boxStrokeWidth">@dimen/text_input_layout_stroke</item>
 
+    </style>
+
+
+    <!-- Chip -->
+
+    <style name="Entmaa.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">?attr/colorSurface</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="chipStrokeColor">@color/color_on_surface_alpha_10</item>
+        <item name="rippleColor">@color/color_on_surface_alpha_25</item>
+        <item name="android:textSize">11sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="shapeAppearanceOverlay">@style/Entmaa.ShapeOverlay.Chip</item>
+        <item name="chipStartPadding">18dp</item>
+        <item name="chipEndPadding">18dp</item>
+        <item name="chipMinHeight">40dp</item>
     </style>
 
     <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
@@ -60,8 +77,5 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
-
-
-
 
 </resources>

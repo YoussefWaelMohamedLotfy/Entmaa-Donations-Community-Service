@@ -1,7 +1,5 @@
 package com.team.entmaa.data.repositories.implementaion
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
 import com.skydoves.sandwich.*
 import com.team.entmaa.data.model.dto.donations.ItemDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
@@ -15,26 +13,30 @@ class DonationRequestsRepositoryImpl @Inject constructor(
     private val donationRequestsApi: DonatonRequestsApi
 ) : DonationRequestsRepository
 {
-    override fun getDonationRequestsFeed(contributorId: Int) = liveData {
+    override suspend fun getDonationRequestsFeed(contributorId: Int): Result<List<DonationRequestDto>> {
 
-        emit(Result.InProgress)
+        return when(val response = donationRequestsApi.getDonationRequestsFeed(contributorId))
+        {
+            is ApiResponse.Success -> {
+                Result.Success(response.data!!)
+            }
 
-        val response = donationRequestsApi.getDonationRequestsFeed(1).getOrThrow()
-        println(response)
-        println(response!![0].title)
-        emit(Result.Success(response!!))
-
+            is ApiResponse.Failure.Error -> {
+                Result.Error("Network Error")
+            }
+            else -> Result.Error("Unknown Error")
+        }
     }
 
-    override fun getDonationRequestsPostedByOrg(orgId: Int): LiveData<Result<List<DonationRequestDto>>> {
+    override fun getDonationRequestsPostedByOrg(orgId: Int): Result<List<DonationRequestDto>> {
         TODO("Not yet implemented")
     }
 
-    override fun getMoneyDonationsOnRequest(requestId: Int): LiveData<Result<List<MoneyDonationsOnRequestDto>>> {
+    override fun getMoneyDonationsOnRequest(requestId: Int): Result<List<MoneyDonationsOnRequestDto>> {
         TODO("Not yet implemented")
     }
 
-    override fun getItemDonationsOnRequest(requestId: Int): LiveData<Result<List<ItemDonationsOnRequestDto>>> {
+    override fun getItemDonationsOnRequest(requestId: Int): Result<List<ItemDonationsOnRequestDto>> {
         TODO("Not yet implemented")
     }
 

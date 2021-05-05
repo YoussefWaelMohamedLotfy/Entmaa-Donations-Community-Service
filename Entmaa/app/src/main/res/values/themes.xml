@@ -11,6 +11,9 @@
         <!-- TextInputLayout -->
         <item name="textInputStyle">@style/Entmaa.TextInputLayout.OutlinedBox</item>
 
+        <!-- Chips  -->
+        <item name="chipStyle">@style/Entmaa.Chip</item>
+
         <item name="fontFamily">@font/nunito_bold</item>
     </style>
 

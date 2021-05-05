@@ -1,8 +1,8 @@
 package com.team.entmaa.di
 
 import com.squareup.moshi.Moshi
-import com.team.entmaa.data.sources.moshi.LocalDateConverter
-import com.team.entmaa.data.sources.moshi.ZonedDateTimeConverter
+import com.team.entmaa.util.moshi.LocalDateConverter
+import com.team.entmaa.util.moshi.ZonedDateTimeConverter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -45,13 +45,23 @@
                 app:layout_constraintVertical_bias="0.12" />
 
             <TextView
+                android:id="@+id/byText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_post_by"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintTop_toBottomOf="@id/postTitle"
+                app:layout_constraintStart_toStartOf="@id/postTitle" />
+
+            <TextView
                 android:id="@+id/postedBy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Organization name"
+                android:layout_marginStart="@dimen/margin_small"
                 android:textAppearance="?attr/textAppearanceCaption"
-                app:layout_constraintTop_toBottomOf="@id/postTitle"
-                app:layout_constraintStart_toStartOf="@id/postTitle" />
+                app:layout_constraintBaseline_toBaselineOf="@id/byText"
+                app:layout_constraintStart_toEndOf="@id/byText" />
 
             <TextView
                 android:id="@+id/timePosted"
@@ -62,6 +72,16 @@
                 android:layout_marginStart="@dimen/margin_small"
                 app:layout_constraintBaseline_toBaselineOf="@id/postedBy"
                 app:layout_constraintStart_toEndOf="@id/postedBy" />
+
+            <TextView
+                android:id="@+id/agoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_post_ago"
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:layout_marginStart="@dimen/margin_small"
+                app:layout_constraintBaseline_toBaselineOf="@id/timePosted"
+                app:layout_constraintStart_toEndOf="@id/timePosted" />
 
             <TextView
                 android:id="@+id/postBody"

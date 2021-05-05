@@ -101,4 +101,7 @@ dependencies {
     implementation network.sandwich
 
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+    implementation "com.github.hadilq:live-event:1.2.3"
+    implementation 'com.github.iammert:MultiSearchView:0.3'
 }

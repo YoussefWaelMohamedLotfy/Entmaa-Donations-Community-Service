@@ -1,4 +1,4 @@
-package com.team.entmaa.data.sources.moshi
+package com.team.entmaa.util.moshi
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson

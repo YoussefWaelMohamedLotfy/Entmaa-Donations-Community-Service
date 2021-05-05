@@ -8,6 +8,15 @@
     <string name="slash">/</string>
     <string name="donation_request_item_collected">collected</string>
     <string name="donation_request_item_donate_btn">@string/main_donate</string>
+
+    <string name="item_post_by">By</string>
+    <string name="item_post_ago">ago</string>
+    
+    <!-- Shared Preferences -->
+    <string name="GlobalSharedPreferences">Global</string>
+    <string name="Key_LoggedInOrgId">com.team.entmaa.SharedPreferenceKey.LoggedInOrgId</string>
+    <string name="Key_LoggedInContribId">com.team.entmaa.SharedPreferenceKey.LoggedInContribId</string>
+
     <string-array name="cities">
         <item>Cairo</item>
         <item>Alexandria</item>

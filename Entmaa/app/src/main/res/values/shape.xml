@@ -33,4 +33,9 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
+
+    <style name="Entmaa.ShapeOverlay.Chip" parent="">
+        <item name="cornerSize">20%</item>
+    </style>
+
 </resources>

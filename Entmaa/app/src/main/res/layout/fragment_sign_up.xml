@@ -78,7 +78,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-
                 android:textColorHighlight="@color/green_500"
                 android:textColorHint="#FFFFFF" />
 
@@ -91,7 +90,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_xlarge"
             android:layout_marginRight="@dimen/margin_xlarge"
-            android:layout_marginTop="@dimen/margin_normal"            android:hint="Password"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:hint="Password"
             android:orientation="vertical"
             android:maxLines="1"
             app:endIconCheckable="false"

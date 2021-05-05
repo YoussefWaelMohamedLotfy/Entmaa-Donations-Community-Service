@@ -9,11 +9,11 @@ import com.team.entmaa.data.repositories.Result
 
 interface DonationRequestsRepository {
 
-    fun getDonationRequestsFeed(contributorId:Int) : LiveData<Result<List<DonationRequestDto>>>
+    suspend fun getDonationRequestsFeed(contributorId:Int) : Result<List<DonationRequestDto>>
 
-    fun getDonationRequestsPostedByOrg(orgId: Int) : LiveData<Result<List<DonationRequestDto>>>
+    fun getDonationRequestsPostedByOrg(orgId: Int) : Result<List<DonationRequestDto>>
 
-    fun getMoneyDonationsOnRequest(requestId:Int) : LiveData<Result<List<MoneyDonationsOnRequestDto>>>
+    fun getMoneyDonationsOnRequest(requestId:Int) : Result<List<MoneyDonationsOnRequestDto>>
 
-    fun getItemDonationsOnRequest(requestId:Int) : LiveData<Result<List<ItemDonationsOnRequestDto>>>
+    fun getItemDonationsOnRequest(requestId:Int) : Result<List<ItemDonationsOnRequestDto>>
 }
