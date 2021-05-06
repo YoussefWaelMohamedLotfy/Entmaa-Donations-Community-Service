@@ -26,8 +26,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Entmaa">
-        <activity android:name=".ui.profileactivity.ProfileMainActivity"></activity>
-        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.organizationprofileactivity.OrganizationProfileMainActivity"></activity>
+        <activity android:name=".ui.contributorprofileactivity.ProfileMainActivity" />
         <activity
             android:name=".ui.authactivity.MainAuthActivity"
             android:label="" />
@@ -38,7 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.DataActivity" />
         <activity android:name=".ui.mainactivity.MainActivity" />
     </application>
 

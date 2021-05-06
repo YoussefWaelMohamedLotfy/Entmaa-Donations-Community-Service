@@ -18,6 +18,8 @@
 
 
    <!---Splash Screen Colors-->
+    <color name="green_100">#d8f3dc</color>
+    <color name="green_200">#95d5b2</color>
     <color name="green_300">#74c69d</color>
     <color name="green_400">#52b788</color>
     <color name="green_500">#40916c</color>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.profileactivity.ProfileFragment">
+    tools:context=".ui.contributorprofileactivity.ContributorProfileFragment">
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,13 +17,14 @@
             android:id="@+id/materialCardView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:elevation="5dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheetBottomCorners"
-            app:strokeColor="@color/green_300"
-            app:strokeWidth="2dp">
+            app:strokeColor="@color/color_on_surface_alpha_10"
+            app:strokeWidth="@dimen/card_stroke_width"
+            app:cardElevation="@dimen/card_elevation">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -71,10 +72,10 @@
                     android:id="@+id/followingVal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_xlarge"
+                    android:layout_marginLeft="@dimen/_70sdp"
                     android:text="10"
                     android:textSize="20dp"
-                    app:layout_constraintEnd_toStartOf="@+id/username"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/username" />
 
                 <TextView
@@ -92,10 +93,10 @@
                     android:id="@+id/badgeVal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_xlarge"
                     android:text="10"
                     android:textSize="20dp"
-                    app:layout_constraintStart_toEndOf="@+id/username"
+                    android:layout_marginRight="@dimen/_70sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/username" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -109,10 +110,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_large"
-        app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheet"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        app:strokeColor="@color/green_300"
-        app:strokeWidth="2dp">
+        app:strokeColor="@color/color_on_surface_alpha_10"
+        app:strokeWidth="@dimen/card_stroke_width"
+        app:cardElevation="@dimen/card_elevation">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -146,11 +147,11 @@
         android:id="@+id/interestsCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_xlarge"
-        app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheet"
+        android:layout_margin="@dimen/margin_large"
         app:layout_constraintTop_toBottomOf="@+id/aboutCard"
-        app:strokeColor="@color/green_300"
-        app:strokeWidth="2dp">
+        app:strokeColor="@color/color_on_surface_alpha_10"
+        app:strokeWidth="@dimen/card_stroke_width"
+        app:cardElevation="@dimen/card_elevation">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

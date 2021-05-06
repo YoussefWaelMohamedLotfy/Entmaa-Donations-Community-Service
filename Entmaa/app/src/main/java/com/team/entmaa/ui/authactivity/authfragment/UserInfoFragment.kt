@@ -3,9 +3,6 @@ package com.team.entmaa.ui.authactivity.authfragment
 import android.app.Activity.RESULT_OK
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Matrix
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,12 +13,10 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputLayout
 import com.team.entmaa.R
-import com.team.entmaa.ui.profileactivity.ProfileMainActivity
-import java.io.FileNotFoundException
+import com.team.entmaa.ui.contributorprofileactivity.ProfileMainActivity
 import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class UserInfoFragment : Fragment() {

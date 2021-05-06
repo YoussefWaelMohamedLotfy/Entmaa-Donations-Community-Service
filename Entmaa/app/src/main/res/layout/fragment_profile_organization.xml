@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.contributorprofileactivity.ContributorProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheetBottomCorners"
+            app:strokeColor="@color/color_on_surface_alpha_10"
+            app:strokeWidth="@dimen/card_stroke_width"
+            app:cardElevation="@dimen/card_elevation">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="@dimen/margin_xlarge"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/addimg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                    app:strokeColor="@color/green_300"
+                    app:strokeWidth="3dp" />
+
+                <TextView
+                    android:id="@+id/orgname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="Organization Name"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+
+
+                <TextView
+                    android:id="@+id/followingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Following"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="@+id/followingVal"
+                    app:layout_constraintStart_toStartOf="@+id/followingVal"
+                    app:layout_constraintTop_toBottomOf="@+id/followingVal" />
+
+                <TextView
+                    android:id="@+id/postTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posts"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="@+id/postVal"
+                    app:layout_constraintStart_toStartOf="@+id/postVal"
+                    app:layout_constraintTop_toBottomOf="@+id/postVal" />
+
+                <TextView
+                    android:id="@+id/postVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/badgeVal"
+                    app:layout_constraintStart_toEndOf="@+id/followingVal"
+                    app:layout_constraintTop_toBottomOf="@+id/orgname" />
+
+                <TextView
+                    android:id="@+id/followingVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="@dimen/_70sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/orgname" />
+
+                <TextView
+                    android:id="@+id/badgeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Badges"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="@+id/badgeVal"
+                    app:layout_constraintStart_toStartOf="@+id/badgeVal"
+                    app:layout_constraintTop_toBottomOf="@+id/badgeVal" />
+
+
+                <TextView
+                    android:id="@+id/badgeVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="20dp"
+                    android:layout_marginRight="@dimen/_70sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/orgname" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:id="@+id/followSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_large"
+
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+            tools:layout_editor_absoluteX="5dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/margin_xlarge"
+                android:layout_marginRight="@dimen/margin_xlarge"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/margin_xlarge"
+                android:layout_marginRight="@dimen/margin_xlarge"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/contactCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            app:layout_constraintTop_toBottomOf="@+id/followSection"
+            app:strokeColor="@color/color_on_surface_alpha_10"
+            app:strokeWidth="@dimen/card_stroke_width"
+            app:cardElevation="@dimen/card_elevation">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_medium">
+
+
+                <TextView
+                    android:id="@+id/contactTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/emailContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_margin="@dimen/margin_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/contactTitle"
+                    >
+                    <ImageView
+                        android:id="@+id/emailIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        app:srcCompat="@drawable/ic_baseline_email_24"
+                        android:layout_weight="0.3"/>
+
+                    <TextView
+                        android:id="@+id/emailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ahmedhatemsayed@gmail.com"
+                        android:textSize="15sp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginLeft="@dimen/margin_normal"
+                        app:layout_constraintStart_toEndOf="@+id/emailIcon"
+                        android:layout_weight="0.7"
+                        app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/PhoneContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_margin="@dimen/margin_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/emailContainer"
+                    >
+
+                    <ImageView
+                        android:id="@+id/phoneIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.1"
+
+                        app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+                    <TextView
+                        android:id="@+id/phonelTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01126638220"
+                        android:textSize="15sp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginLeft="@dimen/margin_normal"
+                        app:layout_constraintStart_toEndOf="@+id/emailIcon"
+                        android:layout_weight="0.9"
+                        app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/locationContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_margin="@dimen/margin_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/PhoneContainer"
+                    >
+
+                    <ImageView
+                        android:id="@+id/locationIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.1"
+                        app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+                    <TextView
+                        android:id="@+id/locationTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Egypt, Cairo"
+                        android:textSize="15sp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginLeft="@dimen/margin_normal"
+                        app:layout_constraintStart_toEndOf="@+id/emailIcon"
+                        android:layout_weight="0.9"
+                        app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
+
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/aboutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            app:layout_constraintTop_toBottomOf="@+id/contactCard"
+            app:strokeColor="@color/color_on_surface_alpha_10"
+            app:strokeWidth="@dimen/card_stroke_width"
+            app:cardElevation="@dimen/card_elevation">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_medium">
+
+
+                <TextView
+                    android:id="@+id/aboutTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/aboutTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+                    android:textSize="20sp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aboutTitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/SpecializationsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            app:layout_constraintTop_toBottomOf="@+id/aboutCard"
+            app:strokeColor="@color/color_on_surface_alpha_10"
+            app:strokeWidth="@dimen/card_stroke_width"
+            app:cardElevation="@dimen/card_elevation">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_medium">
+
+                <TextView
+                    android:id="@+id/interestsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interests"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/Interestschips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/interestsTitle">
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volunteering"/>
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Charity Work"/>
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tutoring"/>
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Helping People"/>
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health"/>
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Economics"
+                        />
+                </com.google.android.material.chip.ChipGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/Activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activities"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SpecializationsCard" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ActivitiesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            android:layout_marginRight="@dimen/margin_xlarge"
+            app:layout_constraintTop_toBottomOf="@id/Activities" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
