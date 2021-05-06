@@ -12,6 +12,7 @@ open class PostDto {
     var postedBy:OrganizationDto = OrganizationDto()
     var postType:PostTypeDto = PostTypeDto()
     var reactCount:Int = 0
+    var isLovedByMe:Boolean = false
     var postPhotoUrl:String = ""
     var comments:List<CommentDto> = listOf()
     var tags:List<TagDto> = listOf()

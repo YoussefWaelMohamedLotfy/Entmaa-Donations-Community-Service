@@ -26,9 +26,9 @@ class CommentsActivity : AppCompatActivity() {
         val adapter = BaseListAdapter<CommentDto,ItemCommentBinding>(R.layout.item_comment)
         {item,position ->
 
-            username.text = item.commentedBy?.username
+            username.text = item.commentedBy.username
             commentText.text = item.commentText
-            profilePhoto.loadURL(item.commentedBy?.profilePhotoUrl!!)
+            profilePhoto.loadURL(item.commentedBy.profilePhotoUrl)
         }
 
         binding.commentsList.adapter = adapter

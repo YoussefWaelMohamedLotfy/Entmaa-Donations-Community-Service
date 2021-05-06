@@ -4,6 +4,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_normal"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <com.google.android.material.imageview.ShapeableImageView
