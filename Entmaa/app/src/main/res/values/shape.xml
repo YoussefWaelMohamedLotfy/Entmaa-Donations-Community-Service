@@ -8,6 +8,11 @@
 
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="Entmaa.ShapeAppearance.Button" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">50dp</item>
         <item name="cornerFamily">rounded</item>

@@ -1,6 +1,6 @@
 package com.team.entmaa.data.model.dto.notification
 
 class NotificationTypeDto {
-    var id:Int? = null
-    var name:Int? = null
+    var id:Int = 0
+    var name:Int = 0
 }

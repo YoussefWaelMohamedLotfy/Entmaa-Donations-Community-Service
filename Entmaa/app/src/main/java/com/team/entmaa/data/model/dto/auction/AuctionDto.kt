@@ -4,14 +4,14 @@ import com.team.entmaa.data.model.dto.tags.TagDto
 import java.time.ZonedDateTime
 
 class AuctionDto {
-    var id:Int? = null
-    var title:String? = null
-    var description:String? = null
-    var startDate:ZonedDateTime? = null
-    var endDate:ZonedDateTime? = null
-    var startPrice:Int? = null
-    var soldPrice:Int? = null
-    var madeBy:Int? = null
-    var tags:List<TagDto>? = null
-    var itemPhotosUrls:List<String>? = null
+    var id:Int = -1
+    var title:String = ""
+    var description:String = ""
+    var startDate:ZonedDateTime = ZonedDateTime.now()
+    var endDate:ZonedDateTime = ZonedDateTime.now()
+    var startPrice:Int = 0
+    var soldPrice:Int = 0
+    var madeBy:Int = 0
+    var tags:List<TagDto> = listOf()
+    var itemPhotosUrls:List<String> = listOf()
 }

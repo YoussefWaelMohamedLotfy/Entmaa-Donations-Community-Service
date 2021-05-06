@@ -1,5 +1,6 @@
 package com.team.entmaa.ui.mainactivity.donatefragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,6 +16,7 @@ import com.team.entmaa.data.repositories.onLoading
 import com.team.entmaa.data.repositories.onSuccess
 import com.team.entmaa.databinding.FragmentDonateBinding
 import com.team.entmaa.databinding.ItemDonationRequestBinding
+import com.team.entmaa.ui.commentsactivity.CommentsActivity
 import com.team.entmaa.ui.mainactivity.FiltersViewModel
 import com.team.entmaa.util.BaseListAdapter
 import com.team.entmaa.util.durationFrom
@@ -57,6 +59,7 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
         {
             viewModel.filterBySearch(it)
         }
+
     }
 
     private fun setupDonationRequestsAdapter()
@@ -79,7 +82,10 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
             commentsButton.text = item.comments?.size.toString()
 
             commentsButton.setOnClickListener {
-                Toast.makeText(requireContext(),"dfd",Toast.LENGTH_SHORT).show()
+                Intent(requireContext(),CommentsActivity::class.java)
+                    .also {
+                        startActivity(it)
+                    }
             }
 
         }

@@ -8,6 +8,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green_300</item>
         <item name="colorPrimaryVariant">@color/green_500</item>
+        <item name="colorPrimaryDark">@color/green_600</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/orange_400</item>
@@ -17,6 +18,9 @@
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+
+        <item name="colorSurfaceLight">@color/gray_200</item>
+
     </style>
 
 </resources>

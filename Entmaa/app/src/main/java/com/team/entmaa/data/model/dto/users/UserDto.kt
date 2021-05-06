@@ -4,18 +4,18 @@ import com.team.entmaa.data.model.dto.location.LocationDto
 import com.team.entmaa.data.model.dto.tags.TagDto
 
 open class UserDto{
-    var id:Int? = null
-    var userType:UserTypeDto? = null
-    var email:String? = null
-    var password:String? = null
-    var username:String? = null
-    var description:String? = null
-    var profilePhotoUrl:String? = null
-    var coverPhotoUrl:String? = null
-    var firebaseToken:String? = null
-    var phoneNumbers:String? = null
-    var location: LocationDto? = null
-    var tags:List<TagDto>? = null
+    var id:Int = 0
+    var userType:UserTypeDto = UserTypeDto()
+    var email:String = ""
+    var password:String = ""
+    var username:String = ""
+    var description:String = ""
+    var profilePhotoUrl:String = ""
+    var coverPhotoUrl:String = ""
+    var firebaseToken:String = ""
+    var phoneNumbers:String = ""
+    var location: LocationDto = LocationDto()
+    var tags:List<TagDto> = listOf()
 }
 
 fun test()

@@ -1,8 +1,8 @@
 package com.team.entmaa.data.model.dto.location
 
 class LocationDto {
-    var id:Int? = null
-    var city:CityDto? = null
-    var address:String? = null
-    var mapsLocation:String? = null
+    var id:Int = 0
+    var city:CityDto = CityDto()
+    var address:String = ""
+    var mapsLocation:String = ""
 }

@@ -27,5 +27,12 @@
 
 
 
+    <!-- Gray -->
+    <color name="gray_200">#E4E6EB</color>
+
+
+
+    <!-- Black -->
+    <color name="black_200">#3A3B3C</color>
 
 </resources>

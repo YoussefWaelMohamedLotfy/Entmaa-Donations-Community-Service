@@ -52,8 +52,8 @@
     <!-- Chip -->
 
     <style name="Entmaa.Chip" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">?attr/colorSurface</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="android:textColor">@color/chip_txt_color</item>
         <item name="chipStrokeColor">@color/color_on_surface_alpha_10</item>
         <item name="rippleColor">@color/color_on_surface_alpha_25</item>
         <item name="android:textSize">11sp</item>
@@ -73,9 +73,5 @@
     </style>
 
 
-    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
 
 </resources>

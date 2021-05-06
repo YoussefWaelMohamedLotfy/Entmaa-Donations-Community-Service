@@ -4,8 +4,8 @@ import com.team.entmaa.data.model.dto.users.UserDto
 import java.time.ZonedDateTime
 
 class CommentDto {
-    var id:Int? = null
-    var commentedBy:UserDto? = null
-    var commentText:String? = null
-    var timePosted:ZonedDateTime? = null
+    var id:Int = 0
+    var commentedBy:UserDto = UserDto()
+    var commentText:String = ""
+    var timePosted:ZonedDateTime = ZonedDateTime.now()
 }

@@ -8,9 +8,9 @@ enum class Gender{
 
 class ContributorDto : UserDto()
 {
-    var birthDate:LocalDate? = null
-    var gender: Gender? = null
-    var followingcount:Int? = null
-    var badgesCount:Int? = null
+    var birthDate:LocalDate = LocalDate.now()
+    var gender: Gender = Gender.Male
+    var followingCount:Int = 0
+    var badgesCount:Int = 0
 }
 

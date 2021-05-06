@@ -26,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Entmaa">
+        <activity android:name=".ui.commentsactivity.CommentsActivity"></activity>
         <activity android:name=".ui.organizationprofileactivity.OrganizationProfileMainActivity"></activity>
         <activity android:name=".ui.contributorprofileactivity.ProfileMainActivity" />
         <activity

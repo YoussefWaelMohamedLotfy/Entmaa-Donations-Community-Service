@@ -3,9 +3,9 @@ package com.team.entmaa.data.model.dto.channel
 import java.time.ZonedDateTime
 
 class ChannelMessageDto {
-    var id:Int? = null
-    var channelId:Int? = null
-    var userId:Int? = null
-    var dateSent:ZonedDateTime? = null
-    var message:String? = null
+    var id:Int = 0
+    var channelId:Int = 0
+    var userId:Int = 0
+    var dateSent:ZonedDateTime = ZonedDateTime.now()
+    var message:String = ""
 }

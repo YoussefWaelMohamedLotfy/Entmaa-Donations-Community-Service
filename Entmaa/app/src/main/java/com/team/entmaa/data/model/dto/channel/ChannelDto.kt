@@ -1,14 +1,11 @@
 package com.team.entmaa.data.model.dto.channel
 
 class ChannelDto {
-    var id:Int? = null
-    var name:String? = null
-    var description:String? = null
-    var createdBy:Int? = null
-    var profilePhotoUrl:Int? = null
-    var userName:String? = null
+    var id:Int = 0
+    var name:String = ""
+    var description:String = ""
+    var createdBy:Int = 0
+    var profilePhotoUrl:Int = 0
+    var userName:String = ""
 }
 
-/**
- * createdBy change type to organization Dto
- * */

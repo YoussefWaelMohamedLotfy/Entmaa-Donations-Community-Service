@@ -5,12 +5,12 @@ import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.model.dto.users.OrganizationDto
 
 class DonatedItemDto {
-    var id:Int? = null
-    var itemName:String? = null
-    var description:String? = null
-    var isDelivered:Boolean? = null
-    var donatedBy:ContributorDto? = null
-    var donatedTo:OrganizationDto? = null
-    var tags:List<TagDto>? = null
-    var photosUrl:String? = null
+    var id:Int = 0
+    var itemName:String = ""
+    var description:String = ""
+    var isDelivered:Boolean = true
+    var donatedBy:ContributorDto = ContributorDto()
+    var donatedTo:OrganizationDto = OrganizationDto()
+    var tags:List<TagDto> = listOf()
+    var photosUrl:String = ""
 }
