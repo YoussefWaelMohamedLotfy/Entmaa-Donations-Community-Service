@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">entmaa</string>
     <string name="main_donate">Donate</string>
+    <string name="main_details">Details</string>
     <string name="main_volunteer">Volunteer</string>
     <string name="main_news">News</string>
     <string name="main_lost_and_found"><![CDATA[Lost & Found]]></string>
@@ -8,6 +9,7 @@
     <string name="slash">/</string>
     <string name="donation_request_item_collected">collected</string>
     <string name="donation_request_item_donate_btn">@string/main_donate</string>
+    <string name="event_request_item_btn">@string/main_details</string>
 
     <string name="item_post_by">By</string>
     <string name="item_post_ago">ago</string>
