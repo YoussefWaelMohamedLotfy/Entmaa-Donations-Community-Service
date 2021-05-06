@@ -5,17 +5,6 @@ using System.Web;
 
 namespace Entmaa_Web_Services.Models.Entmaa
 {
-    public class UserPhoto
-    {
-        public int UserID { get; set; }
-
-        public string PhotoURL { get; set; }
-
-        public byte PhotoType { get; set; } // 1 => Profile , 2 => Cover 
-
-        public User User { get; set; }
-    }
-
     public class PostPhoto
     {
         public int PostID { get; set; }

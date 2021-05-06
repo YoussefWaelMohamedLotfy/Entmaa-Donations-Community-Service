@@ -45,7 +45,6 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<PostPhoto> PostPhotos { get; set; }
         public DbSet<DonatedItemPhoto> DonatedItemPhotos { get; set; }
         public DbSet<OrganizationAlbumPhoto> OrganizationAlbumPhotos { get; set; }
-        public DbSet<UserPhoto> UserPhotos { get; set; }
         public DbSet<ReportedItemPhoto> ReportedItemPhotos { get; set; }
 
         public DbSet<ReportedItem> ReportedItems { get; set; }
@@ -64,7 +63,6 @@ namespace Entmaa_Web_Services.Persistence
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new UserPhoneNumberConfiguration());
             modelBuilder.Configurations.Add(new UserTypeConfiguration());
-            modelBuilder.Configurations.Add(new UserPhotoConfiguration());
 
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new OrganizationsAlbumPhotoConfiguration());

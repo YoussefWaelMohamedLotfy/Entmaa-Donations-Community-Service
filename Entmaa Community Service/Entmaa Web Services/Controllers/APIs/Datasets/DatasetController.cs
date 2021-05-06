@@ -135,5 +135,22 @@ namespace Entmaa_Web_Services.Controllers.APIs.Datasets
             donationDTO.ID = donation.ID;
             return Created(new Uri(Request.RequestUri + "/" + donation.ID), donationDTO);
         }
+
+        [Route("api/Dataset/Auction")]
+        [HttpPost]
+        public IHttpActionResult CreateAution(AuctionDatasetDTO auctionDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Model not valid.");
+
+            var auction = _mapper.Map<Auction>(auctionDTO);
+
+            _unit.Auctions.Add(auction);
+            _unit.CompleteWork();
+
+            auctionDTO.ID = auction.ID;
+            return Created(new Uri(Request.RequestUri + "/" + auction.ID), auctionDTO);
+        }
+
     }
 }

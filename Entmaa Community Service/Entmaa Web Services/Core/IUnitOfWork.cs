@@ -18,6 +18,8 @@ namespace Entmaa_Web_Services.Core
         IDonationRequestRepository DonationRequests { get; }
         IMoneyDonationRepository MoneyDonations { get; }
         IDonatedItemRepository DonatedItems { get; }
+        IReportedItemRepository ReportedItems { get; }
+        IAuctionRepository Auctions { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();

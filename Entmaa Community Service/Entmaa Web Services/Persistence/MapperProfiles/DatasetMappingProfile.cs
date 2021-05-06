@@ -18,6 +18,7 @@ namespace Entmaa_Web_Services.Persistence.MapperProfiles
             CreateMap<PostDatasetDTO, Post>();
             CreateMap<CommentDatasetDTO, PostComment>();
             CreateMap<DonatedItemDatasetDTO, DonatedItem>();
+            CreateMap<AuctionDatasetDTO, Auction>();
         }
     }
 }

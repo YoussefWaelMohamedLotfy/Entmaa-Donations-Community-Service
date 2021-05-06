@@ -23,7 +23,7 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public int CreatedBy { get; set; }
 
-        public int ResolvedBy { get; set; }
+        public int? ResolvedBy { get; set; }
 
         public bool IsFound { get; set; }
 

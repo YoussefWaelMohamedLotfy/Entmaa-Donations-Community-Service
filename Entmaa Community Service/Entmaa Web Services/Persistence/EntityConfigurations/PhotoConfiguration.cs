@@ -3,16 +3,6 @@ using Entmaa_Web_Services.Models.Entmaa;
 
 namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 {
-    public class UserPhotoConfiguration : EntityTypeConfiguration<UserPhoto>
-    {
-        public UserPhotoConfiguration()
-        {
-            HasKey(u => new { u.UserID, u.PhotoType });
-
-            Property(p => p.PhotoURL).IsRequired().HasMaxLength(450);
-        }
-    }
-
     public class PostPhotoConfiguration : EntityTypeConfiguration<PostPhoto>
     {
         public PostPhotoConfiguration()
