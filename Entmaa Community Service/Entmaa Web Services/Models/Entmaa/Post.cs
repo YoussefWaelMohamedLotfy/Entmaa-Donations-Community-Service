@@ -11,7 +11,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
         {
             UsersReacted = new HashSet<User>();
             Tags = new HashSet<Tag>();
-            PostPhotos = new HashSet<PostPhoto>();
             PostComments = new HashSet<PostComment>();
         }
 
@@ -27,6 +26,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public byte PostTypeID { get; set; }
 
+        public string PostPhotoUrl { get; set; }
+
         public PostType PostType { get; set; }
 
         public Organization Organization { get; set; }
@@ -38,8 +39,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
         public ICollection<User> UsersReacted { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
-
-        public ICollection<PostPhoto> PostPhotos { get; set; }
 
         public ICollection<PostComment> PostComments { get; set; }
     }

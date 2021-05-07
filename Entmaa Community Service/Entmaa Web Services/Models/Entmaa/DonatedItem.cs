@@ -9,7 +9,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
     {
         public DonatedItem()
         {
-            DonatedItemPhotos = new HashSet<DonatedItemPhoto>();
             Donations = new HashSet<DonationRequest>();
             Organizations = new HashSet<Organization>();
             Tags = new HashSet<Tag>();
@@ -27,11 +26,11 @@ namespace Entmaa_Web_Services.Models.Entmaa
         
         public int DonatedTo { get; set; }
 
+        public string ItemPhotoUrl { get; set; }
+
         public Organization Organization { get; set; }
 
         public Contributor Contributor { get; set; }
-
-        public ICollection<DonatedItemPhoto> DonatedItemPhotos { get; set; }
 
         public ICollection<DonationRequest> Donations { get; set; }
 

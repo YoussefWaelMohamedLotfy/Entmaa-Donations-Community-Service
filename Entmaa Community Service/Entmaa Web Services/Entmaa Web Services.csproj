@@ -515,6 +515,10 @@
     <Compile Include="Migrations\202105021507298_UpdateUserAndReportedItemModels.designer.cs">
       <DependentUpon>202105021507298_UpdateUserAndReportedItemModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105072226596_RemovedAllPhotoModels.cs" />
+    <Compile Include="Migrations\202105072226596_RemovedAllPhotoModels.designer.cs">
+      <DependentUpon>202105072226596_RemovedAllPhotoModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entmaa\Auction.cs" />
@@ -530,7 +534,6 @@
     <Compile Include="Models\Entmaa\MoneyDonationOnRequest.cs" />
     <Compile Include="Models\Entmaa\Notification.cs" />
     <Compile Include="Models\Entmaa\Organization.cs" />
-    <Compile Include="Models\Entmaa\Photo.cs" />
     <Compile Include="Models\Entmaa\Post.cs" />
     <Compile Include="Models\Entmaa\PostComment.cs" />
     <Compile Include="Models\Entmaa\ReportedCase.cs" />
@@ -557,7 +560,6 @@
     <Compile Include="Persistence\EntityConfigurations\MoneyDonationOnRequestConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\NotificationTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\OrganizationConfiguration.cs" />
-    <Compile Include="Persistence\EntityConfigurations\PhotoConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostCommentConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PostTypeConfiguration.cs" />
@@ -1049,6 +1051,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105021507298_UpdateUserAndReportedItemModels.resx">
       <DependentUpon>202105021507298_UpdateUserAndReportedItemModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105072226596_RemovedAllPhotoModels.resx">
+      <DependentUpon>202105072226596_RemovedAllPhotoModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

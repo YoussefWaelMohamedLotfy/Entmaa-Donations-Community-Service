@@ -34,7 +34,6 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
 
             HasMany(o => o.Posts).WithRequired(p => p.Organization).HasForeignKey(p => p.PostedBy);
             HasMany(o => o.AuctionsCreated).WithRequired(a => a.OrganizationCreator).HasForeignKey(a => a.HostedBy);
-            HasMany(o => o.OrganizationAlbumPhotos).WithRequired(o => o.Organization).HasForeignKey(o => o.OrganizationID);
             HasMany(o => o.DonatedItems).WithRequired(d => d.Organization).HasForeignKey(d => d.DonatedTo);
             HasMany(o => o.Subscriptions).WithRequired(s => s.Organization).HasForeignKey(s => s.SubscribedTo);
             HasMany(o => o.ReportedCases).WithRequired(r => r.Organization).HasForeignKey(r => r.ReportedTo);

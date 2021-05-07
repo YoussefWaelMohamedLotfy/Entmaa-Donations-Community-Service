@@ -14,8 +14,6 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
             Property(d => d.Name).IsRequired();
 
             HasKey(d => d.ID);
-
-            HasMany(d => d.DonatedItemPhotos).WithRequired(d => d.DonatedItem).HasForeignKey(d => d.ItemID);
         }
     }
 }

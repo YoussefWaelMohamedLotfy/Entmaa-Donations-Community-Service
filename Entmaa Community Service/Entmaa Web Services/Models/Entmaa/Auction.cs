@@ -11,7 +11,6 @@ namespace Entmaa_Web_Services.Models.Entmaa
         {
             Tags = new HashSet<Tag>();
             Bidders = new HashSet<AuctionBidder>();
-            AuctionItemPhotos = new HashSet<AuctionItemPhoto>();
         }
 
         public int ID { get; set; }
@@ -30,12 +29,12 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public DateTime EndDate { get; set; }
 
+        public string PhotoUrl { get; set; }
+
         public Organization OrganizationCreator { get; set; }
 
         public ICollection<Tag> Tags { get; set; }
 
         public ICollection<AuctionBidder> Bidders { get; set; }
-
-        public ICollection<AuctionItemPhoto> AuctionItemPhotos { get; set; }
     }
 }
