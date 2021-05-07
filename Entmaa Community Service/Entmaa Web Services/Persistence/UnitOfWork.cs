@@ -25,6 +25,7 @@ namespace Entmaa_Web_Services.Persistence
         public IDonatedItemRepository DonatedItems { get; private set; }
         public IReportedItemRepository ReportedItems { get; private set; }
         public IAuctionRepository Auctions { get; private set; }
+        public IAuctionBidderRepository AuctionBidders { get; private set; }
 
         public UnitOfWork(MainContext context)
         {
@@ -41,6 +42,7 @@ namespace Entmaa_Web_Services.Persistence
             DonatedItems = new DonatedItemRepository(_context);
             ReportedItems = new ReportedItemRepository(_context);
             Auctions = new AuctionRepository(_context);
+            AuctionBidders = new AuctionBidderRepository(_context);
         }
 
         public int CompleteWork()

@@ -64,17 +64,17 @@ namespace Entmaa_Web_Services.Controllers.APIs
             return Json(dto);
         }
 
-        [Route("api/Organizations/{id}/auctions")]
+        [Route("api/Auctions/{auctionId}/winner")]
         [HttpGet]
-        public IHttpActionResult GetAuctionWinner(int id)
+        public IHttpActionResult GetAuctionWinner(int auctionId)
         {
-            var auctions = _unit.Auctions.GetAuctionWinner(id);
+            var auctionWinner = _unit.Auctions.GetAuctionWinner(auctionId);
 
-            if (auctions == null)
+            if (auctionWinner == null)
                 return NotFound();
 
-            //var dto = auctions.Select(_mapper.Map<Auction, UserDTO>);
-            return Ok();
+            var dto = _mapper.Map<UserDTO>(auctionWinner);
+            return Json(dto);
         }
 
         [Route("api/Organizations/{id}/auctions")]
@@ -129,5 +129,34 @@ namespace Entmaa_Web_Services.Controllers.APIs
 
             return Json(new { message = "Success" });
         }
+
+        [Route("api/Auctions/{auctionid}/bidders")]
+        [HttpPost]
+        public IHttpActionResult ContributorBidOnAuction(int auctionId, CreateBidderDTO bidderDTO)
+        {
+            var auction = _unit.Auctions.GetAuction(auctionId);
+
+            if (auction == null)
+                return NotFound();
+
+            var bidder = _unit.AuctionBidders.GetBidder(bidderDTO.BidBy);
+
+            if (bidder == null)
+            {
+                var newBidder = _mapper.Map<AuctionBidder>(bidderDTO);
+                newBidder.AuctionID = auctionId;
+                newBidder.ValidUntil = new DateTime(2020, 8, 14);
+                auction.Bidders.Add(newBidder);
+            }
+            else
+            {
+                bidder.Price = bidderDTO.Price;
+            }
+
+            _unit.CompleteWork();
+
+            return Json(new { message = "Success" });
+        }
+
     }
 }

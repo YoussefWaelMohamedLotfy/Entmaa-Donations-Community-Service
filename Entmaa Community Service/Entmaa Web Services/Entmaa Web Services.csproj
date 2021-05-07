@@ -444,6 +444,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\DIModules\AutoFacModule.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IAuctionBidderRepository.cs" />
     <Compile Include="Core\Repositories\IAuctionRepository.cs" />
     <Compile Include="Core\Repositories\IBadgeRepository.cs" />
     <Compile Include="Core\Repositories\ICommentRepository.cs" />
@@ -457,6 +458,7 @@
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\Auctions\CreateAuctionDTO.cs" />
+    <Compile Include="DTOs\Auctions\CreateBidderDTO.cs" />
     <Compile Include="DTOs\Auctions\EditAuctionDTO.cs" />
     <Compile Include="DTOs\Auctions\GetAuctionsDTO.cs" />
     <Compile Include="DTOs\CityDTO.cs" />
@@ -575,6 +577,7 @@
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\ReportedItemMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
+    <Compile Include="Persistence\Repositories\AuctionBidderRepository.cs" />
     <Compile Include="Persistence\Repositories\AuctionRepository.cs" />
     <Compile Include="Persistence\Repositories\BadgeRepository.cs" />
     <Compile Include="Persistence\Repositories\CommentRepository.cs" />

@@ -13,6 +13,6 @@ namespace Entmaa_Web_Services.Core.Repositories
         IEnumerable<Auction> GetAllAuctions();
         IEnumerable<Auction> GetContributorBiddedAuctions(int id);
         IEnumerable<Auction> GetOrganizationAuctions(int id);
-        AuctionBidder GetAuctionWinner(int id);
+        Contributor GetAuctionWinner(int id);
     }
 }

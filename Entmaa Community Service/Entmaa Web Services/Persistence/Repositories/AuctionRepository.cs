@@ -60,10 +60,16 @@ namespace Entmaa_Web_Services.Persistence.Repositories
                 .ToList();
         }
 
-        public AuctionBidder GetAuctionWinner(int id)
+        public Contributor GetAuctionWinner(int id)
         {
-            return MainContext.AuctionBidders
-                .SingleOrDefault(c => c.BidBy == id);
+            int highestPrice = MainContext.AuctionBidders.Max(b => b.Price);
+
+            var bidder = MainContext.AuctionBidders
+                                .Include(c => c.Auction)
+                                .Include(c => c.Contributor)
+                                .SingleOrDefault(c => c.Price == highestPrice && c.Auction.ID == id);
+
+            return bidder.Contributor;
         }
     }
 }

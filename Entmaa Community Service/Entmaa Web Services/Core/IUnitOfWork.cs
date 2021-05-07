@@ -20,6 +20,7 @@ namespace Entmaa_Web_Services.Core
         IDonatedItemRepository DonatedItems { get; }
         IReportedItemRepository ReportedItems { get; }
         IAuctionRepository Auctions { get; }
+        IAuctionBidderRepository AuctionBidders { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();
