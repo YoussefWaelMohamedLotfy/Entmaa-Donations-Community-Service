@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.team.entmaa.R
+import com.team.entmaa.ui.MapsFragment
 
 class WelcomeFragment : Fragment() {
 
@@ -20,7 +21,7 @@ class WelcomeFragment : Fragment() {
         val loginButton : Button = root.findViewById(R.id.butLogin)
         loginButton.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.authActivity, LoginFragment())
+            transaction?.replace(R.id.authActivity, MapsFragment())
             transaction?.isAddToBackStackAllowed
             transaction?.addToBackStack(null)
             transaction?.commit()
