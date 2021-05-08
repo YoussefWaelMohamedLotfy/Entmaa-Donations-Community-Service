@@ -22,6 +22,7 @@ namespace Entmaa_Web_Services.Core
         IAuctionRepository Auctions { get; }
         IAuctionBidderRepository AuctionBidders { get; }
         ISubscriptionRepository Subscriptions { get; }
+        INotificationRepository Notifications { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();

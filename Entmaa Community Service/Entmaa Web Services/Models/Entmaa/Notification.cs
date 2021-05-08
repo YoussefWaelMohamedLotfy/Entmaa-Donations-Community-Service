@@ -17,6 +17,8 @@ namespace Entmaa_Web_Services.Models.Entmaa
 
         public int TriggerID { get; set; }
 
+        public string Message { get; set; }
+
         public NotificationType NotificationType { get; set; }
     }
 

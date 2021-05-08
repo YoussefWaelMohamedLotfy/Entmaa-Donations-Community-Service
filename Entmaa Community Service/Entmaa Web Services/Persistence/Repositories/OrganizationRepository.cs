@@ -11,6 +11,7 @@ namespace Entmaa_Web_Services.Persistence.Repositories
     public class OrganizationRepository : Repository<Organization>, IOrganizationRepository
     {
         public MainContext MainContext { get { return _context as MainContext; } }
+
         public OrganizationRepository(DbContext context) : base(context)
         {
         }

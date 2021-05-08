@@ -435,6 +435,7 @@
     <Compile Include="Controllers\APIs\DonationRequestController.cs" />
     <Compile Include="Controllers\APIs\InteractionController.cs" />
     <Compile Include="Controllers\APIs\MoneyDonationController.cs" />
+    <Compile Include="Controllers\APIs\NotificationController.cs" />
     <Compile Include="Controllers\APIs\PostController.cs" />
     <Compile Include="Controllers\APIs\ReportedItemController.cs" />
     <Compile Include="Controllers\APIs\SubscriptionController.cs" />
@@ -453,6 +454,7 @@
     <Compile Include="Core\Repositories\IDonatedItemRepository.cs" />
     <Compile Include="Core\Repositories\IDonationRequestRepository.cs" />
     <Compile Include="Core\Repositories\IMoneyDonationRepository.cs" />
+    <Compile Include="Core\Repositories\INotificationRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IPostRepository.cs" />
     <Compile Include="Core\Repositories\IReportedItemRepository.cs" />
@@ -476,6 +478,7 @@
     <Compile Include="DTOs\Donations\UserDTO.cs" />
     <Compile Include="DTOs\Donations\EditDonatedItemDTO.cs" />
     <Compile Include="DTOs\Donations\GetDonatedItemsDTO.cs" />
+    <Compile Include="DTOs\Misc\GetNotificationsDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
     <Compile Include="DTOs\ReportedItems\AddReportedItemDTO.cs" />
     <Compile Include="DTOs\ReportedItems\EditReportedItemDTO.cs" />
@@ -523,6 +526,10 @@
     <Compile Include="Migrations\202105072226596_RemovedAllPhotoModels.cs" />
     <Compile Include="Migrations\202105072226596_RemovedAllPhotoModels.designer.cs">
       <DependentUpon>202105072226596_RemovedAllPhotoModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105081922556_AddMessagePropertyToNotificationModel.cs" />
+    <Compile Include="Migrations\202105081922556_AddMessagePropertyToNotificationModel.designer.cs">
+      <DependentUpon>202105081922556_AddMessagePropertyToNotificationModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -581,6 +588,7 @@
     <Compile Include="Persistence\MapperProfiles\AuctionMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\DonationMappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\MiscMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\ReportedItemMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\SubscriptionMappingProfile.cs" />
@@ -593,6 +601,7 @@
     <Compile Include="Persistence\Repositories\DonatedItemRepository.cs" />
     <Compile Include="Persistence\Repositories\DonationRequestRepository.cs" />
     <Compile Include="Persistence\Repositories\MoneyDonationRepository.cs" />
+    <Compile Include="Persistence\Repositories\NotificationRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\PostRepository.cs" />
     <Compile Include="Persistence\Repositories\ReportedItemRepository.cs" />
@@ -1061,6 +1070,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105072226596_RemovedAllPhotoModels.resx">
       <DependentUpon>202105072226596_RemovedAllPhotoModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105081922556_AddMessagePropertyToNotificationModel.resx">
+      <DependentUpon>202105081922556_AddMessagePropertyToNotificationModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

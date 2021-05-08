@@ -17,6 +17,7 @@ namespace Entmaa_Web_Services.Core.DIModules
                 cfg.AddProfile<ReportedItemMappingProfile>();
                 cfg.AddProfile<AuctionMappingProfile>();
                 cfg.AddProfile<SubscriptionMappingProfile>();
+                cfg.AddProfile<MiscMappingProfile>();
                 cfg.AddProfile<DatasetMappingProfile>();
             }
             )).AsSelf().SingleInstance();
