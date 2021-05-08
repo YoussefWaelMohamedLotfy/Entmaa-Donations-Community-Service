@@ -1,12 +1,7 @@
 package com.team.entmaa.ui
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
-import android.location.Location
-import android.location.LocationListener
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,17 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
@@ -34,7 +25,6 @@ import java.io.IOException
 
 class MapsFragment : Fragment() {
 
-    private var mMap: GoogleMap? = null
     internal var mCurrLocationMarker: Marker? = null
     internal lateinit var mLocationRequest: LocationRequest
     internal var mGoogleApiClient: GoogleApiClient? = null
@@ -74,17 +64,11 @@ class MapsFragment : Fragment() {
                         e.printStackTrace()
                     }
 
-                    //Log.i("map",location)
-
                     if(addressList==null || addressList!!.isEmpty()) {
                         Toast.makeText(activity,"Please rewrite the location correctly ;)",Toast.LENGTH_SHORT).show()
                         return false
                     }
                     val address = addressList!![0]
-
-                    Log.i("map",address!!.latitude.toString())
-                    Log.i("map",address!!.longitude.toString())
-
                     val latLng = LatLng(address.latitude, address.longitude)
 
                     Log.i("map","here")
