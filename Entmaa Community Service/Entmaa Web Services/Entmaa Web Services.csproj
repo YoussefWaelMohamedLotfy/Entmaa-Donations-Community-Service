@@ -437,6 +437,7 @@
     <Compile Include="Controllers\APIs\MoneyDonationController.cs" />
     <Compile Include="Controllers\APIs\PostController.cs" />
     <Compile Include="Controllers\APIs\ReportedItemController.cs" />
+    <Compile Include="Controllers\APIs\SubscriptionController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
     <Compile Include="Controllers\Entmaa\FirebaseAccountController.cs" />
     <Compile Include="Controllers\APIs\OrganizationController.cs" />
@@ -456,6 +457,7 @@
     <Compile Include="Core\Repositories\IPostRepository.cs" />
     <Compile Include="Core\Repositories\IReportedItemRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Repositories\ISubscriptionRepository.cs" />
     <Compile Include="Core\Repositories\ITagRepository.cs" />
     <Compile Include="DTOs\Auctions\CreateAuctionDTO.cs" />
     <Compile Include="DTOs\Auctions\CreateBidderDTO.cs" />
@@ -478,6 +480,9 @@
     <Compile Include="DTOs\ReportedItems\AddReportedItemDTO.cs" />
     <Compile Include="DTOs\ReportedItems\EditReportedItemDTO.cs" />
     <Compile Include="DTOs\ReportedItems\GetReportedItemsDTO.cs" />
+    <Compile Include="DTOs\Subscriptions\AddSubscriptionDTO.cs" />
+    <Compile Include="DTOs\Subscriptions\EditSubscriptionDTO.cs" />
+    <Compile Include="DTOs\Subscriptions\GetSubscriptionsDTO.cs" />
     <Compile Include="DTOs\UserLoginRequestDTO.cs" />
     <Compile Include="DTOs\UserSignupRequestDTO.cs" />
     <Compile Include="DTOs\CountryDTO.cs" />
@@ -578,6 +583,7 @@
     <Compile Include="Persistence\MapperProfiles\DonationMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\ReportedItemMappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\SubscriptionMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\UserMappingProfile.cs" />
     <Compile Include="Persistence\Repositories\AuctionBidderRepository.cs" />
     <Compile Include="Persistence\Repositories\AuctionRepository.cs" />
@@ -591,6 +597,7 @@
     <Compile Include="Persistence\Repositories\PostRepository.cs" />
     <Compile Include="Persistence\Repositories\ReportedItemRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\Repositories\SubscriptionRepository.cs" />
     <Compile Include="Persistence\Repositories\TagRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

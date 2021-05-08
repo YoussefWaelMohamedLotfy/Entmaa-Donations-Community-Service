@@ -28,9 +28,7 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<AuctionBidder> AuctionBidders { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
-
         public DbSet<Badge> Badges { get; set; }
-
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Country> Countries { get; set; }
@@ -39,13 +37,12 @@ namespace Entmaa_Web_Services.Persistence
 
         public DbSet<DonationRequest> DonationRequests { get; set; }
         public DbSet<MoneyDonation> MoneyDonations { get; set; }
+        public DbSet<MoneyDonationOnRequest> MoneyDonationsOnRequest { get; set; }
         public DbSet<DonatedItem> DonatedItems { get; set; }
-
         public DbSet<ReportedItem> ReportedItems { get; set; }
 
         public DbSet<Notification> Notifications { get; set; }
-
-        public DbSet<MoneyDonationOnRequest> MoneyDonationsOnRequest { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
 
         public MainContext() : base("name=EntmaaConnection")
         {
