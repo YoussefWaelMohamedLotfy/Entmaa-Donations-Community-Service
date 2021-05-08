@@ -437,6 +437,7 @@
     <Compile Include="Controllers\APIs\MoneyDonationController.cs" />
     <Compile Include="Controllers\APIs\NotificationController.cs" />
     <Compile Include="Controllers\APIs\PostController.cs" />
+    <Compile Include="Controllers\APIs\ReportedCaseController.cs" />
     <Compile Include="Controllers\APIs\ReportedItemController.cs" />
     <Compile Include="Controllers\APIs\SubscriptionController.cs" />
     <Compile Include="Controllers\Entmaa\ContributorController.cs" />
@@ -457,6 +458,7 @@
     <Compile Include="Core\Repositories\INotificationRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
     <Compile Include="Core\Repositories\IPostRepository.cs" />
+    <Compile Include="Core\Repositories\IReportedCaseRepository.cs" />
     <Compile Include="Core\Repositories\IReportedItemRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\ISubscriptionRepository.cs" />
@@ -480,6 +482,8 @@
     <Compile Include="DTOs\Donations\GetDonatedItemsDTO.cs" />
     <Compile Include="DTOs\Misc\GetNotificationsDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
+    <Compile Include="DTOs\ReportedCases\AddReportedCaseDTO.cs" />
+    <Compile Include="DTOs\ReportedCases\GetReportedCasesDTO.cs" />
     <Compile Include="DTOs\ReportedItems\AddReportedItemDTO.cs" />
     <Compile Include="DTOs\ReportedItems\EditReportedItemDTO.cs" />
     <Compile Include="DTOs\ReportedItems\GetReportedItemsDTO.cs" />
@@ -604,6 +608,7 @@
     <Compile Include="Persistence\Repositories\NotificationRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
     <Compile Include="Persistence\Repositories\PostRepository.cs" />
+    <Compile Include="Persistence\Repositories\ReportedCaseRepository.cs" />
     <Compile Include="Persistence\Repositories\ReportedItemRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\Repositories\SubscriptionRepository.cs" />

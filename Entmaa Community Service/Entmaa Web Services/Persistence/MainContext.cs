@@ -40,6 +40,7 @@ namespace Entmaa_Web_Services.Persistence
         public DbSet<MoneyDonationOnRequest> MoneyDonationsOnRequest { get; set; }
         public DbSet<DonatedItem> DonatedItems { get; set; }
         public DbSet<ReportedItem> ReportedItems { get; set; }
+        public DbSet<ReportedCase> ReportedCases { get; set; }
 
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
