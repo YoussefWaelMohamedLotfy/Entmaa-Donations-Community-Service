@@ -1,14 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/bottom_nav_shadow_height"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mainactivity.morefragment.MoreFragment">
+    android:fillViewport="true"
+   >
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:context=".ui.mainactivity.morefragment.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="morefragment" />
+        android:id="@+id/donateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Donate"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <com.team.entmaa.ui.customviews.DashCardView
+        android:id="@+id/donateItemBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/ic_donate"
+        app:layout_constraintEnd_toStartOf="@+id/remindersBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/donateLabel"
+        app:text="My donated items" />
+
+    <com.team.entmaa.ui.customviews.DashCardView
+        android:id="@+id/remindersBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@drawable/ic_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/donateItemBtn"
+        app:layout_constraintTop_toBottomOf="@id/donateLabel"
+        app:text="Donation reminders" />
+
+
+    <TextView
+        android:id="@+id/interactLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Interact"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/donateItemBtn" />
+
+    <com.team.entmaa.ui.customviews.DashCardView
+        android:id="@+id/channelsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/ic_channel"
+        app:layout_constraintEnd_toStartOf="@+id/reportBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/interactLabel"
+        app:text="Chat Channels" />
+
+    <com.team.entmaa.ui.customviews.DashCardView
+        android:id="@+id/reportBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@drawable/ic_investigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/channelsBtn"
+        app:layout_constraintTop_toBottomOf="@id/interactLabel"
+        app:text="Report a case" />
+
+
+    <LinearLayout
+        android:id="@+id/optionsList"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channelsBtn">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:text="Manage "
+          android:textAppearance="?attr/textAppearanceHeadline5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/donateItemBtn" />
+
+      <Button
+          android:id="@+id/profileBtn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:text="Profile"
+          android:textAppearance="?attr/textAppearanceListItem"
+          android:textColor="?attr/colorOnSurface"
+          android:textAlignment="textStart"
+          app:icon="@drawable/ic_profile_24"
+          app:iconPadding="16dp" />
+
+      <Button
+          android:id="@+id/lostfoundBtn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:text="Lost &amp; found items"
+          android:textAppearance="?attr/textAppearanceListItem"
+          android:textColor="?attr/colorOnSurface"
+          android:textAlignment="textStart"
+          app:icon="@drawable/ic_lost_items"
+          app:iconPadding="16dp"
+          />
+
+      <Button
+          android:id="@+id/volunteersListBtn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:text="My Volunteers"
+          android:textAppearance="?attr/textAppearanceListItem"
+          android:textColor="?attr/colorOnSurface"
+          android:textAlignment="textStart"
+          app:icon="@drawable/ic_volunteer"
+          app:iconPadding="16dp"
+          />
+
+      <Button
+          android:id="@+id/moneyDonationsBtn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:text="My Money Donations"
+          android:textAppearance="?attr/textAppearanceListItem"
+          android:textColor="?attr/colorOnSurface"
+          android:textAlignment="textStart"
+          app:icon="@drawable/ic_money_24"
+          app:iconPadding="16dp"
+          />
+
+      <Button
+          android:id="@+id/logoutBtn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          android:text="Logout"
+          android:textAppearance="?attr/textAppearanceListItem"
+          android:textColor="?attr/colorOnSurface"
+          android:textAlignment="textStart"
+          app:icon="@drawable/ic_logout_24"
+          app:iconPadding="16dp"
+          />
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

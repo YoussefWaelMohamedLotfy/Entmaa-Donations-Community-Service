@@ -1,6 +1,7 @@
 package com.team.entmaa.ui.mainactivity.volunteerfragment
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -102,45 +103,52 @@ class VolunteerFragment : Fragment(R.layout.fragment_volunteer) {
                     }
             }
 
-            fun checkLoveStats()
+            fun checkLoveStatus()
             {
                 val loveColor = requireContext().getColorFromAttr(R.attr.colorPrimary)
-                val color:Int
-                val icon:Int
+                val heartColor:Int
+                val heartIcon:Int
 
                 if(item.isLovedByMe)
                 {
-                    item.reactCount++
-                    color = loveColor
-                    icon = R.drawable.ic_favorite_filled_24
-                    lifecycleScope.launch {
-                        postInteractionsApi.reactOnPost(item.id,contributor.id)
-                    }
+                    heartColor = loveColor
+                    heartIcon = R.drawable.ic_favorite_filled_24
                 }
                 else
                 {
-                    item.reactCount--
-                    color = Color.GRAY
-                    icon = R.drawable.ic_favorite_border_24
-                    lifecycleScope.launch {
-                        postInteractionsApi.removeReactOnPost(item.id,contributor.id)
-                    }
+                    heartColor = Color.GRAY
+                    heartIcon = R.drawable.ic_favorite_border_24
                 }
 
-
-                (heartButton as MaterialButton).icon =
-                    ContextCompat.getDrawable(requireContext(),icon)
-
-                heartButton.icon.setTint(color)
-
-                heartButton.text = item.reactCount.toString()
+                (heartButton as MaterialButton).apply {
+                    text = item.reactCount.toString()
+                    this.icon = ContextCompat.getDrawable(requireContext(),heartIcon)
+                    this.iconTint = ColorStateList.valueOf(heartColor)
+                }
             }
 
-            checkLoveStats()
+            checkLoveStatus()
 
             heartButton.setOnClickListener {
                 item.isLovedByMe = !item.isLovedByMe
-                checkLoveStats()
+                if(item.isLovedByMe)
+                {
+                    lifecycleScope.launch {
+                        postInteractionsApi.reactOnPost(item.id,contributor.id)
+                    }
+                    item.reactCount++
+                }
+                else
+                {
+                    lifecycleScope.launch {
+                        postInteractionsApi.removeReactOnPost(item.id,contributor.id)
+                    }
+                    item.reactCount--
+                }
+
+                heartButton.text = item.reactCount.toString()
+
+                checkLoveStatus()
             }
 
         }

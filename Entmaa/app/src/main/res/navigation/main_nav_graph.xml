@@ -29,5 +29,14 @@
         android:id="@+id/moreFragment"
         android:name="com.team.entmaa.ui.mainactivity.morefragment.MoreFragment"
         android:label="fragment_more"
-        tools:layout="@layout/fragment_more" />
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_contributorProfileFragment"
+            app:destination="@id/contributorProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contributorProfileFragment"
+        android:name="com.team.entmaa.ui.contributorprofileactivity.ContributorProfileFragment"
+        android:label="fragment_profile_contributor"
+        tools:layout="@layout/fragment_profile_contributor" />
 </navigation>

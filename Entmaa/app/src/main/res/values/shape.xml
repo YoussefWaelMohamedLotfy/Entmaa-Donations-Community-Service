@@ -60,4 +60,8 @@
         <item name="cornerSize">20%</item>
     </style>
 
+    <style name="Entmaa.ShapeAppearance.Card.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">15%</item>
+    </style>
+
 </resources>

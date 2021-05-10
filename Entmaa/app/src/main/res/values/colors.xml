@@ -26,6 +26,8 @@
     <color name="green_600">#2D6A4F</color>
 
 
+    <!-- OffWhite -->
+    <color name="offWhite_100">#F9F9F9</color>
 
     <!-- Gray -->
     <color name="gray_200">#F2F2F2</color>
