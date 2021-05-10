@@ -45,6 +45,13 @@ open class BaseListAdapter
     open fun Binding.bind(item: Item, position:Int) = this.bindItem(item,position)
 
 
+    fun add(item:Item)
+    {
+        val newList =  currentList.toMutableList()
+        newList.add(item)
+        submitList(newList)
+    }
+
     class BaseItemCallback<T : Any> : DiffUtil.ItemCallback<T>() {
         override fun areItemsTheSame(oldItem: T, newItem: T) = oldItem == newItem
 

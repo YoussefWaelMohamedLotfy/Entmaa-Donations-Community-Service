@@ -207,4 +207,12 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_event_volunteer_btn">Volunteer</string>
+    <string name="item_auction_highest_bid">Highest bid:</string>
+    <string name="main_nav_auction">Auction</string>
+    <string name="item_auction_bid_now">Bid Now</string>
+    <string name="item_auction_enter_your_bid">Enter your bid</string>
+    <string name="EGP">EGP</string>
+    <string name="item_reported_found">Found</string>
+    <string name="item_reported_lost">Lost</string>
 </resources>

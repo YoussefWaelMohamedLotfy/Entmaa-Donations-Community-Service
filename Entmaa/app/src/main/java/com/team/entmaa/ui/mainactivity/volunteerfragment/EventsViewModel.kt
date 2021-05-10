@@ -1,4 +1,4 @@
-package com.team.entmaa.ui.mainactivity.donatefragment
+package com.team.entmaa.ui.mainactivity.volunteerfragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,10 +10,12 @@ import com.skydoves.sandwich.onSuccess
 import com.team.entmaa.data.model.dto.ApiResponseMessage
 import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.posts.EventDto
 import com.team.entmaa.data.model.dto.tags.TagDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.sources.remote.DonationRequestsApi
+import com.team.entmaa.data.sources.remote.EventsApi
 import com.team.entmaa.di.FakeApi
 import com.team.entmaa.ui.mainactivity.Filterable
 import com.team.entmaa.util.filterBySearch
@@ -25,15 +27,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DonationRequestViewModel @Inject
+class EventsViewModel @Inject
     constructor(
     private val contributor:ContributorDto,
-    @FakeApi private val donationsApi : DonationRequestsApi
+    private val eventsApi : EventsApi
 )
     : ViewModel() , Filterable {
 
-    private val mDonationRequests = MutableLiveData<Result<List<DonationRequestDto>>>()
-    val donationRequests : LiveData<Result<List<DonationRequestDto>>> = mDonationRequests
+    private val mEvents = MutableLiveData<Result<List<EventDto>>>()
+    val events : LiveData<Result<List<EventDto>>> = mEvents
 
     private var activeFilters:Set<TagDto> = setOf()
     private var activeSearch:String = ""
@@ -56,29 +58,19 @@ class DonationRequestViewModel @Inject
     fun refresh()
     {
         viewModelScope.launch {
-            mDonationRequests.value = Result.InProgress
-            val response = donationsApi.getDonationRequestsFeed(contributor.id)
-
-            response.onSuccess {
-                mDonationRequests.value = Result.Success(this.data!!
-                    .filterByTags(activeFilters)
-                    .filterBySearch(activeSearch))
-
-            }.onError {
-              mDonationRequests.value = Result.Error("Network Error")
-            }
+            mEvents.value = Result.InProgress
+            val response = eventsApi.getAllEvents(contributor.id)
+            mEvents.value = Result.Success(response
+                .filterByTags(activeFilters)
+                .filterBySearch(activeSearch))
         }
     }
 
-    suspend fun donatedMoneyToRequest(item:DonationRequestDto, moneyQuantity:Int) : ApiResponse<ApiResponseMessage>
+    fun volunteerInEvent(eventId:Int)
     {
-        val moneyDonation = MoneyDonationsOnRequestDto().apply {
-            donatedBy = contributor
-            donatedTo = item.postedBy
-            this.moneyAmount = moneyQuantity
+        viewModelScope.launch {
+            eventsApi.volunteerInEvent(eventId,contributor.id)
         }
-
-        return donationsApi.donateMoneyToRequest(item.id,moneyDonation)
     }
 
 

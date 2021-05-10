@@ -14,6 +14,9 @@
         <!-- Chips  -->
         <item name="chipStyle">@style/Entmaa.Chip</item>
 
+
+        <item name="bottomSheetDialogTheme">@style/Entmaa.BottomSheetDialog</item>
+
         <item name="fontFamily">@font/nunito_bold</item>
     </style>
 

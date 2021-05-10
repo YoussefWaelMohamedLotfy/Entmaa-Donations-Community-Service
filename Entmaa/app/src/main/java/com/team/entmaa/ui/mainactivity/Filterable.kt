@@ -4,7 +4,7 @@ import com.team.entmaa.data.model.dto.tags.TagDto
 
 interface Filterable {
 
-    fun filterByTags(tags: List<TagDto>)
+    fun filterByTags(tags: Set<TagDto>)
 
     fun filterBySearch(searchQuery: String)
 

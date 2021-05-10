@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_normal"
+        app:strokeColor="@color/color_on_surface_alpha_10"
+        app:strokeWidth="@dimen/card_stroke_width"
+        app:cardElevation="@dimen/card_elevation"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/posterPhoto"
+                android:layout_width="@dimen/post_photo_size"
+                android:layout_height="@dimen/post_photo_size"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CornerSize50Percent"
+                app:srcCompat="@drawable/placeholder" />
+
+            <TextView
+                android:id="@+id/postTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintBottom_toBottomOf="@id/posterPhoto"
+                app:layout_constraintStart_toEndOf="@id/posterPhoto"
+                app:layout_constraintTop_toTopOf="@id/posterPhoto"
+                app:layout_constraintVertical_bias="0.12" />
+
+            <TextView
+                android:id="@+id/byText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_post_by"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintTop_toBottomOf="@id/postTitle"
+                app:layout_constraintStart_toStartOf="@id/postTitle" />
+
+            <TextView
+                android:id="@+id/postedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Organization name"
+                android:layout_marginStart="@dimen/margin_small"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintBaseline_toBaselineOf="@id/byText"
+                app:layout_constraintStart_toEndOf="@id/byText" />
+
+            <TextView
+                android:id="@+id/timePosted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="3:00 PM"
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:layout_marginStart="@dimen/margin_small"
+                app:layout_constraintBaseline_toBaselineOf="@id/postedBy"
+                app:layout_constraintStart_toEndOf="@id/postedBy" />
+
+            <TextView
+                android:id="@+id/agoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_post_ago"
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:layout_marginStart="@dimen/margin_small"
+                app:layout_constraintBaseline_toBaselineOf="@id/timePosted"
+                app:layout_constraintStart_toEndOf="@id/timePosted" />
+
+            <TextView
+                android:id="@+id/postBody"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/posterPhoto"
+                app:layout_constraintStart_toStartOf="@id/posterPhoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/postPhoto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/placeholder"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/postBody"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <TextView
+                android:id="@+id/highestBidLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/item_auction_highest_bid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/postPhoto"
+                android:textAppearance="?attr/textAppearanceBody1"
+                />
+
+            <TextView
+                android:id="@+id/highestBid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/highestBidLabel"
+                tools:text="324"
+                android:layout_marginStart="@dimen/margin_mini"
+                app:layout_constraintBaseline_toBaselineOf="@id/highestBidLabel"
+                android:textAppearance="?attr/textAppearanceBody1"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/highestBid"
+                android:text="@string/EGP"
+                android:layout_marginStart="@dimen/margin_mini"
+                app:layout_constraintBaseline_toBaselineOf="@id/highestBid"
+                android:textAppearance="?attr/textAppearanceBody1"
+                />
+
+
+            <EditText
+                android:id="@+id/bidEt"
+                android:layout_width="0dp"
+                android:inputType="number"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:hint="@string/item_auction_enter_your_bid"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bidButton"
+                app:layout_constraintStart_toStartOf="@id/highestBidLabel"
+                app:layout_constraintTop_toBottomOf="@id/highestBidLabel" />
+
+
+            <Button
+                android:id="@+id/bidButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_auction_bid_now"
+                android:layout_marginEnd="@dimen/margin_normal"
+                app:layout_constraintBaseline_toBaselineOf="@id/bidEt"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
+
+
+

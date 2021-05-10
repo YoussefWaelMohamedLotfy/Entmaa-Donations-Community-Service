@@ -1,6 +1,7 @@
 package com.team.entmaa.data.model.dto.auction
 
 import com.team.entmaa.data.model.dto.tags.TagDto
+import com.team.entmaa.data.model.dto.users.OrganizationDto
 import java.time.ZonedDateTime
 
 class AuctionDto {
@@ -11,7 +12,8 @@ class AuctionDto {
     var endDate:ZonedDateTime = ZonedDateTime.now()
     var startPrice:Int = 0
     var soldPrice:Int = 0
-    var madeBy:Int = 0
+    var highestBid:Int = 0
+    var postedBy:OrganizationDto = OrganizationDto()
     var tags:List<TagDto> = listOf()
-    var itemPhotosUrls:List<String> = listOf()
+    var itemPhotoUrl:String = ""
 }

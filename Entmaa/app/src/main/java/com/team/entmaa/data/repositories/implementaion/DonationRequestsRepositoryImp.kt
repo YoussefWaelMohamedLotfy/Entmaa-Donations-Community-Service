@@ -6,11 +6,11 @@ import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
 import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.repositories.interfaces.DonationRequestsRepository
-import com.team.entmaa.data.sources.remote.DonatonRequestsApi
+import com.team.entmaa.data.sources.remote.DonationRequestsApi
 import javax.inject.Inject
 
 class DonationRequestsRepositoryImpl @Inject constructor(
-    private val donationRequestsApi: DonatonRequestsApi
+    private val donationRequestsApi: DonationRequestsApi
 ) : DonationRequestsRepository
 {
     override suspend fun getDonationRequestsFeed(contributorId: Int): Result<List<DonationRequestDto>> {

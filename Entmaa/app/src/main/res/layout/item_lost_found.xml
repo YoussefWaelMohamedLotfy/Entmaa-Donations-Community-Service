@@ -43,16 +43,7 @@
                 app:layout_constraintTop_toTopOf="@id/posterPhoto"
                 app:layout_constraintVertical_bias="0.12" />
 
-            <TextView
-                android:id="@+id/statusTag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margin_xlarge"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textColor="@color/green_300"
-                app:layout_constraintBottom_toBottomOf="@+id/postTitle"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:text="Found" />
+
 
             <TextView
                 android:id="@+id/byText"
@@ -116,6 +107,62 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 />
+
+            <TextView
+                android:id="@+id/locationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"
+                android:text="Location: "
+                app:layout_constraintTop_toBottomOf="@id/postPhoto"
+                />
+
+            <TextView
+                android:id="@+id/statusTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/green_300"
+                app:layout_constraintBaseline_toBaselineOf="@id/mapsButton"
+                app:layout_constraintStart_toStartOf="@id/locationLabel"
+                tools:text="Found" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBaseline_toBaselineOf="@id/locationLabel"
+                app:layout_constraintStart_toEndOf="@id/locationLabel"
+                android:text="Ain Shams"
+                />
+
+            <Button
+                android:id="@+id/mapsButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="View On Maps"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/contactBtn"
+                app:layout_constraintTop_toBottomOf="@id/locationLabel" />
+
+            <Button
+                android:id="@+id/contactBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginVertical="@dimen/margin_small"
+                app:layout_constraintBaseline_toBaselineOf="@id/mapsButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

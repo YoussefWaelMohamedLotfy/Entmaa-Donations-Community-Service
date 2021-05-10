@@ -11,13 +11,17 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 import com.team.entmaa.R
 import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.onError
 import com.team.entmaa.data.repositories.onLoading
 import com.team.entmaa.data.repositories.onSuccess
+import com.team.entmaa.data.sources.remote.PostInteractionsApi
 import com.team.entmaa.databinding.FragmentDonateBinding
 import com.team.entmaa.databinding.ItemDonationRequestBinding
 import com.team.entmaa.ui.commentsactivity.CommentsActivity
@@ -28,8 +32,10 @@ import com.team.entmaa.util.getColorFromAttr
 import com.team.entmaa.util.loadURL
 
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalDateTime
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class DonateFragment : Fragment(R.layout.fragment_donate) {
@@ -38,6 +44,9 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
     private val filtersViewModel:FiltersViewModel by activityViewModels()
 
     lateinit var binding: FragmentDonateBinding
+
+    @Inject lateinit var postInteractionsApi: PostInteractionsApi
+    @Inject lateinit var contributor:ContributorDto
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentDonateBinding.bind(requireView())
@@ -48,11 +57,8 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
 
     private fun setupFiltersListener()
     {
-        filtersViewModel.refreshState.observe(viewLifecycleOwner){ isRefreshing ->
-            if(isRefreshing)
-            {
-                viewModel.refresh()
-            }
+        filtersViewModel.userTriggeredRefresh.observe(viewLifecycleOwner){
+            viewModel.refresh()
         }
 
         filtersViewModel.appliedFilters.observe(viewLifecycleOwner)
@@ -87,39 +93,49 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
             commentsButton.text = item.comments.size.toString()
 
 
+            donateButton.setOnClickListener {
+                childFragmentManager.setFragmentResultListener(DonateDialog.donationAmountKey,viewLifecycleOwner) { key, bundle ->
+                    val moneyAmount = bundle.getInt(DonateDialog.donationAmountKey)
+                    item.moneyReceivedCount += moneyAmount
+                    val message = "Donated $moneyAmount EGP to ${item.postedBy.username}"
+                    Snackbar.make(binding.root,message,Snackbar.LENGTH_LONG).show()
+                    moneyCollected.text = item.moneyReceivedCount.toString()
+                    donationProgress.progress = item.moneyReceivedCount
+                }
+                DonateDialog(item).show(childFragmentManager,"")
+            }
+
             commentsButton.setOnClickListener {
                 Intent(requireContext(),CommentsActivity::class.java)
                     .also {
+                        it.putExtra(CommentsActivity.postIdKey,item.id)
                         startActivity(it)
                     }
             }
 
-            val loveColor = requireContext().getColorFromAttr(R.attr.colorPrimary)
-
-            if(item.isLovedByMe)
+            fun checkLoveStats()
             {
-                (heartButton as MaterialButton).icon =
-                    ContextCompat.getDrawable(requireContext(),R.drawable.ic_favorite_filled_24)
-
-                (heartButton as MaterialButton).icon.setTint(loveColor)
-            }
-
-            heartButton.setOnClickListener {
-                item.isLovedByMe = !item.isLovedByMe
-                var color:Int
-                var icon:Int
+                val loveColor = requireContext().getColorFromAttr(R.attr.colorPrimary)
+                val color:Int
+                val icon:Int
 
                 if(item.isLovedByMe)
                 {
                     item.reactCount++
                     color = loveColor
                     icon = R.drawable.ic_favorite_filled_24
+                    lifecycleScope.launch {
+                        postInteractionsApi.reactOnPost(item.id,contributor.id)
+                    }
                 }
                 else
                 {
                     item.reactCount--
                     color = Color.GRAY
                     icon = R.drawable.ic_favorite_border_24
+                    lifecycleScope.launch {
+                        postInteractionsApi.removeReactOnPost(item.id,contributor.id)
+                    }
                 }
 
 
@@ -131,6 +147,13 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
                 heartButton.text = item.reactCount.toString()
             }
 
+            checkLoveStats()
+
+            heartButton.setOnClickListener {
+                item.isLovedByMe = !item.isLovedByMe
+                checkLoveStats()
+            }
+
         }
 
         binding.requestsList.adapter = adapter
@@ -138,10 +161,7 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
         viewModel.donationRequests.observe(viewLifecycleOwner){ result ->
 
             result.onLoading {
-                if(!filtersViewModel.refreshState.value!!)
-                {
-                    filtersViewModel.setRefreshing(true)
-                }
+                filtersViewModel.setRefreshing(true)
             }
             .onSuccess {
                 adapter.submitList(it)

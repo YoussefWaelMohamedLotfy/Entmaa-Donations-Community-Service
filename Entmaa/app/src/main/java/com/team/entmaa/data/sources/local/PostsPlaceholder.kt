@@ -1,11 +1,11 @@
-package com.team.entmaa.util
+package com.team.entmaa.data.sources.local
 
 import java.time.ZonedDateTime
 import java.time.temporal.ChronoUnit
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-object FakePosts {
+object PostsPlaceholder {
 
     val title = "Ramadan Donations"
 

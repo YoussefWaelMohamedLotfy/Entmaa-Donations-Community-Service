@@ -27,7 +27,7 @@ fun <T : PostDto>Collection<T>.filterBySearch(query:String) : List<T>
     }
 
     return this.filter {
-        it.title!!.contains(query) ||
-        it.description!!.contains(query)
+        it.title!!.contains(query,true) ||
+        it.description!!.contains(query,true)
     }
 }

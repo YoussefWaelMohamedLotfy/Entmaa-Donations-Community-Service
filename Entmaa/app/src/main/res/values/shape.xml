@@ -13,6 +13,23 @@
         <item name="cornerSize">50%</item>
     </style>
 
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="Entmaa.ShapeAppearanceOverlay.Card.TopRounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerSizeBottomLeft">0%</item>
+        <item name="cornerSizeBottomRight">0%</item>
+    </style>
+
     <style name="Entmaa.ShapeAppearance.Button" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">50dp</item>
         <item name="cornerFamily">rounded</item>

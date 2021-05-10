@@ -16,13 +16,13 @@
         android:label="fragment_volunteer"
         tools:layout="@layout/fragment_volunteer" />
     <fragment
-        android:id="@+id/newsFragment"
-        android:name="com.team.entmaa.ui.mainactivity.newsfragment.NewsFragment"
-        android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        android:id="@+id/auctionFragment"
+        android:name="com.team.entmaa.ui.mainactivity.auctionfragment.AuctionFragment"
+        android:label="fragment_auction"
+        tools:layout="@layout/fragment_auction" />
     <fragment
         android:id="@+id/reportedItemsFragment"
-        android:name="com.team.entmaa.ui.mainactivity.ReportedItemsfragment.ReportedItemsFragment"
+        android:name="com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsFragment"
         android:label="fragment_reported_items"
         tools:layout="@layout/fragment_reported_items" />
     <fragment

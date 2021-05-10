@@ -2,44 +2,49 @@ package com.team.entmaa.di
 
 import android.content.Context
 import com.team.entmaa.R
+import com.team.entmaa.data.model.dto.users.ContributorDto
+import com.team.entmaa.data.model.dto.users.OrganizationDto
+import com.team.entmaa.data.sources.local.PostsPlaceholder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Qualifier
+import kotlin.random.Random
 
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class OrgId
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class ContribId
 
 @Module
 @InstallIn(SingletonComponent::class)
 object SharedPreferencesModule {
 
-    @ContribId
     @Provides
-    fun provideContribId(@ApplicationContext context: Context) : Int
+    fun provideContribId(@ApplicationContext context: Context) : ContributorDto
     {
         val fileName = context.getString(R.string.GlobalSharedPreferences)
         val key = context.getString(R.string.Key_LoggedInContribId)
-        return context.getSharedPreferences(fileName,Context.MODE_PRIVATE)
+        val contribId =  context.getSharedPreferences(fileName,Context.MODE_PRIVATE)
             .getInt(key,-1)
+
+        return ContributorDto().apply {
+            id = contribId
+            username = "Ahmed"
+            profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
+        }
     }
 
-    @OrgId
     @Provides
-    fun provideOrgId(@ApplicationContext context: Context) : Int
+    fun provideOrgId(@ApplicationContext context: Context) : OrganizationDto
     {
         val fileName = context.getString(R.string.GlobalSharedPreferences)
         val key = context.getString(R.string.Key_LoggedInOrgId)
-        return context.getSharedPreferences(fileName,Context.MODE_PRIVATE)
+        val orgId =  context.getSharedPreferences(fileName,Context.MODE_PRIVATE)
             .getInt(key,-1)
+
+        return OrganizationDto().apply {
+            id = orgId
+            username = "Entmaa"
+            profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
+        }
     }
 
 

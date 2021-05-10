@@ -1,4 +1,4 @@
-package com.team.entmaa.ui.mainactivity.donatefragment
+package com.team.entmaa.ui.mainactivity.auctionfragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,12 +8,18 @@ import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.onError
 import com.skydoves.sandwich.onSuccess
 import com.team.entmaa.data.model.dto.ApiResponseMessage
+import com.team.entmaa.data.model.dto.auction.AuctionDto
+import com.team.entmaa.data.model.dto.auction.BidDto
 import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.posts.EventDto
+import com.team.entmaa.data.model.dto.posts.PostDto
 import com.team.entmaa.data.model.dto.tags.TagDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.Result
+import com.team.entmaa.data.sources.remote.AuctionApi
 import com.team.entmaa.data.sources.remote.DonationRequestsApi
+import com.team.entmaa.data.sources.remote.EventsApi
 import com.team.entmaa.di.FakeApi
 import com.team.entmaa.ui.mainactivity.Filterable
 import com.team.entmaa.util.filterBySearch
@@ -25,15 +31,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DonationRequestViewModel @Inject
+class AuctionViewModel @Inject
     constructor(
     private val contributor:ContributorDto,
-    @FakeApi private val donationsApi : DonationRequestsApi
+    private val auctionApi: AuctionApi
 )
     : ViewModel() , Filterable {
 
-    private val mDonationRequests = MutableLiveData<Result<List<DonationRequestDto>>>()
-    val donationRequests : LiveData<Result<List<DonationRequestDto>>> = mDonationRequests
+    private val mAuctions = MutableLiveData<Result<List<AuctionDto>>>()
+    val auctions : LiveData<Result<List<AuctionDto>>> = mAuctions
 
     private var activeFilters:Set<TagDto> = setOf()
     private var activeSearch:String = ""
@@ -56,30 +62,51 @@ class DonationRequestViewModel @Inject
     fun refresh()
     {
         viewModelScope.launch {
-            mDonationRequests.value = Result.InProgress
-            val response = donationsApi.getDonationRequestsFeed(contributor.id)
+            mAuctions.value = Result.InProgress
+            val response = auctionApi.getAllAuctions()
 
-            response.onSuccess {
-                mDonationRequests.value = Result.Success(this.data!!
-                    .filterByTags(activeFilters)
-                    .filterBySearch(activeSearch))
-
-            }.onError {
-              mDonationRequests.value = Result.Error("Network Error")
-            }
+                mAuctions.value = Result.Success(response
+                .filterByTags(activeFilters)
+                .filterBySearch(activeSearch))
         }
     }
 
-    suspend fun donatedMoneyToRequest(item:DonationRequestDto, moneyQuantity:Int) : ApiResponse<ApiResponseMessage>
+    fun bidOnAuction(bidDto: BidDto)
     {
-        val moneyDonation = MoneyDonationsOnRequestDto().apply {
-            donatedBy = contributor
-            donatedTo = item.postedBy
-            this.moneyAmount = moneyQuantity
+        viewModelScope.launch {
+            auctionApi.bidOnAuction(bidDto.auctionId,bidDto)
         }
-
-        return donationsApi.donateMoneyToRequest(item.id,moneyDonation)
     }
 
 
+}
+
+
+fun Collection<AuctionDto>.filterByTags(tags:Collection<TagDto>) : List<AuctionDto>
+{
+
+    if(tags.isEmpty())
+    {
+        return this.toList()
+    }
+
+    val tagSet = tags.toSet()
+    return this.filter {
+        it.tags!!.any { tag ->
+            tagSet.contains(tag)
+        }
+    }
+}
+
+fun Collection<AuctionDto>.filterBySearch(query:String) : List<AuctionDto>
+{
+    if(query.isEmpty())
+    {
+        return this.toList()
+    }
+
+    return this.filter {
+        it.title!!.contains(query,true) ||
+                it.description!!.contains(query,true)
+    }
 }

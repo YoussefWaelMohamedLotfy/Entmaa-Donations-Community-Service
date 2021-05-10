@@ -1,7 +1,7 @@
 package com.team.entmaa.di
 
-import com.team.entmaa.data.sources.local.FakeDonationRequestApi
-import com.team.entmaa.data.sources.remote.DonatonRequestsApi
+import com.team.entmaa.data.sources.local.*
+import com.team.entmaa.data.sources.remote.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,16 +24,46 @@ class ApiModule {
 
     @RealApi
     @Provides
-    fun provideDonationRequestsApi(retrofit: Retrofit) : DonatonRequestsApi
+    fun provideDonationRequestsApi(retrofit: Retrofit) : DonationRequestsApi
     {
-        return retrofit.create(DonatonRequestsApi::class.java)
+        return retrofit.create(DonationRequestsApi::class.java)
     }
 
     @FakeApi
     @Provides
-    fun provideFakeDonationRequestsApi() : DonatonRequestsApi
+    fun provideFakeDonationRequestsApi() : DonationRequestsApi
     {
-        return FakeDonationRequestApi
+        return DonationRequestApiImpl
+    }
+
+    @Provides
+    fun provideTagsApi() : TagsApi
+    {
+        return TagsApiImpl
+    }
+
+    @Provides
+    fun providePostInteractionsApi() : PostInteractionsApi
+    {
+        return PostInteractionsApiImpl
+    }
+
+    @Provides
+    fun provideEventsApi() : EventsApi
+    {
+        return EventsApiImpl
+    }
+
+    @Provides
+    fun provideAuctionsApi() : AuctionApi
+    {
+        return AuctionApiImpl
+    }
+
+    @Provides
+    fun provideReportedItemsApi() : ReportedItemsApi
+    {
+        return ReportedItemsApiImpl
     }
 
 }

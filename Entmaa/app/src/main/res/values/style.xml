@@ -73,5 +73,13 @@
     </style>
 
 
+    <style name="Entmaa.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="Entmaa.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Entmaa.BottomSheet</item>
+    </style>
+
 
 </resources>

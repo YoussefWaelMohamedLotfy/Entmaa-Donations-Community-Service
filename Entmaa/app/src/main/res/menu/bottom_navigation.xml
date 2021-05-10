@@ -14,9 +14,9 @@
         />
 
     <item
-        android:id="@+id/newsFragment"
-        android:title="@string/main_news"
-        android:icon="@drawable/ic_paper"
+        android:id="@+id/auctionFragment"
+        android:title="@string/main_nav_auction"
+        android:icon="@drawable/ic_auction"
         />
 
     <item

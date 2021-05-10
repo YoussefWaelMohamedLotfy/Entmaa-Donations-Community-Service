@@ -106,69 +106,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 />
 
-            <TextView
-                android:id="@+id/moneyCollected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="200"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:textAppearance="?attr/textAppearanceCaption"
-                app:layout_constraintStart_toStartOf="@id/postPhoto"
-                app:layout_constraintTop_toBottomOf="@id/postPhoto"
-                />
 
-            <TextView
-                android:id="@+id/slash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/slash"
-                app:layout_constraintBaseline_toBaselineOf="@id/moneyCollected"
-                app:layout_constraintStart_toEndOf="@id/moneyCollected"
-                />
-
-            <TextView
-                android:id="@+id/moneyTarget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="500"
-                android:textAppearance="?attr/textAppearanceCaption"
-                app:layout_constraintStart_toEndOf="@id/slash"
-                app:layout_constraintBaseline_toBaselineOf="@id/slash"
-                />
-
-            <TextView
-                android:id="@+id/currency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="egp"
-                android:textAllCaps="true"
-                android:textAppearance="?attr/textAppearanceCaption"
-                android:layout_marginStart="@dimen/margin_normal"
-                app:layout_constraintStart_toEndOf="@id/moneyTarget"
-                app:layout_constraintBaseline_toBaselineOf="@id/moneyTarget"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/donation_request_item_collected"
-                android:textAppearance="?attr/textAppearanceCaption"
-                android:layout_marginStart="@dimen/margin_small"
-                app:layout_constraintStart_toEndOf="@id/currency"
-                app:layout_constraintBaseline_toBaselineOf="@id/currency"
-                />
 
             <Button
                 android:id="@+id/heartButton"
                 style="@style/Entmaa.Button.TextButton.Caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="@dimen/margin_medium"
                 app:icon="@drawable/ic_favorite_border_24"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/moneyCollected"
-                app:layout_constraintTop_toBottomOf="@id/moneyCollected"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postPhoto"
                 app:layout_constraintVertical_bias="0.0" />
 
             <Button
@@ -197,14 +148,25 @@
 
 
             <Button
-                android:id="@+id/detailsButton"
+                android:id="@+id/volunteerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/event_request_item_btn"
+                android:text="@string/item_event_volunteer_btn"
                 android:layout_marginEnd="@dimen/margin_normal"
                 app:layout_constraintBaseline_toBaselineOf="@id/shareButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 />
+
+            <Button
+                android:id="@+id/detailsButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:minWidth="0dp"
+                android:text="@string/event_request_item_btn"
+                app:layout_constraintBaseline_toBaselineOf="@id/volunteerButton"
+                app:layout_constraintEnd_toStartOf="@id/volunteerButton" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

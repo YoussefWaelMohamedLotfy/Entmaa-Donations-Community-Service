@@ -1,60 +1,167 @@
 package com.team.entmaa.ui.mainactivity.volunteerfragment
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 import com.team.entmaa.R
+import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.posts.EventDto
+import com.team.entmaa.data.model.dto.users.ContributorDto
+import com.team.entmaa.data.repositories.onError
+import com.team.entmaa.data.repositories.onLoading
+import com.team.entmaa.data.repositories.onSuccess
+import com.team.entmaa.data.sources.remote.PostInteractionsApi
+import com.team.entmaa.databinding.FragmentVolunteerBinding
+import com.team.entmaa.databinding.ItemDonationRequestBinding
+import com.team.entmaa.databinding.ItemEventBinding
+import com.team.entmaa.ui.commentsactivity.CommentsActivity
+import com.team.entmaa.ui.mainactivity.FiltersViewModel
+import com.team.entmaa.ui.mainactivity.donatefragment.DonateDialog
+import com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel
+import com.team.entmaa.util.BaseListAdapter
+import com.team.entmaa.util.durationFrom
+import com.team.entmaa.util.getColorFromAttr
+import com.team.entmaa.util.loadURL
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import java.time.LocalDateTime
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class VolunteerFragment : Fragment(R.layout.fragment_volunteer) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [VolunteerFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class VolunteerFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val viewModel: EventsViewModel by viewModels()
+    private val filtersViewModel: FiltersViewModel by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    @Inject
+    lateinit var postInteractionsApi: PostInteractionsApi
+    @Inject lateinit var contributor: ContributorDto
+
+    lateinit var binding:FragmentVolunteerBinding
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding = FragmentVolunteerBinding.bind(view)
+
+        setupFiltersListener()
+        setupEventsAdapter()
+    }
+
+
+    private fun setupFiltersListener()
+    {
+        filtersViewModel.userTriggeredRefresh.observe(viewLifecycleOwner){
+            viewModel.refresh()
+        }
+
+        filtersViewModel.appliedFilters.observe(viewLifecycleOwner)
+        {
+            //println("filter")
+            viewModel.filterByTags(it)
+        }
+
+        filtersViewModel.appliedSearch.observe(viewLifecycleOwner)
+        {
+            viewModel.filterBySearch(it)
+        }
+
+    }
+
+    private fun setupEventsAdapter()
+    {
+        val adapter = BaseListAdapter<EventDto
+                , ItemEventBinding>(R.layout.item_event){ item, _ ->
+
+            postTitle.text = item.title
+            postedBy.text = item.postedBy.username
+            timePosted.text = LocalDateTime.now().durationFrom(item.timePosted.toLocalDateTime())
+            postBody.text = item.description
+            posterPhoto.loadURL(item.postedBy.profilePhotoUrl)
+            postPhoto.loadURL(item.postPhotoUrl)
+
+            heartButton.text = item.reactCount.toString()
+            commentsButton.text = item.comments.size.toString()
+
+
+            volunteerButton.setOnClickListener {
+
+            }
+
+            commentsButton.setOnClickListener {
+                Intent(requireContext(), CommentsActivity::class.java)
+                    .also {
+                        it.putExtra(CommentsActivity.postIdKey,item.id)
+                        startActivity(it)
+                    }
+            }
+
+            fun checkLoveStats()
+            {
+                val loveColor = requireContext().getColorFromAttr(R.attr.colorPrimary)
+                val color:Int
+                val icon:Int
+
+                if(item.isLovedByMe)
+                {
+                    item.reactCount++
+                    color = loveColor
+                    icon = R.drawable.ic_favorite_filled_24
+                    lifecycleScope.launch {
+                        postInteractionsApi.reactOnPost(item.id,contributor.id)
+                    }
+                }
+                else
+                {
+                    item.reactCount--
+                    color = Color.GRAY
+                    icon = R.drawable.ic_favorite_border_24
+                    lifecycleScope.launch {
+                        postInteractionsApi.removeReactOnPost(item.id,contributor.id)
+                    }
+                }
+
+
+                (heartButton as MaterialButton).icon =
+                    ContextCompat.getDrawable(requireContext(),icon)
+
+                heartButton.icon.setTint(color)
+
+                heartButton.text = item.reactCount.toString()
+            }
+
+            checkLoveStats()
+
+            heartButton.setOnClickListener {
+                item.isLovedByMe = !item.isLovedByMe
+                checkLoveStats()
+            }
+
+        }
+
+        binding.requestsList.adapter = adapter
+
+        viewModel.events.observe(viewLifecycleOwner){ result ->
+
+            result.onLoading {
+
+                filtersViewModel.setRefreshing(true)
+            }
+                .onSuccess {
+                    adapter.submitList(it)
+                    filtersViewModel.setRefreshing(false)
+                }
+                .onError {
+
+                }
+
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_volunteer, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment VolunteerFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            VolunteerFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

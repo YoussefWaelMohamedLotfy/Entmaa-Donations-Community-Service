@@ -8,10 +8,15 @@ import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.chip.Chip
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
+import com.iammert.library.ui.multisearchviewlib.MultiSearchView
 import com.team.entmaa.R
+import com.team.entmaa.data.model.dto.tags.TagDto
 import com.team.entmaa.databinding.ActivityMainBinding
+import com.team.entmaa.databinding.ItemTagBinding
+import com.team.entmaa.util.BaseListAdapter
 import com.team.entmaa.util.playAnimation
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,15 +36,39 @@ class MainActivity : AppCompatActivity() {
 
         setupSwipeRefreshLayout()
 
+        setupSearch()
+
     }
 
-    fun setupSwipeRefreshLayout()
+    fun setupSearch()
+    {
+        binding.searchBar.setSearchViewListener(object : MultiSearchView.MultiSearchViewListener{
+            override fun onItemSelected(index: Int, s: CharSequence) {
+                filtersViewModel.filterBySearch(s.toString())
+            }
+
+            override fun onSearchComplete(index: Int, s: CharSequence) {
+                filtersViewModel.filterBySearch(s.toString())
+            }
+
+            override fun onSearchItemRemoved(index: Int) {
+                filtersViewModel.filterBySearch("")
+            }
+
+            override fun onTextChanged(index: Int, s: CharSequence) {
+            }
+
+
+        })
+    }
+
+    private fun setupSwipeRefreshLayout()
     {
         binding.SwipeRefreshLayout.setOnRefreshListener {
-            filtersViewModel.setRefreshing(true)
+            filtersViewModel.userRequestedRefresh()
         }
 
-        filtersViewModel.refreshState.observe(this){
+        filtersViewModel.requestTriggeredRefresh.observe(this){
             binding.SwipeRefreshLayout.isRefreshing = it
         }
     }
@@ -63,8 +92,30 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val adapter = object : BaseListAdapter<TagDto, ItemTagBinding>(R.layout.item_tag) {
+            val checkedFilters = mutableSetOf<TagDto>()
 
-        binding.filterBar.exerciseChips
+            override fun ItemTagBinding.bind(item: TagDto, position: Int) {
+                tag.text = item.name
+                tag.setOnClickListener {
+                    it as Chip
+
+                    if (it.isChecked) {
+                        checkedFilters.add(item)
+                    } else {
+                        checkedFilters.remove(item)
+                    }
+
+                    filtersViewModel.filterByTags(checkedFilters)
+                }
+            }
+        }
+
+        binding.filterBar.filterChips.adapter = adapter
+
+        filtersViewModel.filters.observe(this){
+            adapter.submitList(it.toList())
+        }
 
     }
 

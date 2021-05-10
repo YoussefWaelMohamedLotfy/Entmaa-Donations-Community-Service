@@ -29,6 +29,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         binding.butLogin.setOnClickListener {
+
+            println("aldsfjl;akjsdfsdfdsf")
+
             Intent(requireContext(),MainActivity::class.java)
                 .also {
                     startActivity(it)

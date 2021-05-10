@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mainactivity.volunteerfragment.VolunteerFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reportedItemsList"
+        android:id="@+id/requestsList"
         android:layout_marginHorizontal="@dimen/margin_normal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_lost_found" />
+        tools:listitem="@layout/item_auction" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

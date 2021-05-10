@@ -2,20 +2,32 @@ package com.team.entmaa.ui.commentsactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListAdapter
+import androidx.lifecycle.lifecycleScope
 import com.team.entmaa.R
 import com.team.entmaa.data.model.dto.posts.CommentDto
-import com.team.entmaa.data.model.dto.users.UserDto
+import com.team.entmaa.data.model.dto.users.ContributorDto
+import com.team.entmaa.data.sources.remote.PostInteractionsApi
 import com.team.entmaa.databinding.ActivityCommentsBinding
 import com.team.entmaa.databinding.ItemCommentBinding
 import com.team.entmaa.util.BaseListAdapter
-import com.team.entmaa.util.FakePosts
 import com.team.entmaa.util.loadURL
-import kotlin.random.Random
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CommentsActivity : AppCompatActivity() {
 
+    companion object{
+
+        const val postIdKey = "postIdKey"
+
+    }
+
     lateinit var binding:ActivityCommentsBinding
+
+    @Inject lateinit var postInteractionsApi: PostInteractionsApi
+    @Inject lateinit var contributor: ContributorDto
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,24 +45,29 @@ class CommentsActivity : AppCompatActivity() {
 
         binding.commentsList.adapter = adapter
 
-        val list = mutableListOf<CommentDto>().apply{
+        val postId = intent.getIntExtra(postIdKey,-1)
 
-            repeat(20)
-            {
-                val comment = CommentDto().apply {
-                    commentedBy = UserDto().apply {
-                        username = "My Name"
-                        profilePhotoUrl = FakePosts.profilePhotoUrl + Random.nextInt()
-                    }
-
-                    commentText = "dhgfjaosdhfglkjasdhfkjl"
-                }
-
-                add(comment)
-            }
-
+        lifecycleScope.launch {
+            adapter.submitList(postInteractionsApi.getComments(postId))
         }
 
-        adapter.submitList(list)
+
+
+        binding.sendBtn.setOnClickListener {
+
+            val commentText = binding.commentText.text.toString()
+            val comment = CommentDto().apply {
+                commentedBy = contributor
+                this.commentText = commentText
+            }
+
+            lifecycleScope.launch {
+                postInteractionsApi.commentOnPost(postId,comment)
+            }
+
+            adapter.add(comment)
+
+            binding.commentText.text.clear()
+        }
     }
 }
