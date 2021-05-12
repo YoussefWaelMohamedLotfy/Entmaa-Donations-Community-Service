@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.team.entmaa.R
+import com.team.entmaa.ui.DonatedItemsFragment
 import com.team.entmaa.ui.MapsFragment
 import com.team.entmaa.ui.mainactivity.MainActivity
 
@@ -44,7 +45,7 @@ class WelcomeFragment : Fragment() {
             transaction?.commit()
         }
 
-        return  root;
+        return  root
     }
 
 

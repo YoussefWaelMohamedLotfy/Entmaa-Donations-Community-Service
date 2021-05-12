@@ -64,4 +64,11 @@
         <item name="cornerSize">15%</item>
     </style>
 
+
+
+    <style name="Entmaa.ShapeAppearance.imageView.RoundedCorner" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">10%</item>
+
+    </style>
+
 </resources>

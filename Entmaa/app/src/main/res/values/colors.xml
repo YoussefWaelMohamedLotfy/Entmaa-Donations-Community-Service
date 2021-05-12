@@ -37,4 +37,9 @@
     <!-- Black -->
     <color name="black_200">#3A3B3C</color>
 
+
+    <!-- Black -->
+    <color name="blue_100">#168aad</color>
+
+
 </resources>

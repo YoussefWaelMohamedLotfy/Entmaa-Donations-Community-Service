@@ -32,11 +32,13 @@
     <dimen name="button_corner_radius">16dp</dimen>
 
     <!-- Header -->
-   <dimen name="header_normal">100dp</dimen>
+    <dimen name="header_normal">100dp</dimen>
 
-   <!-- Circle Image -->
+    <!-- Circle Image -->
     <dimen name="corner_radius">100dp</dimen>
     <dimen name="search_bar_height">40dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
 
 
 </resources>
