@@ -39,7 +39,7 @@ class WelcomeFragment : Fragment() {
         val signUpButton:Button = root.findViewById(R.id.butRegister)
         signUpButton.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.authActivity, SignUpFragment())
+            transaction?.replace(R.id.authActivity, DonatedItemsFragment())
             transaction?.isAddToBackStackAllowed
             transaction?.addToBackStack(null)
             transaction?.commit()

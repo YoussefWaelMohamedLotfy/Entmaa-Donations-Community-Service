@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemPic"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_margin="@dimen/margin_large"
+        android:scaleType="centerCrop"
+        android:background="@color/whiteGray"
+        android:src="@drawable/addimg"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.imageView.RoundedCorner" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:hint="Item Name"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemPic">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColorHighlight="@color/green_600"
+            android:textColorHint="@color/green_600" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:hint="Description"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/itemName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColorHighlight="@color/green_600"
+            android:textColorHint="@color/green_600" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itemQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:hint="Description"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/itemDescription">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColorHighlight="@color/green_600"
+            android:textColorHint="@color/green_600" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/categoriesMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_xlarge"
+
+        android:hint="Categories"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        android:layout_margin="@dimen/margin_large"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxStrokeWidth="3dp"
+        android:elevation="@dimen/margin_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemQuantity">
+
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textColorHighlight="@color/green_600"
+            android:textColorHint="@color/green_600" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Switch
+        android:id="@+id/itemLocationSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:text="Make Location Visible    "
+        android:textSize="16sp"
+        android:textColorHighlight="@color/green_600"
+        android:textColorHint="@color/green_600"
+        android:elevation="@dimen/margin_medium"
+        android:theme="@style/SwitchTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriesMenu" />
+
+
+    <Button
+        android:id="@+id/donatedItemAdd_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_xlarge"
+        android:layout_marginLeft="@dimen/margin_xlarge"
+        android:backgroundTint="@color/green_300"
+        android:elevation="5dp"
+        android:shadowColor="@color/white"
+        android:text="List for donation"
+        android:paddingVertical="8dp"
+        android:textSize="24sp"
+        app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemLocationSwitch"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
