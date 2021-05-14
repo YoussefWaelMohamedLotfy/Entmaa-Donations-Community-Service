@@ -16,6 +16,12 @@ class MainAuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_auth)
 
+        /** Check userType **/
+        val userType = intent.getStringExtra("EXTRA_USER_TYPE")
+        if (userType != null) {
+            Log.i("UserType",userType)
+        }
+
         replaceFragment(WelcomeFragment(),manager)
 
     }

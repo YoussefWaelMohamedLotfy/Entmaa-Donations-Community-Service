@@ -28,14 +28,20 @@ class MainSplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_splash)
 
-        checkSharedPreferences()
+        //checkSharedPreferences()
 
         /** observe onClick **/
         viewModel.selectedItem.observe(this) { item ->
             // Perform an action with the latest item data
 
             Log.i("onCreate", item.toString())
-           setSharedPreferences()
+
+          // setSharedPreferences()
+
+            val intent: Intent = Intent(this, MainAuthActivity::class.java)
+            intent.putExtra("EXTRA_USER_TYPE", item);
+
+            startActivity(intent)
         }
 
 
