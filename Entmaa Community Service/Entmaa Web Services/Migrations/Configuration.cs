@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Data.Entity.Migrations;
     using System.Data.SQLite.EF6.Migrations;
     using Entmaa_Web_Services.Persistence;
@@ -11,7 +12,9 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+
+            if (ConfigurationManager.ConnectionStrings["EntmaaConnection"].ProviderName == "System.Data.SQLite")
+                SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }
 
         protected override void Seed(MainContext context)
