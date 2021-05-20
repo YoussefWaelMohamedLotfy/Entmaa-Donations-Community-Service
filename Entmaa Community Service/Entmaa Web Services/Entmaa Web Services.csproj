@@ -551,6 +551,10 @@
     <Compile Include="Migrations\202105131047065_ChangeToSQLite.designer.cs">
       <DependentUpon>202105131047065_ChangeToSQLite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105202208506_DeploymentConfig.cs" />
+    <Compile Include="Migrations\202105202208506_DeploymentConfig.designer.cs">
+      <DependentUpon>202105202208506_DeploymentConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entmaa\Auction.cs" />
@@ -1098,6 +1102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105131047065_ChangeToSQLite.resx">
       <DependentUpon>202105131047065_ChangeToSQLite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105202208506_DeploymentConfig.resx">
+      <DependentUpon>202105202208506_DeploymentConfig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
