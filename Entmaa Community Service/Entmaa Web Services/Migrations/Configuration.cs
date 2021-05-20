@@ -3,16 +3,18 @@
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
-    using Models.Entmaa;
+    using System.Data.SQLite.EF6.Migrations;
+    using Entmaa_Web_Services.Persistence;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Persistence.MainContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MainContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }
 
-        protected override void Seed(Persistence.MainContext context)
+        protected override void Seed(MainContext context)
         {
             //  This method will be called after migrating to the latest version.
 
