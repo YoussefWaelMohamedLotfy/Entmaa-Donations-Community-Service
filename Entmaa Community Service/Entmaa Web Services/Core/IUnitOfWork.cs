@@ -24,6 +24,7 @@ namespace Entmaa_Web_Services.Core
         ISubscriptionRepository Subscriptions { get; }
         INotificationRepository Notifications { get; }
         IReportedCaseRepository ReportedCases { get; }
+        IMoneyDonationOnRequestRepository MoneyDonationsOnRequest { get; }
 
         int CompleteWork();
         Task<int> CompleteWorkAsync();

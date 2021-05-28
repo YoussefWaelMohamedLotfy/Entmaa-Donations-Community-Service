@@ -14,9 +14,9 @@ namespace Entmaa_Web_Services.Models.Entmaa
         }
 
         public int PostID { get; set; }
-        
-        public string Title { get; set; }
-        
+
+        public bool ItemsAccepted { get; set; }
+
         public int MoneyNeededAmount { get; set; }
         
         public int MoneyReceivedAmount { get; set; }

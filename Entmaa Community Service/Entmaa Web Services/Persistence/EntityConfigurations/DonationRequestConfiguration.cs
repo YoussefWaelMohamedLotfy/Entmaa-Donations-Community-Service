@@ -11,8 +11,6 @@ namespace Entmaa_Web_Services.Persistence.EntityConfigurations
     {
         public DonationRequestConfiguration()
         {
-            Property(d => d.Title).IsRequired();       
-            
             HasKey(d => d.PostID);
 
             HasRequired(d => d.Post).WithRequiredDependent(p => p.DonationRequest);

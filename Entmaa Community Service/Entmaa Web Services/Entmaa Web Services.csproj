@@ -466,6 +466,7 @@
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
     <Compile Include="Core\Repositories\IDonatedItemRepository.cs" />
     <Compile Include="Core\Repositories\IDonationRequestRepository.cs" />
+    <Compile Include="Core\Repositories\IMoneyDonationOnRequestRepository.cs" />
     <Compile Include="Core\Repositories\IMoneyDonationRepository.cs" />
     <Compile Include="Core\Repositories\INotificationRepository.cs" />
     <Compile Include="Core\Repositories\IOrganizationRepository.cs" />
@@ -486,6 +487,12 @@
     <Compile Include="DTOs\Dataset\CommentDatasetDTO.cs" />
     <Compile Include="DTOs\Dataset\DonatedItemDatasetDTO.cs" />
     <Compile Include="DTOs\Dataset\MoneyDonationDatasetDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\CreateDonationRequestDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\DonationRequestDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\EditDonationRequestDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\GetDonationRequestsDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\GetMoneyDonationsOnRequestDTO.cs" />
+    <Compile Include="DTOs\DonationRequests\MoneyDonationOnRequestDTO.cs" />
     <Compile Include="DTOs\Donations\AddDonatedItemDTO.cs" />
     <Compile Include="DTOs\Donations\GetMoneyDonationDTO.cs" />
     <Compile Include="DTOs\Donations\MoneyDonationDTO.cs" />
@@ -555,6 +562,14 @@
     <Compile Include="Migrations\202105202208506_DeploymentConfig.designer.cs">
       <DependentUpon>202105202208506_DeploymentConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105250951186_UpdateDonationRequestsTable.cs" />
+    <Compile Include="Migrations\202105250951186_UpdateDonationRequestsTable.designer.cs">
+      <DependentUpon>202105250951186_UpdateDonationRequestsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105281830253_ChangeInDonationRequestTable.cs" />
+    <Compile Include="Migrations\202105281830253_ChangeInDonationRequestTable.designer.cs">
+      <DependentUpon>202105281830253_ChangeInDonationRequestTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entmaa\Auction.cs" />
@@ -612,6 +627,7 @@
     <Compile Include="Persistence\MapperProfiles\AuctionMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\DatasetMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\DonationMappingProfile.cs" />
+    <Compile Include="Persistence\MapperProfiles\DonationRequestMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\MiscMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\PostMappingProfile.cs" />
     <Compile Include="Persistence\MapperProfiles\ReportedItemMappingProfile.cs" />
@@ -624,6 +640,7 @@
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\DonatedItemRepository.cs" />
     <Compile Include="Persistence\Repositories\DonationRequestRepository.cs" />
+    <Compile Include="Persistence\Repositories\MoneyDonationOnRequestRepository.cs" />
     <Compile Include="Persistence\Repositories\MoneyDonationRepository.cs" />
     <Compile Include="Persistence\Repositories\NotificationRepository.cs" />
     <Compile Include="Persistence\Repositories\OrganizationRepository.cs" />
@@ -1105,6 +1122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105202208506_DeploymentConfig.resx">
       <DependentUpon>202105202208506_DeploymentConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105250951186_UpdateDonationRequestsTable.resx">
+      <DependentUpon>202105250951186_UpdateDonationRequestsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105281830253_ChangeInDonationRequestTable.resx">
+      <DependentUpon>202105281830253_ChangeInDonationRequestTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
