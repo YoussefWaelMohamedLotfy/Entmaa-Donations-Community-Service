@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.team.entmaa.R
-import com.team.entmaa.ui.DonatedItemsFragment
-import com.team.entmaa.ui.MapsFragment
+import com.team.entmaa.ui.contribdonateditems.DonatedItemsFragment
 import com.team.entmaa.ui.mainactivity.MainActivity
+import com.team.entmaa.ui.orgactivity.OrgActivity
 
 class WelcomeFragment : Fragment() {
 
@@ -23,26 +23,30 @@ class WelcomeFragment : Fragment() {
 
         val loginButton : Button = root.findViewById(R.id.butLogin)
         loginButton.setOnClickListener {
-//            val transaction = activity?.supportFragmentManager?.beginTransaction()
-//            transaction?.replace(R.id.authActivity, MapsFragment())
-//            transaction?.isAddToBackStackAllowed
-//            transaction?.addToBackStack(null)
-//            transaction?.commit()
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.authActivity, LoginFragment())
+            transaction?.isAddToBackStackAllowed
+            transaction?.addToBackStack(null)
+            transaction?.commit()
 
-
-            Intent(requireContext(), MainActivity::class.java)
-                .also {
-                    startActivity(it)
-                }
+//            Intent(requireContext(), MainActivity::class.java)
+//                .also {
+//                    startActivity(it)
+//                }
         }
 
         val signUpButton:Button = root.findViewById(R.id.butRegister)
         signUpButton.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.authActivity, DonatedItemsFragment())
+            transaction?.replace(R.id.authActivity, SignUpFragment())
             transaction?.isAddToBackStackAllowed
             transaction?.addToBackStack(null)
             transaction?.commit()
+
+//            Intent(requireContext(), OrgActivity::class.java)
+//                .also {
+//                    startActivity(it)
+//                }
         }
 
         return  root

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.SubscriptionsFragment">
+    tools:context=".ui.donationreminders.SubscriptionsFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardContainer"
@@ -53,9 +53,13 @@
         android:id="@+id/subsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_large"
+        android:paddingTop="24dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_subscription"
+        android:layout_marginHorizontal="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_subscription_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/cardContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,7 +39,7 @@ class MainSplashActivity : AppCompatActivity() {
           // setSharedPreferences()
 
             val intent: Intent = Intent(this, MainAuthActivity::class.java)
-            intent.putExtra("EXTRA_USER_TYPE", item);
+            intent.putExtra("EXTRA_USER_TYPE", item.toString());
 
             startActivity(intent)
         }

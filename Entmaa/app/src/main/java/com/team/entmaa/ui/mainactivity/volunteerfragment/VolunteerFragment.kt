@@ -1,6 +1,5 @@
 package com.team.entmaa.ui.mainactivity.volunteerfragment
 
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -10,10 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
+import com.team.entmaa.MainNavGraphDirections
 import com.team.entmaa.R
-import com.team.entmaa.data.model.dto.posts.DonationRequestDto
 import com.team.entmaa.data.model.dto.posts.EventDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.onError
@@ -21,12 +21,8 @@ import com.team.entmaa.data.repositories.onLoading
 import com.team.entmaa.data.repositories.onSuccess
 import com.team.entmaa.data.sources.remote.PostInteractionsApi
 import com.team.entmaa.databinding.FragmentVolunteerBinding
-import com.team.entmaa.databinding.ItemDonationRequestBinding
 import com.team.entmaa.databinding.ItemEventBinding
-import com.team.entmaa.ui.commentsactivity.CommentsActivity
-import com.team.entmaa.ui.mainactivity.FiltersViewModel
-import com.team.entmaa.ui.mainactivity.donatefragment.DonateDialog
-import com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel
+import com.team.entmaa.ui.filters.FiltersViewModel
 import com.team.entmaa.util.BaseListAdapter
 import com.team.entmaa.util.durationFrom
 import com.team.entmaa.util.getColorFromAttr
@@ -92,15 +88,23 @@ class VolunteerFragment : Fragment(R.layout.fragment_volunteer) {
 
 
             volunteerButton.setOnClickListener {
+                viewModel.volunteerInEvent(item.id)
+                Snackbar.make(binding.root,"Volunteer request sent",Snackbar.LENGTH_SHORT)
+                    .show()
+            }
 
+            posterPhoto.setOnClickListener {
+                findNavController().navigate(
+                    MainNavGraphDirections.actionGlobalOrgProfileFragment(item.postedBy.id))
             }
 
             commentsButton.setOnClickListener {
-                Intent(requireContext(), CommentsActivity::class.java)
-                    .also {
-                        it.putExtra(CommentsActivity.postIdKey,item.id)
-                        startActivity(it)
-                    }
+                findNavController().navigate(
+                    MainNavGraphDirections.actionGlobalCommentsFragment(item.id))
+            }
+
+            detailsButton.setOnClickListener {
+                findNavController().navigate(VolunteerFragmentDirections.actionVolunteerFragmentToEventDetailsFragment(item.id))
             }
 
             fun checkLoveStatus()
@@ -153,7 +157,7 @@ class VolunteerFragment : Fragment(R.layout.fragment_volunteer) {
 
         }
 
-        binding.requestsList.adapter = adapter
+        binding.eventsList.adapter = adapter
 
         viewModel.events.observe(viewLifecycleOwner){ result ->
 

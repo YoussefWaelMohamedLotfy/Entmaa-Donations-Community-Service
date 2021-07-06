@@ -33,15 +33,17 @@
 
             <TextView
                 android:id="@+id/postTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:text="Title"
-                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:layout_marginStart="@dimen/margin_normal"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintBottom_toBottomOf="@id/posterPhoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/posterPhoto"
                 app:layout_constraintTop_toTopOf="@id/posterPhoto"
-                app:layout_constraintVertical_bias="0.12" />
+                app:layout_constraintVertical_bias="0.12"
+                tools:text="Title" />
 
 
 
@@ -88,13 +90,12 @@
                 android:id="@+id/postBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                tools:text="I found this item "
-                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/margin_normal"
-                app:layout_constraintTop_toBottomOf="@id/posterPhoto"
-                app:layout_constraintStart_toStartOf="@id/posterPhoto"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="@id/posterPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/byText"
+                tools:text="I found this item " />
 
             <ImageView
                 android:id="@+id/postPhoto"

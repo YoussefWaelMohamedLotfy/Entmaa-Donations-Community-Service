@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        app:strokeColor="@color/color_on_surface_alpha_10"
+        app:strokeWidth="@dimen/card_stroke_width"
+        app:cardElevation="@dimen/card_elevation"
+        android:layout_width="match_parent"
+        android:layout_margin="12dp"
+        android:layout_height="wrap_content"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/subscriptionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Entmaa sub 1" />
+
+            <TextView
+                android:id="@+id/frequencyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="frequency in days: "
+                app:layout_constraintStart_toStartOf="@id/subscriptionName"
+                app:layout_constraintTop_toBottomOf="@id/subscriptionName" />
+
+            <TextView
+                android:id="@+id/frequency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="30"
+                app:layout_constraintStart_toEndOf="@id/frequencyLabel"
+                app:layout_constraintBaseline_toBaselineOf="@id/frequencyLabel"
+                />
+
+            <TextView
+                android:id="@+id/moneyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Money to donate: "
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                app:layout_constraintStart_toStartOf="@id/frequencyLabel"
+                app:layout_constraintTop_toBottomOf="@id/frequencyLabel" />
+
+            <TextView
+                android:id="@+id/moneyToDonate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/moneyLabel"
+                app:layout_constraintBaseline_toBaselineOf="@id/moneyLabel"
+                tools:text="324"
+                />
+
+
+            <TextView
+                android:id="@+id/renewalDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Renewal Date:"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintStart_toStartOf="@id/moneyLabel"
+                app:layout_constraintTop_toBottomOf="@id/moneyLabel" />
+
+
+            <TextView
+                android:id="@+id/renewalDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/renewalDateLabel"
+                app:layout_constraintStart_toEndOf="@id/renewalDateLabel"
+                tools:text="01/10/2020" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</layout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/bottom_nav_shadow_height"
+        tools:context=".ui.contribdonateditems.DonatedItemsFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/blue_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheetBottomCorners">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/orgName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entmaa"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/orgEventsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/orgRequestsBtn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/orgName">
+
+                    <TextView
+                        android:id="@+id/eventsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Events"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/orgRequestsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/orgAuctionsBtn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/orgEventsBtn"
+                    app:layout_constraintTop_toTopOf="@+id/orgEventsBtn">
+
+                    <TextView
+                        android:id="@+id/donationRequestsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:text="12"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Donations request"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/orgAuctionsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/orgRequestsBtn"
+                    app:layout_constraintTop_toTopOf="@+id/orgRequestsBtn">
+
+                    <TextView
+                        android:id="@+id/auctionsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/auctionsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auctions"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/actionsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Actions"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardContainer" />
+
+        <com.team.entmaa.ui.customviews.DashCardView
+            android:id="@+id/newEvenBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:minWidth="145dp"
+            app:icon="@drawable/ic_event"
+            app:layout_constraintEnd_toStartOf="@+id/newAuctionBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actionsLabel"
+            app:text="New Event" />
+
+        <com.team.entmaa.ui.customviews.DashCardView
+            android:id="@+id/newAuctionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minWidth="145dp"
+            app:icon="@drawable/ic_auction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newEvenBtn"
+            app:layout_constraintTop_toBottomOf="@id/actionsLabel"
+            app:text="New Auction" />
+
+        <com.team.entmaa.ui.customviews.DashCardView
+            android:id="@+id/newDonationReqBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:icon="@drawable/ic_request"
+            app:layout_constraintEnd_toEndOf="@+id/newAuctionBtn"
+            app:layout_constraintStart_toStartOf="@+id/newEvenBtn"
+            app:layout_constraintTop_toBottomOf="@id/newEvenBtn"
+            app:text="New Donation Request" />
+
+
+        <LinearLayout
+            android:id="@+id/optionsList"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newDonationReqBtn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Manage "
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/donateItemBtn" />
+
+            <Button
+                android:id="@+id/profileBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Profile"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="textStart"
+                app:icon="@drawable/ic_profile_24"
+                app:iconPadding="16dp" />
+
+            <Button
+                android:id="@+id/volunteersListBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="My Volunteers"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="textStart"
+                app:icon="@drawable/ic_volunteer"
+                app:iconPadding="16dp"
+                />
+
+            <Button
+                android:id="@+id/moneyDonationsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Received Money Donations"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="textStart"
+                app:icon="@drawable/ic_money_24"
+                app:iconPadding="16dp"
+                />
+
+            <Button
+                android:id="@+id/channelsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Communication channels"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="textStart"
+                app:icon="@drawable/ic_channel"
+                app:iconPadding="16dp"
+                />
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Logout"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="textStart"
+                app:icon="@drawable/ic_logout_24"
+                app:iconPadding="16dp"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

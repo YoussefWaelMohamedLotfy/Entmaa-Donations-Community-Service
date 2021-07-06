@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "com.team.entmaa"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -107,4 +107,8 @@ dependencies {
 
     implementation "com.github.hadilq:live-event:1.2.3"
     implementation 'com.github.iammert:MultiSearchView:0.3'
+
+    // Charts library
+    implementation "com.github.PhilJay:MPAndroidChart:$MPAndroidChart_version"
+
 }

@@ -9,7 +9,7 @@ class ReportedItemDto {
     var name:String = ""
     var timePosted:LocalDate = LocalDate.now()
     var description:String = ""
-    var mapsLocation:String = ""
+    var mapsLocation:String = "geo:30.207276965528077, 31.447550625636186"
     var locationDescription:String = ""
     var postedBy:ContributorDto = ContributorDto()
     var resolvedBy:ContributorDto = ContributorDto()

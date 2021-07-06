@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/donateFragment">
+
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.team.entmaa.ui.mainactivity.donatefragment.DonateFragment"
+        android:label="fragment_donate"
+        tools:layout="@layout/fragment_donate" />
+    <fragment
+        android:id="@+id/volunteerFragment"
+        android:name="com.team.entmaa.ui.mainactivity.volunteerfragment.VolunteerFragment"
+        android:label="fragment_volunteer"
+        tools:layout="@layout/fragment_volunteer" >
+        <action
+            android:id="@+id/action_volunteerFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auctionFragment"
+        android:name="com.team.entmaa.ui.mainactivity.auctionfragment.AuctionFragment"
+        android:label="fragment_auction"
+        tools:layout="@layout/fragment_auction" />
+    <fragment
+        android:id="@+id/reportedItemsFragment"
+        android:name="com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsFragment"
+        android:label="fragment_reported_items"
+        tools:layout="@layout/fragment_reported_items" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.team.entmaa.ui.mainactivity.morefragment.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_contributorProfileFragment"
+            app:destination="@id/contributorProfileFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_donatedItemsFragment"
+            app:destination="@id/donatedItemsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_channelFragment"
+            app:destination="@id/channelFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_subscriptionsFragment"
+            app:destination="@id/subscriptionsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_volunteerWorkFragment"
+            app:destination="@id/volunteerWorkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contributorProfileFragment"
+        android:name="com.team.entmaa.ui.contributorprofileactivity.ContributorProfileFragment"
+        android:label="fragment_profile_contributor"
+        tools:layout="@layout/fragment_profile_contributor" />
+    <fragment
+        android:id="@+id/eventDetailsFragment"
+        android:name="com.team.entmaa.ui.eventdetails.EventDetailsFragment"
+        android:label="EventDetailsFragment"
+        tools:layout="@layout/fragment_details_event"
+        >
+        <argument
+            android:name="eventId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/orgProfileFragment"
+        android:name="com.team.entmaa.ui.orgProfile.OrgProfileFragment"
+        android:label="OrgProfileFragment" >
+        <argument
+            android:name="orgId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <action android:id="@+id/action_global_orgProfileFragment"
+        app:destination="@id/orgProfileFragment" />
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.team.entmaa.ui.commentsfragment.CommentsFragment"
+        android:label="CommentsFragment" >
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+    </fragment>
+    <action android:id="@+id/action_global_commentsFragment" app:destination="@id/commentsFragment" />
+    <fragment
+        android:id="@+id/donatedItemsFragment"
+        android:name="com.team.entmaa.ui.contribdonateditems.DonatedItemsFragment"
+        android:label="fragment_donated_items"
+        tools:layout="@layout/fragment_donated_items" />
+    <fragment
+        android:id="@+id/channelFragment"
+        android:name="com.team.entmaa.ui.ChannelFragment"
+        android:label="fragment_channel"
+        tools:layout="@layout/fragment_channel" />
+    <fragment
+        android:id="@+id/subscriptionsFragment"
+        android:name="com.team.entmaa.ui.donationreminders.SubscriptionsFragment"
+        android:label="fragment_subscriptions"
+        tools:layout="@layout/fragment_subscriptions" />
+    <fragment
+        android:id="@+id/volunteerWorkFragment"
+        android:name="com.team.entmaa.ui.VolunteerWorkFragment"
+        android:label="fragment_volunteer_work"
+        tools:layout="@layout/fragment_volunteer_work" />
+</navigation>

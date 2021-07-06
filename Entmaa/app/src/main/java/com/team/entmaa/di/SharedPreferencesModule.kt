@@ -41,9 +41,9 @@ object SharedPreferencesModule {
             .getInt(key,-1)
 
         return OrganizationDto().apply {
-            id = orgId
-            username = "Entmaa"
-            profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
+            id = 1
+            username = "Misr El Khair"
+            profilePhotoUrl = "https://s3-eu-west-1.amazonaws.com/wuzzuf/files/company_logo/Misr-El-Kheir-Foundation-Egypt-3428.jpeg"
         }
     }
 

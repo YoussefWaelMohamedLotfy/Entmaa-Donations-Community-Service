@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/posterPhoto"
+            android:layout_width="@dimen/post_photo_size"
+            android:layout_height="@dimen/post_photo_size"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CornerSize50Percent"
+            app:srcCompat="@drawable/placeholder" />
+
+        <EditText
+            android:id="@+id/eventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Event title"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:layout_marginStart="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="@id/posterPhoto"
+            app:layout_constraintStart_toEndOf="@id/posterPhoto"
+            app:layout_constraintTop_toTopOf="@id/posterPhoto"
+            app:layout_constraintVertical_bias="0.12" />
+
+        <ScrollView
+            android:id="@+id/postContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/posterPhoto">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:weightSum="1"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/posterPhoto">
+
+
+                <EditText
+                    android:id="@+id/eventBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="@dimen/margin_large"
+                    android:textSize="@dimen/_16sdp"
+                    android:hint="Event description"
+                    />
+
+                <ImageView
+                    android:id="@+id/postImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:src="@drawable/placeholder" />
+
+
+                <Button
+                    android:id="@+id/addImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Image"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:layout_gravity="end"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    app:layout_constraintStart_toEndOf="@+id/postTarget"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/calenderImg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postContainer"
+            app:srcCompat="@drawable/ic_baseline_calendar_today_24"/>
+
+        <EditText
+            android:id="@+id/startDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:hint="Start Date"
+            app:layout_constraintBottom_toBottomOf="@+id/calenderImg1"
+            app:layout_constraintStart_toEndOf="@+id/calenderImg1"
+            app:layout_constraintTop_toTopOf="@+id/calenderImg1">
+
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/endtDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:hint="End Date"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/calenderImg1"
+            app:layout_constraintStart_toEndOf="@+id/startDateText"
+            app:layout_constraintTop_toTopOf="@+id/calenderImg1">
+
+        </EditText>
+
+        <SearchView
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startDateText" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar"
+            tools:context=".ui.MapsFragment" />
+
+        <Button
+            android:id="@+id/addPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            android:layout_margin="@dimen/margin_large"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

@@ -18,19 +18,28 @@ object PostInteractionsApiImpl : PostInteractionsApi {
 
 
     override suspend fun getComments(postId: Int): List<CommentDto> {
-        return mutableListOf<CommentDto>().apply {
-            repeat(3){
-
-                val comment = CommentDto().apply {
-                    commentedBy = ContributorDto().apply {
-                        username = "Contributor $it"
-                        profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
-                    }
-                    commentText = "I wish you the best of luck"
+        return mutableListOf(
+            CommentDto().apply {
+                commentedBy = ContributorDto().apply {
+                    username = "Omar Khaled"
+                    profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
                 }
-
-                add(comment)
+                commentText = "I wish you the best of luck"
+            },
+            CommentDto().apply {
+                commentedBy = ContributorDto().apply {
+                    username = "Beshoy Victor"
+                    profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
+                }
+                commentText = "Always in support of those in need"
+            },
+            CommentDto().apply {
+                commentedBy = ContributorDto().apply {
+                    username = "Mohamad Amr"
+                    profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
+                }
+                commentText = "I can definitely this is a trust worthy Organization"
             }
-        }
+        )
     }
 }

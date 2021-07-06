@@ -4,26 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.skydoves.sandwich.ApiResponse
-import com.skydoves.sandwich.onError
-import com.skydoves.sandwich.onSuccess
-import com.team.entmaa.data.model.dto.ApiResponseMessage
 import com.team.entmaa.data.model.dto.auction.AuctionDto
 import com.team.entmaa.data.model.dto.auction.BidDto
-import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
-import com.team.entmaa.data.model.dto.posts.DonationRequestDto
-import com.team.entmaa.data.model.dto.posts.EventDto
-import com.team.entmaa.data.model.dto.posts.PostDto
 import com.team.entmaa.data.model.dto.tags.TagDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.sources.remote.AuctionApi
-import com.team.entmaa.data.sources.remote.DonationRequestsApi
-import com.team.entmaa.data.sources.remote.EventsApi
-import com.team.entmaa.di.FakeApi
-import com.team.entmaa.ui.mainactivity.Filterable
-import com.team.entmaa.util.filterBySearch
-import com.team.entmaa.util.filterByTags
+import com.team.entmaa.ui.filters.Filterable
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 

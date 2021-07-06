@@ -40,6 +40,23 @@
 
     <!-- Black -->
     <color name="blue_100">#168aad</color>
+    <color name="blue_700">#0A3040</color>
 
+
+    <color name="Blue_200">#06224A</color>
+    <color name="Blue_100">#03B5FF</color>
+    <color name="Orange_200">#FCC196</color>
+    <color name="Yellow_300">#FFB947</color>
+    <color name="Red_200">#DF7663</color>
+    <color name="Green_300">#21DC98</color>
+
+    <array name="pieChartColors">
+        <item>@color/Green_300</item>
+        <item>@color/Blue_200</item>
+        <item>@color/Blue_100</item>
+        <item>@color/Red_200</item>
+        <item>@color/Orange_200</item>
+        <item>@color/Yellow_300</item>
+    </array>
 
 </resources>

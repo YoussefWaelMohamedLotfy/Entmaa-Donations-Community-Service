@@ -9,9 +9,8 @@ import com.team.entmaa.data.model.dto.lostandfound.ReportedItemDto
 import com.team.entmaa.data.model.dto.tags.TagDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.Result
-import com.team.entmaa.data.sources.remote.AuctionApi
 import com.team.entmaa.data.sources.remote.ReportedItemsApi
-import com.team.entmaa.ui.mainactivity.Filterable
+import com.team.entmaa.ui.filters.Filterable
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 

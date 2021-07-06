@@ -7,8 +7,7 @@
     tools:context=".ui.mainactivity.volunteerfragment.VolunteerFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/search_bar_height"
-        android:id="@+id/requestsList"
+        android:id="@+id/auctionsList"
         android:layout_marginHorizontal="@dimen/margin_normal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

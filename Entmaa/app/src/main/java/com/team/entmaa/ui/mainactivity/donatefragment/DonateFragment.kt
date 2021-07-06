@@ -1,22 +1,19 @@
 package com.team.entmaa.ui.mainactivity.donatefragment
 
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.drawable.VectorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
+import com.team.entmaa.MainNavGraphDirections
 import com.team.entmaa.R
-import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.onError
@@ -25,8 +22,7 @@ import com.team.entmaa.data.repositories.onSuccess
 import com.team.entmaa.data.sources.remote.PostInteractionsApi
 import com.team.entmaa.databinding.FragmentDonateBinding
 import com.team.entmaa.databinding.ItemDonationRequestBinding
-import com.team.entmaa.ui.commentsactivity.CommentsActivity
-import com.team.entmaa.ui.mainactivity.FiltersViewModel
+import com.team.entmaa.ui.filters.FiltersViewModel
 import com.team.entmaa.util.BaseListAdapter
 import com.team.entmaa.util.durationFrom
 import com.team.entmaa.util.getColorFromAttr
@@ -34,7 +30,6 @@ import com.team.entmaa.util.loadURL
 
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.time.LocalDate
 import java.time.LocalDateTime
 import javax.inject.Inject
 
@@ -42,7 +37,7 @@ import javax.inject.Inject
 class DonateFragment : Fragment(R.layout.fragment_donate) {
 
     private val viewModel:DonationRequestViewModel by viewModels()
-    private val filtersViewModel:FiltersViewModel by activityViewModels()
+    private val filtersViewModel: FiltersViewModel by activityViewModels()
 
     lateinit var binding: FragmentDonateBinding
 
@@ -94,6 +89,11 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
             commentsButton.text = item.comments.size.toString()
 
 
+            posterPhoto.setOnClickListener {
+                findNavController().navigate(
+                    MainNavGraphDirections.actionGlobalOrgProfileFragment(item.postedBy.id))
+            }
+
             donateButton.setOnClickListener {
                 childFragmentManager.setFragmentResultListener(DonateDialog.donationAmountKey,viewLifecycleOwner) { key, bundle ->
                     val moneyAmount = bundle.getInt(DonateDialog.donationAmountKey)
@@ -107,11 +107,8 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
             }
 
             commentsButton.setOnClickListener {
-                Intent(requireContext(),CommentsActivity::class.java)
-                    .also {
-                        it.putExtra(CommentsActivity.postIdKey,item.id)
-                        startActivity(it)
-                    }
+                findNavController().navigate(
+                    MainNavGraphDirections.actionGlobalCommentsFragment(item.id))
             }
 
             fun checkLoveStatus()

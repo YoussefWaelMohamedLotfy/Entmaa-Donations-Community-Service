@@ -4,33 +4,33 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.chip.Chip
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.iammert.library.ui.multisearchviewlib.MultiSearchView
 import com.team.entmaa.R
-import com.team.entmaa.data.model.dto.tags.TagDto
-import com.team.entmaa.data.sources.remote.TagsApi
-import com.team.entmaa.databinding.ActivityMainBinding
-import com.team.entmaa.databinding.ItemTagBinding
-import com.team.entmaa.util.BaseListAdapter
+import com.team.entmaa.databinding.ActivityMainContribBinding
+import com.team.entmaa.ui.filters.FiltersViewModel
+import com.team.entmaa.ui.tags.TagsAdapter
 import com.team.entmaa.util.playAnimation
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val filtersViewModel:FiltersViewModel by viewModels()
+    private lateinit var binding: ActivityMainContribBinding
+    private val filtersViewModel: FiltersViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main_contrib)
 
         styleBottomNavigationBar()
 
@@ -40,6 +40,13 @@ class MainActivity : AppCompatActivity() {
 
         setupSearch()
 
+        setUpOnDestinationChangedListener()
+
+    }
+
+
+    private fun setUpOnDestinationChangedListener()
+    {
         (supportFragmentManager
             .findFragmentById(R.id.mainFragmentContainer)
                 as NavHostFragment)
@@ -52,23 +59,30 @@ class MainActivity : AppCompatActivity() {
                     R.id.volunteerFragment,
                     R.id.auctionFragment,
                     R.id.reportedItemsFragment,
-                     -> {
+                    -> {
                         showSearch()
                         showBottomNav()
+                        setCanRefresh(true)
                     }
 
                     R.id.moreFragment -> {
                         showBottomNav()
                         hideSearch()
+                        setCanRefresh(false)
                     }
                     else -> {
                         hideBottomNav()
                         hideSearch()
+                        setCanRefresh(false)
                     }
                 }
 
             }
+    }
 
+    fun setCanRefresh(canRefresh:Boolean)
+    {
+        binding.SwipeRefreshLayout.isEnabled = canRefresh
     }
 
     private fun hideBottomNav()
@@ -76,6 +90,7 @@ class MainActivity : AppCompatActivity() {
         if(binding.bottomNavigation.visibility == View.VISIBLE)
         {
             binding.bottomNavigation.playAnimation(R.anim.slide_down_fade_out)
+            binding.bottomNavShadow.playAnimation(R.anim.slide_down_fade_out)
             binding.bottomNavigation.visibility = View.INVISIBLE
             binding.bottomNavShadow.visibility = View.INVISIBLE
         }
@@ -86,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         if(binding.bottomNavigation.visibility == View.INVISIBLE)
         {
             binding.bottomNavigation.playAnimation(R.anim.slide_up_fade_in)
+            binding.bottomNavShadow.playAnimation(R.anim.slide_up_fade_in)
             binding.bottomNavigation.visibility = View.VISIBLE
             binding.bottomNavShadow.visibility = View.VISIBLE
         }
@@ -95,7 +111,15 @@ class MainActivity : AppCompatActivity() {
 
         if(binding.topBar.visibility == View.VISIBLE)
         {
-            binding.topBar.playAnimation(R.anim.slide_up_fade_out)
+            val addMargin = ConstraintLayout
+                .LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,ConstraintLayout.LayoutParams.MATCH_PARENT)
+                .apply {
+                    val top = resources.getDimension(R.dimen.search_bar_height).toInt()
+                    topMargin = 0
+                }
+            binding.SwipeRefreshLayout.layoutParams = addMargin
+            binding.SwipeRefreshLayout.requestLayout()
+            binding.topBar.playAnimation(R.anim.fade_out)
             binding.topBar.visibility = View.INVISIBLE
         }
     }
@@ -104,7 +128,16 @@ class MainActivity : AppCompatActivity() {
     {
         if(binding.topBar.visibility == View.INVISIBLE)
         {
-            binding.topBar.playAnimation(R.anim.slide_down_fade_in)
+            val addMargin = ConstraintLayout
+                .LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,ConstraintLayout.LayoutParams.MATCH_PARENT)
+                .apply {
+                    val top = resources.getDimension(R.dimen.search_bar_height).toInt()
+                topMargin = top
+            }
+            println("Show ")
+            binding.SwipeRefreshLayout.layoutParams = addMargin
+            binding.SwipeRefreshLayout.requestLayout()
+            binding.topBar.playAnimation(R.anim.fade_in)
             binding.topBar.visibility = View.VISIBLE
         }
     }
@@ -117,7 +150,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSearchComplete(index: Int, s: CharSequence) {
-                filtersViewModel.filterBySearch(s.toString())
+                if(s.isNotEmpty())
+                {
+                    filtersViewModel.filterBySearch(s.toString())
+                }
             }
 
             override fun onSearchItemRemoved(index: Int) {
@@ -128,6 +164,12 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        val searchIcon = findViewById<AppCompatImageView>(R.id.imageViewSearch).apply {
+            //@color/mtrl_text_btn_text_color_selector
+            imageTintList = AppCompatResources.getColorStateList(context,R.color.material_on_background_emphasis_medium)
+        }
+
     }
 
     private fun setupSwipeRefreshLayout()
@@ -160,23 +202,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val adapter = object : BaseListAdapter<TagDto, ItemTagBinding>(R.layout.item_tag) {
-            val checkedFilters = mutableSetOf<TagDto>()
 
-            override fun ItemTagBinding.bind(item: TagDto, position: Int) {
-                tag.text = item.name
-                tag.setOnClickListener {
-                    it as Chip
-
-                    if (it.isChecked) {
-                        checkedFilters.add(item)
-                    } else {
-                        checkedFilters.remove(item)
-                    }
-
-                    filtersViewModel.filterByTags(checkedFilters)
-                }
-            }
+        val adapter = TagsAdapter{ tagDto, isChecked, selectedTags ->
+            filtersViewModel.filterByTags(selectedTags)
         }
 
         binding.filterBar.filterChips.adapter = adapter

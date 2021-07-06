@@ -5,6 +5,7 @@ import com.team.entmaa.data.model.dto.ApiResponseMessage
 import com.team.entmaa.data.model.dto.donations.ItemDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.donations.MoneyDonationsOnRequestDto
 import com.team.entmaa.data.model.dto.posts.DonationRequestDto
+import com.team.entmaa.data.model.dto.posts.EventDto
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -33,5 +34,9 @@ interface DonationRequestsApi {
     @POST("donationrequests/{requestid}/moneydonations")
     suspend fun donateMoneyToRequest(@Path("requestid") requestId:Int,
                                      @Body moneyDonation:MoneyDonationsOnRequestDto) : ApiResponse<ApiResponseMessage>
+
+
+    @POST("organizations/{OrgId}/donationrequests")
+    suspend fun createNewDonationRequest(@Path("orgId") orgId:Int,@Body request: DonationRequestDto)
 
 }

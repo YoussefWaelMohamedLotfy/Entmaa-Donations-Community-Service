@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_xlarge"
         android:fontFamily="@font/nunito_bold"
-        android:text="Together we can "
+        android:text="Give back to your\nCommunity"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,10 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_xlarge"
+        android:layout_marginEnd="7dp"
         android:fontFamily="@font/nunito_semibold"
-        android:text="Adding value\nthrough helping your society"
+        android:text="Help spread donations to those\nin need"
         android:textColor="@color/white"
         android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title" />
 

@@ -10,7 +10,10 @@ import android.widget.Button
 import android.widget.TextView
 import com.team.entmaa.R
 import com.team.entmaa.databinding.FragmentLoginBinding
+import com.team.entmaa.ui.authactivity.MainAuthActivity
 import com.team.entmaa.ui.mainactivity.MainActivity
+import com.team.entmaa.ui.orgactivity.OrgActivity
+import com.team.entmaa.ui.splashscreenactivity.Users
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -30,12 +33,22 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         binding.butLogin.setOnClickListener {
 
-            println("aldsfjl;akjsdfsdfdsf")
+            val userType = requireActivity().intent.getStringExtra(MainAuthActivity.userTypeKey)
+            if(userType == Users.Contributor.toString())
+            {
+                Intent(requireContext(),MainActivity::class.java)
+                    .also {
+                        startActivity(it)
+                    }
+            }
+            else
+            {
+                Intent(requireContext(),OrgActivity::class.java)
+                    .also {
+                        startActivity(it)
+                    }
+            }
 
-            Intent(requireContext(),MainActivity::class.java)
-                .also {
-                    startActivity(it)
-                }
         }
     }
 }

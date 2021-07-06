@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/org_main_nav_graph"
+    app:startDestination="@id/orgDashFragment">
+
+    <fragment
+        android:id="@+id/orgDashFragment"
+        android:name="com.team.entmaa.ui.orgactivity.dashboard.OrgDashFragment"
+        android:label="fragment_org_dash"
+        tools:layout="@layout/fragment_org_dash" >
+        <action
+            android:id="@+id/action_orgDashFragment_to_createAuctionFragment"
+            app:destination="@id/createAuctionFragment" />
+        <action
+            android:id="@+id/action_orgDashFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+        <action
+            android:id="@+id/action_orgDashFragment_to_createDonationRequsetFragment"
+            app:destination="@id/createDonationRequsetFragment" />
+        <action
+            android:id="@+id/action_orgDashFragment_to_orgAuctionsFragment"
+            app:destination="@id/orgAuctionsFragment" />
+        <action
+            android:id="@+id/action_orgDashFragment_to_orgEventsFragment"
+            app:destination="@id/orgEventsFragment" />
+        <action
+            android:id="@+id/action_orgDashFragment_to_orgRequestsFragment"
+            app:destination="@id/orgRequestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browseItemsFragment"
+        android:name="com.team.entmaa.ui.orgactivity.donateditems.BrowseItemsFragment"
+        android:label="fragment_browse_items"
+        tools:layout="@layout/fragment_browse_items" />
+    <fragment
+        android:id="@+id/createAuctionFragment"
+        android:name="com.team.entmaa.ui.orgactivity.auctions.CreateAuctionFragment"
+        android:label="fragment_create_auction"
+        tools:layout="@layout/fragment_create_auction" />
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.team.entmaa.ui.orgactivity.orgevents.CreateEventFragment"
+        android:label="fragment_create_event"
+        tools:layout="@layout/fragment_create_event" />
+    <fragment
+        android:id="@+id/createDonationRequsetFragment"
+        android:name="com.team.entmaa.ui.orgactivity.orgrdonationequests.CreateDonationRequestFragment"
+        android:label="fragment_create_donation_requset"
+        tools:layout="@layout/fragment_create_donation_request" />
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.team.entmaa.ui.orgactivity.analytics.AnalyticsFragment"
+        android:label="fragment_analytics"
+        tools:layout="@layout/fragment_analytics" />
+    <fragment
+        android:id="@+id/orgAuctionsFragment"
+        android:name="com.team.entmaa.ui.orgactivity.auctions.OrgAuctionsFragment"
+        android:label="OrgAuctionsFragment" />
+    <fragment
+        android:id="@+id/orgEventsFragment"
+        android:name="com.team.entmaa.ui.orgactivity.orgevents.OrgEventsFragment"
+        android:label="OrgEventsFragment" />
+    <fragment
+        android:id="@+id/orgRequestsFragment"
+        android:name="com.team.entmaa.ui.orgactivity.orgrdonationequests.OrgRequestsFragment"
+        android:label="OrgRequestsFragment" />
+</navigation>

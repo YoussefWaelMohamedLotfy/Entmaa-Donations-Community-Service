@@ -22,14 +22,14 @@ annotation class RealApi
 @InstallIn(ActivityRetainedComponent::class)
 class ApiModule {
 
-    @RealApi
-    @Provides
-    fun provideDonationRequestsApi(retrofit: Retrofit) : DonationRequestsApi
-    {
-        return retrofit.create(DonationRequestsApi::class.java)
-    }
+//    @RealApi
+//    @Provides
+//    fun provideDonationRequestsApi(retrofit: Retrofit) : DonationRequestsApi
+//    {
+//        return retrofit.create(DonationRequestsApi::class.java)
+//    }
 
-    @FakeApi
+
     @Provides
     fun provideFakeDonationRequestsApi() : DonationRequestsApi
     {
@@ -64,6 +64,24 @@ class ApiModule {
     fun provideReportedItemsApi() : ReportedItemsApi
     {
         return ReportedItemsApiImpl
+    }
+
+    @Provides
+    fun provideDonatedItemsApi() : DonatedItemsApi
+    {
+        return DonatedItemsApiImpl
+    }
+
+    @Provides
+    fun provideOrganizationApi() : OrganizationApi
+    {
+        return OrganizationApiImpl
+    }
+
+    @Provides
+    fun provideSubscriptionsApi() : SubscriptionsApi
+    {
+        return SubscriptionsApiImpl
     }
 
 }

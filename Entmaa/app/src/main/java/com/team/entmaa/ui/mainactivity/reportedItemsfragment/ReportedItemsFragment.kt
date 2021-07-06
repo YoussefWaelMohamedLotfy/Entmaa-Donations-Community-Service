@@ -1,10 +1,13 @@
 package com.team.entmaa.ui.mainactivity.reportedItemsfragment
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.team.entmaa.MainNavGraphDirections
 import com.team.entmaa.R
 import com.team.entmaa.data.model.dto.lostandfound.ReportedItemDto
 import com.team.entmaa.data.model.dto.users.ContributorDto
@@ -13,11 +16,8 @@ import com.team.entmaa.data.repositories.onLoading
 import com.team.entmaa.data.repositories.onSuccess
 import com.team.entmaa.databinding.FragmentReportedItemsBinding
 import com.team.entmaa.databinding.ItemLostFoundBinding
-import com.team.entmaa.ui.mainactivity.FiltersViewModel
-import com.team.entmaa.util.BaseListAdapter
-import com.team.entmaa.util.durationFrom
-import com.team.entmaa.util.getColorFromAttr
-import com.team.entmaa.util.loadURL
+import com.team.entmaa.ui.filters.FiltersViewModel
+import com.team.entmaa.util.*
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDateTime
 import javax.inject.Inject
@@ -73,8 +73,13 @@ class ReportedItemsFragment : Fragment(R.layout.fragment_reported_items) {
             posterPhoto.loadURL(item.postedBy.profilePhotoUrl)
             postPhoto.loadURL(item.itemPhotoUrl)
 
-            location.text = item.locationDescription
+            this.location.text = item.locationDescription
 
+
+            posterPhoto.setOnClickListener {
+                findNavController().navigate(
+                    MainNavGraphDirections.actionGlobalOrgProfileFragment(item.postedBy.id))
+            }
 
             if(item.lostOrFound == false)
             {
@@ -88,7 +93,12 @@ class ReportedItemsFragment : Fragment(R.layout.fragment_reported_items) {
             }
 
             contactBtn.setOnClickListener {
+                requireContext().dialPhoneNumber(item.postedBy.phoneNumber)
+            }
 
+            mapsButton.setOnClickListener {
+                val location = Uri.parse(item.mapsLocation)
+                requireContext().showMap(location)
             }
 
         }

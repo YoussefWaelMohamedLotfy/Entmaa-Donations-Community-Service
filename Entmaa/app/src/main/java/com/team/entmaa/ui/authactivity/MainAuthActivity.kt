@@ -12,9 +12,15 @@ import com.team.entmaa.ui.authactivity.authfragment.WelcomeFragment
 class MainAuthActivity : AppCompatActivity() {
     var manager:FragmentManager = supportFragmentManager
 
+
+    companion object{
+        const val userTypeKey = "EXTRA_USER_TYPE"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_auth)
+
 
         /** Check userType **/
         val userType = intent.getStringExtra("EXTRA_USER_TYPE")

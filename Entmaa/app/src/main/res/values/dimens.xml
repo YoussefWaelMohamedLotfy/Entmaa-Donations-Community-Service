@@ -21,7 +21,7 @@
     <!-- Material Card -->
     <dimen name="card_elevation">5dp</dimen>
     <dimen name="card_stroke_width">2dp</dimen>
-    <dimen name="card_sheet_radius">48dp</dimen>
+    <dimen name="card_sheet_radius">32dp</dimen>
     <dimen name="card_sheet_radius_default">20dp</dimen>
 
     <!-- EditText -->
@@ -36,7 +36,7 @@
 
     <!-- Circle Image -->
     <dimen name="corner_radius">100dp</dimen>
-    <dimen name="search_bar_height">40dp</dimen>
+    <dimen name="search_bar_height">64dp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
 

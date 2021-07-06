@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,14 +13,11 @@
             android:id="@+id/cardContainer"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-
+            app:cardBackgroundColor="@color/blue_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheetBottomCorners"
-            app:strokeColor="@color/color_on_surface_alpha_10"
-            app:strokeWidth="@dimen/card_stroke_width"
-            app:cardElevation="@dimen/card_elevation">
+            app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.CardSheetBottomCorners">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -31,6 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_xlarge"
+                    android:textColor="@color/white"
                     android:text="Event Name"
                     android:textSize="24dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +39,7 @@
                     android:id="@+id/interestedTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="Interested"
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="@+id/followingVal"
@@ -51,6 +50,7 @@
                     android:id="@+id/followingVal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_marginTop="@dimen/margin_xlarge"
                     android:layout_marginLeft="@dimen/_70sdp"
                     android:text="10"
@@ -62,6 +62,7 @@
                     android:id="@+id/volunteeredTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="Volunteered"
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="@+id/volunteeredVal"
@@ -72,8 +73,9 @@
                 <TextView
                     android:id="@+id/volunteeredVal"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
-                    android:text="10"
+                    android:text="4"
                     android:textSize="20dp"
                     android:layout_marginTop="@dimen/margin_xlarge"
                     android:layout_marginRight="@dimen/_70sdp"
@@ -96,16 +98,25 @@
             app:srcCompat="@drawable/placeholder" />
 
         <TextView
-            android:id="@+id/createdBy"
+            android:id="@+id/createdByLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginStart="8dp"
             android:hint="Created By"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
             app:layout_constraintStart_toEndOf="@id/userPic"
             app:layout_constraintTop_toTopOf="@id/userPic" />
 
+        <TextView
+            android:id="@+id/createdBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Org Name"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            app:layout_constraintStart_toStartOf="@id/createdByLabel"
+            app:layout_constraintTop_toBottomOf="@id/createdByLabel" />
+
+        <!--
         <Button
             android:id="@+id/followBtn"
             android:layout_width="wrap_content"
@@ -117,6 +128,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/createdBy"
             app:layout_constraintTop_toBottomOf="@+id/cardContainer" />
+
+            -->
 
 
         <com.google.android.material.card.MaterialCardView
@@ -289,6 +302,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
+            android:id="@+id/volunteerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_large"
@@ -305,4 +319,4 @@
 
 
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -18,10 +18,14 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
         </intent>
     </queries>
 
@@ -49,9 +53,16 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ui.commentsactivity.CommentsActivity" />
         <activity android:name=".ui.organizationprofileactivity.OrganizationProfileMainActivity" />
         <activity android:name=".ui.contributorprofileactivity.ProfileMainActivity" />
+        <activity android:name=".ui.orgactivity.OrgActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
         <activity
             android:name=".ui.authactivity.MainAuthActivity"
             android:label="" />
@@ -62,7 +73,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.mainactivity.MainActivity" />
+        <activity android:name=".ui.mainactivity.MainActivity" android:windowSoftInputMode="adjustPan">
+
+        </activity>
     </application>
 
 </manifest>

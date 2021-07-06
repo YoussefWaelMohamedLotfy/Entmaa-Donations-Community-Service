@@ -51,7 +51,6 @@ class DashCardView(context:Context,attributeSet:AttributeSet) :
             .build()
 
         elevation = 8.dpf
-        setContentPadding(32.dp,24.dp,32.dp,16.dp)
 
         strokeWidth = 1.dp
         setStrokeColor(context.getColorStateList(R.color.color_on_surface_alpha_10))

@@ -5,6 +5,7 @@ buildscript {
         hilt_version = "2.33-beta"
         glide_version = "4.12.0"
         nav_version = "2.3.4"
+        MPAndroidChart_version = "v3.1.0"
     }
 
     repositories {

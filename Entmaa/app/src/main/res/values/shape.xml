@@ -45,6 +45,8 @@
     <style name="Entmaa.ShapeAppearance.CardSheetBottomCorners" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerSizeBottomRight">@dimen/card_sheet_radius</item>
         <item name="cornerSizeBottomLeft">@dimen/card_sheet_radius</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
 

@@ -9,7 +9,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/Entmaa.ShapeAppearance.Card.Rounded"
+
         app:strokeColor="@color/color_on_surface_alpha_10"
         app:strokeWidth="@dimen/card_stroke_width"
         app:cardElevation="@dimen/card_elevation">
@@ -23,8 +23,6 @@
                 android:id="@+id/donatedItemPic"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-
-
                 android:background="@color/whiteGray"
                 android:scaleType="centerCrop"
                 android:src="@drawable/addimg"

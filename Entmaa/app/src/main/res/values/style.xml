@@ -82,4 +82,15 @@
     </style>
 
 
+    <style name="Entmaa.SearchViewStyle" parent="">
+        <!-- Custom values write to here for SearchEditText. -->
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:enabled">true</item>
+        <item name="tint">@color/green_200</item>
+        <item name="android:hint">Search</item>
+        <item name="android:imeOptions">actionSearch</item>
+    </style>
+
+
 </resources>

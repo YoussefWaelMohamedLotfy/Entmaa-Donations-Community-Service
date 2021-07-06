@@ -15,7 +15,7 @@ import com.team.entmaa.data.model.dto.users.ContributorDto
 import com.team.entmaa.data.repositories.Result
 import com.team.entmaa.data.sources.remote.DonationRequestsApi
 import com.team.entmaa.di.FakeApi
-import com.team.entmaa.ui.mainactivity.Filterable
+import com.team.entmaa.ui.filters.Filterable
 import com.team.entmaa.util.filterBySearch
 import com.team.entmaa.util.filterByTags
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,7 +28,7 @@ import javax.inject.Inject
 class DonationRequestViewModel @Inject
     constructor(
     private val contributor:ContributorDto,
-    @FakeApi private val donationsApi : DonationRequestsApi
+    private val donationsApi : DonationRequestsApi
 )
     : ViewModel() , Filterable {
 
