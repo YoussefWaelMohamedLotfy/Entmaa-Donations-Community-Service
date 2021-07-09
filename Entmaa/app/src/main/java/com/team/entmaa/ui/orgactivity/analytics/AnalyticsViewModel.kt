@@ -23,7 +23,7 @@ class AnalyticsViewModel : ViewModel() {
     private set
 
     init {
-        generateFakeAnalytics()
+        getAnalytics()
         changeMonth(LocalDate.now().monthValue - 1)
 
     }
@@ -35,7 +35,7 @@ class AnalyticsViewModel : ViewModel() {
         mSelectedMonthAnalytics.value = mAllMonthAnalytics[index]
     }
 
-    private fun generateFakeAnalytics()
+    private fun getAnalytics()
     {
         repeat(monthNames.size)
         {

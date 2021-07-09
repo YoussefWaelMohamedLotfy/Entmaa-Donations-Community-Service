@@ -18,4 +18,12 @@ object PostsPlaceholder {
             " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
             " Ut enim ad minim"
 
+    val contributorNames = listOf(
+        "Ahmed Safwat",
+        "Beshoy Victor",
+        "Mohamed Amr",
+        "Yousef Wael",
+        "Omar Khaled"
+        )
+
 }

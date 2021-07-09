@@ -1,0 +1,1413 @@
+@startuml
+
+title __ENTMAA.APP's Class Diagram__\n
+
+  namespace androidx.databinding {
+    class androidx.databinding.DataBinderMapperImpl {
+    }
+  }
+  
+
+  namespace androidx.databinding {
+    interface androidx.databinding.DataBindingComponent {
+    }
+  }
+  
+
+  namespace androidx.databinding {
+    namespace library.baseAdapters {
+      class androidx.databinding.library.baseAdapters.BR {
+      }
+    }
+  }
+  
+
+  namespace com.iammert.library.ui.multisearchviewlib {
+    class com.iammert.library.ui.multisearchviewlib.BR {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    class com.team.entmaa.BR {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    class com.team.entmaa.BuildConfig {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    class com.team.entmaa.DaggerEntmaaApplication_HiltComponents_SingletonC {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    class com.team.entmaa.DataBinderMapperImpl {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    interface com.team.entmaa.EntmaaApplication_GeneratedInjector {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    class com.team.entmaa.EntmaaApplication_HiltComponents {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    abstract class com.team.entmaa.Hilt_EntmaaApplication {
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace data.repositories.implementaion {
+      class com.team.entmaa.data.repositories.implementaion.DonationRequestsRepositoryImpl_Factory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ActivityMainContribBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ActivityMainOrgBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ChannelitemcardBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.FragmentDonateBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemAuctionBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemCommentBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemDonateditemBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemDonationRequestBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemDonationRequestOrgBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemEventBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemLostFoundBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemNewspostRequestBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemOrgBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemSubscriptionBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace databinding {
+      class com.team.entmaa.databinding.ItemTagBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideAuctionsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideDonatedItemsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideEventsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideFakeDonationRequestsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideOrganizationApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvidePostInteractionsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideReportedItemsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideSubscriptionsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.ApiModule_ProvideTagsApiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.MoshiModule_ProvideMoshiFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.RepositoryModule_ProvideDonationRequestsRepositoryFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.RetrofitModule_ProvideRetrofitFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.SharedPreferencesModule_ProvideContribIdFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace di {
+      class com.team.entmaa.di.SharedPreferencesModule_ProvideOrgIdFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.commentsfragment {
+      interface com.team.entmaa.ui.commentsfragment.CommentsFragment_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.commentsfragment {
+      class com.team.entmaa.ui.commentsfragment.CommentsFragment_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.commentsfragment {
+      abstract class com.team.entmaa.ui.commentsfragment.Hilt_CommentsFragment {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      interface com.team.entmaa.ui.contribdonateditems.DonatedItemDialog_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      class com.team.entmaa.ui.contribdonateditems.DonatedItemDialog_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      interface com.team.entmaa.ui.contribdonateditems.DonatedItemsFragment_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      class com.team.entmaa.ui.contribdonateditems.DonatedItemsViewModel_Factory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      class com.team.entmaa.ui.contribdonateditems.DonatedItemsViewModel_HiltModules {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      class com.team.entmaa.ui.contribdonateditems.DonatedItemsViewModel_HiltModules_KeyModule_ProvideFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      abstract class com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemDialog {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.contribdonateditems {
+      abstract class com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemsFragment {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      abstract class com.team.entmaa.ui.donationreminders.Hilt_NewReminderDialog {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      abstract class com.team.entmaa.ui.donationreminders.Hilt_SubscriptionsFragment {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      interface com.team.entmaa.ui.donationreminders.NewReminderDialog_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      class com.team.entmaa.ui.donationreminders.RemindersViewModel_Factory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      class com.team.entmaa.ui.donationreminders.RemindersViewModel_HiltModules {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      class com.team.entmaa.ui.donationreminders.RemindersViewModel_HiltModules_KeyModule_ProvideFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.donationreminders {
+      interface com.team.entmaa.ui.donationreminders.SubscriptionsFragment_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.eventdetails {
+      interface com.team.entmaa.ui.eventdetails.EventDetailsFragment_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.eventdetails {
+      class com.team.entmaa.ui.eventdetails.EventDetailsFragment_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.eventdetails {
+      abstract class com.team.entmaa.ui.eventdetails.Hilt_EventDetailsFragment {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.filters {
+      class com.team.entmaa.ui.filters.FiltersViewModel_Factory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.filters {
+      class com.team.entmaa.ui.filters.FiltersViewModel_HiltModules {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.filters {
+      class com.team.entmaa.ui.filters.FiltersViewModel_HiltModules_KeyModule_ProvideFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      abstract class com.team.entmaa.ui.mainactivity.Hilt_MainActivity {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      interface com.team.entmaa.ui.mainactivity.MainActivity_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        interface com.team.entmaa.ui.mainactivity.auctionfragment.AuctionFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        class com.team.entmaa.ui.mainactivity.auctionfragment.AuctionFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        class com.team.entmaa.ui.mainactivity.auctionfragment.AuctionViewModel_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        class com.team.entmaa.ui.mainactivity.auctionfragment.AuctionViewModel_HiltModules {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        class com.team.entmaa.ui.mainactivity.auctionfragment.AuctionViewModel_HiltModules_KeyModule_ProvideFactory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace auctionfragment {
+        abstract class com.team.entmaa.ui.mainactivity.auctionfragment.Hilt_AuctionFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        interface com.team.entmaa.ui.mainactivity.donatefragment.DonateDialog_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        interface com.team.entmaa.ui.mainactivity.donatefragment.DonateFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        class com.team.entmaa.ui.mainactivity.donatefragment.DonateFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        class com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        class com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel_HiltModules {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        class com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel_HiltModules_KeyModule_ProvideFactory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        abstract class com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateDialog {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace donatefragment {
+        abstract class com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace morefragment {
+        abstract class com.team.entmaa.ui.mainactivity.morefragment.Hilt_MoreFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace morefragment {
+        interface com.team.entmaa.ui.mainactivity.morefragment.MoreFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        abstract class com.team.entmaa.ui.mainactivity.reportedItemsfragment.Hilt_ReportedItemsFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        interface com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        class com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        class com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsViewModel_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        class com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsViewModel_HiltModules {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace reportedItemsfragment {
+        class com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsViewModel_HiltModules_KeyModule_ProvideFactory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        class com.team.entmaa.ui.mainactivity.volunteerfragment.EventsViewModel_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        class com.team.entmaa.ui.mainactivity.volunteerfragment.EventsViewModel_HiltModules {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        class com.team.entmaa.ui.mainactivity.volunteerfragment.EventsViewModel_HiltModules_KeyModule_ProvideFactory {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        abstract class com.team.entmaa.ui.mainactivity.volunteerfragment.Hilt_VolunteerFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        interface com.team.entmaa.ui.mainactivity.volunteerfragment.VolunteerFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.mainactivity {
+      namespace volunteerfragment {
+        class com.team.entmaa.ui.mainactivity.volunteerfragment.VolunteerFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      abstract class com.team.entmaa.ui.orgactivity.Hilt_OrgActivity {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      interface com.team.entmaa.ui.orgactivity.OrgActivity_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace auctions {
+        abstract class com.team.entmaa.ui.orgactivity.auctions.Hilt_OrgAuctionsFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace auctions {
+        interface com.team.entmaa.ui.orgactivity.auctions.OrgAuctionsFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace auctions {
+        class com.team.entmaa.ui.orgactivity.auctions.OrgAuctionsFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace dashboard {
+        abstract class com.team.entmaa.ui.orgactivity.dashboard.Hilt_OrgDashFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace dashboard {
+        interface com.team.entmaa.ui.orgactivity.dashboard.OrgDashFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace dashboard {
+        class com.team.entmaa.ui.orgactivity.dashboard.OrgDashFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgevents {
+        abstract class com.team.entmaa.ui.orgactivity.orgevents.Hilt_OrgEventsFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgevents {
+        interface com.team.entmaa.ui.orgactivity.orgevents.OrgEventsFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgevents {
+        class com.team.entmaa.ui.orgactivity.orgevents.OrgEventsFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        interface com.team.entmaa.ui.orgactivity.orgrdonationequests.CreateDonationRequestFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        class com.team.entmaa.ui.orgactivity.orgrdonationequests.CreateDonationRequestFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        abstract class com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_CreateDonationRequestFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        abstract class com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_OrgRequestsFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        interface com.team.entmaa.ui.orgactivity.orgrdonationequests.OrgRequestsFragment_GeneratedInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgactivity {
+      namespace orgrdonationequests {
+        class com.team.entmaa.ui.orgactivity.orgrdonationequests.OrgRequestsFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgselector {
+      abstract class com.team.entmaa.ui.orgselector.Hilt_OrgSelectorFragment {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgselector {
+      interface com.team.entmaa.ui.orgselector.OrgSelectorFragment_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgselector {
+      class com.team.entmaa.ui.orgselector.OrgSelectorViewModel_Factory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgselector {
+      class com.team.entmaa.ui.orgselector.OrgSelectorViewModel_HiltModules {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.orgselector {
+      class com.team.entmaa.ui.orgselector.OrgSelectorViewModel_HiltModules_KeyModule_ProvideFactory {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.reportedcase {
+      abstract class com.team.entmaa.ui.reportedcase.Hilt_ReportCaseDialog {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.reportedcase {
+      interface com.team.entmaa.ui.reportedcase.ReportCaseDialog_GeneratedInjector {
+      }
+    }
+  }
+  
+
+  namespace com.team.entmaa {
+    namespace ui.reportedcase {
+      class com.team.entmaa.ui.reportedcase.ReportCaseDialog_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_EntmaaApplication_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_di_ApiModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_di_MoshiModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_di_RepositoryModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_di_RetrofitModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_di_SharedPreferencesModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_commentsfragment_CommentsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_contribdonateditems_DonatedItemDialog_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_contribdonateditems_DonatedItemsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_contribdonateditems_DonatedItemsViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_contribdonateditems_DonatedItemsViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_donationreminders_NewReminderDialog_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_donationreminders_RemindersViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_donationreminders_RemindersViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_donationreminders_SubscriptionsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_eventdetails_EventDetailsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_filters_FiltersViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_filters_FiltersViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_MainActivity_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_auctionfragment_AuctionFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_auctionfragment_AuctionViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_auctionfragment_AuctionViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_donatefragment_DonateDialog_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_donatefragment_DonateFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_donatefragment_DonationRequestViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_donatefragment_DonationRequestViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_morefragment_MoreFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_reportedItemsfragment_ReportedItemsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_reportedItemsfragment_ReportedItemsViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_reportedItemsfragment_ReportedItemsViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_volunteerfragment_EventsViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_volunteerfragment_EventsViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_mainactivity_volunteerfragment_VolunteerFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_OrgActivity_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_auctions_OrgAuctionsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_dashboard_OrgDashFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_orgevents_OrgEventsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_orgrdonationequests_CreateDonationRequestFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgactivity_orgrdonationequests_OrgRequestsFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgselector_OrgSelectorFragment_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgselector_OrgSelectorViewModel_HiltModules_BindsModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_orgselector_OrgSelectorViewModel_HiltModules_KeyModuleModuleDeps {
+    }
+  }
+  
+
+  namespace hilt_aggregated_deps {
+    class hilt_aggregated_deps.com_team_entmaa_ui_reportedcase_ReportCaseDialog_GeneratedInjectorModuleDeps {
+    }
+  }
+  
+
+  androidx.databinding.DataBinderMapperImpl -up-|> androidx.databinding.MergedDataBinderMapper
+  com.team.entmaa.DaggerEntmaaApplication_HiltComponents_SingletonC -up-|> com.team.entmaa.EntmaaApplication_HiltComponents.SingletonC
+  com.team.entmaa.DataBinderMapperImpl -up-|> androidx.databinding.DataBinderMapper
+  com.team.entmaa.Hilt_EntmaaApplication .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.Hilt_EntmaaApplication -up-|> android.app.Application
+  com.team.entmaa.data.repositories.implementaion.DonationRequestsRepositoryImpl_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.databinding.ActivityMainContribBindingImpl -up-|> com.team.entmaa.databinding.ActivityMainContribBinding
+  com.team.entmaa.databinding.ActivityMainOrgBindingImpl -up-|> com.team.entmaa.databinding.ActivityMainOrgBinding
+  com.team.entmaa.databinding.ChannelitemcardBindingImpl -up-|> com.team.entmaa.databinding.ChannelitemcardBinding
+  com.team.entmaa.databinding.FragmentDonateBindingImpl -up-|> com.team.entmaa.databinding.FragmentDonateBinding
+  com.team.entmaa.databinding.ItemAuctionBindingImpl -up-|> com.team.entmaa.databinding.ItemAuctionBinding
+  com.team.entmaa.databinding.ItemCommentBindingImpl -up-|> com.team.entmaa.databinding.ItemCommentBinding
+  com.team.entmaa.databinding.ItemDonateditemBindingImpl -up-|> com.team.entmaa.databinding.ItemDonateditemBinding
+  com.team.entmaa.databinding.ItemDonationRequestBindingImpl -up-|> com.team.entmaa.databinding.ItemDonationRequestBinding
+  com.team.entmaa.databinding.ItemDonationRequestOrgBindingImpl -up-|> com.team.entmaa.databinding.ItemDonationRequestOrgBinding
+  com.team.entmaa.databinding.ItemEventBindingImpl -up-|> com.team.entmaa.databinding.ItemEventBinding
+  com.team.entmaa.databinding.ItemLostFoundBindingImpl -up-|> com.team.entmaa.databinding.ItemLostFoundBinding
+  com.team.entmaa.databinding.ItemNewspostRequestBindingImpl -up-|> com.team.entmaa.databinding.ItemNewspostRequestBinding
+  com.team.entmaa.databinding.ItemOrgBindingImpl -up-|> com.team.entmaa.databinding.ItemOrgBinding
+  com.team.entmaa.databinding.ItemSubscriptionBindingImpl -up-|> com.team.entmaa.databinding.ItemSubscriptionBinding
+  com.team.entmaa.databinding.ItemTagBindingImpl -up-|> com.team.entmaa.databinding.ItemTagBinding
+  com.team.entmaa.di.ApiModule_ProvideAuctionsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideAuctionsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideDonatedItemsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideDonatedItemsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideEventsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideEventsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideFakeDonationRequestsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideFakeDonationRequestsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideOrganizationApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideOrganizationApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvidePostInteractionsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvidePostInteractionsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideReportedItemsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideReportedItemsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideSubscriptionsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideSubscriptionsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.ApiModule_ProvideTagsApiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.ApiModule_ProvideTagsApiFactory o-- com.team.entmaa.di.ApiModule : module
+  com.team.entmaa.di.MoshiModule_ProvideMoshiFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.RepositoryModule_ProvideDonationRequestsRepositoryFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.RetrofitModule_ProvideRetrofitFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.SharedPreferencesModule_ProvideContribIdFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.di.SharedPreferencesModule_ProvideOrgIdFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.commentsfragment.CommentsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.commentsfragment.Hilt_CommentsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.commentsfragment.Hilt_CommentsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.contribdonateditems.DonatedItemDialog_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.contribdonateditems.DonatedItemsViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.contribdonateditems.DonatedItemsViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemDialog .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemDialog -up-|> com.google.android.material.bottomsheet.BottomSheetDialogFragment
+  com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.contribdonateditems.Hilt_DonatedItemsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.donationreminders.Hilt_NewReminderDialog .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.donationreminders.Hilt_NewReminderDialog -up-|> com.google.android.material.bottomsheet.BottomSheetDialogFragment
+  com.team.entmaa.ui.donationreminders.Hilt_SubscriptionsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.donationreminders.Hilt_SubscriptionsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.donationreminders.RemindersViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.donationreminders.RemindersViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.eventdetails.EventDetailsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.eventdetails.Hilt_EventDetailsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.eventdetails.Hilt_EventDetailsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.filters.FiltersViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.filters.FiltersViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.Hilt_MainActivity .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.Hilt_MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.team.entmaa.ui.mainactivity.auctionfragment.AuctionFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.mainactivity.auctionfragment.AuctionViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.auctionfragment.AuctionViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.auctionfragment.Hilt_AuctionFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.auctionfragment.Hilt_AuctionFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.mainactivity.donatefragment.DonateFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.donatefragment.DonationRequestViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateDialog .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateDialog -up-|> com.google.android.material.bottomsheet.BottomSheetDialogFragment
+  com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.donatefragment.Hilt_DonateFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.mainactivity.morefragment.Hilt_MoreFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.morefragment.Hilt_MoreFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.mainactivity.reportedItemsfragment.Hilt_ReportedItemsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.reportedItemsfragment.Hilt_ReportedItemsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.reportedItemsfragment.ReportedItemsViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.volunteerfragment.EventsViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.volunteerfragment.EventsViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.mainactivity.volunteerfragment.Hilt_VolunteerFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.mainactivity.volunteerfragment.Hilt_VolunteerFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.mainactivity.volunteerfragment.VolunteerFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgactivity.Hilt_OrgActivity .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.Hilt_OrgActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.team.entmaa.ui.orgactivity.auctions.Hilt_OrgAuctionsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.auctions.Hilt_OrgAuctionsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgactivity.auctions.OrgAuctionsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgactivity.dashboard.Hilt_OrgDashFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.dashboard.Hilt_OrgDashFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgactivity.dashboard.OrgDashFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgactivity.orgevents.Hilt_OrgEventsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.orgevents.Hilt_OrgEventsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgactivity.orgevents.OrgEventsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.CreateDonationRequestFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_CreateDonationRequestFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_CreateDonationRequestFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_OrgRequestsFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.Hilt_OrgRequestsFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgactivity.orgrdonationequests.OrgRequestsFragment_MembersInjector .up.|> dagger.MembersInjector
+  com.team.entmaa.ui.orgselector.Hilt_OrgSelectorFragment .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.orgselector.Hilt_OrgSelectorFragment -up-|> androidx.fragment.app.Fragment
+  com.team.entmaa.ui.orgselector.OrgSelectorViewModel_Factory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.orgselector.OrgSelectorViewModel_HiltModules_KeyModule_ProvideFactory .up.|> dagger.internal.Factory
+  com.team.entmaa.ui.reportedcase.Hilt_ReportCaseDialog .up.|> dagger.hilt.internal.GeneratedComponentManagerHolder
+  com.team.entmaa.ui.reportedcase.Hilt_ReportCaseDialog -up-|> com.google.android.material.bottomsheet.BottomSheetDialogFragment
+  com.team.entmaa.ui.reportedcase.ReportCaseDialog_MembersInjector .up.|> dagger.MembersInjector
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

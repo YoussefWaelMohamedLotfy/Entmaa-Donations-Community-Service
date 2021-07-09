@@ -39,7 +39,7 @@ object DonatedItemsApiImpl : DonatedItemsApi {
             itemName = "Winter Clothes"
 
             donatedBy = ContributorDto().apply{
-                username = PostsPlaceholder.organizationName
+                username = PostsPlaceholder.contributorNames.random()
                 profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
             }
 
@@ -56,7 +56,7 @@ object DonatedItemsApiImpl : DonatedItemsApi {
             itemName = "Children toys"
 
             donatedBy = ContributorDto().apply{
-                username = PostsPlaceholder.organizationName
+                username = PostsPlaceholder.contributorNames.random()
                 profilePhotoUrl = PostsPlaceholder.profilePhotoUrl + Random.nextInt()
             }
 
