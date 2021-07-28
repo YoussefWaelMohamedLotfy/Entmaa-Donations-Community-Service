@@ -30,6 +30,7 @@ namespace Entmaa_Web_Services.Persistence
         public INotificationRepository Notifications { get; private set; }
         public IReportedCaseRepository ReportedCases { get; private set; }
         public IMoneyDonationOnRequestRepository MoneyDonationsOnRequest { get; private set; }
+        public IEventRepository Events { get; private set; }
 
         public UnitOfWork(MainContext context)
         {
@@ -51,6 +52,7 @@ namespace Entmaa_Web_Services.Persistence
             Notifications = new NotificationRepository(_context);
             ReportedCases = new ReportedCaseRepository(_context);
             MoneyDonationsOnRequest = new MoneyDonationOnRequestRepository(_context);
+            Events = new EventRepository(_context);
         }
 
         public int CompleteWork()

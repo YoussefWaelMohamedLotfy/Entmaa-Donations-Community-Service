@@ -445,6 +445,7 @@
     <Compile Include="Controllers\APIs\Datasets\DatasetController.cs" />
     <Compile Include="Controllers\APIs\DonatedItemController.cs" />
     <Compile Include="Controllers\APIs\DonationRequestController.cs" />
+    <Compile Include="Controllers\APIs\EventController.cs" />
     <Compile Include="Controllers\APIs\InteractionController.cs" />
     <Compile Include="Controllers\APIs\MoneyDonationController.cs" />
     <Compile Include="Controllers\APIs\NotificationController.cs" />
@@ -466,6 +467,7 @@
     <Compile Include="Core\Repositories\IContributorRepository.cs" />
     <Compile Include="Core\Repositories\IDonatedItemRepository.cs" />
     <Compile Include="Core\Repositories\IDonationRequestRepository.cs" />
+    <Compile Include="Core\Repositories\IEventRepository.cs" />
     <Compile Include="Core\Repositories\IMoneyDonationOnRequestRepository.cs" />
     <Compile Include="Core\Repositories\IMoneyDonationRepository.cs" />
     <Compile Include="Core\Repositories\INotificationRepository.cs" />
@@ -499,6 +501,7 @@
     <Compile Include="DTOs\Donations\UserDTO.cs" />
     <Compile Include="DTOs\Donations\EditDonatedItemDTO.cs" />
     <Compile Include="DTOs\Donations\GetDonatedItemsDTO.cs" />
+    <Compile Include="DTOs\Events\CreateEventDTO.cs" />
     <Compile Include="DTOs\Misc\GetNotificationsDTO.cs" />
     <Compile Include="DTOs\Posts\UsersReactedDTO.cs" />
     <Compile Include="DTOs\ReportedCases\AddReportedCaseDTO.cs" />
@@ -640,6 +643,7 @@
     <Compile Include="Persistence\Repositories\ContributorRepository.cs" />
     <Compile Include="Persistence\Repositories\DonatedItemRepository.cs" />
     <Compile Include="Persistence\Repositories\DonationRequestRepository.cs" />
+    <Compile Include="Persistence\Repositories\EventRepository.cs" />
     <Compile Include="Persistence\Repositories\MoneyDonationOnRequestRepository.cs" />
     <Compile Include="Persistence\Repositories\MoneyDonationRepository.cs" />
     <Compile Include="Persistence\Repositories\NotificationRepository.cs" />
@@ -1087,6 +1091,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="DTOs\Users\" />
     <Folder Include="Views\Contributor\" />
+    <Folder Include="Views\Event\" />
     <Folder Include="Views\FirebaseAccount\" />
   </ItemGroup>
   <ItemGroup>
