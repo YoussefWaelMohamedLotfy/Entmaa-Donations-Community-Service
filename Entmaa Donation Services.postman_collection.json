@@ -1,0 +1,1988 @@
+{
+	"info": {
+		"_postman_id": "27b1466c-86a9-4f12-ab7a-1bbe0c9b414e",
+		"name": "Entmaa Donation Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13626567"
+	},
+	"item": [
+		{
+			"name": "Contributor",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Get Contributor Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/profile",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"profile"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contributor Badges",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/badges",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"badges"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Contributor Profile",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"phoneNumber\": \"{{$randomPhoneNumber}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"a\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"b\"\r\n        }\r\n    ],\r\n    \"location\": { \r\n        \"city\": { \"id\": 1 },\r\n        \"address\": \"{{$randomStreetAddress}}\",\r\n        \"mapLocation\": \"{{$randomLongitude}}\"\r\n    },\r\n    \"birthDate\": \"2005-10-11T00:00:00\",\r\n    \"gender\": \"Male\",\r\n    \"firebaseToken\": \"{{$randomUUID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/profile",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"profile"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contributor Profile Edit",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"phoneNumber\": \"{{$randomPhoneNumber}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"b\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"a\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"w\"\r\n        }\r\n    ],\r\n    \"location\": { \r\n        \"city\": { \"id\": 3 },\r\n        \"address\": \"{{$randomStreetAddress}}\",\r\n        \"mapLocation\": \"{{$randomLongitude}}\"\r\n    },\r\n    \"birthDate\": \"2005-10-11T00:00:00\",\r\n    \"gender\": \"Male\",\r\n    \"firebaseToken\": \"{{$randomUUID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/profile",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"profile"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Contributor Signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":  \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\" : \"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contributor Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Myrtice_Willms59@yahoo.com\",\r\n    \"password\": \"MWXm18JdOWAUNJg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors/sessions",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors",
+										"sessions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dataset Creation",
+			"item": [
+				{
+					"name": "Contributor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"dateJoined\": \"2018-03-29T13:34:00\",\r\n    \"firebaseToken\": \"{{$randomUUID}}\",\r\n    \"userTypeID\": 0,\r\n    \"birthDate\": \"2016-03-29T00:00:00\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Contributor",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Contributor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Organization",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var dt = new Date(pm.variables.replaceIn('{{$randomDatePast}}'));\r",
+									"pm.environment.set(\"RandomPastDate\", dt.toISOString().split(\".000\")[0]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{$randomExampleEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"name\": \"{{$randomCompanyName}}\",\r\n    \"description\": \"{{$randomBs}}\",\r\n    \"dateJoined\": \"2020-04-15T13:34:00\",\r\n    \"firebaseToken\": \"{{$randomUUID}}\",\r\n    \"userTypeID\": 1,\r\n    \"isApproved\": {{$randomBoolean}},\r\n    \"foundedDate\": \"{{RandomPastDate}}\",\r\n    \"fawryToken\": \"{{$randomUUID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Organization",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Badge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomWord}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Badge",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Badge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var dt = new Date(pm.variables.replaceIn('{{$randomDatePast}}'));\r",
+									"pm.environment.set(\"RandomPastDate\", dt.toISOString().split(\".000\")[0]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"timePosted\": \"{{RandomPastDate}}\",\r\n    \"description\": \"{{$randomLoremSentences}}\",\r\n    \"postedBy\": \"{{$randomInt}}\",\r\n    \"postTypeId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Post",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\": 32,\r\n    \"userId\": 44,\r\n    \"comment\": \"{{$randomLoremSentence}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Comment",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donated Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"isDelivered\": {{$randomBoolean}},\r\n    \"donatedTo\": 9,\r\n    \"donatedBy\": 44\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/DonatedItem",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"DonatedItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Money Donation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contributorId\": 44,\r\n    \"organizationId\": 9,\r\n    \"moneyAmount\": {{$randomInt}},\r\n    \"donationToken\": \"{{$randomUUID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/MoneyDonation",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"MoneyDonation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"hostedBy\": 9,\r\n    \"startPrice\": {{$randomInt}},\r\n    \"endPrice\": {{$randomInt}},\r\n    \"startDate\": \"2020-04-24T00:00:00\",\r\n    \"endDate\": \"2021-04-24T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Dataset/Auction",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Dataset",
+								"Auction"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Machine Learning",
+			"item": [
+				{
+					"name": "Organization Recommendation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/ML/OrganizationRecommendation",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"ML",
+								"OrganizationRecommendation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Organization Recommendation Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/ML/OrganizationRecommendation",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"ML",
+										"OrganizationRecommendation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"orgId\": 3,\r\n        \"rating\": 4\r\n    },\r\n    {\r\n        \"orgId\": 4,\r\n        \"rating\": 3\r\n    },\r\n    {\r\n        \"orgId\": 6,\r\n        \"rating\": 3.5\r\n    }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Organization Recommendation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 3\r\n    },\r\n    {\r\n        \"id\": 6\r\n    },\r\n    {\r\n        \"id\": 18\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/ML/OrganizationRecommendation",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"ML",
+								"OrganizationRecommendation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create News Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomWords}}\",\r\n    //\"timePosted\": \"12/04/1999\",\r\n    \"description\": \"{{$randomLoremParagraph}}\",\r\n    //\"postPhoto\": \"base64 img\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"a\"\r\n        },\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"b\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"c\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/news",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"news"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "39"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit News Post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomWords}}\",\r\n    \"description\": \"{{$randomLoremParagraph}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"a\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/news/:postId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"news",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "39"
+								},
+								{
+									"key": "postId",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete News Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/news/:postId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"news",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "39"
+								},
+								{
+									"key": "postId",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Organization News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/news",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"news"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "39"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recommended News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/news",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"news"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interactions",
+			"item": [
+				{
+					"name": "Comment on a post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 44,\r\n    \"commentText\": \"{{$randomLoremSentence}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Posts/:postId/comments",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Posts",
+								":postId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "React on a post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Posts/:postId/reacts/:userId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Posts",
+								":postId",
+								"reacts",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "32"
+								},
+								{
+									"key": "userId",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove react from post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Posts/:postId/reacts/:userId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Posts",
+								":postId",
+								"reacts",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "32"
+								},
+								{
+									"key": "userId",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get who reacted",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Posts/:postId/reacts",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Posts",
+								":postId",
+								"reacts"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Donations",
+			"item": [
+				{
+					"name": "Donated Items",
+					"item": [
+						{
+							"name": "Get All Donated Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/donateditems",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"donateditems"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contributor Donated Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors/:id/donateditems",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors",
+										":id",
+										"donateditems"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Received Donated Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Organizations/:id/donateditems",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Organizations",
+										":id",
+										"donateditems"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Donation Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"health\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Food\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors/:id/donateditems",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors",
+										":id",
+										"donateditems"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Donated Item",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"health\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Food\"\r\n        }\r\n    ],\r\n    \"isDelivered\": true,\r\n    \"donatedTo\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors/:id/donateditems/:itemId",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors",
+										":id",
+										"donateditems",
+										":itemId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										},
+										{
+											"key": "itemId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Donated Item",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributors/:id/donateditems/:itemId",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributors",
+										":id",
+										"donateditems",
+										":itemId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										},
+										{
+											"key": "itemId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Money Donations",
+					"item": [
+						{
+							"name": "Donate to Organization",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contributorId\": 44,\r\n    \"organizationId\": 9,\r\n    \"moneyAmount\": {{$randomInt}},\r\n    \"donationToken\": \"{{$randomUUID}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/moneydonations",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"moneydonations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contributor Donations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Contributor/:id/moneydonations",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Contributor",
+										":id",
+										"moneydonations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Money Donations to Organizations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL_Debug}}/api/Organizations/:id/moneydonations",
+									"host": [
+										"{{BaseURL_Debug}}"
+									],
+									"path": [
+										"api",
+										"Organizations",
+										":id",
+										"moneydonations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reported Items",
+			"item": [
+				{
+					"name": "Add Reported Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"mapLocation\": \"{{$randomLatitude}}\",\r\n    \"createdBy\": 44,\r\n    \"tags\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"ag\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"bv\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"c\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/reporteditems",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"reporteditems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Reported Item",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"mapLocation\": \"{{$randomLatitude}}\",\r\n    \"resolvedBy\": 45,\r\n    \"isFound\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/reporteditems/:itemId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"reporteditems",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reported Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/reporteditems/:itemId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"reporteditems",
+								":itemId"
+							],
+							"variable": [
+								{
+									"key": "itemId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reported Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/reporteditems",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"reporteditems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contributor Reported Cases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributor/:id/reporteditems",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributor",
+								":id",
+								"reporteditems"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auctions",
+			"item": [
+				{
+					"name": "Get All Auctions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/auctions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"auctions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Auction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"startPrice\": 2000,\r\n    \"startDate\": \"2020-04-24T00:00:00\",\r\n    //\"endDate\": \"2021-04-24T00:00:00\",\r\n    \"tags\": [\r\n        {\r\n            \"name\": \"football\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/auctions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"auctions"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Auction",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"endDate\": \"2021-04-24T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/auctions/:auctionId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"auctions",
+								":auctionId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								},
+								{
+									"key": "auctionId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Auction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/auctions/:auctionId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"auctions",
+								":auctionId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								},
+								{
+									"key": "auctionId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Organization Auctions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/auctions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"auctions"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contributors Bidded Auctions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/auctions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"auctions"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contributor Bid on an Auction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bidBy\": 44,\r\n    \"price\": {{$randomInt}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Auctions/:auctionid/bidders",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Auctions",
+								":auctionid",
+								"bidders"
+							],
+							"variable": [
+								{
+									"key": "auctionid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auction Winner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Auctions/:auctionId/winner",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Auctions",
+								":auctionId",
+								"winner"
+							],
+							"variable": [
+								{
+									"key": "auctionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Add new Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subscribedTo\": 9,\r\n    \"daysInterval\": 20,\r\n    \"startDate\": \"2019-03-15T00:00:00\",\r\n    \"cashAmount\": {{$randomInt}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/subscriptions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"subscriptions"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Subscription",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"daysInterval\": 20,\r\n    \"cashAmount\": {{$randomInt}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/subscriptions/:subId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"subscriptions",
+								":subId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								},
+								{
+									"key": "subId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/subscriptions/:subId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"subscriptions",
+								":subId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								},
+								{
+									"key": "subId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contributor Subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/subscriptions",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"subscriptions"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get User Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Users/:id/notifications",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								":id",
+								"notifications"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reported Cases",
+			"item": [
+				{
+					"name": "Report a Case",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomFullName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"reportedTo\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Contributors/:id/reportedcases",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Contributors",
+								":id",
+								"reportedcases"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cases reported to Organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id:/reportedcases",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id:",
+								"reportedcases"
+							],
+							"variable": [
+								{
+									"key": "id:",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Donation Requests",
+			"item": [
+				{
+					"name": "Get Organization Donation Requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/donationrequests",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"donationrequests"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Donation Request Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"moneyReceivedAmount\": {{$randomInt}},\r\n    \"itemsAccepted\": false,\r\n    \"tags\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"food\"\r\n        },\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"health\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"c\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/donationrequests",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"donationrequests"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Donation Request Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/donationrequests/:requestId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"donationrequests",
+								":requestId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								},
+								{
+									"key": "requestId",
+									"value": "43"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Donation Request Post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremSentence}}\",\r\n    \"tags\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"food\"\r\n        },\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"health\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"c\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/donationrequests/:requestId",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"donationrequests",
+								":requestId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								},
+								{
+									"key": "requestId",
+									"value": "44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donate Money on Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\": 45,\r\n    \"contributorId\": 44,\r\n    \"moneyAmount\": {{$randomInt}},\r\n    \"donationToken\": \"{{$randomUUID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/DonationRequests/:requestId/moneydonations",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"DonationRequests",
+								":requestId",
+								"moneydonations"
+							],
+							"variable": [
+								{
+									"key": "requestId",
+									"value": "45"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Money Donations on Requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/DonationRequests/:requestId/moneydonations",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"DonationRequests",
+								":requestId",
+								"moneydonations"
+							],
+							"variable": [
+								{
+									"key": "requestId",
+									"value": "46"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL_Debug}}/api/Organizations/:id/events",
+							"host": [
+								"{{BaseURL_Debug}}"
+							],
+							"path": [
+								"api",
+								"Organizations",
+								":id",
+								"events"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
